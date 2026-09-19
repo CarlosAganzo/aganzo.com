@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600&display=swap');
 
 :root {
   --bg: #f3f0ea;
@@ -17,11 +17,19 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
-  font-family: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Manrope", "Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.5;
 }
 
+html[lang="ja"] body {
+  font-family: "Noto Sans JP", "Manrope", system-ui, sans-serif;
+}
+
 a { color: inherit; text-decoration: none; }
+
+button {
+  font: inherit;
+}
 
 .topbar {
   width: min(calc(100% - 40px), var(--max));
@@ -30,12 +38,19 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 32px;
   border-bottom: 1px solid var(--line);
 }
 
 .brand {
   font: 500 14px/1 "DM Mono", monospace;
   letter-spacing: .16em;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 28px;
 }
 
 nav {
@@ -47,6 +62,34 @@ nav {
 
 nav a { opacity: .68; }
 nav a:hover { opacity: 1; }
+
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+  font: 400 11px/1 "DM Mono", monospace;
+  color: var(--muted);
+}
+
+.language-switcher button {
+  border: 0;
+  padding: 4px 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  opacity: .55;
+}
+
+.language-switcher button:hover,
+.language-switcher button.active {
+  color: var(--ink);
+  opacity: 1;
+}
+
+.language-switcher span {
+  opacity: .35;
+}
 
 main, footer {
   width: min(calc(100% - 40px), var(--max));
@@ -70,6 +113,10 @@ main, footer {
   color: var(--muted);
 }
 
+html[lang="ja"] .eyebrow {
+  letter-spacing: .08em;
+}
+
 h1 {
   max-width: 850px;
   margin: 22px 0 28px;
@@ -79,12 +126,24 @@ h1 {
   font-weight: 500;
 }
 
+html[lang="ja"] h1 {
+  font-size: clamp(45px, 6.3vw, 88px);
+  line-height: 1.12;
+  letter-spacing: -.045em;
+}
+
 .intro {
   max-width: 690px;
   margin: 0;
   font-size: clamp(18px, 2vw, 25px);
   line-height: 1.45;
   color: #35332f;
+}
+
+html[lang="ja"] .intro,
+html[lang="ja"] .section-content > p:not(.eyebrow):not(.small-note),
+html[lang="ja"] .grid p {
+  line-height: 1.75;
 }
 
 .portrait {
@@ -129,6 +188,12 @@ h1 {
   letter-spacing: -.04em;
 }
 
+html[lang="ja"] .manifesto p {
+  font-size: clamp(28px, 4vw, 58px);
+  line-height: 1.35;
+  letter-spacing: -.035em;
+}
+
 .section {
   display: grid;
   grid-template-columns: 160px 1fr;
@@ -149,6 +214,11 @@ h1 {
   font-weight: 500;
 }
 
+html[lang="ja"] .section h2 {
+  line-height: 1.25;
+  letter-spacing: -.03em;
+}
+
 .section-content > p:not(.eyebrow):not(.small-note) {
   max-width: 760px;
   font-size: 20px;
@@ -167,6 +237,10 @@ h1 {
   border-radius: 999px;
   padding: 9px 12px;
   font: 400 11px/1 "DM Mono", monospace;
+}
+
+html[lang="ja"] .tags span {
+  font-family: "Noto Sans JP", sans-serif;
 }
 
 .grid {
@@ -192,6 +266,12 @@ h1 {
   letter-spacing: .08em;
 }
 
+html[lang="ja"] .grid h3 {
+  font-family: "Noto Sans JP", sans-serif;
+  text-transform: none;
+  letter-spacing: .04em;
+}
+
 .grid p {
   margin: 0;
   max-width: 390px;
@@ -204,6 +284,10 @@ h1 {
   color: var(--muted);
 }
 
+html[lang="ja"] .small-note {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
 footer {
   min-height: 130px;
   display: flex;
@@ -213,12 +297,42 @@ footer {
   color: var(--muted);
 }
 
+html[lang="ja"] footer a {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
 footer a:hover { color: var(--ink); }
+
+@media (max-width: 900px) {
+  .topbar {
+    align-items: flex-start;
+    padding: 22px 0;
+  }
+
+  .topbar-right {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 13px;
+  }
+
+  nav {
+    gap: 18px;
+  }
+}
 
 @media (max-width: 760px) {
   .topbar { min-height: 72px; }
-  nav { gap: 15px; }
+
+  nav {
+    gap: 15px;
+  }
+
   nav a:nth-child(2) { display: none; }
+
+  .language-switcher {
+    gap: 6px;
+    font-size: 10px;
+  }
 
   .hero {
     min-height: auto;
@@ -238,6 +352,30 @@ footer a:hover { color: var(--ink); }
 
   .grid { grid-template-columns: 1fr; }
   .grid article { min-height: 185px; }
+}
+
+@media (max-width: 520px) {
+  .topbar {
+    width: min(calc(100% - 28px), var(--max));
+    gap: 18px;
+  }
+
+  main,
+  footer {
+    width: min(calc(100% - 28px), var(--max));
+  }
+
+  nav {
+    font-size: 10px;
+  }
+
+  nav a:nth-child(3) {
+    display: none;
+  }
+
+  html[lang="ja"] h1 {
+    font-size: clamp(40px, 12vw, 58px);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
