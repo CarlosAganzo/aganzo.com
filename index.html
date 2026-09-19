@@ -29,7 +29,16 @@ html[lang=ja] .hero-statement{font-size:clamp(23px,2.3vw,34px);line-height:1.5;l
 <body>
 <a class="skip" href="#work">Skip to content</a>
   <header class="topbar">
-    <a class="brand" href="#top" aria-label="Carlos Aganzo home">CARLOS AGANZO</a>
+    <a class="brand" href="#top" aria-label="Carlos Aganzo home">AGANZO.COM</a>
+    <script>
+      (() => {
+        const hostname = window.location.hostname.toLowerCase().replace(/^www\./, "");
+        const origin = new URLSearchParams(window.location.search).get("from");
+        const domain = hostname === "carlosaganzo.com" || origin === "carlosaganzo.com"
+          ? "CARLOSAGANZO.COM" : "AGANZO.COM";
+        document.querySelector(".brand").textContent = domain;
+      })();
+</script>
 
     <div class="topbar-right">
       <nav aria-label="Primary navigation">
