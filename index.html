@@ -576,6 +576,20 @@ html[lang="en"] .lang-copy[data-copy-lang="en"],html[lang="es"] .lang-copy[data-
       browserLanguage.startsWith("ja") ? "ja" : "en");
 
 
+    const fieldPortrait = document.querySelector(".portrait-field");
+    if (fieldPortrait) {
+      Promise.all(
+        [0, 1, 2, 3, 4, 5].map(i =>
+          fetch(`portrait-field-data/${i}.txt`, { cache: "force-cache" }).then(response => {
+            if (!response.ok) throw new Error(`portrait data ${response.status}`);
+            return response.text();
+          })
+        )
+      ).then(parts => {
+        fieldPortrait.src = "data:image/jpeg;base64," + parts.join("");
+      }).catch(() => {});
+    }
+
     const portraitSlides = [...document.querySelectorAll(".portrait-photo")];
     const portraitDots = [...document.querySelectorAll(".portrait-dot")];
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
