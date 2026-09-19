@@ -14,12 +14,22 @@
 
 .atlas{margin:0 5%;padding:65px 0;border-bottom:2px solid var(--ink)}.atlas-heading{display:flex;justify-content:space-between;align-items:center;gap:30px}.atlas-heading h2{font-size:clamp(38px,5vw,76px);letter-spacing:-.05em;line-height:1.1;margin:0 0 18px}.atlas-heading p:not(.eyebrow){max-width:650px;margin:0}.atlas-stat{text-align:right;flex-shrink:0}.atlas-stat strong{display:block;font-size:clamp(85px,11vw,160px);font-weight:900;letter-spacing:-.08em;line-height:1;color:var(--accent)}.atlas-stat span{font:11px monospace;text-transform:uppercase;letter-spacing:1px}.atlas-filters{display:flex;flex-wrap:wrap;gap:8px;margin:35px 0 25px}.atlas-filters button{font:13px Arial,sans-serif;border:1px solid var(--ink);color:var(--ink);background:transparent;padding:10px 16px;cursor:pointer}.atlas-filters button[aria-pressed=true]{background:var(--ink);color:var(--paper)}.atlas-filters button:hover{border-color:var(--accent)}.atlas-layout{display:grid;grid-template-columns:minmax(0,1.9fr) minmax(0,1fr);border:1px solid var(--ink)}.atlas-map-wrap{background:#e2dccd;min-width:0;padding:22px 20px 14px;display:flex;flex-direction:column;justify-content:space-between}.atlas-map-top{display:flex;justify-content:space-between;gap:15px;font:10px monospace;text-transform:uppercase;letter-spacing:1px}.atlas-map-top span:first-child:before{content:"";display:inline-block;width:7px;height:7px;background:var(--accent);margin-right:8px}.atlas-map{width:100%;height:auto;overflow:visible;margin:20px 0}.atlas-land{fill:#c4bca9;stroke:#e2dccd;stroke-width:.5}.atlas-country{fill:var(--accent);stroke:#e2dccd;stroke-width:.65;cursor:pointer;transition:opacity .25s,fill .25s}.atlas-country.is-muted{opacity:.22}.atlas-country:hover{fill:#79170e;opacity:1}.atlas-hint,.atlas-foot{font:11px/1.7 monospace!important}.atlas-hint{margin:0}.atlas-detail{padding:28px;background:var(--ink);color:var(--paper);min-height:385px}.atlas-index{font:13px monospace;letter-spacing:4px;color:#ff745c;margin:0 0 26px}.atlas-detail h3{font:italic 32px/1.12 Georgia,serif;margin:0 0 20px}.atlas-detail>p:not(.atlas-index):not(.atlas-places-label){font-size:16px;line-height:1.7;margin:0 0 22px}.atlas-places-label{font:10px monospace;text-transform:uppercase;letter-spacing:1px;color:#c4bca9}.atlas-place{font:11px/1.5 monospace;display:inline-block;margin:0 6px 6px 0;padding:4px 7px;border:1px solid #625e55}.atlas-foot{max-width:900px;margin:16px 0 0;color:#605e57}@media(min-width:1600px){.atlas{max-width:1440px;margin-left:auto;margin-right:auto}}@media(max-width:900px){.atlas-layout{grid-template-columns:1fr}.atlas-detail{min-height:0}.atlas-map-wrap{padding:20px}.atlas-map{margin:25px 0}}@media(max-width:480px){.atlas-heading{align-items:flex-start;gap:15px}.atlas-heading h2{font-size:36px}.atlas-heading p:not(.eyebrow){font-size:16px}.atlas-stat strong{font-size:76px}.atlas-stat span{font-size:9px;max-width:85px;display:block}.atlas-filters button{font-size:12px;padding:10px 12px}.atlas-detail{padding:23px}.atlas-map-wrap{padding:14px 10px}.atlas-map-top{font-size:8px}.atlas{padding:45px 0}}@media(prefers-reduced-motion:reduce){.atlas-country{transition:none}}
 
+
+/* Name-led masthead and introduction, shared across all three languages. */
+.brand{font-size:clamp(18px,2.3vw,30px);letter-spacing:-.065em;line-height:1.1;white-space:nowrap}
+.hero-copy{min-width:0}
+h1.hero-name,html[lang=ja] h1.hero-name{font-family:Arial,Helvetica,sans-serif;font-size:clamp(72px,8.2vw,132px);line-height:.86;letter-spacing:-.075em;margin:0 0 30px;font-weight:900}
+.name-period{color:var(--accent)}
+.hero-statement{font-size:clamp(24px,2.5vw,38px);font-weight:700;line-height:1.16;letter-spacing:-.04em;margin:0 0 22px}
+html[lang=ja] .hero-statement{font-size:clamp(23px,2.3vw,34px);line-height:1.5;letter-spacing:-.025em}
+@media(max-width:720px){h1.hero-name,html[lang=ja] h1.hero-name{font-size:clamp(76px,16vw,112px)}.hero-statement{font-size:28px}}
+@media(max-width:420px){.topbar{gap:12px;flex-wrap:wrap}.topbar-right{margin-left:auto}.brand{font-size:21px}.hero-statement{font-size:25px}}
 </style>
 </head>
 <body>
 <a class="skip" href="#work">Skip to content</a>
   <header class="topbar">
-    <a class="brand" href="#top" aria-label="Carlos Aganzo home">AGANZO</a>
+    <a class="brand" href="#top" aria-label="Carlos Aganzo home">CARLOS AGANZO</a>
 
     <div class="topbar-right">
       <nav aria-label="Primary navigation">
@@ -42,7 +52,8 @@
     <section class="hero">
       <div class="hero-copy">
         <p class="eyebrow" data-i18n="heroLocation">MADRID ↔ GREAT BRITAIN</p>
-        <h1 data-i18n-html="heroTitle">I build systems.<br>I collect obsessions.</h1>
+        <h1 class="hero-name">Carlos<br><span>Aganzo</span><span class="name-period" aria-hidden="true">.</span></h1>
+        <p class="hero-statement" data-i18n-html="heroTitle">I build systems.<br>I collect obsessions.</p>
         <p class="intro" data-i18n="heroIntro">From Madrid. Based in Great Britain. Engineering leader, film obsessive, music lover and traveller with a camera.</p>
       </div>
 
