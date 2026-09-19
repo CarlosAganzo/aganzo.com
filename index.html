@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carlos Aganzo</title>
+  <meta name="description" content="Carlos Aganzo — engineering, systems, photography, travel, film and music.">
+  <meta name="theme-color" content="#f3f0ea">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Carlos Aganzo home">AGANZO</a>
+    <nav aria-label="Primary navigation">
+      <a href="#work">Work</a>
+      <a href="#outside">Outside work</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">CARLOS AGANZO</p>
+        <h1>I build systems.<br>I collect obsessions.</h1>
+        <p class="intro">
+          Software engineering leader focused on platforms, identity and distributed systems.
+          Outside work: photography, long walks, travel, film, music and the occasional rabbit hole.
+        </p>
+      </div>
+
+      <div class="portrait" aria-label="Portrait placeholder">
+        <div class="portrait-inner">
+          <span>CA</span>
+          <small>portrait.jpg</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="manifesto" aria-label="Introduction">
+      <p>
+        I like things that are built properly, whether they are software platforms,
+        cameras, records, films, clothes or plans for getting from one place to another.
+      </p>
+    </section>
+
+    <section id="work" class="section">
+      <div class="section-number">01</div>
+      <div class="section-content">
+        <p class="eyebrow">WORK</p>
+        <h2>Engineering leadership without theatre.</h2>
+        <p>
+          I work on the less glamorous parts of software that become very glamorous
+          the moment they fail: identity, authentication, shared services, messaging
+          and platform infrastructure.
+        </p>
+        <p>
+          My job is mostly about making complicated systems simpler, helping teams
+          make good decisions, and being comfortable saying “I don’t know” before
+          finding out.
+        </p>
+        <div class="tags" aria-label="Areas of work">
+          <span>Platform</span>
+          <span>Identity</span>
+          <span>Distributed systems</span>
+          <span>Engineering management</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="outside" class="section">
+      <div class="section-number">02</div>
+      <div class="section-content">
+        <p class="eyebrow">OUTSIDE WORK</p>
+        <h2>Walking, looking, listening.</h2>
+        <div class="grid">
+          <article>
+            <h3>Photography</h3>
+            <p>
+              Small cameras, available light, streets, landscapes and the kind of
+              pictures that are better because nobody noticed they were being taken.
+            </p>
+          </article>
+          <article>
+            <h3>Travel</h3>
+            <p>
+              Cities, long-distance walks and places that require a little more effort
+              than arriving, photographing the obvious thing and leaving.
+            </p>
+          </article>
+          <article>
+            <h3>Film & music</h3>
+            <p>
+              Too many films, too much music, and strong opinions about both.
+              Melancholy is over-represented.
+            </p>
+          </article>
+          <article>
+            <h3>Collections</h3>
+            <p>
+              Objects with a story: cameras, records, cards and other things whose
+              practical necessity is open to debate.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="section-number">03</div>
+      <div class="section-content">
+        <p class="eyebrow">ABOUT</p>
+        <h2>Madrid → North East England.</h2>
+        <p>
+          Spanish by origin, British by weather exposure. I have spent much of my
+          adult life in the North East of England and still regard Madrid as home
+          in a way that geography does not entirely explain.
+        </p>
+        <p class="small-note">
+          This site is intentionally small. No analytics. No trackers. No newsletter popup.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© <span id="year"></span> Carlos Aganzo</span>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
