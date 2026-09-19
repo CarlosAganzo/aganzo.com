@@ -26,19 +26,34 @@ html[lang=ja] .hero-statement{font-size:clamp(23px,2.3vw,34px);line-height:1.5;l
 @media(max-width:720px){h1.hero-name,html[lang=ja] h1.hero-name{font-size:clamp(76px,16vw,112px)}.hero-statement{font-size:28px}}
 @media(max-width:420px){.topbar{gap:12px;flex-wrap:wrap}.topbar-right{margin-left:auto}.brand{font-size:21px}.hero-statement{font-size:25px}}
 
-/* Visitor interaction — deliberately simple: no account, database or public comment wall required. */
-.interaction-section{margin:0 5%;padding:65px 0;border-bottom:2px solid var(--ink)}
-.interaction-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(280px,.6fr);gap:7%;align-items:end}
-.interaction-section h2{font-size:clamp(35px,4.3vw,65px);line-height:1.08;letter-spacing:-.045em;max-width:850px;margin:0 0 18px}
-.interaction-copy{max-width:700px;margin:0;font-size:18px}
-.interaction-cta{display:flex;align-items:center;justify-content:space-between;gap:20px;border:2px solid var(--ink);padding:22px 24px;text-decoration:none;font-size:20px;font-weight:700;transition:background .2s,color .2s,transform .2s}
-.interaction-cta span:last-child{font-size:30px;line-height:1}
-.interaction-cta:hover{background:var(--ink);color:var(--paper);transform:translate(-3px,-3px)}
+/* Visitor interaction — Spotify preview in-page, email only at the final handoff. */
+.interaction-section{margin:0 5%;padding:68px 0 72px;border-bottom:2px solid var(--ink)}
+.interaction-grid{display:grid;grid-template-columns:minmax(0,.86fr) minmax(360px,1.14fr);gap:7%;align-items:start}
+.interaction-section h2{font-size:clamp(35px,4.3vw,65px);line-height:1.08;letter-spacing:-.045em;max-width:760px;margin:0 0 18px}
+.interaction-copy{max-width:650px;margin:0;font-size:18px;line-height:1.65}
+.song-picker{border:2px solid var(--ink);padding:24px;background:rgba(255,255,255,.18);box-shadow:7px 7px 0 var(--ink)}
+.song-field{display:block;margin-bottom:18px}
+.song-field-label{display:block;margin:0 0 9px;font:700 11px/1.2 "DM Mono",monospace;letter-spacing:.1em;text-transform:uppercase}
+.song-input,.song-reason{width:100%;border:1.5px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:0;padding:14px 15px;font:500 15px/1.45 inherit;outline:none}
+.song-input:focus,.song-reason:focus{box-shadow:0 0 0 3px var(--accent)}
+.song-reason{min-height:92px;resize:vertical}
+.song-tools{display:flex;justify-content:space-between;gap:16px;align-items:center;margin:-5px 0 18px;font:11px/1.45 "DM Mono",monospace;color:#625e55}
+.song-tools a{text-decoration:underline;text-underline-offset:3px}
+.spotify-preview{display:none;margin:0 0 18px}
+.spotify-preview.is-visible{display:block}
+.spotify-preview iframe{display:block;width:100%;height:152px;border:0}
+.song-status{min-height:20px;margin:0 0 10px;font:11px/1.5 "DM Mono",monospace;color:#8b3422}
+.song-submit{width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;border:2px solid var(--ink);background:var(--ink);color:var(--paper);padding:18px 20px;font:700 18px/1.15 inherit;cursor:pointer;transition:transform .2s,box-shadow .2s,opacity .2s}
+.song-submit:not(:disabled):hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 var(--accent)}
+.song-submit:disabled{opacity:.38;cursor:not-allowed}
+.song-submit .arrow{font-size:28px;line-height:1}
+.song-old-school{display:inline-block;margin-top:16px;font:11px/1.5 "DM Mono",monospace;text-decoration:underline;text-underline-offset:3px;color:#4f4b44}
 .lang-copy{display:none}
 html[lang="en"] .lang-copy[data-copy-lang="en"],html[lang="es"] .lang-copy[data-copy-lang="es"],html[lang="ja"] .lang-copy[data-copy-lang="ja"]{display:inline}
 @media(min-width:1600px){.interaction-section{max-width:1440px;margin-left:auto;margin-right:auto}}
-@media(max-width:720px){.interaction-section{padding:45px 0}.interaction-grid{grid-template-columns:1fr;gap:28px}.interaction-copy{font-size:17px}.interaction-cta{font-size:18px;padding:18px 20px}}
-@media(prefers-reduced-motion:reduce){.interaction-cta{transition:none}.interaction-cta:hover{transform:none}}
+@media(max-width:820px){.interaction-grid{grid-template-columns:1fr;gap:34px}.song-picker{box-shadow:5px 5px 0 var(--ink)}}
+@media(max-width:520px){.interaction-section{padding:46px 0 52px}.interaction-copy{font-size:17px}.song-picker{padding:17px}.song-tools{align-items:flex-start;flex-direction:column;gap:7px}.song-submit{font-size:16px;padding:16px}}
+@media(prefers-reduced-motion:reduce){.song-submit{transition:none}.song-submit:not(:disabled):hover{transform:none}}
 </style>
 </head>
 <body>
@@ -197,17 +212,62 @@ html[lang="en"] .lang-copy[data-copy-lang="en"],html[lang="es"] .lang-copy[data-
         <span class="lang-copy" data-copy-lang="ja">私の音楽の趣味を広げてください。</span>
       </h2>
       <p class="interaction-copy">
-        <span class="lang-copy" data-copy-lang="en">Think there is something I should hear? Send me one song. One. Not a playlist.</span>
-        <span class="lang-copy" data-copy-lang="es">¿Crees que hay algo que debería escuchar? Mándame una canción. Una. No una playlist.</span>
-        <span class="lang-copy" data-copy-lang="ja">聴くべき曲があるなら、1曲だけ送ってください。1曲。プレイリストは禁止。</span>
+        <span class="lang-copy" data-copy-lang="en">Think I have somehow missed the greatest song ever recorded? Paste one Spotify track. One. Playlists are cowardice.</span>
+        <span class="lang-copy" data-copy-lang="es">¿Crees que, incomprensiblemente, se me ha escapado la mejor canción jamás grabada? Pega una canción de Spotify. Una. Las playlists son cobardía.</span>
+        <span class="lang-copy" data-copy-lang="ja">私が史上最高の1曲をなぜか聴き逃していると思いますか？ Spotifyの曲を1曲だけ貼ってください。1曲だけ。プレイリストは反則です。</span>
       </p>
     </div>
-    <a class="interaction-cta" href="mailto:carlos.aganzo@gmail.com?subject=One%20song%20for%20AGANZO.COM&body=Artist%3A%0ASong%3A%0AWhy%20this%20one%3A%0A" aria-label="Recommend one song to Carlos Aganzo by email">
-      <span class="lang-copy" data-copy-lang="en">Recommend one song</span>
-      <span class="lang-copy" data-copy-lang="es">Recomiéndame una canción</span>
-      <span class="lang-copy" data-copy-lang="ja">1曲おすすめする</span>
-      <span aria-hidden="true">↗</span>
-    </a>
+
+    <div class="song-picker" aria-label="Recommend a song">
+      <label class="song-field" for="spotify-track">
+        <span class="song-field-label">
+          <span class="lang-copy" data-copy-lang="en">Spotify track</span>
+          <span class="lang-copy" data-copy-lang="es">Canción de Spotify</span>
+          <span class="lang-copy" data-copy-lang="ja">Spotifyの曲</span>
+        </span>
+        <input id="spotify-track" class="song-input" type="text" inputmode="url" autocomplete="off" placeholder="https://open.spotify.com/track/…" aria-describedby="spotify-status">
+      </label>
+
+      <div class="song-tools">
+        <span>
+          <span class="lang-copy" data-copy-lang="en">Paste a track link and I will preview it here.</span>
+          <span class="lang-copy" data-copy-lang="es">Pega el enlace y la previsualizo aquí.</span>
+          <span class="lang-copy" data-copy-lang="ja">曲リンクを貼ると、ここでプレビューできます。</span>
+        </span>
+        <a href="https://open.spotify.com/search" target="_blank" rel="noopener noreferrer">
+          <span class="lang-copy" data-copy-lang="en">Open Spotify ↗</span>
+          <span class="lang-copy" data-copy-lang="es">Abrir Spotify ↗</span>
+          <span class="lang-copy" data-copy-lang="ja">Spotifyを開く ↗</span>
+        </a>
+      </div>
+
+      <div id="spotify-preview" class="spotify-preview" aria-live="polite"></div>
+      <p id="spotify-status" class="song-status" aria-live="polite"></p>
+
+      <label class="song-field" for="song-reason">
+        <span class="song-field-label">
+          <span class="lang-copy" data-copy-lang="en">Make your case <span aria-hidden="true">(optional)</span></span>
+          <span class="lang-copy" data-copy-lang="es">Defiende tu elección <span aria-hidden="true">(opcional)</span></span>
+          <span class="lang-copy" data-copy-lang="ja">おすすめする理由 <span aria-hidden="true">(任意)</span></span>
+        </span>
+        <textarea id="song-reason" class="song-reason" maxlength="280" data-placeholder-en="Why this song? “Because your taste is appalling” is accepted." data-placeholder-es="¿Por qué esta canción? «Porque tu gusto es lamentable» es una respuesta válida." data-placeholder-ja="なぜこの曲？「あなたの趣味がひどいから」でも構いません。"></textarea>
+      </label>
+
+      <button id="song-submit" class="song-submit" type="button" disabled>
+        <span>
+          <span class="lang-copy" data-copy-lang="en">Inflict this on me</span>
+          <span class="lang-copy" data-copy-lang="es">Oblígame a escucharla</span>
+          <span class="lang-copy" data-copy-lang="ja">これを聴かせる</span>
+        </span>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </button>
+
+      <a class="song-old-school" href="mailto:carlos.aganzo@gmail.com?subject=One%20song%20for%20AGANZO.COM&body=Artist%3A%0ASong%3A%0AWhy%20this%20one%3A%0A">
+        <span class="lang-copy" data-copy-lang="en">No Spotify? Send it like it’s 1999. Hate mail also accepted.</span>
+        <span class="lang-copy" data-copy-lang="es">¿Sin Spotify? Mándamela como en 1999. También acepto hate mail.</span>
+        <span class="lang-copy" data-copy-lang="ja">Spotifyなし？ 1999年方式でメールしてください。苦情メールも歓迎です。</span>
+      </a>
+    </div>
   </div>
 </section>
 <section class="social-section"><p class="eyebrow" data-i18n="socialLabel">FIND ME</p><h2 data-i18n="socialTitle">Elsewhere on the internet, against my better judgement.</h2><a class="social-link" href="https://www.instagram.com/carlosaganzo/" target="_blank" rel="noopener noreferrer">Instagram <span>↗</span></a>
@@ -456,6 +516,109 @@ html[lang="en"] .lang-copy[data-copy-lang="en"],html[lang="es"] .lang-copy[data-
     startPortraitTimer();
 
     setLanguage(initialLanguage);
+  </script>
+
+  <script>
+    (() => {
+      const trackInput = document.getElementById("spotify-track");
+      const reasonInput = document.getElementById("song-reason");
+      const preview = document.getElementById("spotify-preview");
+      const status = document.getElementById("spotify-status");
+      const submit = document.getElementById("song-submit");
+
+      if (!trackInput || !reasonInput || !preview || !status || !submit) return;
+
+      const copy = {
+        en: {
+          invalid: "That does not look like a Spotify track link.",
+          subject: "One song for AGANZO.COM",
+          track: "Spotify track",
+          reason: "Why this one",
+          footer: "Sent from AGANZO.COM, where one song means one song."
+        },
+        es: {
+          invalid: "Eso no parece un enlace a una canción de Spotify.",
+          subject: "Una canción para AGANZO.COM",
+          track: "Canción de Spotify",
+          reason: "Por qué esta",
+          footer: "Enviado desde AGANZO.COM, donde una canción significa una canción."
+        },
+        ja: {
+          invalid: "Spotifyの曲リンクではないようです。",
+          subject: "AGANZO.COMへの1曲",
+          track: "Spotifyの曲",
+          reason: "おすすめする理由",
+          footer: "AGANZO.COMから送信。1曲と言ったら1曲です。"
+        }
+      };
+
+      let trackId = "";
+
+      function lang() {
+        const current = document.documentElement.lang;
+        return copy[current] ? current : "en";
+      }
+
+      function extractTrackId(value) {
+        const trimmed = value.trim();
+        const uri = trimmed.match(/^spotify:track:([A-Za-z0-9]{22})$/i);
+        if (uri) return uri[1];
+
+        const url = trimmed.match(/^https?:\/\/open\.spotify\.com\/(?:intl-[a-z-]+\/)?track\/([A-Za-z0-9]{22})(?:[?/#].*)?$/i);
+        return url ? url[1] : "";
+      }
+
+      function syncLanguage() {
+        const current = lang();
+        reasonInput.placeholder = reasonInput.dataset["placeholder" + current.charAt(0).toUpperCase() + current.slice(1)] || reasonInput.dataset.placeholderEn || "";
+        if (trackInput.value.trim() && !trackId) status.textContent = copy[current].invalid;
+      }
+
+      function renderTrack() {
+        const value = trackInput.value.trim();
+        trackId = extractTrackId(value);
+        submit.disabled = !trackId;
+
+        if (!value) {
+          preview.replaceChildren();
+          preview.classList.remove("is-visible");
+          status.textContent = "";
+          return;
+        }
+
+        if (!trackId) {
+          preview.replaceChildren();
+          preview.classList.remove("is-visible");
+          status.textContent = copy[lang()].invalid;
+          return;
+        }
+
+        status.textContent = "";
+        const iframe = document.createElement("iframe");
+        iframe.src = "https://open.spotify.com/embed/track/" + encodeURIComponent(trackId) + "?utm_source=generator&theme=0";
+        iframe.title = "Spotify track preview";
+        iframe.loading = "lazy";
+        iframe.allow = "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture";
+        preview.replaceChildren(iframe);
+        preview.classList.add("is-visible");
+      }
+
+      trackInput.addEventListener("input", renderTrack);
+      trackInput.addEventListener("paste", () => window.setTimeout(renderTrack, 0));
+
+      submit.addEventListener("click", () => {
+        if (!trackId) return;
+        const current = lang();
+        const t = copy[current];
+        const canonical = "https://open.spotify.com/track/" + trackId;
+        const reason = reasonInput.value.trim() || "—";
+        const body = t.track + ": " + canonical + "\n" + t.reason + ": " + reason + "\n\n" + t.footer;
+        window.location.href = "mailto:carlos.aganzo@gmail.com?subject=" + encodeURIComponent(t.subject) + "&body=" + encodeURIComponent(body);
+      });
+
+      new MutationObserver(syncLanguage).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+      syncLanguage();
+    })();
   </script>
 
   <!-- Cloudflare Web Analytics bootstrap.
