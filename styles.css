@@ -150,6 +150,7 @@ html[lang="ja"] .grid p {
   aspect-ratio: 4 / 5;
   border: 1px solid var(--line);
   padding: 12px;
+  overflow: hidden;
 }
 
 .portrait-inner {
@@ -380,4 +381,13 @@ footer a:hover { color: var(--ink); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+}
+
+
+.portrait-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 54%;
 }
