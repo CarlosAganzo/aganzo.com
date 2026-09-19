@@ -90,6 +90,14 @@ html[lang="en"] .lang-copy[data-copy-lang="en"],html[lang="es"] .lang-copy[data-
 @media(max-width:820px){.now-grid{grid-template-columns:1fr 1fr}.now-item:nth-child(2){border-right:0}.now-item:nth-child(n+3){border-top:1px solid var(--ink)}.now-item:nth-child(3){padding-left:0}.now-heading{align-items:flex-start}}
 @media(max-width:520px){.now-section{padding:44px 0 50px}.now-heading{display:block}.now-note{text-align:left;margin-top:12px}.now-grid{grid-template-columns:1fr}.now-item,.now-item:not(:first-child){padding:18px 0 20px;border-right:0;border-top:1px solid var(--ink)}.now-item:first-child{border-top:0}}
 
+
+.now-link{position:relative;display:block;color:inherit;text-decoration:none}
+.now-link::after{content:"↗";position:absolute;right:0;top:0;font:16px/1 monospace;color:var(--accent);opacity:.42;transition:opacity .18s,transform .18s}
+.now-link:hover::after{opacity:1;transform:translate(2px,-2px)}
+.now-link:hover .now-value{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:5px;text-decoration-color:var(--accent)}
+.now-link:focus-visible{outline:3px solid var(--accent);outline-offset:7px}
+@media(prefers-reduced-motion:reduce){.now-link::after{transition:none}}
+
 </style>
 </head>
 <body>
@@ -176,36 +184,44 @@ html[lang="en"] .lang-copy[data-copy-lang="en"],html[lang="es"] .lang-copy[data-
 
       <div class="now-grid">
         <article class="now-item">
-          <span class="now-label">
-            <span class="lang-copy" data-copy-lang="en">Watching</span>
-            <span class="lang-copy" data-copy-lang="es">Viendo</span>
-            <span class="lang-copy" data-copy-lang="ja">観ている</span>
-          </span>
-          <strong class="now-value">Nathan for You</strong>
+          <a class="now-link" href="https://www.imdb.com/title/tt2297757/" target="_blank" rel="noopener noreferrer" aria-label="Nathan for You on IMDb">
+            <span class="now-label">
+              <span class="lang-copy" data-copy-lang="en">Watching</span>
+              <span class="lang-copy" data-copy-lang="es">Viendo</span>
+              <span class="lang-copy" data-copy-lang="ja">観ている</span>
+            </span>
+            <strong class="now-value">Nathan for You</strong>
+          </a>
         </article>
         <article class="now-item">
-          <span class="now-label">
-            <span class="lang-copy" data-copy-lang="en">Listening</span>
-            <span class="lang-copy" data-copy-lang="es">Escuchando</span>
-            <span class="lang-copy" data-copy-lang="ja">聴いている</span>
-          </span>
-          <strong class="now-value">Aphex Twin</strong>
+          <a class="now-link" href="https://open.spotify.com/artist/2b9LjccE4dz9lGsD3RtTuw" target="_blank" rel="noopener noreferrer" aria-label="Aphex Twin on Spotify">
+            <span class="now-label">
+              <span class="lang-copy" data-copy-lang="en">Listening</span>
+              <span class="lang-copy" data-copy-lang="es">Escuchando</span>
+              <span class="lang-copy" data-copy-lang="ja">聴いている</span>
+            </span>
+            <strong class="now-value">Aphex Twin</strong>
+          </a>
         </article>
         <article class="now-item">
-          <span class="now-label">
-            <span class="lang-copy" data-copy-lang="en">Reading</span>
-            <span class="lang-copy" data-copy-lang="es">Leyendo</span>
-            <span class="lang-copy" data-copy-lang="ja">読んでいる</span>
-          </span>
-          <strong class="now-value"><em>Kokoro</em> — Natsume Sōseki</strong>
+          <a class="now-link" href="https://www.penguin.co.uk/books/178231/kokoro-by-soseki-natsume/9780143106036" target="_blank" rel="noopener noreferrer" aria-label="Kokoro by Natsume Soseki at Penguin Classics">
+            <span class="now-label">
+              <span class="lang-copy" data-copy-lang="en">Reading</span>
+              <span class="lang-copy" data-copy-lang="es">Leyendo</span>
+              <span class="lang-copy" data-copy-lang="ja">読んでいる</span>
+            </span>
+            <strong class="now-value"><em>Kokoro</em> — Natsume Sōseki</strong>
+          </a>
         </article>
         <article class="now-item">
-          <span class="now-label">
-            <span class="lang-copy" data-copy-lang="en">Current obsession</span>
-            <span class="lang-copy" data-copy-lang="es">Obsesión actual</span>
-            <span class="lang-copy" data-copy-lang="ja">今のこだわり</span>
-          </span>
-          <strong class="now-value">Japanese denim</strong>
+          <a class="now-link" href="https://www.heddels.com/2019/08/raw-japanese-denim-beginners-guide-japans-biggest-labels/" target="_blank" rel="noopener noreferrer" aria-label="Heddels guide to Japanese raw denim">
+            <span class="now-label">
+              <span class="lang-copy" data-copy-lang="en">Current obsession</span>
+              <span class="lang-copy" data-copy-lang="es">Obsesión actual</span>
+              <span class="lang-copy" data-copy-lang="ja">今のこだわり</span>
+            </span>
+            <strong class="now-value">Japanese denim</strong>
+          </a>
         </article>
       </div>
     </section>
