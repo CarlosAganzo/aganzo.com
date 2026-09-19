@@ -12,19 +12,30 @@
 <body>
   <header class="topbar">
     <a class="brand" href="#top" aria-label="Carlos Aganzo home">AGANZO</a>
-    <nav aria-label="Primary navigation">
-      <a href="#work">Work</a>
-      <a href="#outside">Outside work</a>
-      <a href="#about">About</a>
-    </nav>
+
+    <div class="topbar-right">
+      <nav aria-label="Primary navigation">
+        <a href="#work" data-i18n="navWork">Work</a>
+        <a href="#outside" data-i18n="navOutside">Outside work</a>
+        <a href="#about" data-i18n="navAbout">About</a>
+      </nav>
+
+      <div class="language-switcher" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <span>/</span>
+        <button type="button" data-lang="es" aria-pressed="false">ES</button>
+        <span>/</span>
+        <button type="button" data-lang="ja" aria-pressed="false">日本語</button>
+      </div>
+    </div>
   </header>
 
   <main id="top">
     <section class="hero">
       <div class="hero-copy">
         <p class="eyebrow">CARLOS AGANZO</p>
-        <h1>I build systems.<br>I collect obsessions.</h1>
-        <p class="intro">
+        <h1 data-i18n-html="heroTitle">I build systems.<br>I collect obsessions.</h1>
+        <p class="intro" data-i18n="heroIntro">
           Software engineering leader focused on platforms, identity and distributed systems.
           Outside work: photography, long walks, travel, film, music and the occasional rabbit hole.
         </p>
@@ -39,7 +50,7 @@
     </section>
 
     <section class="manifesto" aria-label="Introduction">
-      <p>
+      <p data-i18n="manifesto">
         I like things that are built properly, whether they are software platforms,
         cameras, records, films, clothes or plans for getting from one place to another.
       </p>
@@ -48,23 +59,23 @@
     <section id="work" class="section">
       <div class="section-number">01</div>
       <div class="section-content">
-        <p class="eyebrow">WORK</p>
-        <h2>Engineering leadership without theatre.</h2>
-        <p>
+        <p class="eyebrow" data-i18n="workLabel">WORK</p>
+        <h2 data-i18n="workTitle">Engineering leadership without theatre.</h2>
+        <p data-i18n="workP1">
           I work on the less glamorous parts of software that become very glamorous
           the moment they fail: identity, authentication, shared services, messaging
           and platform infrastructure.
         </p>
-        <p>
+        <p data-i18n="workP2">
           My job is mostly about making complicated systems simpler, helping teams
           make good decisions, and being comfortable saying “I don’t know” before
           finding out.
         </p>
         <div class="tags" aria-label="Areas of work">
-          <span>Platform</span>
-          <span>Identity</span>
-          <span>Distributed systems</span>
-          <span>Engineering management</span>
+          <span data-i18n="tagPlatform">Platform</span>
+          <span data-i18n="tagIdentity">Identity</span>
+          <span data-i18n="tagDistributed">Distributed systems</span>
+          <span data-i18n="tagManagement">Engineering management</span>
         </div>
       </div>
     </section>
@@ -72,33 +83,33 @@
     <section id="outside" class="section">
       <div class="section-number">02</div>
       <div class="section-content">
-        <p class="eyebrow">OUTSIDE WORK</p>
-        <h2>Walking, looking, listening.</h2>
+        <p class="eyebrow" data-i18n="outsideLabel">OUTSIDE WORK</p>
+        <h2 data-i18n="outsideTitle">Walking, looking, listening.</h2>
         <div class="grid">
           <article>
-            <h3>Photography</h3>
-            <p>
+            <h3 data-i18n="photoTitle">Photography</h3>
+            <p data-i18n="photoText">
               Small cameras, available light, streets, landscapes and the kind of
               pictures that are better because nobody noticed they were being taken.
             </p>
           </article>
           <article>
-            <h3>Travel</h3>
-            <p>
+            <h3 data-i18n="travelTitle">Travel</h3>
+            <p data-i18n="travelText">
               Cities, long-distance walks and places that require a little more effort
               than arriving, photographing the obvious thing and leaving.
             </p>
           </article>
           <article>
-            <h3>Film & music</h3>
-            <p>
+            <h3 data-i18n="filmTitle">Film & music</h3>
+            <p data-i18n="filmText">
               Too many films, too much music, and strong opinions about both.
               Melancholy is over-represented.
             </p>
           </article>
           <article>
-            <h3>Collections</h3>
-            <p>
+            <h3 data-i18n="collectionsTitle">Collections</h3>
+            <p data-i18n="collectionsText">
               Objects with a story: cameras, records, cards and other things whose
               practical necessity is open to debate.
             </p>
@@ -110,14 +121,14 @@
     <section id="about" class="section">
       <div class="section-number">03</div>
       <div class="section-content">
-        <p class="eyebrow">ABOUT</p>
-        <h2>Madrid → North East England.</h2>
-        <p>
+        <p class="eyebrow" data-i18n="aboutLabel">ABOUT</p>
+        <h2 data-i18n="aboutTitle">Madrid → North East England.</h2>
+        <p data-i18n="aboutText">
           Spanish by origin, British by weather exposure. I have spent much of my
           adult life in the North East of England and still regard Madrid as home
           in a way that geography does not entirely explain.
         </p>
-        <p class="small-note">
+        <p class="small-note" data-i18n="smallNote">
           This site is intentionally small. No analytics. No trackers. No newsletter popup.
         </p>
       </div>
@@ -126,11 +137,155 @@
 
   <footer>
     <span>© <span id="year"></span> Carlos Aganzo</span>
-    <a href="#top">Back to top ↑</a>
+    <a href="#top" data-i18n="backToTop">Back to top ↑</a>
   </footer>
 
   <script>
+    const translations = {
+      en: {
+        pageTitle: "Carlos Aganzo",
+        metaDescription: "Carlos Aganzo — engineering, systems, photography, travel, film and music.",
+        navWork: "Work",
+        navOutside: "Outside work",
+        navAbout: "About",
+        heroTitle: "I build systems.<br>I collect obsessions.",
+        heroIntro: "Software engineering leader focused on platforms, identity and distributed systems. Outside work: photography, long walks, travel, film, music and the occasional rabbit hole.",
+        manifesto: "I like things that are built properly, whether they are software platforms, cameras, records, films, clothes or plans for getting from one place to another.",
+        workLabel: "WORK",
+        workTitle: "Engineering leadership without theatre.",
+        workP1: "I work on the less glamorous parts of software that become very glamorous the moment they fail: identity, authentication, shared services, messaging and platform infrastructure.",
+        workP2: "My job is mostly about making complicated systems simpler, helping teams make good decisions, and being comfortable saying “I don’t know” before finding out.",
+        tagPlatform: "Platform",
+        tagIdentity: "Identity",
+        tagDistributed: "Distributed systems",
+        tagManagement: "Engineering management",
+        outsideLabel: "OUTSIDE WORK",
+        outsideTitle: "Walking, looking, listening.",
+        photoTitle: "Photography",
+        photoText: "Small cameras, available light, streets, landscapes and the kind of pictures that are better because nobody noticed they were being taken.",
+        travelTitle: "Travel",
+        travelText: "Cities, long-distance walks and places that require a little more effort than arriving, photographing the obvious thing and leaving.",
+        filmTitle: "Film & music",
+        filmText: "Too many films, too much music, and strong opinions about both. Melancholy is over-represented.",
+        collectionsTitle: "Collections",
+        collectionsText: "Objects with a story: cameras, records, cards and other things whose practical necessity is open to debate.",
+        aboutLabel: "ABOUT",
+        aboutTitle: "Madrid → North East England.",
+        aboutText: "Spanish by origin, British by weather exposure. I have spent much of my adult life in the North East of England and still regard Madrid as home in a way that geography does not entirely explain.",
+        smallNote: "This site is intentionally small. No analytics. No trackers. No newsletter popup.",
+        backToTop: "Back to top ↑"
+      },
+      es: {
+        pageTitle: "Carlos Aganzo",
+        metaDescription: "Carlos Aganzo — ingeniería, sistemas, fotografía, viajes, cine y música.",
+        navWork: "Trabajo",
+        navOutside: "Fuera del trabajo",
+        navAbout: "Sobre mí",
+        heroTitle: "Construyo sistemas.<br>Colecciono obsesiones.",
+        heroIntro: "Lidero equipos de ingeniería de software centrados en plataformas, identidad y sistemas distribuidos. Fuera del trabajo: fotografía, largas caminatas, viajes, cine, música y alguna que otra madriguera de conejo.",
+        manifesto: "Me gustan las cosas bien hechas, ya sean plataformas de software, cámaras, discos, películas, ropa o planes para ir de un sitio a otro.",
+        workLabel: "TRABAJO",
+        workTitle: "Liderazgo de ingeniería sin teatro.",
+        workP1: "Trabajo en las partes menos vistosas del software, que se vuelven tremendamente importantes en cuanto fallan: identidad, autenticación, servicios compartidos, mensajería e infraestructura de plataforma.",
+        workP2: "Mi trabajo consiste sobre todo en simplificar sistemas complicados, ayudar a los equipos a tomar buenas decisiones y sentirme cómodo diciendo «no lo sé» antes de averiguarlo.",
+        tagPlatform: "Plataforma",
+        tagIdentity: "Identidad",
+        tagDistributed: "Sistemas distribuidos",
+        tagManagement: "Gestión de ingeniería",
+        outsideLabel: "FUERA DEL TRABAJO",
+        outsideTitle: "Caminar, mirar, escuchar.",
+        photoTitle: "Fotografía",
+        photoText: "Cámaras pequeñas, luz disponible, calles, paisajes y ese tipo de fotos que son mejores porque nadie se dio cuenta de que las estaban haciendo.",
+        travelTitle: "Viajes",
+        travelText: "Ciudades, caminatas de larga distancia y lugares que exigen algo más de esfuerzo que llegar, fotografiar lo obvio y marcharse.",
+        filmTitle: "Cine y música",
+        filmText: "Demasiadas películas, demasiada música y opiniones bastante firmes sobre ambas. La melancolía está sobrerrepresentada.",
+        collectionsTitle: "Colecciones",
+        collectionsText: "Objetos con una historia: cámaras, discos, cartas y otras cosas cuya necesidad práctica es discutible.",
+        aboutLabel: "SOBRE MÍ",
+        aboutTitle: "Madrid → Nordeste de Inglaterra.",
+        aboutText: "Español de origen, británico por exposición al clima. He pasado buena parte de mi vida adulta en el nordeste de Inglaterra y sigo considerando Madrid mi casa de una forma que la geografía no explica del todo.",
+        smallNote: "Esta web es pequeña a propósito. Sin analítica. Sin rastreadores. Sin ventanas emergentes para apuntarte a nada.",
+        backToTop: "Volver arriba ↑"
+      },
+      ja: {
+        pageTitle: "カルロス・アガンソ",
+        metaDescription: "カルロス・アガンソ — エンジニアリング、システム、写真、旅、映画、音楽。",
+        navWork: "仕事",
+        navOutside: "仕事以外",
+        navAbout: "私について",
+        heroTitle: "システムを作る。<br>こだわりを集める。",
+        heroIntro: "プラットフォーム、アイデンティティ、分散システムを中心に、ソフトウェアエンジニアリングのチームを率いています。仕事以外では、写真、長い散歩、旅、映画、音楽、そして時々深すぎる寄り道を。",
+        manifesto: "ソフトウェアのプラットフォームでも、カメラでも、レコードでも、映画でも、服でも、旅の計画でも、きちんと作られたものが好きです。",
+        workLabel: "仕事",
+        workTitle: "余計な演出のない、エンジニアリング・リーダーシップ。",
+        workP1: "普段扱っているのは、目立たないけれど、止まった瞬間に一気に重要になるソフトウェアの領域です。アイデンティティ、認証、共通サービス、メッセージング、そしてプラットフォーム基盤。",
+        workP2: "複雑なシステムを少しでも単純にし、チームが良い判断をできるよう支え、分からないことにはまず「分からない」と言ってから答えを探す。それが私の仕事の中心です。",
+        tagPlatform: "プラットフォーム",
+        tagIdentity: "アイデンティティ",
+        tagDistributed: "分散システム",
+        tagManagement: "エンジニアリング管理",
+        outsideLabel: "仕事以外",
+        outsideTitle: "歩く。見る。聴く。",
+        photoTitle: "写真",
+        photoText: "小さなカメラ、自然な光、街、風景。そして、撮られていることに誰も気づかなかったからこそ良くなる写真。",
+        travelTitle: "旅",
+        travelText: "街、長距離のウォーキング、そして着いて定番の写真を撮って帰るだけでは終わらない場所。",
+        filmTitle: "映画と音楽",
+        filmText: "映画も音楽も多すぎるほど。そして両方について意見はかなり強めです。メランコリーは少々多め。",
+        collectionsTitle: "コレクション",
+        collectionsText: "物語のあるもの。カメラ、レコード、カード、そして実用性については議論の余地があるその他いろいろ。",
+        aboutLabel: "私について",
+        aboutTitle: "マドリード → イングランド北東部。",
+        aboutText: "生まれはスペイン、天気への長年の曝露で少し英国人。大人になってからの人生の多くをイングランド北東部で過ごしてきました。それでも、地理だけでは説明できない意味で、今もマドリードを故郷だと思っています。",
+        smallNote: "このサイトは意図的に小さくしています。アクセス解析なし。トラッカーなし。ニュースレターのポップアップもなし。",
+        backToTop: "ページ上部へ ↑"
+      }
+    };
+
+    const metaDescription = document.querySelector('meta[name="description"]');
+    const languageButtons = document.querySelectorAll("[data-lang]");
+
+    function setLanguage(lang) {
+      const dictionary = translations[lang] || translations.en;
+
+      document.documentElement.lang = lang;
+      document.title = dictionary.pageTitle;
+      metaDescription.setAttribute("content", dictionary.metaDescription);
+
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const key = element.dataset.i18n;
+        if (dictionary[key]) element.textContent = dictionary[key];
+      });
+
+      document.querySelectorAll("[data-i18n-html]").forEach((element) => {
+        const key = element.dataset.i18nHtml;
+        if (dictionary[key]) element.innerHTML = dictionary[key];
+      });
+
+      languageButtons.forEach((button) => {
+        const active = button.dataset.lang === lang;
+        button.setAttribute("aria-pressed", String(active));
+        button.classList.toggle("active", active);
+      });
+
+      localStorage.setItem("aganzo-language", lang);
+    }
+
+    languageButtons.forEach((button) => {
+      button.addEventListener("click", () => setLanguage(button.dataset.lang));
+    });
+
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    const savedLanguage = localStorage.getItem("aganzo-language");
+    const browserLanguage = navigator.language.toLowerCase();
+    const initialLanguage =
+      savedLanguage ||
+      (browserLanguage.startsWith("es") ? "es" :
+      browserLanguage.startsWith("ja") ? "ja" : "en");
+
+    setLanguage(initialLanguage);
   </script>
 </body>
 </html>
