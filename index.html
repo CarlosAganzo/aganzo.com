@@ -60,7 +60,8 @@ html[lang="en"] .lang-copy[data-copy-lang="en"],html[lang="es"] .lang-copy[data-
   .atlas-layout{height:500px;align-items:stretch;overflow:hidden}
   .atlas-map-wrap{height:500px;min-height:500px;max-height:500px;overflow:hidden}
   .atlas-detail{height:500px;min-height:0;max-height:500px;overflow:hidden;display:flex;flex-direction:column}
-  #atlas-places{min-height:0;overflow:auto;overscroll-behavior:contain;padding-right:8px}
+  .atlas-detail > :not(#atlas-places){flex:0 0 auto}
+  #atlas-places{flex:1 1 auto;min-height:0;overflow:auto;overscroll-behavior:contain;padding-right:8px}
 }
 @media (max-width:900px){
   .atlas-layout{height:auto;overflow:visible}
