@@ -54,6 +54,24 @@ html[lang="en"] .lang-copy[data-copy-lang="en"],html[lang="es"] .lang-copy[data-
 @media(max-width:820px){.interaction-grid{grid-template-columns:1fr;gap:34px}.song-picker{box-shadow:5px 5px 0 var(--ink)}}
 @media(max-width:520px){.interaction-section{padding:46px 0 52px}.interaction-copy{font-size:17px}.song-picker{padding:17px}.song-tools{align-items:flex-start;flex-direction:column;gap:7px}.song-submit{font-size:16px;padding:16px}}
 @media(prefers-reduced-motion:reduce){.song-submit{transition:none}.song-submit:not(:disabled):hover{transform:none}}
+
+/* Stable atlas dimensions: country labels must never resize the map. */
+@media (min-width:901px){
+  .atlas-layout{height:500px;align-items:stretch;overflow:hidden}
+  .atlas-map-wrap{height:500px;min-height:500px;max-height:500px;overflow:hidden}
+  .atlas-detail{height:500px;min-height:0;max-height:500px;overflow:hidden;display:flex;flex-direction:column}
+  #atlas-places{min-height:0;overflow:auto;overscroll-behavior:contain;padding-right:8px}
+}
+@media (max-width:900px){
+  .atlas-layout{height:auto;overflow:visible}
+  .atlas-map-wrap{height:420px;min-height:420px;max-height:420px;overflow:hidden}
+  .atlas-detail{height:360px;min-height:0;max-height:360px;overflow:hidden;display:flex;flex-direction:column}
+  #atlas-places{min-height:0;overflow:auto;overscroll-behavior:contain;padding-right:6px}
+}
+@media (max-width:480px){
+  .atlas-map-wrap{height:330px;min-height:330px;max-height:330px}
+  .atlas-detail{height:340px;max-height:340px}
+}
 </style>
 </head>
 <body>
