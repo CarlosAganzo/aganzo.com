@@ -48,3 +48,18 @@ if(rotationCards.length){
     onLanguage(render);
   }).catch(console.error);
 }
+
+
+const songScroll=document.getElementById('song-scroll');
+const songProgress=document.querySelector('.song-scroll-progress span');
+function updateSongScrollProgress(){
+  if(!songScroll||!songProgress)return;
+  const range=songScroll.scrollHeight-songScroll.clientHeight;
+  const progress=range>0 ? Math.max(.08,Math.min(1,songScroll.scrollTop/range)) : 1;
+  songScroll.style.setProperty('--song-scroll-progress',String(progress));
+}
+if(songScroll){
+  songScroll.addEventListener('scroll',updateSongScrollProgress,{passive:true});
+  addEventListener('resize',updateSongScrollProgress,{passive:true});
+  requestAnimationFrame(updateSongScrollProgress);
+}
