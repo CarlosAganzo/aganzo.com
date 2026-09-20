@@ -8,7 +8,15 @@ document.getElementById('audit').addEventListener('click',async event=>{
  for(const p of ['','travel/','photos/','lists/','archive/'])for(const l of ['en','es','ja','zh'])for(const w of [1440,1024,768,390]){
   page.value=p;lang.value=l;width.value=String(w);size();
   await new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(new Error('Page timed out')),12000);frame.onload=()=>{clearTimeout(timer);resolve();};frame.src='/v2/'+p+'?lang='+l;});
-  await new Promise(resolve=>setTimeout(resolve,160));
+  // Dynamic page modules can finish after window.load on a cold cache.
+  // Wait for their observable UI state, rather than a fixed delay.
+  const expectedLang=l==='zh'?'zh-Hans':l;
+  const started=Date.now();
+  while(Date.now()-started<8000){
+   const d=frame.contentDocument;
+   if(d.documentElement.lang===expectedLang && (p!=='travel/' || d.querySelectorAll('#country-list button').length===76))break;
+   await new Promise(resolve=>setTimeout(resolve,60));
+  }
   const doc=frame.contentDocument,win=frame.contentWindow;
   await Promise.all([...doc.images].filter(img=>img.loading!=='lazy').map(img=>img.decode().catch(()=>{})));
   const errors=[];

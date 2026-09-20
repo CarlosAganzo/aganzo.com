@@ -69,7 +69,7 @@ if(page==='photos')import('./photos.js').catch(console.error);
 if(page==='lists')import('./music.js').catch(console.error);
 // Same token and beacon as production; no root analytics configuration is changed.
 const token=document.querySelector('meta[name="cf-web-analytics-token"]')?.content.trim();
-if(token && location.hostname!=='localhost' && location.hostname!=='127.0.0.1'){
+if(token && window.self===window.top && location.hostname!=='localhost' && location.hostname!=='127.0.0.1'){
   const beacon=document.createElement('script');beacon.defer=true;
   beacon.src='https://static.cloudflareinsights.com/beacon.min.js';
   beacon.dataset.cfBeacon=JSON.stringify({token});document.body.append(beacon);
