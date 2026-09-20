@@ -164,16 +164,16 @@ async function loadRegionalMap(){
     regionalCanvas.querySelectorAll('.region-province').forEach(path=>{
       const key=path.dataset.region;
       const item=config.regions[key];
-      if(!item)return;
-      const regionName=localized(item.name);
-      path.setAttribute('aria-label',regionName+' — '+t(item.visited?'visitedRegion':'unvisitedRegion'));
-      if(item.visited){
-        path.setAttribute('role','button');path.setAttribute('tabindex','0');
-        path.addEventListener('click',()=>selectSubregion(key));
-        path.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();selectSubregion(key);}});
-      }
+      if(!item?.visited)return;
+      path.setAttribute('role','button');path.setAttribute('tabindex','0');
+      path.addEventListener('click',()=>selectSubregion(key));
+      path.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();selectSubregion(key);}});
     });
   }
+  regionalCanvas.querySelectorAll('.region-province').forEach(path=>{
+    const item=config.regions[path.dataset.region];if(!item)return;
+    path.setAttribute('aria-label',localized(item.name)+' — '+t(item.visited?'visitedRegion':'unvisitedRegion'));
+  });
   buildRegionList(config);syncRegionalSelection();
 }
 function showWorldMap(){
@@ -214,4 +214,3 @@ search.addEventListener('input',renderCountries);
 const requestedSubregion=params.get('subregion');
 if(requestedSubregion&&subdivision()?.regions?.[requestedSubregion]?.visited)subregion=requestedSubregion;
 onLanguage(render);
-render();
