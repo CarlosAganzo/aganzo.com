@@ -2087,3 +2087,39 @@ dialog>.micro {
   .song-player-head>span{display:block}
   .song-player-head strong{display:block;margin-top:3px}
 }
+
+
+/* Video games — card showcase */
+.games-showcase{align-items:start}
+.games-showcase .section-number{position:sticky;top:28px}
+.games-glyphs{display:block;margin-top:34px;font:46px/1 var(--serif);letter-spacing:.12em;color:var(--red)}
+.games-no-order{max-width:210px;margin:24px 0 0;font:18px/1.35 var(--serif)}
+.games-showcase-main{min-width:0}
+.games-showcase-head{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:end;margin-bottom:26px}
+.games-showcase-head h2{margin:0}
+.games-showcase-head p{margin:0;font-size:13px;max-width:360px}
+.game-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.game-card{position:relative;min-height:230px;border:1px solid var(--line);padding:20px 22px 24px;background:var(--paper);overflow:hidden;transition:transform .18s ease,border-color .18s ease,background .18s ease}
+.game-card::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .18s ease}
+.game-card:hover{transform:translateY(-3px);border-color:var(--ink);background:#f5f0e7}
+.game-card:hover::after{transform:scaleX(1)}
+.game-card-meta{display:flex;justify-content:space-between;gap:18px;padding-bottom:13px;border-bottom:1px solid var(--line);font-size:10px;letter-spacing:.09em;text-transform:uppercase}
+.game-card-meta span:first-child{color:var(--red)}
+.game-card h3{font:clamp(28px,3.2vw,46px)/.95 var(--serif);letter-spacing:-.035em;margin:30px 0 20px}
+.game-card p{font-size:13px;line-height:1.45;margin:0;max-width:42ch}
+.games-readout{display:grid;grid-template-columns:190px 1fr;gap:28px;margin-top:28px;padding:22px 0;border-top:2px solid var(--ink);border-bottom:1px solid var(--line)}
+.games-readout .micro{color:var(--red)}
+.games-readout p{font:22px/1.28 var(--serif);margin:0}
+.games-also{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:baseline;padding-top:17px;font-size:12px}
+.games-also .micro{color:var(--red);margin-right:10px}
+.games-also i{font-style:normal;color:var(--red)}
+@media(max-width:850px){
+  .games-showcase .section-number{position:static}
+  .games-showcase-head{grid-template-columns:1fr}
+}
+@media(max-width:620px){
+  .game-cards{grid-template-columns:1fr}
+  .game-card{min-height:190px}
+  .games-readout{grid-template-columns:1fr;gap:8px}
+  .games-readout p{font-size:20px}
+}
