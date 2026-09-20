@@ -226,7 +226,8 @@
             "zh": "科莫多巨蜥"
           }
         }
-      ]
+      ],
+      "heroPhoto": "travel/indonesia/dsc06812.webp"
     }
   },
   "entrySchema": {
@@ -235,6 +236,7 @@
     "places": {},
     "photo": null,
     "memory": {},
-    "photos": []
+    "photos": [],
+    "heroPhoto": null
   }
 }
