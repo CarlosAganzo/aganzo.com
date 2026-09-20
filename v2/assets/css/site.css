@@ -1,9 +1,9 @@
 :root {
-  --paper:#eee9dd;
-  --ink:#22231f;
-  --red:#b92e23;
-  --line:#b9b4a7;
-  --muted:#66665d;
+  --paper:#e8ecef;
+  --ink:#172026;
+  --red:#c53830;
+  --line:#aeb9c0;
+  --muted:#53616a;
   --serif:Georgia,'Times New Roman',serif;
   --sans:Arial,Helvetica,sans-serif;
   --mono:'Courier New',monospace;
@@ -240,7 +240,7 @@ nav a[aria-current=page] {
 }
 .portrait-frame {
   position:relative;
-  background:#d8d2c5;
+  background:#cbd4d9;
   aspect-ratio:4/5;
   max-height:510px;
   overflow:hidden;
@@ -504,7 +504,7 @@ nav a[aria-current=page] {
 }
 .map-paper {
   position:relative;
-  background:#e5dfd0;
+  background:#d6dde1;
   border:1px solid var(--line);
   height:clamp(260px,39vw,530px);
   overflow:hidden;
@@ -514,7 +514,7 @@ nav a[aria-current=page] {
   position:absolute;
   inset:0;
   pointer-events:none;
-  background-image:linear-gradient(#aaa58b22 1px,transparent 1px),linear-gradient(90deg,#aaa58b22 1px,transparent 1px);
+  background-image:linear-gradient(#7f909a22 1px,transparent 1px),linear-gradient(90deg,#7f909a22 1px,transparent 1px);
   background-size:10% 20%;
 }
 .atlas-map {
@@ -524,7 +524,7 @@ nav a[aria-current=page] {
   position:relative;
 }
 .atlas-map path {
-  fill:#cdc8b9;
+  fill:#adb9c0;
   stroke:var(--paper);
   stroke-width:.6;
 }
@@ -535,17 +535,17 @@ nav a[aria-current=page] {
   stroke-width:.7;
 }
 .atlas-map .atlas-country.is-muted {
-  fill:#bba69a;
+  fill:#a8b2b8;
 }
 .atlas-map .atlas-country:hover,.atlas-map .atlas-country:focus {
-  fill:#252b28;
+  fill:var(--ink);
   outline:none;
-  stroke:#252b28;
+  stroke:var(--ink);
   stroke-width:1.8;
 }
 .atlas-map .atlas-country[aria-pressed=true] {
-  fill:#252b28;
-  stroke:#252b28;
+  fill:var(--ink);
+  stroke:var(--ink);
   stroke-width:1.8;
 }
 .map-key {
@@ -570,7 +570,7 @@ nav a[aria-current=page] {
   inset:0;
   z-index:3;
   padding:14px 18px 12px;
-  background:#e5dfd0;
+  background:#d6dde1;
   display:grid;
   grid-template-rows:auto minmax(0,1fr) auto;
   gap:8px;
@@ -612,7 +612,7 @@ nav a[aria-current=page] {
   display:block;
 }
 .regional-map-canvas .region-province {
-  fill:#cbc6b8;
+  fill:#adb9c0;
   stroke:var(--paper);
   stroke-width:.7;
   vector-effect:non-scaling-stroke;
@@ -1189,7 +1189,7 @@ dialog>.micro {
   border:1px solid var(--line);
   border-bottom-color:var(--ink);
   border-radius:0;
-  background:#f5f0e7;
+  background:#f1f4f6;
   padding:12px;
   margin-bottom:10px;
   min-height:48px;
