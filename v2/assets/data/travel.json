@@ -1,0 +1,123 @@
+{
+  "regions": {
+    "europe": [
+      "AL",
+      "AD",
+      "AM",
+      "AT",
+      "AZ",
+      "BY",
+      "BE",
+      "BA",
+      "BG",
+      "HR",
+      "CY",
+      "CZ",
+      "DK",
+      "EE",
+      "FI",
+      "FR",
+      "GE",
+      "DE",
+      "GR",
+      "HU",
+      "IS",
+      "IE",
+      "IT",
+      "KZ",
+      "XK",
+      "LV",
+      "LI",
+      "LT",
+      "LU",
+      "MT",
+      "MD",
+      "MC",
+      "ME",
+      "NL",
+      "MK",
+      "NO",
+      "PL",
+      "PT",
+      "RO",
+      "RU",
+      "SM",
+      "RS",
+      "SK",
+      "SI",
+      "ES",
+      "SE",
+      "CH",
+      "TR",
+      "UA",
+      "GB",
+      "VA"
+    ],
+    "americas": [
+      "CA",
+      "US",
+      "AR",
+      "CL",
+      "AG",
+      "BS",
+      "BB",
+      "CU",
+      "DM",
+      "DO",
+      "GD",
+      "HT",
+      "JM",
+      "KN",
+      "LC",
+      "VC",
+      "TT"
+    ],
+    "asia": [
+      "CN",
+      "JP",
+      "TH",
+      "MY",
+      "ID"
+    ],
+    "africa": [
+      "EG",
+      "MA"
+    ],
+    "oceania": [
+      "AU"
+    ]
+  },
+  "entries": {
+    "ID": {
+      "places": {
+        "en": [
+          "Java",
+          "Komodo",
+          "Borneo"
+        ],
+        "es": [
+          "Java",
+          "Komodo",
+          "Borneo"
+        ],
+        "ja": [
+          "ジャワ島",
+          "コモド",
+          "ボルネオ"
+        ],
+        "zh": [
+          "爪哇",
+          "科莫多",
+          "婆罗洲"
+        ]
+      }
+    }
+  },
+  "entrySchema": {
+    "year": null,
+    "note": {},
+    "places": {},
+    "photo": null,
+    "memory": {}
+  }
+}

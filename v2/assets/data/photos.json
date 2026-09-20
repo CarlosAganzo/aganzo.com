@@ -1,0 +1,20 @@
+[
+  {
+    "file": "portrait-2026.webp",
+    "caption": "portrait1",
+    "width": 640,
+    "height": 853
+  },
+  {
+    "file": "library.webp",
+    "caption": "portrait2",
+    "width": 520,
+    "height": 558
+  },
+  {
+    "file": "portrait-field-hq.webp",
+    "caption": "portrait3",
+    "width": 1000,
+    "height": 1250
+  }
+]
