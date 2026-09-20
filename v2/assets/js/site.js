@@ -2,7 +2,7 @@ const base = '/v2/';
 const page = document.body.dataset.page;
 const params = new URLSearchParams(location.search);
 const load = async name => {
-  const response = await fetch(`${base}assets/data/${name}.json`);
+  const response = await fetch(`${base}assets/data/${name}.json?v=archive-1`);
   if (!response.ok) throw new Error(`Cannot load ${name}: ${response.status}`);
   return response.json();
 };

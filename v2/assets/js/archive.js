@@ -1,4 +1,4 @@
-import {translate as t, onLanguage} from './site.js';
+import {translate as t, onLanguage} from './site.js?v=archive-1';
 // Entirely synthetic demonstration. Never replace with an unfiltered GEDCOM export.
 const people = [
   {id:'p1',name:'Elena Robles',born:1924,died:2008,parents:['p2','p3']},
