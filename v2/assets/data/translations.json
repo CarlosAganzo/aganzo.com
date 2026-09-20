@@ -237,7 +237,6 @@
     "gameWatchNote": "Tiny machines, two screens, no firmware update, no battle pass. A better civilisation.",
     "gamePcTitle": "The machine still matters",
     "gamePcNote": "Enough of a PC person to care about the GPU before caring about the case.",
-    "gamePokemonNote": "At this point Pokémon lives here mostly as cardboard, Japanese promos and poor financial discipline.",
     "gamesCaveat": "No fake “top 10 games” here: that list gets added when it is actually mine.",
     "booksStayed": "STAYED",
     "booksNext": "NEXT / EVENTUALLY",
@@ -258,7 +257,8 @@
     "verdictsIntro": "Nothing has survived public judgment yet. Future categories:",
     "verdictGood": "GOOD",
     "verdictNo": "ABSOLUTELY NOT",
-    "verdictAnnoying": "ANNOYINGLY GOOD"
+    "verdictAnnoying": "ANNOYINGLY GOOD",
+    "gameCivilizationNote": "One more turn. Then another. Then somehow it is 3am and an empire needs administrative attention."
   },
   "es": {
     "emailLabel": "Correo electrónico",
@@ -498,7 +498,6 @@
     "gameWatchNote": "Máquinas diminutas, dos pantallas, sin firmware ni battle pass. Una civilización mejor.",
     "gamePcTitle": "La máquina todavía importa",
     "gamePcNote": "Lo bastante de PC como para preocuparme por la GPU antes que por la caja.",
-    "gamePokemonNote": "A estas alturas Pokémon vive aquí sobre todo como cartón, promos japonesas y escasa disciplina financiera.",
     "gamesCaveat": "Nada de inventarme un “top 10 de juegos”: esa lista aparecerá cuando sea de verdad la mía.",
     "booksStayed": "SE QUEDARON",
     "booksNext": "DESPUÉS / ALGÚN DÍA",
@@ -519,7 +518,8 @@
     "verdictsIntro": "Todavía no ha sobrevivido nada al juicio público. Futuras categorías:",
     "verdictGood": "BUENA",
     "verdictNo": "NI DE COÑA",
-    "verdictAnnoying": "IRRITANTEMENTE BUENA"
+    "verdictAnnoying": "IRRITANTEMENTE BUENA",
+    "gameCivilizationNote": "Un turno más. Luego otro. Y de repente son las tres de la mañana y un imperio necesita atención administrativa."
   },
   "ja": {
     "emailLabel": "メール",
@@ -759,7 +759,6 @@
     "gameWatchNote": "小さな機械、二画面、アップデートなし、バトルパスなし。より良い文明。",
     "gamePcTitle": "マシンは今でも重要",
     "gamePcNote": "ケースより先にGPUを気にする程度にはPC派です。",
-    "gamePokemonNote": "今のPokémonは主にカード、日本のプロモ、そして少し危うい金銭感覚としてここにいます。",
     "gamesCaveat": "本当ではない「好きなゲームTOP10」は作りません。本当に自分のリストになった時に追加します。",
     "booksStayed": "残った本",
     "booksNext": "次 / いつか",
@@ -780,7 +779,8 @@
     "verdictsIntro": "まだ公開判定を生き延びた曲はありません。将来の分類:",
     "verdictGood": "良い",
     "verdictNo": "絶対に無理",
-    "verdictAnnoying": "悔しいほど良い"
+    "verdictAnnoying": "悔しいほど良い",
+    "gameCivilizationNote": "あと1ターン。さらにもう1ターン。気づけば午前3時で、帝国の行政処理が待っています。"
   },
   "zh": {
     "emailLabel": "电子邮件",
@@ -1020,7 +1020,6 @@
     "gameWatchNote": "小机器、双屏、没有固件更新、没有 battle pass。文明曾经更好。",
     "gamePcTitle": "机器本身仍然重要",
     "gamePcNote": "我还是那种先关心 GPU、再关心机箱的人。",
-    "gamePokemonNote": "现在 Pokémon 在这里主要以纸片、日本促销卡和不太健康的财务纪律存在。",
     "gamesCaveat": "这里不会编一个假的“十大游戏”。等那份榜单真的是我的，再放上来。",
     "booksStayed": "留下来的",
     "booksNext": "接下来 / 迟早",
@@ -1041,6 +1040,7 @@
     "verdictsIntro": "目前还没有任何推荐活着通过公开审判。未来分类：",
     "verdictGood": "不错",
     "verdictNo": "绝对不行",
-    "verdictAnnoying": "烦人地好"
+    "verdictAnnoying": "烦人地好",
+    "gameCivilizationNote": "再来一回合。然后再一回合。等回过神来已经凌晨三点，帝国还有行政事务要处理。"
   }
 }
