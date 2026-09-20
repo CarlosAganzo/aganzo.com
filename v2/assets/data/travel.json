@@ -152,7 +152,8 @@
             "es": "Barcos bajo un cielo de atardecer en Indonesia",
             "ja": "インドネシアの夕焼けと船",
             "zh": "印度尼西亚夕阳下的船只"
-          }
+          },
+          "region": "nusa-tenggara"
         },
         {
           "file": "travel/indonesia/dsc05836.webp",
@@ -161,7 +162,8 @@
             "es": "Figura tradicional verde en Indonesia",
             "ja": "インドネシアの伝統的な緑色の像",
             "zh": "印度尼西亚的绿色传统形象"
-          }
+          },
+          "region": "bali"
         },
         {
           "file": "travel/indonesia/dsc06337.webp",
@@ -170,7 +172,8 @@
             "es": "Cresta volcánica antes del amanecer",
             "ja": "夜明け前の火山稜線",
             "zh": "日出前的火山山脊"
-          }
+          },
+          "region": "java"
         },
         {
           "file": "travel/indonesia/dsc06812.webp",
@@ -179,7 +182,8 @@
             "es": "Paisaje volcánico con luz dorada",
             "ja": "黄金色の光に包まれた火山風景",
             "zh": "金色光线下的火山景观"
-          }
+          },
+          "region": "java"
         },
         {
           "file": "travel/indonesia/dsc07440.webp",
@@ -188,7 +192,8 @@
             "es": "Complejo de templos en Java",
             "ja": "ジャワ島の寺院群",
             "zh": "爪哇的寺庙建筑群"
-          }
+          },
+          "region": "java"
         },
         {
           "file": "travel/indonesia/dsc08278.webp",
@@ -197,7 +202,8 @@
             "es": "Orangután en Borneo",
             "ja": "ボルネオのオランウータン",
             "zh": "婆罗洲的红毛猩猩"
-          }
+          },
+          "region": "kalimantan"
         },
         {
           "file": "travel/indonesia/dsc08494.webp",
@@ -206,7 +212,8 @@
             "es": "Mono narigudo en Borneo",
             "ja": "ボルネオのテングザル",
             "zh": "婆罗洲的长鼻猴"
-          }
+          },
+          "region": "kalimantan"
         },
         {
           "file": "travel/indonesia/dsc04805.webp",
@@ -215,7 +222,8 @@
             "es": "Mirador sobre la costa de Indonesia",
             "ja": "インドネシアの海岸を望む展望台",
             "zh": "俯瞰印度尼西亚海岸的观景点"
-          }
+          },
+          "region": "nusa-tenggara"
         },
         {
           "file": "travel/indonesia/dsc05469.webp",
@@ -224,7 +232,8 @@
             "es": "Dragón de Komodo",
             "ja": "コモドドラゴン",
             "zh": "科莫多巨蜥"
-          }
+          },
+          "region": "nusa-tenggara"
         }
       ],
       "heroPhoto": "travel/indonesia/dsc06812.webp"
@@ -237,6 +246,158 @@
     "photo": null,
     "memory": {},
     "photos": [],
-    "heroPhoto": null
+    "heroPhoto": null,
+    "subdivisions": null
+  },
+  "subdivisions": {
+    "ID": {
+      "asset": "maps/indonesia-regions.svg",
+      "regions": {
+        "sumatra": {
+          "name": {
+            "en": "Sumatra",
+            "es": "Sumatra",
+            "ja": "スマトラ",
+            "zh": "苏门答腊"
+          },
+          "visited": false
+        },
+        "java": {
+          "name": {
+            "en": "Java",
+            "es": "Java",
+            "ja": "ジャワ",
+            "zh": "爪哇"
+          },
+          "visited": true,
+          "places": {
+            "en": [
+              "Jakarta",
+              "Ijen",
+              "Bromo",
+              "Yogyakarta",
+              "Semarang"
+            ],
+            "es": [
+              "Jakarta",
+              "Ijen",
+              "Bromo",
+              "Yogyakarta",
+              "Semarang"
+            ],
+            "ja": [
+              "ジャカルタ",
+              "イジェン",
+              "ブロモ",
+              "ジョグジャカルタ",
+              "スマラン"
+            ],
+            "zh": [
+              "雅加达",
+              "伊真",
+              "布罗莫",
+              "日惹",
+              "三宝垄"
+            ]
+          }
+        },
+        "bali": {
+          "name": {
+            "en": "Bali",
+            "es": "Bali",
+            "ja": "バリ",
+            "zh": "巴厘岛"
+          },
+          "visited": true,
+          "places": {
+            "en": [
+              "Ubud"
+            ],
+            "es": [
+              "Ubud"
+            ],
+            "ja": [
+              "ウブド"
+            ],
+            "zh": [
+              "乌布"
+            ]
+          }
+        },
+        "nusa-tenggara": {
+          "name": {
+            "en": "Nusa Tenggara",
+            "es": "Nusa Tenggara",
+            "ja": "ヌサ・トゥンガラ",
+            "zh": "努沙登加拉"
+          },
+          "visited": true,
+          "places": {
+            "en": [
+              "Komodo"
+            ],
+            "es": [
+              "Komodo"
+            ],
+            "ja": [
+              "コモド"
+            ],
+            "zh": [
+              "科莫多"
+            ]
+          }
+        },
+        "kalimantan": {
+          "name": {
+            "en": "Kalimantan",
+            "es": "Kalimantan",
+            "ja": "カリマンタン",
+            "zh": "加里曼丹"
+          },
+          "visited": true,
+          "places": {
+            "en": [
+              "Borneo"
+            ],
+            "es": [
+              "Borneo"
+            ],
+            "ja": [
+              "ボルネオ"
+            ],
+            "zh": [
+              "婆罗洲"
+            ]
+          }
+        },
+        "sulawesi": {
+          "name": {
+            "en": "Sulawesi",
+            "es": "Sulawesi",
+            "ja": "スラウェシ",
+            "zh": "苏拉威西"
+          },
+          "visited": false
+        },
+        "maluku": {
+          "name": {
+            "en": "Maluku",
+            "es": "Molucas",
+            "ja": "マルク",
+            "zh": "马鲁古"
+          },
+          "visited": false
+        },
+        "papua": {
+          "name": {
+            "en": "Papua",
+            "es": "Papúa",
+            "ja": "パプア",
+            "zh": "巴布亚"
+          },
+          "visited": false
+        }
+      }
+    }
   }
 }
