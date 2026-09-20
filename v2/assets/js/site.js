@@ -1,7 +1,7 @@
 const base = '/v2/';
 const page = document.body.dataset.page;
 const params = new URLSearchParams(location.search);
-const assetVersion = '20260920-2042';
+const assetVersion = '20260920-2125';
 const load = async name => {
   const response = await fetch(`${base}assets/data/${name}.json?v=${assetVersion}`);
   if (!response.ok) throw new Error(`Cannot load ${name}: ${response.status}`);
@@ -67,7 +67,7 @@ if(page==='home'){
 }
 if(page==='travel')import('./travel.js?v=20260920-1705').catch(console.error);
 if(page==='photos')import('./photos.js').catch(console.error);
-if(page==='lists')import('./music.js?v=20260920-2042').catch(console.error);
+if(page==='lists')import('./music.js?v=20260920-2125').catch(console.error);
 // Same token and beacon as production; no root analytics configuration is changed.
 const token=document.querySelector('meta[name="cf-web-analytics-token"]')?.content.trim();
 if(token && window.self===window.top && location.hostname!=='localhost' && location.hostname!=='127.0.0.1'){
