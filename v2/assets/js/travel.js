@@ -12,7 +12,8 @@ const params=new URLSearchParams(location.search);
 let country=visited.includes(params.get('country'))?params.get('country'):null;
 let region=country?Object.keys(data.regions).find(r=>data.regions[r].includes(country)):'all';
 function name(code){return new Intl.DisplayNames([language()],{type:'region'}).of(code);}
-function imageSrc(photo){return '/v2/assets/images/'+photo.file;}
+const travelImageVersion='20260920-1610';
+function imageSrc(photo){return '/v2/assets/images/'+photo.file+'?v='+travelImageVersion;}
 function imageAlt(photo){return photo.alt?.[language()]||name(country);}
 function openPhoto(photos,startIndex){
   let current=startIndex;
