@@ -277,7 +277,12 @@
     "gamesReadout": "Systems over spectacle. Atmosphere matters. I like games that trust me to work things out — and occasionally waste an entire evening doing it.",
     "gamesAlso": "ALSO",
     "gamesAlsoTurn": "probably too many hours lost to “one more turn”",
-    "gameRE4Note": "The point where horror, action and near-perfect pacing locked together."
+    "gameRE4Note": "The point where horror, action and near-perfect pacing locked together.",
+    "arcadeLabel": "COIN-OP YEARS",
+    "arcadeIntro": "Before “one more turn”, there was “one more coin”.",
+    "arcadePlay": "PLAY ↗",
+    "arcadeNote": "Pocket money had a very clear business model.",
+    "arcadeAria": "1980s arcade games"
   },
   "es": {
     "emailLabel": "Correo electrónico",
@@ -557,7 +562,12 @@
     "gamesReadout": "Sistemas antes que espectáculo. La atmósfera importa. Me gustan los juegos que confían en que averigüe las cosas — y que de vez en cuando me hagan perder una tarde entera.",
     "gamesAlso": "TAMBIÉN",
     "gamesAlsoTurn": "probablemente demasiadas horas perdidas con «un turno más»",
-    "gameRE4Note": "El punto en el que terror, acción y un ritmo casi perfecto encajaron a la vez."
+    "gameRE4Note": "El punto en el que terror, acción y un ritmo casi perfecto encajaron a la vez.",
+    "arcadeLabel": "AÑOS DE RECREATIVA",
+    "arcadeIntro": "Antes del «one more turn», estaba el «one more coin».",
+    "arcadePlay": "JUGAR ↗",
+    "arcadeNote": "La paga tenía un modelo de negocio bastante claro.",
+    "arcadeAria": "Juegos de recreativa de los años 80"
   },
   "ja": {
     "emailLabel": "メール",
@@ -837,7 +847,12 @@
     "gamesReadout": "派手さよりシステム。雰囲気は重要。自分で考えさせてくれるゲームが好きで、ときどき一晩まるごと消えても構わない。",
     "gamesAlso": "ほかにも",
     "gamesAlsoTurn": "「あと1ターン」で失った時間はたぶん多すぎる",
-    "gameRE4Note": "ホラー、アクション、そしてほぼ完璧なテンポが噛み合った地点。"
+    "gameRE4Note": "ホラー、アクション、そしてほぼ完璧なテンポが噛み合った地点。",
+    "arcadeLabel": "コインオペの時代",
+    "arcadeIntro": "「もう1ターン」の前には、「もう1コイン」があった。",
+    "arcadePlay": "PLAY ↗",
+    "arcadeNote": "小遣いの行き先は、かなり明確だった。",
+    "arcadeAria": "1980年代のアーケードゲーム"
   },
   "zh": {
     "emailLabel": "电子邮件",
@@ -1117,6 +1132,11 @@
     "gamesReadout": "系统胜过表演。氛围很重要。我喜欢那些相信我能自己想明白的游戏——哪怕偶尔因此浪费掉整个晚上。",
     "gamesAlso": "另外",
     "gamesAlsoTurn": "大概有太多时间丢在“再来一回合”上",
-    "gameRE4Note": "恐怖、动作和近乎完美的节奏在这里严丝合缝地结合起来。"
+    "gameRE4Note": "恐怖、动作和近乎完美的节奏在这里严丝合缝地结合起来。",
+    "arcadeLabel": "投币街机年代",
+    "arcadeIntro": "在“再来一回合”之前，是“再投一枚币”。",
+    "arcadePlay": "PLAY ↗",
+    "arcadeNote": "零花钱当年有一个非常明确的去处。",
+    "arcadeAria": "1980年代街机游戏"
   }
 }
