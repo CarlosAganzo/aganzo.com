@@ -260,7 +260,8 @@
     "verdictAnnoying": "ANNOYINGLY GOOD",
     "gameCivilizationNote": "One more turn. Then another. Then somehow it is 3am and an empire needs administrative attention.",
     "gamesListLabel": "GAMES / NO ORDER",
-    "gamesListNote": "No ranking. Just games that belong here."
+    "gamesListNote": "No ranking. Just games that belong here.",
+    "songScrollLabel": "14 TRACKS / SCROLL"
   },
   "es": {
     "emailLabel": "Correo electrónico",
@@ -523,7 +524,8 @@
     "verdictAnnoying": "IRRITANTEMENTE BUENA",
     "gameCivilizationNote": "Un turno más. Luego otro. Y de repente son las tres de la mañana y un imperio necesita atención administrativa.",
     "gamesListLabel": "JUEGOS / SIN ORDEN",
-    "gamesListNote": "Sin ranking. Simplemente juegos que tienen que estar aquí."
+    "gamesListNote": "Sin ranking. Simplemente juegos que tienen que estar aquí.",
+    "songScrollLabel": "14 CANCIONES / DESLIZA"
   },
   "ja": {
     "emailLabel": "メール",
@@ -786,7 +788,8 @@
     "verdictAnnoying": "悔しいほど良い",
     "gameCivilizationNote": "あと1ターン。さらにもう1ターン。気づけば午前3時で、帝国の行政処理が待っています。",
     "gamesListLabel": "ゲーム / 順不同",
-    "gamesListNote": "順位なし。ただ、ここに置くべきゲーム。"
+    "gamesListNote": "順位なし。ただ、ここに置くべきゲーム。",
+    "songScrollLabel": "14曲 / スクロール"
   },
   "zh": {
     "emailLabel": "电子邮件",
@@ -1049,6 +1052,7 @@
     "verdictAnnoying": "烦人地好",
     "gameCivilizationNote": "再来一回合。然后再一回合。等回过神来已经凌晨三点，帝国还有行政事务要处理。",
     "gamesListLabel": "游戏 / 不排序",
-    "gamesListNote": "不排名。只是这些游戏应该出现在这里。"
+    "gamesListNote": "不排名。只是这些游戏应该出现在这里。",
+    "songScrollLabel": "14 首 / 滚动"
   }
 }
