@@ -64,7 +64,7 @@ if(page==='home'){
   motion.addEventListener('change',()=>{if(motion.matches){playing=false;sync();}});
   onLanguage(sync);
 }
-if(page==='travel')import('./travel.js').catch(console.error);
+if(page==='travel')import('./travel.js?v=20260920-1610').catch(console.error);
 if(page==='photos')import('./photos.js').catch(console.error);
 if(page==='lists')import('./music.js').catch(console.error);
 // Same token and beacon as production; no root analytics configuration is changed.
