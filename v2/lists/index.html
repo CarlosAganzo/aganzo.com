@@ -52,7 +52,10 @@
   <div>
     <h3 data-i18n="songsExplain">Songs that explain me better than this website</h3>
     <p class="music-intro" data-i18n="songsExplainIntro">Memory, people and emotional damage, filed under audio.</p>
-    <ol class="song-explain-list">
+    <div class="song-scroll-shell">
+      <div class="song-scroll-meta"><span class="micro" data-i18n="songScrollLabel">14 TRACKS / SCROLL</span><span aria-hidden="true">↓</span></div>
+      <div class="song-scroll" id="song-scroll" tabindex="0" aria-label="The most important songs in my life">
+        <ol class="song-explain-list">
       <li class="song-card"><span class="micro">01</span><div><strong>A Day In The Life — Remastered 2009</strong><span>The Beatles</span></div></li>
       <li class="song-card"><span class="micro">02</span><div><strong>Ashes to Ashes — 2017 Remaster</strong><span>David Bowie</span><p data-i18n="songAshesNote">Bowie at the exact intersection of beautiful and strange.</p></div></li>
       <li class="song-card"><span class="micro">03</span><div><strong>(Sittin’ On) the Dock of the Bay — Mono</strong><span>Otis Redding</span><p data-i18n="songDockNote">My father. Since I was a kid. Still number one.</p></div></li>
@@ -68,6 +71,9 @@
       <li class="song-card"><span class="micro">13</span><div><strong>Dirt — 2005 Remaster</strong><span>The Stooges</span></div></li>
       <li class="song-card"><span class="micro">14</span><div><strong>La Copa De Europa</strong><span>Los Planetas</span></div></li>
     </ol>
+      </div>
+      <div class="song-scroll-progress" aria-hidden="true"><span></span></div>
+    </div>
     <div class="taste-shuffle">
       <div><span class="micro" data-i18n="tasteShuffle">TRY YOUR LUCK</span><p data-i18n="tasteShuffleIntro">Pull one item at random from the evidence above.</p><strong id="taste-random-result">—</strong></div>
       <button type="button" id="taste-random" data-i18n="tasteShuffleButton">Shuffle my damage</button>
