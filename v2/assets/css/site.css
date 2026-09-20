@@ -1978,3 +1978,61 @@ dialog>.micro {
   }
 }
 
+
+
+/* Lists v2.1 — richer taxonomy */
+.list-jump-nav{display:grid;grid-template-columns:repeat(6,1fr);border-bottom:1px solid var(--line);margin-bottom:0}
+.list-jump-nav a{padding:14px 10px;border-right:1px solid var(--line);text-transform:uppercase;font-size:11px;letter-spacing:.08em;display:flex;gap:8px}
+.list-jump-nav a:last-child{border-right:0}.list-jump-nav a span:first-child{color:var(--red)}
+.rotation-section{padding:42px 0 55px;border-bottom:2px solid var(--ink)}
+.section-kicker{display:grid;grid-template-columns:1fr 2fr auto;gap:30px;align-items:end;margin-bottom:24px}
+.section-kicker h2{font:30px/1.12 var(--serif);margin:0;max-width:720px}
+.rotation-updated{white-space:nowrap}.rotation-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ink)}
+.rotation-card{background:var(--paper);padding:22px;min-height:130px;display:grid;grid-template-columns:1fr auto;grid-template-rows:auto 1fr;gap:12px}
+.rotation-card .micro{grid-column:1/-1;color:var(--red)}.rotation-card strong{font:24px/1.12 var(--serif)}.rotation-card>:last-child{color:var(--red)}
+.list-stack{min-width:0}.list-tabs{display:flex;gap:6px;margin:0 0 24px;border-bottom:1px solid var(--line)}
+.list-tabs button{border:0;border-bottom:3px solid transparent;background:transparent;padding:9px 14px 11px;text-transform:uppercase;font-size:11px;letter-spacing:.07em}
+.list-tabs button[aria-selected="true"]{border-bottom-color:var(--red);color:var(--red)}
+.versus-list p{display:grid;grid-template-columns:1fr 30px 1fr;gap:15px;align-items:center;margin:0;padding:22px 0;border-bottom:1px solid var(--line);font:34px/1.1 var(--serif)}
+.versus-list p span{text-align:center;color:var(--red)}.versus-list del{opacity:.55;text-decoration-thickness:1px}.panel-note{margin-top:25px;font-size:19px}
+.comfort-word{font:clamp(70px,12vw,150px)/.8 var(--serif);letter-spacing:-.07em;color:var(--red);margin:30px 0}
+.music-expanded{grid-template-columns:.72fr 1.45fr;align-items:start;position:relative}
+.music-expanded>div:nth-child(2) h3{font:30px/1.05 var(--serif);margin:0}.music-intro{color:#c5c0b5;margin:10px 0 24px}
+.song-explain-list{list-style:none;margin:0;padding:0}.song-card{display:grid;grid-template-columns:34px 1fr;gap:12px;padding:15px 0;border-top:1px solid #ffffff2a}
+.song-card .micro{color:#e18e7b}.song-card strong,.song-card span{display:block}.song-card strong{font:20px/1.1 var(--serif)}.song-card div>span{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#c5c0b5;margin-top:3px}
+.song-card p{margin:8px 0 0;font-size:13px;color:#c5c0b5}
+.taste-shuffle{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:end;border-top:2px solid #e18e7b;margin-top:22px;padding-top:18px}
+.taste-shuffle p{font-size:12px;color:#c5c0b5;margin:4px 0 8px}.taste-shuffle strong{font:22px/1.1 var(--serif)}.taste-shuffle button{background:#e18e7b;border-color:#e18e7b;color:var(--ink)}
+.artist-cloud-wrap{grid-column:1/-1;border-top:1px solid #ffffff2a;padding-top:25px}.artist-cloud-wrap>.micro{color:#e18e7b;margin-bottom:12px}
+.games-section{display:grid;grid-template-columns:.72fr 1.45fr;gap:50px;padding:60px 0;border-bottom:2px solid var(--ink)}
+.section-number>span:last-child{display:block;margin-top:35px;font:44px/1 var(--serif);letter-spacing:.12em;color:var(--red)}
+.games-section h2,.collections-section h2,.opinions-section h2{font:38px/1.05 var(--serif);margin:0 0 30px}
+.game-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.game-grid article{background:var(--paper);padding:22px;min-height:240px}.game-grid h3{font:26px/1 var(--serif);margin:28px 0 12px}.game-grid p{font-size:13px}
+.games-caveat{font:18px/1.35 var(--serif);border-left:4px solid var(--red);padding-left:18px;margin:25px 0 0}
+.books-expanded{grid-template-columns:280px 1fr;max-width:none;align-items:start}
+.book-shelf{height:390px;display:flex;align-items:flex-end;border-bottom:12px solid var(--ink);padding:0 12px;gap:4px}
+.spine{writing-mode:vertical-rl;transform:rotate(180deg);display:flex;align-items:center;justify-content:center;padding:14px 10px;font:15px/1 var(--serif);letter-spacing:.06em;color:var(--paper)}
+.spine-a{height:72%;background:var(--red)}.spine-b{height:94%;background:var(--ink)}.spine-c{height:84%;background:#726b5f}.spine-d{height:66%;background:#a45c4d}
+.book-mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin:28px 0}
+.book-mini-grid>div{background:var(--paper);padding:18px}.book-mini-grid strong{display:block;font:18px/1.2 var(--serif);margin-top:13px}.book-mini-grid p{margin:4px 0 0}
+.collections-section{display:grid;grid-template-columns:.72fr 1.45fr;gap:50px;padding:60px 0;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.collection-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.collection-grid article{border-top:5px solid var(--red);padding-top:16px}.collection-count{font:48px/.9 var(--serif);color:var(--red)}
+.collection-grid h3{font:25px/1 var(--serif);margin:14px 0 9px}.collection-grid p{font-size:13px}
+.opinions-section{display:grid;grid-template-columns:.72fr 1.45fr;gap:50px;padding:60px 0}
+.opinion-list p{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:18px 0;border-top:1px solid var(--line);margin:0}.opinion-list p:last-child{border-bottom:1px solid var(--line)}
+.opinion-list span{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--red)}.opinion-list strong{font:23px/1.2 var(--serif);font-weight:400}
+.recommend-expanded{border-top:3px solid var(--ink)}.verdict-preview{margin-top:40px;border-top:1px solid var(--line);padding-top:18px}.verdict-preview>div{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.verdict-preview>div span{border:1px solid var(--ink);padding:5px 8px;font-size:10px;letter-spacing:.05em}
+@media(max-width:850px){
+  .list-jump-nav{grid-template-columns:repeat(3,1fr)}.list-jump-nav a:nth-child(3){border-right:0}
+  .section-kicker{grid-template-columns:1fr}.rotation-grid{grid-template-columns:1fr}
+  .music-expanded,.games-section,.collections-section,.opinions-section{grid-template-columns:1fr}.game-grid,.collection-grid,.book-mini-grid{grid-template-columns:1fr}
+  .books-expanded{grid-template-columns:1fr}.book-shelf{height:230px}.spine{writing-mode:horizontal-tb;transform:none;align-items:flex-end;justify-content:flex-start}
+}
+@media(max-width:560px){
+  .list-jump-nav{grid-template-columns:repeat(2,1fr)}.list-jump-nav a:nth-child(3){border-right:1px solid var(--line)}.list-jump-nav a:nth-child(even){border-right:0}
+  .film-section{grid-template-columns:1fr;gap:30px}.big-number{font-size:78px}.versus-list p{font-size:25px}
+  .music-section{padding:30px 22px}.taste-shuffle{grid-template-columns:1fr}.game-grid article{min-height:0}
+  .opinion-list p{grid-template-columns:1fr;gap:6px}.books-expanded{margin:40px auto}
+}
