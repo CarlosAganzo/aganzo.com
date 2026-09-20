@@ -2036,3 +2036,9 @@ dialog>.micro {
   .music-section{padding:30px 22px}.taste-shuffle{grid-template-columns:1fr}.game-grid article{min-height:0}
   .opinion-list p{grid-template-columns:1fr;gap:6px}.books-expanded{margin:40px auto}
 }
+
+.games-list-block{margin-top:28px;border-top:2px solid var(--ink);padding-top:20px}
+.games-list-heading{display:flex;justify-content:space-between;gap:20px;align-items:baseline;margin-bottom:10px}
+.games-list-heading p{margin:0;font:17px/1.3 var(--serif)}
+.games-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.games-list li{padding:14px 0;border-bottom:1px solid var(--line);font:28px/1.1 var(--serif)}
