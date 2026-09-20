@@ -1,8 +1,9 @@
 const base = '/v2/';
 const page = document.body.dataset.page;
 const params = new URLSearchParams(location.search);
+const assetVersion = '20260920-1705';
 const load = async name => {
-  const response = await fetch(`${base}assets/data/${name}.json?v=archive-1`);
+  const response = await fetch(`${base}assets/data/${name}.json?v=${assetVersion}`);
   if (!response.ok) throw new Error(`Cannot load ${name}: ${response.status}`);
   return response.json();
 };
@@ -64,7 +65,7 @@ if(page==='home'){
   motion.addEventListener('change',()=>{if(motion.matches){playing=false;sync();}});
   onLanguage(sync);
 }
-if(page==='travel')import('./travel.js?v=20260920-1610').catch(console.error);
+if(page==='travel')import('./travel.js?v=20260920-1705').catch(console.error);
 if(page==='photos')import('./photos.js').catch(console.error);
 if(page==='lists')import('./music.js?v=20260920-1640').catch(console.error);
 // Same token and beacon as production; no root analytics configuration is changed.
