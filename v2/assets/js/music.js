@@ -63,3 +63,35 @@ if(songScroll){
   addEventListener('resize',updateSongScrollProgress,{passive:true});
   requestAnimationFrame(updateSongScrollProgress);
 }
+
+
+const spotifyRows=[...document.querySelectorAll('.song-card[data-spotify-id]')];
+const songPlayer=document.getElementById('song-player');
+const songPlayerTitle=document.getElementById('song-player-title');
+const songPlayerEmbed=document.getElementById('song-player-embed');
+const songPlayerClose=document.getElementById('song-player-close');
+
+function closeSongPlayer(){
+  if(!songPlayer)return;
+  songPlayer.hidden=true;
+  songPlayerEmbed?.replaceChildren();
+  spotifyRows.forEach(row=>row.classList.remove('is-playing'));
+}
+spotifyRows.forEach(row=>{
+  const play=row.querySelector('.song-play');
+  play?.addEventListener('click',()=>{
+    const id=row.dataset.spotifyId;
+    const title=row.querySelector('strong')?.textContent?.trim()||'Spotify';
+    if(!id||!songPlayerEmbed)return;
+    spotifyRows.forEach(item=>item.classList.toggle('is-playing',item===row));
+    songPlayerTitle.textContent=title;
+    const frame=document.createElement('iframe');
+    frame.src=`https://open.spotify.com/embed/track/${id}?utm_source=generator&theme=0`;
+    frame.title=`${title} — Spotify`;
+    frame.loading='lazy';
+    frame.allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
+    songPlayerEmbed.replaceChildren(frame);
+    songPlayer.hidden=false;
+  });
+});
+songPlayerClose?.addEventListener('click',closeSongPlayer);
