@@ -11,6 +11,26 @@ const params=new URLSearchParams(location.search);
 let country=visited.includes(params.get('country'))?params.get('country'):null;
 let region=country?Object.keys(data.regions).find(r=>data.regions[r].includes(country)):'all';
 function name(code){return new Intl.DisplayNames([language()],{type:'region'}).of(code);}
+function imageSrc(photo){return '/v2/assets/images/'+photo.file;}
+function imageAlt(photo){return photo.alt?.[language()]||name(country);}
+function renderGallery(photos){
+  if(!photos?.length)return;
+  const gallery=document.createElement('div');gallery.className='trip-gallery';
+  const figure=document.createElement('figure');figure.className='trip-gallery-feature';
+  const hero=document.createElement('img');hero.src=imageSrc(photos[0]);hero.alt=imageAlt(photos[0]);hero.loading='lazy';figure.append(hero);
+  const thumbs=document.createElement('div');thumbs.className='trip-gallery-thumbs';
+  photos.forEach((photo,index)=>{
+    const button=document.createElement('button');button.type='button';button.className='trip-gallery-thumb';
+    button.setAttribute('aria-label',`${index+1} / ${photos.length}`);button.setAttribute('aria-pressed',String(index===0));
+    const img=document.createElement('img');img.src=imageSrc(photo);img.alt='';img.loading='lazy';button.append(img);
+    button.addEventListener('click',()=>{
+      hero.src=imageSrc(photo);hero.alt=imageAlt(photo);
+      thumbs.querySelectorAll('button').forEach((b,i)=>b.setAttribute('aria-pressed',String(i===index)));
+    });
+    thumbs.append(button);
+  });
+  gallery.append(figure,thumbs);entry.append(gallery);
+}
 function renderDetail(){
   title.textContent=country?name(country):t(region+'Title');
   note.textContent=country?(data.entries[country]?.note?.[language()]||t('notesPending')):t(region+'Text');
@@ -26,7 +46,8 @@ function renderDetail(){
     row.append(dt,dd);dl.append(row);
   }
   entry.append(dl);
-  if(item.photo){const img=document.createElement('img');img.src='/v2/assets/images/'+item.photo.file;img.alt=item.photo.alt?.[language()]||name(country);img.loading='lazy';entry.append(img);}
+  const photos=item.photos?.length?item.photos:(item.photo?[item.photo]:[]);
+  renderGallery(photos);
 }
 function renderCountries(){
   const codes=region==='all'?visited:data.regions[region];
