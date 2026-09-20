@@ -564,6 +564,93 @@ nav a[aria-current=page] {
   height:9px;
   margin-right:5px;
 }
+
+.regional-map-shell {
+  position:absolute;
+  inset:0;
+  z-index:3;
+  padding:14px 18px 12px;
+  background:#e5dfd0;
+  display:grid;
+  grid-template-rows:auto minmax(0,1fr) auto;
+  gap:8px;
+}
+.regional-map-topline {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  border-bottom:1px solid var(--line);
+  padding-bottom:7px;
+}
+.regional-map-topline button {
+  min-height:34px;
+  padding:5px 8px;
+  border:0;
+  font:10px/1.4 var(--mono);
+  text-transform:uppercase;
+}
+.regional-map-heading {
+  display:flex;
+  align-items:baseline;
+  gap:10px;
+  min-width:0;
+}
+.regional-map-heading strong {
+  font:400 23px/1 var(--serif);
+}
+.regional-map-heading .micro {
+  color:var(--red);
+}
+.regional-map-canvas {
+  min-height:0;
+  overflow:hidden;
+}
+.regional-map-canvas svg {
+  width:100%;
+  height:100%;
+  display:block;
+}
+.regional-map-canvas .region-province {
+  fill:#cbc6b8;
+  stroke:var(--paper);
+  stroke-width:.7;
+  vector-effect:non-scaling-stroke;
+  transition:fill .14s ease,opacity .14s ease;
+}
+.regional-map-canvas .region-province.is-visited {
+  fill:var(--red);
+  cursor:pointer;
+}
+.regional-map-canvas .region-province.is-visited:hover,
+.regional-map-canvas .region-province.is-visited:focus {
+  fill:var(--ink);
+  outline:none;
+}
+.regional-map-canvas .region-province.is-selected {
+  fill:var(--ink);
+}
+.regional-map-list {
+  display:flex;
+  gap:4px;
+  overflow-x:auto;
+  padding-top:6px;
+  border-top:1px solid var(--line);
+  scrollbar-width:thin;
+  scrollbar-color:var(--red) transparent;
+}
+.regional-map-list button {
+  flex:0 0 auto;
+  min-height:34px;
+  padding:6px 9px;
+  border:0;
+  font:10px/1.4 var(--mono);
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+.map-paper.is-regional .map-key {
+  display:none;
+}
 .atlas>.micro {
   margin:13px 0 25px;
   color:var(--muted);
@@ -1686,6 +1773,22 @@ dialog>.micro {
   .map-paper {
     height:260px;
     padding:5px;
+  }
+  .map-paper.is-regional {
+    height:320px;
+  }
+  .regional-map-shell {
+    padding:10px 8px 8px;
+  }
+  .regional-map-heading strong {
+    font-size:19px;
+  }
+  .regional-map-heading .micro {
+    display:none;
+  }
+  .regional-map-list button {
+    font-size:9px;
+    padding:6px 8px;
   }
   .atlas-map {
     min-width:0;
