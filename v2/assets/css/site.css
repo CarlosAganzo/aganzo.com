@@ -2211,8 +2211,29 @@ dialog>.micro {
   margin:14px 0 0;
   max-width:8ch;
   font:22px/.98 var(--serif);
-  letter-spacing:-.035em
+  letter-spacing:-.035em;
+  transition:transform .2s ease
 }
+.games-compact .game-card-note{
+  position:absolute;
+  left:12px;
+  right:10px;
+  bottom:12px;
+  z-index:3;
+  font:9px/1.15 var(--sans);
+  letter-spacing:.09em;
+  text-transform:uppercase;
+  color:var(--red);
+  opacity:0;
+  transform:translateY(5px);
+  transition:opacity .18s ease,transform .18s ease;
+  pointer-events:none
+}
+.games-compact .game-card:hover h3,
+.games-compact .game-card:focus-visible h3{transform:translateY(-2px)}
+.games-compact .game-card:hover .game-card-note,
+.games-compact .game-card:focus-visible .game-card-note{opacity:1;transform:translateY(0)}
+.games-compact .game-card:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 .games-compact .game-card p{display:none}
 .games-compact .game-card::before{
   width:70%;
@@ -2221,9 +2242,10 @@ dialog>.micro {
   opacity:.28;
   transform:rotate(-3deg)
 }
-.games-compact .game-card:hover::before{
+.games-compact .game-card:hover::before,
+.games-compact .game-card:focus-visible::before{
   opacity:.52;
-  transform:scale(1.04) rotate(0)
+  transform:scale(1.07) rotate(0)
 }
 .games-compact .game-card:hover{transform:translateY(-2px)}
 .games-compact .games-also{
@@ -2246,4 +2268,13 @@ dialog>.micro {
   .games-compact .game-card{min-height:148px;padding:12px}
   .games-compact .game-card::before{width:92px;right:-8px;bottom:-8px;opacity:.26}
   .games-compact .game-card h3{font-size:20px}
+}
+
+@media (hover:none){
+  .games-compact .game-card-note{opacity:.72;transform:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .games-compact .game-card h3,
+  .games-compact .game-card-note,
+  .games-compact .game-card::before{transition:none}
 }
