@@ -131,7 +131,7 @@
     "listsTitle": "Things that<br><em>stay with me.</em>",
     "listsIntro": "A personal taxonomy of the things I replay, reread, collect and argue about.",
     "films": "Films I return to",
-    "filmsNote": "Around 200 films a year. These four are a reasonable starting point.",
+    "filmsNote": "Around 200 films a year. These eight are a reasonable starting point.",
     "music": "Always something playing",
     "artists": "Some names on repeat",
     "musicFoot": "Apparently happiness has weaker replay value.",
@@ -282,7 +282,16 @@
     "arcadeIntro": "Before “one more turn”, there was “one more coin”.",
     "arcadePlay": "PLAY ↗",
     "arcadeNote": "Pocket money had a very clear business model.",
-    "arcadeAria": "1980s arcade games"
+    "arcadeAria": "1980s arcade games",
+    "filmStripLabel": "8 FILMS / SCROLL",
+    "filmParisTexas": "Loneliness, distance and redemption.",
+    "filmBarryLyndon": "Beautiful images. Terrible decisions.",
+    "filmDrive": "Neon, silence and sudden violence.",
+    "filmStraightStory": "Kindness without sentimentality.",
+    "filmJesseJames": "Melancholy in widescreen.",
+    "filmTrueRomance": "Messy, romantic and completely alive.",
+    "filmPulpFiction": "Cool, funny and endlessly rewatchable.",
+    "filmDune": "Because sometimes scale really matters."
   },
   "es": {
     "emailLabel": "Correo electrónico",
@@ -416,7 +425,7 @@
     "listsTitle": "Cosas que<br><em>se quedan.</em>",
     "listsIntro": "Una taxonomía personal de las cosas que repito, releo, colecciono y discuto.",
     "films": "Películas a las que vuelvo",
-    "filmsNote": "Unas 200 películas al año. Estas cuatro son un buen punto de partida.",
+    "filmsNote": "Unas 200 películas al año. Estas ocho son un buen punto de partida.",
     "music": "Siempre hay algo sonando",
     "artists": "Algunos nombres recurrentes",
     "musicFoot": "Parece que la felicidad tiene menos valor de repetición.",
@@ -567,7 +576,16 @@
     "arcadeIntro": "Antes del «one more turn», estaba el «one more coin».",
     "arcadePlay": "JUGAR ↗",
     "arcadeNote": "La paga tenía un modelo de negocio bastante claro.",
-    "arcadeAria": "Juegos de recreativa de los años 80"
+    "arcadeAria": "Juegos de recreativa de los años 80",
+    "filmStripLabel": "8 PELÍCULAS / DESLIZA",
+    "filmParisTexas": "Soledad, distancia y redención.",
+    "filmBarryLyndon": "Imágenes bellísimas. Decisiones pésimas.",
+    "filmDrive": "Neón, silencio y violencia súbita.",
+    "filmStraightStory": "Bondad sin sentimentalismo.",
+    "filmJesseJames": "Melancolía en formato panorámico.",
+    "filmTrueRomance": "Caótica, romántica y completamente viva.",
+    "filmPulpFiction": "Mola, hace gracia y aguanta infinitos revisionados.",
+    "filmDune": "Porque a veces la escala sí importa."
   },
   "ja": {
     "emailLabel": "メール",
@@ -701,7 +719,7 @@
     "listsTitle": "心に<br><em>残るもの。</em>",
     "listsIntro": "何度も観るもの、読み返すもの、集めるもの、そして議論したくなるものの個人的な分類。",
     "films": "何度も戻る映画",
-    "filmsNote": "年間約200本。この四本が出発点です。",
+    "filmsNote": "年間約200本。この8本が良い出発点です。",
     "music": "いつも何かが流れている",
     "artists": "よく聴く名前",
     "musicFoot": "どうやら幸福はリピート再生に少し弱いらしい。",
@@ -852,7 +870,16 @@
     "arcadeIntro": "「もう1ターン」の前には、「もう1コイン」があった。",
     "arcadePlay": "PLAY ↗",
     "arcadeNote": "小遣いの行き先は、かなり明確だった。",
-    "arcadeAria": "1980年代のアーケードゲーム"
+    "arcadeAria": "1980年代のアーケードゲーム",
+    "filmStripLabel": "8本 / 横にスクロール",
+    "filmParisTexas": "孤独、距離、そして救い。",
+    "filmBarryLyndon": "美しい映像。ひどい判断。",
+    "filmDrive": "ネオン、沈黙、そして突然の暴力。",
+    "filmStraightStory": "感傷に流されない優しさ。",
+    "filmJesseJames": "ワイドスクリーンのメランコリー。",
+    "filmTrueRomance": "無茶で、ロマンチックで、生々しい。",
+    "filmPulpFiction": "クールで、可笑しくて、何度でも観られる。",
+    "filmDune": "ときにはスケールそのものが重要。"
   },
   "zh": {
     "emailLabel": "电子邮件",
@@ -986,7 +1013,7 @@
     "listsTitle": "那些<br><em>留在心里的东西。</em>",
     "listsIntro": "把我会重看、重读、收藏和争论的东西做成一套私人分类。",
     "films": "反复回看的电影",
-    "filmsNote": "每年大约 200 部电影。这四部可以作为起点。",
+    "filmsNote": "每年大约 200 部电影。这八部可以作为起点。",
     "music": "总有音乐在放",
     "artists": "常听的名字",
     "musicFoot": "看来快乐的重播价值稍微低一点。",
@@ -1137,6 +1164,15 @@
     "arcadeIntro": "在“再来一回合”之前，是“再投一枚币”。",
     "arcadePlay": "PLAY ↗",
     "arcadeNote": "零花钱当年有一个非常明确的去处。",
-    "arcadeAria": "1980年代街机游戏"
+    "arcadeAria": "1980年代街机游戏",
+    "filmStripLabel": "8 部 / 横向滚动",
+    "filmParisTexas": "孤独、距离与救赎。",
+    "filmBarryLyndon": "画面极美，决定极差。",
+    "filmDrive": "霓虹、沉默和突如其来的暴力。",
+    "filmStraightStory": "不煽情的善意。",
+    "filmJesseJames": "宽银幕里的忧郁。",
+    "filmTrueRomance": "混乱、浪漫，而且活得很。",
+    "filmPulpFiction": "酷、好笑，而且怎么重看都行。",
+    "filmDune": "有时候，规模本身就很重要。"
   }
 }
