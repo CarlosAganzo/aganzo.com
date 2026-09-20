@@ -265,7 +265,18 @@
     "playSpotify": "Play in the inline Spotify player",
     "openSpotify": "Open in Spotify",
     "nowPlaying": "NOW PLAYING",
-    "closePlayer": "Close player"
+    "closePlayer": "Close player",
+    "gamesShowcaseTitle": "Six games. No order.",
+    "gamesShowcaseIntro": "Different decades, different genres, same ability to make several hours disappear.",
+    "gameDoomNote": "Pure forward motion: speed, pressure and almost no wasted space.",
+    "gameFF7Note": "Ambition, melancholy and a world big enough to disappear into.",
+    "gameDune2Note": "Strategy turned into a map, a base and a problem that needed solving.",
+    "gameEldenNote": "A hostile world that trusts you to work it out instead of explaining itself to death.",
+    "gameMonkeyNote": "Proof that writing, timing and glorious stupidity can age extremely well.",
+    "gamesReadoutLabel": "WHAT THIS PROBABLY SAYS ABOUT ME",
+    "gamesReadout": "Systems over spectacle. Atmosphere matters. I like games that trust me to work things out — and occasionally waste an entire evening doing it.",
+    "gamesAlso": "ALSO",
+    "gamesAlsoTurn": "probably too many hours lost to “one more turn”"
   },
   "es": {
     "emailLabel": "Correo electrónico",
@@ -533,7 +544,18 @@
     "playSpotify": "Reproducir en el reproductor de Spotify",
     "openSpotify": "Abrir en Spotify",
     "nowPlaying": "SONANDO",
-    "closePlayer": "Cerrar reproductor"
+    "closePlayer": "Cerrar reproductor",
+    "gamesShowcaseTitle": "Seis juegos. Sin orden.",
+    "gamesShowcaseIntro": "Décadas distintas, géneros distintos, la misma capacidad de hacer desaparecer varias horas.",
+    "gameDoomNote": "Movimiento puro hacia delante: velocidad, presión y casi nada de espacio desperdiciado.",
+    "gameFF7Note": "Ambición, melancolía y un mundo lo bastante grande como para desaparecer dentro.",
+    "gameDune2Note": "La estrategia convertida en un mapa, una base y un problema que había que resolver.",
+    "gameEldenNote": "Un mundo hostil que confía en que lo averigües en lugar de explicártelo todo hasta matarlo.",
+    "gameMonkeyNote": "La prueba de que la escritura, el timing y la gloriosa estupidez pueden envejecer extraordinariamente bien.",
+    "gamesReadoutLabel": "LO QUE PROBABLEMENTE DICE ESTO DE MÍ",
+    "gamesReadout": "Sistemas antes que espectáculo. La atmósfera importa. Me gustan los juegos que confían en que averigüe las cosas — y que de vez en cuando me hagan perder una tarde entera.",
+    "gamesAlso": "TAMBIÉN",
+    "gamesAlsoTurn": "probablemente demasiadas horas perdidas con «un turno más»"
   },
   "ja": {
     "emailLabel": "メール",
@@ -801,7 +823,18 @@
     "playSpotify": "Spotifyプレーヤーで再生",
     "openSpotify": "Spotifyで開く",
     "nowPlaying": "再生中",
-    "closePlayer": "プレーヤーを閉じる"
+    "closePlayer": "プレーヤーを閉じる",
+    "gamesShowcaseTitle": "6本。順位なし。",
+    "gamesShowcaseIntro": "違う年代、違うジャンル。それでも数時間を消してしまう力は同じ。",
+    "gameDoomNote": "前へ進む純粋な勢い。速度、圧力、そして無駄のほとんどない設計。",
+    "gameFF7Note": "野心、哀愁、そして中に消えてしまえるほど大きな世界。",
+    "gameDune2Note": "戦略がマップ、基地、そして解くべき問題になった。",
+    "gameEldenNote": "説明しすぎず、自分で理解することを信頼してくれる敵対的な世界。",
+    "gameMonkeyNote": "文章、間、そして見事な馬鹿らしさは驚くほど長持ちするという証明。",
+    "gamesReadoutLabel": "たぶん、これが私について語ること",
+    "gamesReadout": "派手さよりシステム。雰囲気は重要。自分で考えさせてくれるゲームが好きで、ときどき一晩まるごと消えても構わない。",
+    "gamesAlso": "ほかにも",
+    "gamesAlsoTurn": "「あと1ターン」で失った時間はたぶん多すぎる"
   },
   "zh": {
     "emailLabel": "电子邮件",
@@ -1069,6 +1102,17 @@
     "playSpotify": "在 Spotify 播放器中播放",
     "openSpotify": "在 Spotify 中打开",
     "nowPlaying": "正在播放",
-    "closePlayer": "关闭播放器"
+    "closePlayer": "关闭播放器",
+    "gamesShowcaseTitle": "六款游戏。不排名。",
+    "gamesShowcaseIntro": "不同年代，不同类型，但都同样擅长让几个小时凭空消失。",
+    "gameDoomNote": "纯粹向前：速度、压力，几乎没有浪费任何空间。",
+    "gameFF7Note": "野心、忧郁，以及一个大到足以让人消失其中的世界。",
+    "gameDune2Note": "策略变成了一张地图、一个基地和一个必须解决的问题。",
+    "gameEldenNote": "一个敌意十足的世界，相信你能自己搞明白，而不是把一切解释到死。",
+    "gameMonkeyNote": "证明了文字、节奏和光荣的愚蠢可以老得非常漂亮。",
+    "gamesReadoutLabel": "这大概说明了我什么",
+    "gamesReadout": "系统胜过表演。氛围很重要。我喜欢那些相信我能自己想明白的游戏——哪怕偶尔因此浪费掉整个晚上。",
+    "gamesAlso": "另外",
+    "gamesAlsoTurn": "大概有太多时间丢在“再来一回合”上"
   }
 }
