@@ -56,7 +56,7 @@ function updateSongScrollProgress(){
   if(!songScroll||!songProgress)return;
   const range=songScroll.scrollHeight-songScroll.clientHeight;
   const progress=range>0 ? Math.max(.08,Math.min(1,songScroll.scrollTop/range)) : 1;
-  songScroll.style.setProperty('--song-scroll-progress',String(progress));
+  songProgress.style.transform=`scaleY(${progress})`;
 }
 if(songScroll){
   songScroll.addEventListener('scroll',updateSongScrollProgress,{passive:true});
