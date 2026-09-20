@@ -199,7 +199,13 @@
     "demoGeneration": "Generation",
     "demoFocus": "Selected person",
     "demoRecord": "Documentation",
-    "demoRecordText": "This profile demonstrates the design. No real photographs or documents are attached yet."
+    "demoRecordText": "This profile demonstrates the design. No real photographs or documents are attached yet.",
+    "worldMap": "World",
+    "regionalView": "Regions",
+    "regionalHint": "Choose a region to filter the photographs.",
+    "allRegionPhotos": "All Indonesia",
+    "visitedRegion": "Visited on this trip",
+    "unvisitedRegion": "Not on this trip"
   },
   "es": {
     "emailLabel": "Correo electrónico",
@@ -401,7 +407,13 @@
     "demoGeneration": "Generación",
     "demoFocus": "Persona seleccionada",
     "demoRecord": "Documentación",
-    "demoRecordText": "Esta ficha muestra el diseño. Todavía no tiene fotos ni documentos reales asociados."
+    "demoRecordText": "Esta ficha muestra el diseño. Todavía no tiene fotos ni documentos reales asociados.",
+    "worldMap": "Mundo",
+    "regionalView": "Regiones",
+    "regionalHint": "Elige una región para filtrar las fotografías.",
+    "allRegionPhotos": "Toda Indonesia",
+    "visitedRegion": "Visitada en este viaje",
+    "unvisitedRegion": "No visitada en este viaje"
   },
   "ja": {
     "emailLabel": "メール",
@@ -603,7 +615,13 @@
     "demoGeneration": "世代",
     "demoFocus": "選択した人物",
     "demoRecord": "資料",
-    "demoRecordText": "デザインを示すための人物です。本物の写真や文書はまだありません。"
+    "demoRecordText": "デザインを示すための人物です。本物の写真や文書はまだありません。",
+    "worldMap": "世界",
+    "regionalView": "地域",
+    "regionalHint": "地域を選ぶと写真を絞り込めます。",
+    "allRegionPhotos": "インドネシア全体",
+    "visitedRegion": "この旅で訪問",
+    "unvisitedRegion": "この旅では未訪問"
   },
   "zh": {
     "emailLabel": "电子邮件",
@@ -805,6 +823,12 @@
     "demoGeneration": "代",
     "demoFocus": "所选人物",
     "demoRecord": "资料",
-    "demoRecordText": "此人物卡仅用于展示设计，尚未关联真实照片或文献。"
+    "demoRecordText": "此人物卡仅用于展示设计，尚未关联真实照片或文献。",
+    "worldMap": "世界",
+    "regionalView": "地区",
+    "regionalHint": "选择地区以筛选照片。",
+    "allRegionPhotos": "全部印度尼西亚",
+    "visitedRegion": "本次旅行到访",
+    "unvisitedRegion": "本次旅行未到访"
   }
 }
