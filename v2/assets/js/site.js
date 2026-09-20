@@ -66,7 +66,7 @@ if(page==='home'){
 }
 if(page==='travel')import('./travel.js?v=20260920-1610').catch(console.error);
 if(page==='photos')import('./photos.js').catch(console.error);
-if(page==='lists')import('./music.js').catch(console.error);
+if(page==='lists')import('./music.js?v=20260920-1640').catch(console.error);
 // Same token and beacon as production; no root analytics configuration is changed.
 const token=document.querySelector('meta[name="cf-web-analytics-token"]')?.content.trim();
 if(token && window.self===window.top && location.hostname!=='localhost' && location.hostname!=='127.0.0.1'){
