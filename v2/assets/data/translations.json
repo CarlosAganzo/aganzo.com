@@ -237,7 +237,7 @@
     "gameWatchNote": "Tiny machines, two screens, no firmware update, no battle pass. A better civilisation.",
     "gamePcTitle": "The machine still matters",
     "gamePcNote": "Enough of a PC person to care about the GPU before caring about the case.",
-    "gamesCaveat": "No fake “top 10 games” here: that list gets added when it is actually mine.",
+    "gamesCaveat": "Five names for now. No ranking, no fake precision.",
     "booksStayed": "STAYED",
     "booksNext": "NEXT / EVENTUALLY",
     "booksNextNote": "Still waiting patiently in the enormous queue.",
@@ -258,7 +258,9 @@
     "verdictGood": "GOOD",
     "verdictNo": "ABSOLUTELY NOT",
     "verdictAnnoying": "ANNOYINGLY GOOD",
-    "gameCivilizationNote": "One more turn. Then another. Then somehow it is 3am and an empire needs administrative attention."
+    "gameCivilizationNote": "One more turn. Then another. Then somehow it is 3am and an empire needs administrative attention.",
+    "gamesListLabel": "GAMES / NO ORDER",
+    "gamesListNote": "No ranking. Just games that belong here."
   },
   "es": {
     "emailLabel": "Correo electrónico",
@@ -498,7 +500,7 @@
     "gameWatchNote": "Máquinas diminutas, dos pantallas, sin firmware ni battle pass. Una civilización mejor.",
     "gamePcTitle": "La máquina todavía importa",
     "gamePcNote": "Lo bastante de PC como para preocuparme por la GPU antes que por la caja.",
-    "gamesCaveat": "Nada de inventarme un “top 10 de juegos”: esa lista aparecerá cuando sea de verdad la mía.",
+    "gamesCaveat": "Cinco nombres por ahora. Sin ranking y sin falsa precisión.",
     "booksStayed": "SE QUEDARON",
     "booksNext": "DESPUÉS / ALGÚN DÍA",
     "booksNextNote": "Sigue esperando pacientemente en una cola enorme.",
@@ -519,7 +521,9 @@
     "verdictGood": "BUENA",
     "verdictNo": "NI DE COÑA",
     "verdictAnnoying": "IRRITANTEMENTE BUENA",
-    "gameCivilizationNote": "Un turno más. Luego otro. Y de repente son las tres de la mañana y un imperio necesita atención administrativa."
+    "gameCivilizationNote": "Un turno más. Luego otro. Y de repente son las tres de la mañana y un imperio necesita atención administrativa.",
+    "gamesListLabel": "JUEGOS / SIN ORDEN",
+    "gamesListNote": "Sin ranking. Simplemente juegos que tienen que estar aquí."
   },
   "ja": {
     "emailLabel": "メール",
@@ -759,7 +763,7 @@
     "gameWatchNote": "小さな機械、二画面、アップデートなし、バトルパスなし。より良い文明。",
     "gamePcTitle": "マシンは今でも重要",
     "gamePcNote": "ケースより先にGPUを気にする程度にはPC派です。",
-    "gamesCaveat": "本当ではない「好きなゲームTOP10」は作りません。本当に自分のリストになった時に追加します。",
+    "gamesCaveat": "今はこの5本。順位も、無理な精密さもなし。",
     "booksStayed": "残った本",
     "booksNext": "次 / いつか",
     "booksNextNote": "巨大な待ち行列で静かに順番を待っています。",
@@ -780,7 +784,9 @@
     "verdictGood": "良い",
     "verdictNo": "絶対に無理",
     "verdictAnnoying": "悔しいほど良い",
-    "gameCivilizationNote": "あと1ターン。さらにもう1ターン。気づけば午前3時で、帝国の行政処理が待っています。"
+    "gameCivilizationNote": "あと1ターン。さらにもう1ターン。気づけば午前3時で、帝国の行政処理が待っています。",
+    "gamesListLabel": "ゲーム / 順不同",
+    "gamesListNote": "順位なし。ただ、ここに置くべきゲーム。"
   },
   "zh": {
     "emailLabel": "电子邮件",
@@ -1020,7 +1026,7 @@
     "gameWatchNote": "小机器、双屏、没有固件更新、没有 battle pass。文明曾经更好。",
     "gamePcTitle": "机器本身仍然重要",
     "gamePcNote": "我还是那种先关心 GPU、再关心机箱的人。",
-    "gamesCaveat": "这里不会编一个假的“十大游戏”。等那份榜单真的是我的，再放上来。",
+    "gamesCaveat": "先放这五个。不排名，也不装作精确。",
     "booksStayed": "留下来的",
     "booksNext": "接下来 / 迟早",
     "booksNextNote": "还在巨大的队伍里耐心等候。",
@@ -1041,6 +1047,8 @@
     "verdictGood": "不错",
     "verdictNo": "绝对不行",
     "verdictAnnoying": "烦人地好",
-    "gameCivilizationNote": "再来一回合。然后再一回合。等回过神来已经凌晨三点，帝国还有行政事务要处理。"
+    "gameCivilizationNote": "再来一回合。然后再一回合。等回过神来已经凌晨三点，帝国还有行政事务要处理。",
+    "gamesListLabel": "游戏 / 不排序",
+    "gamesListNote": "不排名。只是这些游戏应该出现在这里。"
   }
 }
