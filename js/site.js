@@ -1,3 +1,18 @@
+/* V1 theme preview selector — query-param only, so the normal homepage keeps its existing theme. */
+(() => {
+  const themes = {
+    "cold-paper": "#f1f1ef",
+    "blue-grey": "#e8ecef",
+    "high-contrast": "#f5f5f2"
+  };
+  const theme = new URLSearchParams(window.location.search).get("theme");
+  if (!Object.prototype.hasOwnProperty.call(themes, theme)) return;
+
+  document.documentElement.dataset.theme = theme;
+  const metaTheme = document.querySelector('meta[name="theme-color"]');
+  if (metaTheme) metaTheme.setAttribute("content", themes[theme]);
+})();
+
 /* AGANZO.COM site behaviour. Kept out of index.html on purpose. */
 
 (() => {
