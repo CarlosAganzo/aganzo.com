@@ -1,7 +1,7 @@
 const base = '/v2/';
 const page = document.body.dataset.page;
 const params = new URLSearchParams(location.search);
-const assetVersion = '20260921-1604-films';
+const assetVersion = '20260921-1608-too-old';
 const load = async name => {
   const response = await fetch(`${base}assets/data/${name}.json?v=${assetVersion}`);
   if (!response.ok) throw new Error(`Cannot load ${name}: ${response.status}`);
