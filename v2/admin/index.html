@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Admin — AGANZO.COM</title>
+  <meta name="description" content="Private editing tools for AGANZO.COM.">
+  <link rel="icon" href="/v2/assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/v2/assets/css/site.css">
+  <link rel="stylesheet" href="/v2/admin/admin.css">
+  <script type="module" src="/v2/admin/admin.js"></script>
+</head>
+<body class="admin-page">
+  <header class="admin-header">
+    <div>
+      <a class="brand" href="/v2/">AGANZO.COM</a>
+      <span class="admin-kicker">ADMIN / V2</span>
+    </div>
+    <a class="admin-view-site" href="/v2/" target="_blank" rel="noopener noreferrer">View site ↗</a>
+  </header>
+
+  <main class="admin-shell">
+    <section class="admin-intro">
+      <p class="eyebrow">CONTENT CONTROL</p>
+      <h1>Edit without touching code.</h1>
+      <p>This first panel controls the four items in the <strong>Now</strong> strip on the V2 homepage. Saving creates a normal GitHub commit, so every change remains reversible.</p>
+    </section>
+
+    <section class="admin-auth" aria-labelledby="auth-title">
+      <div>
+        <p class="micro">01 / ACCESS</p>
+        <h2 id="auth-title">Connect GitHub</h2>
+        <p class="admin-help">Use a fine-grained GitHub token restricted to <code>CarlosAganzo/aganzo.com</code> with <strong>Contents: read and write</strong>. It is kept only for this browser session and is never written into the site.</p>
+      </div>
+      <div class="admin-auth-controls">
+        <label for="github-token">GitHub token</label>
+        <div class="admin-token-row">
+          <input id="github-token" type="password" autocomplete="off" spellcheck="false" placeholder="github_pat_…">
+          <button id="connect-github" type="button">Connect</button>
+          <button id="forget-github" class="secondary" type="button" hidden>Forget</button>
+        </div>
+        <p id="auth-status" class="admin-status" aria-live="polite">Not connected. You can still edit and preview locally.</p>
+      </div>
+    </section>
+
+    <section class="admin-workspace" aria-labelledby="now-editor-title">
+      <div class="admin-section-heading">
+        <div>
+          <p class="micro">02 / HOMEPAGE</p>
+          <h2 id="now-editor-title">Now</h2>
+        </div>
+        <div class="admin-meta">
+          <span>Last saved</span>
+          <strong id="now-updated">—</strong>
+        </div>
+      </div>
+
+      <div id="now-form" class="now-editor">
+        <article class="admin-card" data-slot="0">
+          <div class="admin-card-index">01</div>
+          <label>
+            <span>Watching</span>
+            <input class="now-value-input" type="text" maxlength="120" placeholder="Nathan for You">
+          </label>
+          <label>
+            <span>Link</span>
+            <input class="now-url-input" type="url" inputmode="url" placeholder="https://…">
+          </label>
+        </article>
+
+        <article class="admin-card" data-slot="1">
+          <div class="admin-card-index">02</div>
+          <label>
+            <span>Listening</span>
+            <input class="now-value-input" type="text" maxlength="120" placeholder="Aphex Twin">
+          </label>
+          <label>
+            <span>Link</span>
+            <input class="now-url-input" type="url" inputmode="url" placeholder="https://…">
+          </label>
+        </article>
+
+        <article class="admin-card" data-slot="2">
+          <div class="admin-card-index">03</div>
+          <label>
+            <span>Reading</span>
+            <input class="now-value-input" type="text" maxlength="120" placeholder="Kokoro — Natsume Sōseki">
+          </label>
+          <label>
+            <span>Link</span>
+            <input class="now-url-input" type="url" inputmode="url" placeholder="https://…">
+          </label>
+        </article>
+
+        <article class="admin-card" data-slot="3">
+          <div class="admin-card-index">04</div>
+          <label>
+            <span>Current obsession</span>
+            <input class="now-value-input" type="text" maxlength="120" placeholder="Japanese denim">
+          </label>
+          <label>
+            <span>Link</span>
+            <input class="now-url-input" type="url" inputmode="url" placeholder="https://…">
+          </label>
+        </article>
+      </div>
+
+      <div class="admin-actions">
+        <button id="reload-now" class="secondary" type="button">Reload published data</button>
+        <button id="save-now" class="primary" type="button" disabled>Save & publish</button>
+        <p id="save-status" class="admin-status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section class="admin-preview" aria-labelledby="preview-title">
+      <div class="admin-section-heading">
+        <div>
+          <p class="micro">03 / PREVIEW</p>
+          <h2 id="preview-title">What visitors will see</h2>
+        </div>
+      </div>
+      <div class="now-strip admin-now-preview">
+        <div class="now-label">
+          <h2>Now</h2>
+          <p>Subject to change without notice.</p>
+        </div>
+        <div class="now-items" id="now-preview-items"></div>
+      </div>
+    </section>
+
+    <section class="admin-next">
+      <p class="micro">NEXT</p>
+      <h2>This can grow into a real content dashboard.</h2>
+      <p>The same pattern can later control travel notes, lists, featured photographs or other small editable blocks without turning the whole site into a CMS.</p>
+    </section>
+  </main>
+
+  <footer class="admin-footer">
+    <span>Changes are committed to <code>main</code>.</span>
+    <a href="/v2/">Back to V2 ↑</a>
+  </footer>
+</body>
+</html>
