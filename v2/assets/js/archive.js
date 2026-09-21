@@ -77,7 +77,9 @@ function renderTree(){
       const row=el('div','family-generation family-children');
       row.setAttribute('role','group');
       row.setAttribute('aria-label',isDemo?t('demoChildren'):l.children);
-      directChildren.forEach(p=>row.append(personButton(p)));
+      const track=el('div','family-children-track');
+      directChildren.forEach(p=>track.append(personButton(p)));
+      row.append(track);
       tree.append(row);
     }
   }
