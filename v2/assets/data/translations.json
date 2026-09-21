@@ -291,7 +291,10 @@
     "filmJesseJames": "Melancholy in widescreen.",
     "filmTrueRomance": "Messy, romantic and completely alive.",
     "filmPulpFiction": "Cool, funny and endlessly rewatchable.",
-    "filmDune": "Because sometimes scale really matters."
+    "filmDune": "Because sometimes scale really matters.",
+    "filmMetropolis": "Machines, crowds and a future that never stopped looking modern.",
+    "filmSantosInocentes": "Cruel, humane and almost unbearably Spanish.",
+    "filmDersuUzala": "Friendship, wilderness and the sadness of a world changing."
   },
   "es": {
     "emailLabel": "Correo electrónico",
@@ -585,7 +588,10 @@
     "filmJesseJames": "Melancolía en formato panorámico.",
     "filmTrueRomance": "Caótica, romántica y completamente viva.",
     "filmPulpFiction": "Mola, hace gracia y aguanta infinitos revisionados.",
-    "filmDune": "Porque a veces la escala sí importa."
+    "filmDune": "Porque a veces la escala sí importa.",
+    "filmMetropolis": "Máquinas, multitudes y un futuro que nunca dejó de parecer moderno.",
+    "filmSantosInocentes": "Cruel, humana y casi insoportablemente española.",
+    "filmDersuUzala": "Amistad, naturaleza y la tristeza de un mundo que cambia."
   },
   "ja": {
     "emailLabel": "メール",
@@ -879,7 +885,10 @@
     "filmJesseJames": "ワイドスクリーンのメランコリー。",
     "filmTrueRomance": "無茶で、ロマンチックで、生々しい。",
     "filmPulpFiction": "クールで、可笑しくて、何度でも観られる。",
-    "filmDune": "ときにはスケールそのものが重要。"
+    "filmDune": "ときにはスケールそのものが重要。",
+    "filmMetropolis": "機械、群衆、そして今も古びない未来。",
+    "filmSantosInocentes": "残酷で人間的、そして痛いほどスペイン的。",
+    "filmDersuUzala": "友情、自然、そして変わっていく世界の哀しみ。"
   },
   "zh": {
     "emailLabel": "电子邮件",
@@ -1173,6 +1182,9 @@
     "filmJesseJames": "宽银幕里的忧郁。",
     "filmTrueRomance": "混乱、浪漫，而且活得很。",
     "filmPulpFiction": "酷、好笑，而且怎么重看都行。",
-    "filmDune": "有时候，规模本身就很重要。"
+    "filmDune": "有时候，规模本身就很重要。",
+    "filmMetropolis": "机器、人群，以及一个至今仍显得现代的未来。",
+    "filmSantosInocentes": "残酷、有人情味，而且几乎西班牙得让人难受。",
+    "filmDersuUzala": "友谊、荒野，以及一个正在消失的世界的悲伤。"
   }
 }
