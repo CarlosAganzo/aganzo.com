@@ -130,7 +130,7 @@
     "mapSource": "76 places on the map. Still room in the notebook.",
     "listsTitle": "Things that<br><em>stay with me.</em>",
     "listsIntro": "A personal taxonomy of the things I replay, reread, collect and argue about.",
-    "films": "Films I return to",
+    "films": "Films — mostly",
     "filmsNote": "Around 200 films a year. These ten are a reasonable starting point.",
     "music": "Always something playing",
     "artists": "Some names on repeat",
@@ -296,7 +296,8 @@
     "filmSantosInocentes": "Cruel, humane and almost unbearably Spanish.",
     "filmDersuUzala": "Friendship, wilderness and the sadness of a world changing.",
     "filmTheThing": "Paranoia, isolation and practical effects that still look wrong in exactly the right way.",
-    "filmIrreversible": "Form as assault. Time running backwards does not make anything better."
+    "filmIrreversible": "Form as assault. Time running backwards does not make anything better.",
+    "filmTooOld": "Neon, dread and violence slowed down until it becomes almost hypnotic."
   },
   "es": {
     "emailLabel": "Correo electrónico",
@@ -429,7 +430,7 @@
     "mapSource": "76 lugares en el mapa. Todavía queda sitio en el cuaderno.",
     "listsTitle": "Cosas que<br><em>se quedan.</em>",
     "listsIntro": "Una taxonomía personal de las cosas que repito, releo, colecciono y discuto.",
-    "films": "Películas a las que vuelvo",
+    "films": "Películas — casi siempre",
     "filmsNote": "Unas 200 películas al año. Estas diez son un buen punto de partida.",
     "music": "Siempre hay algo sonando",
     "artists": "Algunos nombres recurrentes",
@@ -595,7 +596,8 @@
     "filmSantosInocentes": "Cruel, humana y casi insoportablemente española.",
     "filmDersuUzala": "Amistad, naturaleza y la tristeza de un mundo que cambia.",
     "filmTheThing": "Paranoia, aislamiento y unos efectos prácticos que siguen viéndose mal exactamente de la manera correcta.",
-    "filmIrreversible": "La forma como agresión. Que el tiempo vaya hacia atrás no arregla nada."
+    "filmIrreversible": "La forma como agresión. Que el tiempo vaya hacia atrás no arregla nada.",
+    "filmTooOld": "Neón, inquietud y violencia ralentizada hasta volverse casi hipnótica."
   },
   "ja": {
     "emailLabel": "メール",
@@ -728,7 +730,7 @@
     "mapSource": "地図には76か国。ノートにはまだ余白があります。",
     "listsTitle": "心に<br><em>残るもの。</em>",
     "listsIntro": "何度も観るもの、読み返すもの、集めるもの、そして議論したくなるものの個人的な分類。",
-    "films": "何度も戻る映画",
+    "films": "映画 — ほぼ",
     "filmsNote": "年間約200本。この10本が良い出発点です。",
     "music": "いつも何かが流れている",
     "artists": "よく聴く名前",
@@ -894,7 +896,8 @@
     "filmSantosInocentes": "残酷で人間的、そして痛いほどスペイン的。",
     "filmDersuUzala": "友情、自然、そして変わっていく世界の哀しみ。",
     "filmTheThing": "パラノイア、孤立、そして今見ても正しい意味で異様な実写効果。",
-    "filmIrreversible": "形式そのものが暴力。時間を逆にしても、何ひとつ救われない。"
+    "filmIrreversible": "形式そのものが暴力。時間を逆にしても、何ひとつ救われない。",
+    "filmTooOld": "ネオン、不穏さ、そしてほとんど催眠的になるまで引き延ばされた暴力。"
   },
   "zh": {
     "emailLabel": "电子邮件",
@@ -1027,7 +1030,7 @@
     "mapSource": "地图上有 76 个国家。笔记本还有空白。",
     "listsTitle": "那些<br><em>留在心里的东西。</em>",
     "listsIntro": "把我会重看、重读、收藏和争论的东西做成一套私人分类。",
-    "films": "反复回看的电影",
+    "films": "电影——基本上",
     "filmsNote": "每年大约 200 部电影。这十部可以作为起点。",
     "music": "总有音乐在放",
     "artists": "常听的名字",
@@ -1193,6 +1196,7 @@
     "filmSantosInocentes": "残酷、有人情味，而且几乎西班牙得让人难受。",
     "filmDersuUzala": "友谊、荒野，以及一个正在消失的世界的悲伤。",
     "filmTheThing": "偏执、孤立，以及直到今天仍以一种恰到好处的方式令人不适的实体特效。",
-    "filmIrreversible": "形式本身就是攻击。时间倒流并不会让任何事情变好。"
+    "filmIrreversible": "形式本身就是攻击。时间倒流并不会让任何事情变好。",
+    "filmTooOld": "霓虹、不安，以及被放慢到几乎催眠般的暴力。"
   }
 }
