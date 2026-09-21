@@ -71,7 +71,17 @@ function renderTree(){
   for(let i=0;i<2;i++){const next=current.flatMap(p=>mode==='ancestors'?cleanList(p.parents):children(p));current=[...new Map(next.map(p=>[p.id,p])).values()];if(!current.length)break;levels.push(current);}
   if(mode==='ancestors')levels.reverse(); const l=labels();
   levels.forEach(list=>{const row=el('div','family-generation');row.setAttribute('role','group');row.setAttribute('aria-label',list.some(p=>p.id===selected.id)?(isDemo?t('demoFocus'):l.focus):(isDemo?t('demoGeneration'):l.generation));list.forEach(p=>row.append(personButton(p)));tree.append(row);});
-  if(levels.length===1)tree.append(el('p','small',isDemo?t('demoNone'):l.none));
+  if(mode==='ancestors'){
+    const directChildren=children(selected);
+    if(directChildren.length){
+      const row=el('div','family-generation family-children');
+      row.setAttribute('role','group');
+      row.setAttribute('aria-label',isDemo?t('demoChildren'):l.children);
+      directChildren.forEach(p=>row.append(personButton(p)));
+      tree.append(row);
+    }
+  }
+  if(levels.length===1 && !(mode==='ancestors' && children(selected).length))tree.append(el('p','small',isDemo?t('demoNone'):l.none));
 }
 function renderDetail(){
   const l=labels(); detail.replaceChildren(); detail.setAttribute('aria-label',isDemo?t('demoPerson'):l.person);
@@ -82,7 +92,7 @@ function renderDetail(){
   }
   detail.append(timeline,group(isDemo?t('demoParents'):l.parents,cleanList(selected.parents)));
   if(!isDemo)detail.append(group(l.spouses,cleanList(selected.spouses)));
-  detail.append(group(isDemo?t('demoChildren'):l.children,children(selected)),el('h4','micro',isDemo?t('demoRecord'):l.record),el('p','small',isDemo?t('demoRecordText'):l.recordText));
+  detail.append(el('h4','micro',isDemo?t('demoRecord'):l.record),el('p','small',isDemo?t('demoRecordText'):l.recordText));
   const personMedia=renderMediaForPerson(selected); if(personMedia)detail.append(personMedia);
 }
 function renderArchiveCopy(){
