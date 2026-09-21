@@ -3,7 +3,9 @@ const page = document.body.dataset.page;
 const params = new URLSearchParams(location.search);
 const assetVersion = '20260921-1608-too-old';
 const load = async name => {
-  const response = await fetch(`${base}assets/data/${name}.json?v=${assetVersion}`);
+  const version = name === 'now' ? Date.now() : assetVersion;
+  const options = name === 'now' ? { cache: 'no-store' } : undefined;
+  const response = await fetch(`${base}assets/data/${name}.json?v=${version}`, options);
   if (!response.ok) throw new Error(`Cannot load ${name}: ${response.status}`);
   return response.json();
 };
