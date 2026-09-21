@@ -195,11 +195,19 @@ function generationLayout(direction){
 }
 
 function measuredNode(stage,id){
-  const node=[...stage.querySelectorAll('.family-tree-node')].find(el=>el.dataset.person===id);
+  const node=stage.querySelector('.family-tree-node[data-person="'+CSS.escape(id)+'"]');
   if(!node)return null;
-  const cx=node.offsetLeft,cy=node.offsetTop;
-  const halfW=node.offsetWidth/2,halfH=node.offsetHeight/2;
-  return {cx,cy,left:cx-halfW,right:cx+halfW,top:cy-halfH,bottom:cy+halfH};
+  const nodeRect=node.getBoundingClientRect();
+  const stageRect=stage.getBoundingClientRect();
+  const left=nodeRect.left-stageRect.left;
+  const top=nodeRect.top-stageRect.top;
+  const right=left+nodeRect.width;
+  const bottom=top+nodeRect.height;
+  return {
+    cx:left+nodeRect.width/2,
+    cy:top+nodeRect.height/2,
+    left,right,top,bottom
+  };
 }
 
 function pathFor(edge,stage){
@@ -277,11 +285,22 @@ function renderTree(){
   layout.nodes.forEach(n=>stage.append(treeNode(n)));
   tree.append(stage);
   requestAnimationFrame(()=>{
-    drawEdges(svg,stage,layout.edges);
     const focus=tree.querySelector('.is-focus');
     if(focus&&canvas){
-      const left=Math.max(0,focus.offsetLeft-canvas.clientWidth/2+focus.offsetWidth/2);
-      canvas.scrollTo({left,behavior:'smooth'});
+      const focusRect=focus.getBoundingClientRect();
+      const stageRect=stage.getBoundingClientRect();
+      const focusCenter=(focusRect.left-stageRect.left)+(focusRect.width/2);
+      const left=Math.max(0,focusCenter-canvas.clientWidth/2);
+      canvas.scrollTo({left,behavior:'auto'});
+    }
+
+    // Draw only after the tree has been positioned/recentred. Measuring
+    // with DOMRects keeps the SVG in exactly the same coordinate space
+    // as the visible boxes, including transforms and horizontal scroll.
+    requestAnimationFrame(()=>drawEdges(svg,stage,layout.edges));
+
+    if(document.fonts?.ready){
+      document.fonts.ready.then(()=>drawEdges(svg,stage,layout.edges));
     }
   });
 }
@@ -440,6 +459,19 @@ document.querySelector('#archive-files')?.addEventListener('click',e=>{
 
 mediaMore?.addEventListener('click',()=>{mediaLimit+=24;renderMedia();});
 search.addEventListener('input',renderResults);
+
+let resizeRedrawFrame=0;
+window.addEventListener('resize',()=>{
+  cancelAnimationFrame(resizeRedrawFrame);
+  resizeRedrawFrame=requestAnimationFrame(()=>{
+    const stage=tree.querySelector('.family-tree-stage');
+    const svg=stage?.querySelector('.family-tree-lines');
+    if(!stage||!svg)return;
+    const layout=mode==='family'?familyLayout():generationLayout(mode);
+    drawEdges(svg,stage,layout.edges);
+  });
+});
+
 onLanguage(render);
 
 async function loadFamily(){
