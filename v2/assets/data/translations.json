@@ -131,7 +131,7 @@
     "listsTitle": "Things that<br><em>stay with me.</em>",
     "listsIntro": "A personal taxonomy of the things I replay, reread, collect and argue about.",
     "films": "Films I return to",
-    "filmsNote": "Around 200 films a year. These eight are a reasonable starting point.",
+    "filmsNote": "Around 200 films a year. These ten are a reasonable starting point.",
     "music": "Always something playing",
     "artists": "Some names on repeat",
     "musicFoot": "Apparently happiness has weaker replay value.",
@@ -294,7 +294,9 @@
     "filmDune": "Because sometimes scale really matters.",
     "filmMetropolis": "Machines, crowds and a future that never stopped looking modern.",
     "filmSantosInocentes": "Cruel, humane and almost unbearably Spanish.",
-    "filmDersuUzala": "Friendship, wilderness and the sadness of a world changing."
+    "filmDersuUzala": "Friendship, wilderness and the sadness of a world changing.",
+    "filmTheThing": "Paranoia, isolation and practical effects that still look wrong in exactly the right way.",
+    "filmIrreversible": "Form as assault. Time running backwards does not make anything better."
   },
   "es": {
     "emailLabel": "Correo electrónico",
@@ -428,7 +430,7 @@
     "listsTitle": "Cosas que<br><em>se quedan.</em>",
     "listsIntro": "Una taxonomía personal de las cosas que repito, releo, colecciono y discuto.",
     "films": "Películas a las que vuelvo",
-    "filmsNote": "Unas 200 películas al año. Estas ocho son un buen punto de partida.",
+    "filmsNote": "Unas 200 películas al año. Estas diez son un buen punto de partida.",
     "music": "Siempre hay algo sonando",
     "artists": "Algunos nombres recurrentes",
     "musicFoot": "Parece que la felicidad tiene menos valor de repetición.",
@@ -591,7 +593,9 @@
     "filmDune": "Porque a veces la escala sí importa.",
     "filmMetropolis": "Máquinas, multitudes y un futuro que nunca dejó de parecer moderno.",
     "filmSantosInocentes": "Cruel, humana y casi insoportablemente española.",
-    "filmDersuUzala": "Amistad, naturaleza y la tristeza de un mundo que cambia."
+    "filmDersuUzala": "Amistad, naturaleza y la tristeza de un mundo que cambia.",
+    "filmTheThing": "Paranoia, aislamiento y unos efectos prácticos que siguen viéndose mal exactamente de la manera correcta.",
+    "filmIrreversible": "La forma como agresión. Que el tiempo vaya hacia atrás no arregla nada."
   },
   "ja": {
     "emailLabel": "メール",
@@ -725,7 +729,7 @@
     "listsTitle": "心に<br><em>残るもの。</em>",
     "listsIntro": "何度も観るもの、読み返すもの、集めるもの、そして議論したくなるものの個人的な分類。",
     "films": "何度も戻る映画",
-    "filmsNote": "年間約200本。この8本が良い出発点です。",
+    "filmsNote": "年間約200本。この10本が良い出発点です。",
     "music": "いつも何かが流れている",
     "artists": "よく聴く名前",
     "musicFoot": "どうやら幸福はリピート再生に少し弱いらしい。",
@@ -888,7 +892,9 @@
     "filmDune": "ときにはスケールそのものが重要。",
     "filmMetropolis": "機械、群衆、そして今も古びない未来。",
     "filmSantosInocentes": "残酷で人間的、そして痛いほどスペイン的。",
-    "filmDersuUzala": "友情、自然、そして変わっていく世界の哀しみ。"
+    "filmDersuUzala": "友情、自然、そして変わっていく世界の哀しみ。",
+    "filmTheThing": "パラノイア、孤立、そして今見ても正しい意味で異様な実写効果。",
+    "filmIrreversible": "形式そのものが暴力。時間を逆にしても、何ひとつ救われない。"
   },
   "zh": {
     "emailLabel": "电子邮件",
@@ -1022,7 +1028,7 @@
     "listsTitle": "那些<br><em>留在心里的东西。</em>",
     "listsIntro": "把我会重看、重读、收藏和争论的东西做成一套私人分类。",
     "films": "反复回看的电影",
-    "filmsNote": "每年大约 200 部电影。这八部可以作为起点。",
+    "filmsNote": "每年大约 200 部电影。这十部可以作为起点。",
     "music": "总有音乐在放",
     "artists": "常听的名字",
     "musicFoot": "看来快乐的重播价值稍微低一点。",
@@ -1185,6 +1191,8 @@
     "filmDune": "有时候，规模本身就很重要。",
     "filmMetropolis": "机器、人群，以及一个至今仍显得现代的未来。",
     "filmSantosInocentes": "残酷、有人情味，而且几乎西班牙得让人难受。",
-    "filmDersuUzala": "友谊、荒野，以及一个正在消失的世界的悲伤。"
+    "filmDersuUzala": "友谊、荒野，以及一个正在消失的世界的悲伤。",
+    "filmTheThing": "偏执、孤立，以及直到今天仍以一种恰到好处的方式令人不适的实体特效。",
+    "filmIrreversible": "形式本身就是攻击。时间倒流并不会让任何事情变好。"
   }
 }
