@@ -111,7 +111,25 @@ async function loadFamily(){
   try{
     const response=await fetch('/v2/assets/genealogy/family.json',{cache:'no-store'});if(!response.ok)throw new Error('family.json unavailable');
     const data=await response.json();if(!Array.isArray(data.people)||!data.people.length)throw new Error('family.json empty');
-    people=data.people.map(normalisePerson);media=data.media||{};isDemo=false;
+    if(data.schema===2){
+      const toPerson=p=>normalisePerson({
+        id:'I'+p[0],name:p[1],
+        birth:p[2]?{date:p[2][0],place:p[2][1]}:null,
+        death:p[3]?{date:p[3][0],place:p[3][1]}:null,
+        parents:(p[4]||[]).map(x=>'I'+x),
+        spouses:(p[5]||[]).map(x=>'I'+x),
+        children:(p[6]||[]).map(x=>'I'+x),
+        media:(p[7]||[]).map(x=>'@M'+x+'@')
+      });
+      people=data.people.map(toPerson);
+      media=Object.fromEntries((data.media||[]).map(m=>{
+        const id='@M'+m[0]+'@', filename=m[1];
+        return [id,{id,url:'/v2/assets/genealogy/media/'+filename,title:m[2],kind:m[3],format:filename.split('.').pop()}];
+      }));
+    }else{
+      people=data.people.map(normalisePerson);media=data.media||{};
+    }
+    isDemo=false;
     selected=[...people].sort((a,b)=>((b.parents.length+b.children.length+b.spouses.length)-(a.parents.length+a.children.length+a.spouses.length))||a.name.localeCompare(b.name))[0];
     render();
   }catch(error){render();}
