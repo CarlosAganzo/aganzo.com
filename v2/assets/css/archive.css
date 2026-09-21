@@ -65,6 +65,16 @@
 }
 .family-result strong{font:400 1rem/1.15 var(--serif,Georgia,serif)}
 .family-result .micro{font-size:9px;color:var(--muted,#666)}
+.family-result[aria-pressed=true]{
+  color:var(--paper,#f4f0e6);
+  background:var(--ink,#252820);
+  border-color:var(--red,#9e392b);
+  box-shadow:inset 4px 0 0 var(--red,#9e392b)
+}
+.family-result[aria-pressed=true] .micro{
+  color:var(--paper,#f4f0e6);
+  opacity:.78
+}
 .family-layout{
   display:grid;
   grid-template-columns:minmax(0,3fr) minmax(270px,.9fr);
@@ -115,12 +125,24 @@
 .family-tree-lines path{
   fill:none;
   stroke:#8b8273;
-  stroke-width:1.25;
+  stroke-width:1.35;
+  stroke-linecap:square;
+  stroke-linejoin:round;
   vector-effect:non-scaling-stroke
 }
 .family-tree-lines path.is-partner{
   stroke:var(--red,#9e392b);
-  stroke-width:1.6
+  stroke-width:1.75
+}
+.family-tree-lines path.is-active{
+  stroke:var(--red,#9e392b);
+  stroke-width:2.1
+}
+.family-tree-junction{
+  fill:#8b8273
+}
+.family-tree-junction.is-active{
+  fill:var(--red,#9e392b)
 }
 .family-tree-node{
   position:absolute;
@@ -153,12 +175,34 @@
 }
 .family-tree-node.is-focus,
 .family-tree-node[aria-pressed=true]{
-  background:#fff9ee;
+  color:var(--paper,#f4f0e6);
+  background:var(--ink,#252820);
   border:2px solid var(--red,#9e392b);
-  box-shadow:5px 5px 0 #9e392b18;
-  z-index:3
+  box-shadow:
+    0 0 0 4px #f7f3e9,
+    0 0 0 6px var(--red,#9e392b),
+    8px 8px 0 #00000014;
+  z-index:4
+}
+.family-tree-node.is-focus::before,
+.family-tree-node[aria-pressed=true]::before{
+  content:'';
+  position:absolute;
+  width:8px;
+  height:8px;
+  left:50%;
+  top:-13px;
+  transform:translateX(-50%);
+  border-radius:50%;
+  background:var(--red,#9e392b);
+  box-shadow:0 0 0 3px #f7f3e9
 }
 .family-tree-node.is-focus strong{font-size:1.15rem}
+.family-tree-node.is-focus .micro,
+.family-tree-node[aria-pressed=true] .micro{
+  color:var(--paper,#f4f0e6);
+  opacity:.78
+}
 .family-tree-node:focus-visible,
 .family-result:focus-visible,
 .family-stat:focus-visible,
