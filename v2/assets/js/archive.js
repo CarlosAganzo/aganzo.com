@@ -128,6 +128,33 @@ function unique(list){
   return [...new Map(list.filter(Boolean).map(p=>[p.id,p])).values()];
 }
 
+function relationshipEdges(nodes,extraPartners=[]){
+  const positions=new Map(nodes.map(n=>[n.p.id,n]));
+  const edges=[];
+  const partnerKeys=new Set();
+  const addPartner=(aId,bId)=>{
+    if(!positions.has(aId)||!positions.has(bId)||aId===bId)return;
+    const key=[aId,bId].sort().join('|');
+    if(partnerKeys.has(key))return;
+    partnerKeys.add(key);
+    edges.push({type:'partner',fromId:aId,toId:bId});
+  };
+  nodes.forEach(n=>{
+    const visibleParents=unique(cleanList(n.p.parents))
+      .filter(p=>positions.has(p.id))
+      .sort((a,b)=>positions.get(a.id).x-positions.get(b.id).x);
+    if(visibleParents.length>=2){
+      const a=visibleParents[0],b=visibleParents[1];
+      addPartner(a.id,b.id);
+      edges.push({type:'descent',fromUnion:[a.id,b.id],toId:n.p.id});
+    }else if(visibleParents.length===1){
+      edges.push({type:'descent',fromId:visibleParents[0].id,toId:n.p.id});
+    }
+  });
+  extraPartners.forEach(([aId,bId])=>addPartner(aId,bId));
+  return edges;
+}
+
 function familyLayout(){
   const parents=unique(cleanList(selected.parents));
   const spouses=unique(cleanList(selected.spouses));
@@ -140,18 +167,7 @@ function familyLayout(){
     ...distribute(centre,stageWidth,286,'focus'),
     ...distribute(kids,stageWidth,486,'child')
   ];
-  const positions=new Map(nodes.map(n=>[n.p.id,n]));
-  const edges=[];
-  const sel=positions.get(selected.id);
-  parents.forEach(p=>{const a=positions.get(p.id);if(a&&sel)edges.push({a,b:sel,type:'descent'});});
-  spouses.forEach(p=>{const a=positions.get(p.id);if(a&&sel)edges.push({a:sel,b:a,type:'partner'});});
-  kids.forEach(k=>{
-    const child=positions.get(k.id);if(!child||!sel)return;
-    const shared=spouses.find(s=>(k.parents||[]).includes(s.id));
-    const partner=shared?positions.get(shared.id):null;
-    if(partner)edges.push({a:{x:(sel.x+partner.x)/2,y:sel.y},b:child,type:'descent',fromUnion:true});
-    else edges.push({a:sel,b:child,type:'descent'});
-  });
+  const edges=relationshipEdges(nodes,spouses.map(p=>[selected.id,p.id]));
   return {nodes,edges,width:stageWidth,height:580};
 }
 
@@ -174,35 +190,70 @@ function generationLayout(direction){
     const y=80+visualIndex*rowGap;
     nodes.push(...distribute(list,stageWidth,y,index===0?'focus':'generation'));
   });
-  const positions=new Map(nodes.map(n=>[n.p.id,n]));
-  const edges=[];
-  if(direction==='ancestors'){
-    nodes.forEach(n=>{
-      cleanList(n.p.parents).forEach(parent=>{
-        const a=positions.get(parent.id);if(a)edges.push({a,b:n,type:'descent'});
-      });
-    });
-  }else{
-    nodes.forEach(n=>{
-      children(n.p).forEach(child=>{
-        const b=positions.get(child.id);if(b)edges.push({a:n,b,type:'descent'});
-      });
-    });
-  }
+  const edges=relationshipEdges(nodes);
   return {nodes,edges,width:stageWidth,height};
 }
 
-function pathFor(edge){
+function measuredNode(stage,id){
+  const node=[...stage.querySelectorAll('.family-tree-node')].find(el=>el.dataset.person===id);
+  if(!node)return null;
+  const cx=node.offsetLeft,cy=node.offsetTop;
+  const halfW=node.offsetWidth/2,halfH=node.offsetHeight/2;
+  return {cx,cy,left:cx-halfW,right:cx+halfW,top:cy-halfH,bottom:cy+halfH};
+}
+
+function pathFor(edge,stage){
   if(edge.type==='partner'){
-    const x1=edge.a.x+(edge.a.x<edge.b.x?83:-83);
-    const x2=edge.b.x+(edge.a.x<edge.b.x?-83:83);
-    return 'M '+x1+' '+edge.a.y+' L '+x2+' '+edge.b.y;
+    const a=measuredNode(stage,edge.fromId),b=measuredNode(stage,edge.toId);
+    if(!a||!b)return null;
+    const left=a.cx<=b.cx?a:b;
+    const right=a.cx<=b.cx?b:a;
+    const y=(left.cy+right.cy)/2;
+    return 'M '+left.right+' '+y+' L '+right.left+' '+y;
   }
-  const a=edge.a,b=edge.b;
-  const fromY=a.y+(edge.fromUnion?0:38);
-  const toY=b.y-38;
-  const mid=(fromY+toY)/2;
-  return 'M '+a.x+' '+fromY+' L '+a.x+' '+mid+' L '+b.x+' '+mid+' L '+b.x+' '+toY;
+  const b=measuredNode(stage,edge.toId);
+  if(!b)return null;
+  let fromX,fromY;
+  if(edge.fromUnion){
+    const a=measuredNode(stage,edge.fromUnion[0]),partner=measuredNode(stage,edge.fromUnion[1]);
+    if(!a||!partner)return null;
+    fromX=(a.cx+partner.cx)/2;
+    fromY=(a.cy+partner.cy)/2;
+  }else{
+    const a=measuredNode(stage,edge.fromId);
+    if(!a)return null;
+    fromX=a.cx;fromY=a.bottom;
+  }
+  const toX=b.cx,toY=b.top;
+  const mid=fromY+(toY-fromY)/2;
+  return 'M '+fromX+' '+fromY+' L '+fromX+' '+mid+' L '+toX+' '+mid+' L '+toX+' '+toY;
+}
+
+function drawEdges(svg,stage,edges){
+  svg.replaceChildren();
+  const junctions=[];
+  edges.forEach(edge=>{
+    const d=pathFor(edge,stage);
+    if(!d)return;
+    const p=document.createElementNS('http://www.w3.org/2000/svg','path');
+    const active=edge.fromId===selected.id||edge.toId===selected.id||(edge.fromUnion||[]).includes(selected.id);
+    p.setAttribute('d',d);
+    p.setAttribute('class',[edge.type==='partner'?'is-partner':'',active?'is-active':''].filter(Boolean).join(' '));
+    svg.append(p);
+    if(edge.fromUnion){
+      const a=measuredNode(stage,edge.fromUnion[0]),b=measuredNode(stage,edge.fromUnion[1]);
+      if(a&&b)junctions.push({x:(a.cx+b.cx)/2,y:(a.cy+b.cy)/2,active});
+    }
+  });
+  const seen=new Set();
+  junctions.forEach(j=>{
+    const key=Math.round(j.x)+'|'+Math.round(j.y);
+    if(seen.has(key))return;seen.add(key);
+    const dot=document.createElementNS('http://www.w3.org/2000/svg','circle');
+    dot.setAttribute('cx',j.x);dot.setAttribute('cy',j.y);dot.setAttribute('r','3');
+    dot.setAttribute('class','family-tree-junction'+(j.active?' is-active':''));
+    svg.append(dot);
+  });
 }
 
 function treeNode(n){
@@ -222,15 +273,11 @@ function renderTree(){
   const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
   svg.setAttribute('class','family-tree-lines');svg.setAttribute('viewBox','0 0 '+layout.width+' '+layout.height);
   svg.setAttribute('aria-hidden','true');
-  layout.edges.forEach(edge=>{
-    const p=document.createElementNS('http://www.w3.org/2000/svg','path');
-    p.setAttribute('d',pathFor(edge));p.setAttribute('class',edge.type==='partner'?'is-partner':'');
-    svg.append(p);
-  });
   stage.append(svg);
   layout.nodes.forEach(n=>stage.append(treeNode(n)));
   tree.append(stage);
   requestAnimationFrame(()=>{
+    drawEdges(svg,stage,layout.edges);
     const focus=tree.querySelector('.is-focus');
     if(focus&&canvas){
       const left=Math.max(0,focus.offsetLeft-canvas.clientWidth/2+focus.offsetWidth/2);
