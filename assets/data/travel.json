@@ -1,0 +1,403 @@
+{
+  "regions": {
+    "europe": [
+      "AL",
+      "AD",
+      "AM",
+      "AT",
+      "AZ",
+      "BY",
+      "BE",
+      "BA",
+      "BG",
+      "HR",
+      "CY",
+      "CZ",
+      "DK",
+      "EE",
+      "FI",
+      "FR",
+      "GE",
+      "DE",
+      "GR",
+      "HU",
+      "IS",
+      "IE",
+      "IT",
+      "KZ",
+      "XK",
+      "LV",
+      "LI",
+      "LT",
+      "LU",
+      "MT",
+      "MD",
+      "MC",
+      "ME",
+      "NL",
+      "MK",
+      "NO",
+      "PL",
+      "PT",
+      "RO",
+      "RU",
+      "SM",
+      "RS",
+      "SK",
+      "SI",
+      "ES",
+      "SE",
+      "CH",
+      "TR",
+      "UA",
+      "GB",
+      "VA"
+    ],
+    "americas": [
+      "CA",
+      "US",
+      "AR",
+      "CL",
+      "AG",
+      "BS",
+      "BB",
+      "CU",
+      "DM",
+      "DO",
+      "GD",
+      "HT",
+      "JM",
+      "KN",
+      "LC",
+      "VC",
+      "TT"
+    ],
+    "asia": [
+      "CN",
+      "JP",
+      "TH",
+      "MY",
+      "ID"
+    ],
+    "africa": [
+      "EG",
+      "MA"
+    ],
+    "oceania": [
+      "AU"
+    ]
+  },
+  "entries": {
+    "ID": {
+      "year": "April 2026 · 15 days",
+      "note": {
+        "en": "Jakarta → Komodo → Ubud → Ijen → Bromo → Yogyakarta → Semarang → Borneo",
+        "es": "Jakarta → Komodo → Ubud → Ijen → Bromo → Yogyakarta → Semarang → Borneo",
+        "ja": "ジャカルタ → コモド → ウブド → イジェン → ブロモ → ジョグジャカルタ → スマラン → ボルネオ",
+        "zh": "雅加达 → 科莫多 → 乌布 → 伊真 → 布罗莫 → 日惹 → 三宝垄 → 婆罗洲"
+      },
+      "places": {
+        "en": [
+          "Jakarta",
+          "Komodo",
+          "Ubud",
+          "Ijen",
+          "Bromo",
+          "Yogyakarta",
+          "Semarang",
+          "Borneo"
+        ],
+        "es": [
+          "Jakarta",
+          "Komodo",
+          "Ubud",
+          "Ijen",
+          "Bromo",
+          "Yogyakarta",
+          "Semarang",
+          "Borneo"
+        ],
+        "ja": [
+          "ジャカルタ",
+          "コモド",
+          "ウブド",
+          "イジェン",
+          "ブロモ",
+          "ジョグジャカルタ",
+          "スマラン",
+          "ボルネオ"
+        ],
+        "zh": [
+          "雅加达",
+          "科莫多",
+          "乌布",
+          "伊真",
+          "布罗莫",
+          "日惹",
+          "三宝垄",
+          "婆罗洲"
+        ]
+      },
+      "memory": {
+        "en": "Orangutans, volcanoes, dragons and one dead Sony RX100.",
+        "es": "Orangutanes, volcanes, dragones y una Sony RX100 muerta.",
+        "ja": "オランウータン、火山、ドラゴン、そして壊れた Sony RX100。",
+        "zh": "红毛猩猩、火山、科莫多龙，还有一台报废的 Sony RX100。"
+      },
+      "photos": [
+        {
+          "file": "travel/indonesia/dsc05597.webp",
+          "alt": {
+            "en": "Boats beneath a sunset sky in Indonesia",
+            "es": "Barcos bajo un cielo de atardecer en Indonesia",
+            "ja": "インドネシアの夕焼けと船",
+            "zh": "印度尼西亚夕阳下的船只"
+          },
+          "region": "nusa-tenggara"
+        },
+        {
+          "file": "travel/indonesia/dsc05836.webp",
+          "alt": {
+            "en": "Traditional green figure in Indonesia",
+            "es": "Figura tradicional verde en Indonesia",
+            "ja": "インドネシアの伝統的な緑色の像",
+            "zh": "印度尼西亚的绿色传统形象"
+          },
+          "region": "bali"
+        },
+        {
+          "file": "travel/indonesia/dsc06337.webp",
+          "alt": {
+            "en": "Volcanic ridge before sunrise",
+            "es": "Cresta volcánica antes del amanecer",
+            "ja": "夜明け前の火山稜線",
+            "zh": "日出前的火山山脊"
+          },
+          "region": "java"
+        },
+        {
+          "file": "travel/indonesia/dsc06812.webp",
+          "alt": {
+            "en": "Volcanic landscape in golden light",
+            "es": "Paisaje volcánico con luz dorada",
+            "ja": "黄金色の光に包まれた火山風景",
+            "zh": "金色光线下的火山景观"
+          },
+          "region": "java"
+        },
+        {
+          "file": "travel/indonesia/dsc07440.webp",
+          "alt": {
+            "en": "Temple complex in Java",
+            "es": "Complejo de templos en Java",
+            "ja": "ジャワ島の寺院群",
+            "zh": "爪哇的寺庙建筑群"
+          },
+          "region": "java"
+        },
+        {
+          "file": "travel/indonesia/dsc08278.webp",
+          "alt": {
+            "en": "Orangutan in Borneo",
+            "es": "Orangután en Borneo",
+            "ja": "ボルネオのオランウータン",
+            "zh": "婆罗洲的红毛猩猩"
+          },
+          "region": "kalimantan"
+        },
+        {
+          "file": "travel/indonesia/dsc08494.webp",
+          "alt": {
+            "en": "Proboscis monkey in Borneo",
+            "es": "Mono narigudo en Borneo",
+            "ja": "ボルネオのテングザル",
+            "zh": "婆罗洲的长鼻猴"
+          },
+          "region": "kalimantan"
+        },
+        {
+          "file": "travel/indonesia/dsc04805.webp",
+          "alt": {
+            "en": "Viewpoint over the Indonesian coast",
+            "es": "Mirador sobre la costa de Indonesia",
+            "ja": "インドネシアの海岸を望む展望台",
+            "zh": "俯瞰印度尼西亚海岸的观景点"
+          },
+          "region": "nusa-tenggara"
+        },
+        {
+          "file": "travel/indonesia/dsc05469.webp",
+          "alt": {
+            "en": "Komodo dragon",
+            "es": "Dragón de Komodo",
+            "ja": "コモドドラゴン",
+            "zh": "科莫多巨蜥"
+          },
+          "region": "nusa-tenggara"
+        }
+      ],
+      "heroPhoto": "travel/indonesia/dsc06812.webp"
+    }
+  },
+  "entrySchema": {
+    "year": null,
+    "note": {},
+    "places": {},
+    "photo": null,
+    "memory": {},
+    "photos": [],
+    "heroPhoto": null,
+    "subdivisions": null
+  },
+  "subdivisions": {
+    "ID": {
+      "asset": "maps/indonesia-regions.svg",
+      "regions": {
+        "sumatra": {
+          "name": {
+            "en": "Sumatra",
+            "es": "Sumatra",
+            "ja": "スマトラ",
+            "zh": "苏门答腊"
+          },
+          "visited": false
+        },
+        "java": {
+          "name": {
+            "en": "Java",
+            "es": "Java",
+            "ja": "ジャワ",
+            "zh": "爪哇"
+          },
+          "visited": true,
+          "places": {
+            "en": [
+              "Jakarta",
+              "Ijen",
+              "Bromo",
+              "Yogyakarta",
+              "Semarang"
+            ],
+            "es": [
+              "Jakarta",
+              "Ijen",
+              "Bromo",
+              "Yogyakarta",
+              "Semarang"
+            ],
+            "ja": [
+              "ジャカルタ",
+              "イジェン",
+              "ブロモ",
+              "ジョグジャカルタ",
+              "スマラン"
+            ],
+            "zh": [
+              "雅加达",
+              "伊真",
+              "布罗莫",
+              "日惹",
+              "三宝垄"
+            ]
+          }
+        },
+        "bali": {
+          "name": {
+            "en": "Bali",
+            "es": "Bali",
+            "ja": "バリ",
+            "zh": "巴厘岛"
+          },
+          "visited": true,
+          "places": {
+            "en": [
+              "Ubud"
+            ],
+            "es": [
+              "Ubud"
+            ],
+            "ja": [
+              "ウブド"
+            ],
+            "zh": [
+              "乌布"
+            ]
+          }
+        },
+        "nusa-tenggara": {
+          "name": {
+            "en": "Nusa Tenggara",
+            "es": "Nusa Tenggara",
+            "ja": "ヌサ・トゥンガラ",
+            "zh": "努沙登加拉"
+          },
+          "visited": true,
+          "places": {
+            "en": [
+              "Komodo"
+            ],
+            "es": [
+              "Komodo"
+            ],
+            "ja": [
+              "コモド"
+            ],
+            "zh": [
+              "科莫多"
+            ]
+          }
+        },
+        "kalimantan": {
+          "name": {
+            "en": "Kalimantan",
+            "es": "Kalimantan",
+            "ja": "カリマンタン",
+            "zh": "加里曼丹"
+          },
+          "visited": true,
+          "places": {
+            "en": [
+              "Borneo"
+            ],
+            "es": [
+              "Borneo"
+            ],
+            "ja": [
+              "ボルネオ"
+            ],
+            "zh": [
+              "婆罗洲"
+            ]
+          }
+        },
+        "sulawesi": {
+          "name": {
+            "en": "Sulawesi",
+            "es": "Sulawesi",
+            "ja": "スラウェシ",
+            "zh": "苏拉威西"
+          },
+          "visited": false
+        },
+        "maluku": {
+          "name": {
+            "en": "Maluku",
+            "es": "Molucas",
+            "ja": "マルク",
+            "zh": "马鲁古"
+          },
+          "visited": false
+        },
+        "papua": {
+          "name": {
+            "en": "Papua",
+            "es": "Papúa",
+            "ja": "パプア",
+            "zh": "巴布亚"
+          },
+          "visited": false
+        }
+      }
+    }
+  }
+}

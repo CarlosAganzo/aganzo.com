@@ -1,0 +1,29 @@
+{
+  "updated": "2026-09-19",
+  "items": [
+    {
+      "label": "watching",
+      "value": "Nathan for You",
+      "valueKey": null,
+      "url": "https://www.imdb.com/title/tt2297757/"
+    },
+    {
+      "label": "listening",
+      "value": "Aphex Twin",
+      "valueKey": null,
+      "url": "https://open.spotify.com/artist/2b9LjccE4dz9lGsD3RtTuw"
+    },
+    {
+      "label": "reading",
+      "value": "Kokoro — Natsume Sōseki",
+      "valueKey": null,
+      "url": "https://www.penguin.co.uk/books/178231/kokoro-by-soseki-natsume/9780143106036"
+    },
+    {
+      "label": "obsession",
+      "value": "Japanese denim",
+      "valueKey": "denim",
+      "url": "https://www.heddels.com/2019/08/raw-japanese-denim-beginners-guide-japans-biggest-labels/"
+    }
+  ]
+}
