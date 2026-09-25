@@ -1,20 +1,56 @@
 [
   {
-    "file": "portrait-2026.webp",
-    "caption": "portrait1",
-    "width": 640,
-    "height": 853
+    "file": "photography/photo-01.webp",
+    "caption": "photo01",
+    "width": 700,
+    "height": 700
   },
   {
-    "file": "library.webp",
-    "caption": "portrait2",
-    "width": 520,
-    "height": 558
+    "file": "photography/photo-02.webp",
+    "caption": "photo02",
+    "width": 700,
+    "height": 700
   },
   {
-    "file": "portrait-field-hq.webp",
-    "caption": "portrait3",
-    "width": 1000,
-    "height": 1250
+    "file": "photography/photo-03.webp",
+    "caption": "photo03",
+    "width": 700,
+    "height": 525
+  },
+  {
+    "file": "photography/photo-04.webp",
+    "caption": "photo04",
+    "width": 700,
+    "height": 525
+  },
+  {
+    "file": "photography/photo-05.webp",
+    "caption": "photo05",
+    "width": 700,
+    "height": 525
+  },
+  {
+    "file": "photography/photo-06.webp",
+    "caption": "photo06",
+    "width": 700,
+    "height": 525
+  },
+  {
+    "file": "photography/photo-07.webp",
+    "caption": "photo07",
+    "width": 700,
+    "height": 525
+  },
+  {
+    "file": "photography/photo-08.webp",
+    "caption": "photo08",
+    "width": 700,
+    "height": 525
+  },
+  {
+    "file": "photography/photo-09.webp",
+    "caption": "photo09",
+    "width": 700,
+    "height": 525
   }
 ]

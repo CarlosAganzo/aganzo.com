@@ -2405,3 +2405,54 @@ dialog>.micro {
   .arcade-marquee{overflow-x:auto;mask-image:none}
   .arcade-group[aria-hidden="true"]{display:none}
 }
+
+
+/* Photography — September 2026 portfolio refresh */
+.photos-heading{padding-bottom:52px}
+.contact-sheet{padding:30px 0 86px}
+.photo-grid{
+  display:grid;
+  grid-template-columns:repeat(12,minmax(0,1fr));
+  align-items:start;
+  gap:38px 24px;
+  padding:20px 0 0;
+}
+.photo-grid .photo-item{margin-top:0;min-width:0}
+.photo-item--wide{grid-column:span 8}
+.photo-item--standard{grid-column:span 4}
+.photo-item--final{grid-column:3 / span 8}
+.photo-grid .photo-item--offset{margin-top:88px}
+.photo-button{overflow:hidden;background:#d8d2c5}
+.photo-button img{
+  width:100%;
+  height:auto;
+  transition:transform .28s ease,filter .28s ease;
+}
+.photo-button:hover img{outline:none;transform:scale(1.012);filter:contrast(1.025)}
+.photo-item figcaption{
+  margin-top:11px;
+  padding-top:9px;
+  font:10px/1.45 var(--mono);
+  letter-spacing:.055em;
+  text-transform:uppercase;
+}
+.photo-item figcaption>:nth-child(2){text-transform:none;letter-spacing:0;font-family:var(--sans);font-size:11px}
+@media(max-width:780px){
+  .photo-grid{grid-template-columns:1fr 1fr;gap:34px 18px}
+  .photo-item--wide,.photo-item--standard{grid-column:auto}
+  .photo-item--final{grid-column:1 / -1;width:min(82%,620px);justify-self:center}
+  .photo-grid .photo-item--offset{margin-top:54px}
+}
+@media(max-width:560px){
+  .photos-heading{padding-bottom:36px}
+  .contact-sheet{padding-bottom:58px}
+  .photo-grid{display:block;padding-top:8px}
+  .photo-grid .photo-item,
+  .photo-grid .photo-item--offset,
+  .photo-item--final{width:100%;margin:0 0 38px}
+  .photo-item figcaption{margin-top:8px}
+}
+@media(prefers-reduced-motion:reduce){
+  .photo-button img{transition:none}
+  .photo-button:hover img{transform:none}
+}

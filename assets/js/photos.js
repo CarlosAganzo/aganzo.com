@@ -1,4 +1,4 @@
-import {load,translate as t,onLanguage} from './site.js?v=20260922-main';
+import {load,translate as t,onLanguage} from './site.js?v=20260925-photo';
 const photos=await load('photos');
 const dialog=document.getElementById('photo-dialog');
 const img=document.getElementById('viewer-image');

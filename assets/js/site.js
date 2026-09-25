@@ -6,7 +6,7 @@ if(location.pathname==='/' && legacySections[location.hash]){
 const base = '/';
 const page = document.body.dataset.page;
 const params = new URLSearchParams(location.search);
-const assetVersion = '20260922-main';
+const assetVersion = '20260925-photo';
 const load = async name => {
   const version = name === 'now' ? Date.now() : assetVersion;
   const options = name === 'now' ? { cache: 'no-store' } : undefined;
@@ -77,6 +77,6 @@ if(page==='home'){
   motion.addEventListener('change',()=>{if(motion.matches){playing=false;sync();}});
   onLanguage(sync);
 }
-if(page==='travel')import('./travel.js?v=20260922-main').catch(console.error);
-if(page==='photos')import('./photos.js?v=20260922-main').catch(console.error);
-if(page==='lists')import('./music.js?v=20260922-main').catch(console.error);
+if(page==='travel')import('./travel.js?v=20260925-photo').catch(console.error);
+if(page==='photos')import('./photos.js?v=20260925-photo').catch(console.error);
+if(page==='lists')import('./music.js?v=20260925-photo').catch(console.error);
