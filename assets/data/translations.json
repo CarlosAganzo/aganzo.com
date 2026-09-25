@@ -324,7 +324,8 @@
     "photo06": "Alpine dusk",
     "photo07": "Between clouds",
     "photo08": "Break in the weather",
-    "photo09": "Ice"
+    "photo09": "Ice",
+    "gamesOrigin": "My history with video games probably began around 1980, in Benidorm. I was four or five, sitting at a Pac-Man cabinet, when some foreign tourist dropped a 25-peseta coin — five duros — into the machine for me. I do not remember him. I remember that."
   },
   "es": {
     "emailLabel": "Correo electrónico",
@@ -651,7 +652,8 @@
     "photo06": "Anochecer alpino",
     "photo07": "Entre nubes",
     "photo08": "Un claro en la tormenta",
-    "photo09": "Hielo"
+    "photo09": "Hielo",
+    "gamesOrigin": "Mi historia con los videojuegos debió de empezar hacia 1980, en Benidorm. Yo tenía cuatro o cinco años y estaba sentado frente a una máquina de Pac-Man cuando un guiri echó cinco duros para que jugara. No recuerdo quién era. Eso sí lo recuerdo."
   },
   "ja": {
     "emailLabel": "メール",
@@ -978,7 +980,8 @@
     "photo06": "アルプスの夕暮れ",
     "photo07": "雲の間",
     "photo08": "嵐の切れ間",
-    "photo09": "氷"
+    "photo09": "氷",
+    "gamesOrigin": "僕とビデオゲームの歴史は、たぶん1980年ごろのベニドルムで始まった。4歳か5歳の僕がパックマンの筐体の前に座っていると、外国人旅行者が僕のために25ペセタ硬貨――「5ドゥロ」――を入れてくれた。その人のことは覚えていない。でも、その瞬間は覚えている。"
   },
   "zh": {
     "emailLabel": "电子邮件",
@@ -1305,6 +1308,7 @@
     "photo06": "阿尔卑斯暮色",
     "photo07": "云间",
     "photo08": "风暴中的间隙",
-    "photo09": "冰"
+    "photo09": "冰",
+    "gamesOrigin": "我和电子游戏的故事，大概始于1980年前后的贝尼多姆。那时我四五岁，坐在一台《吃豆人》街机前，一个外国游客替我往机器里投了25比塞塔——也就是“五个杜罗”。我不记得那个人是谁，但我记得这件事。"
   }
 }
