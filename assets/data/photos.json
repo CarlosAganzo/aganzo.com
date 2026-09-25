@@ -52,5 +52,29 @@
     "caption": "photo09",
     "width": 700,
     "height": 525
+  },
+  {
+    "file": "photography/photo-10.webp",
+    "caption": "photo10",
+    "width": 900,
+    "height": 675
+  },
+  {
+    "file": "photography/photo-11.webp",
+    "caption": "photo11",
+    "width": 900,
+    "height": 675
+  },
+  {
+    "file": "photography/photo-12.webp",
+    "caption": "photo12",
+    "width": 900,
+    "height": 600
+  },
+  {
+    "file": "photography/photo-13.webp",
+    "caption": "photo13",
+    "width": 900,
+    "height": 675
   }
 ]

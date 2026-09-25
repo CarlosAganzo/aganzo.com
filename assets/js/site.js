@@ -77,6 +77,6 @@ if(page==='home'){
   motion.addEventListener('change',()=>{if(motion.matches){playing=false;sync();}});
   onLanguage(sync);
 }
-if(page==='travel')import('./travel.js?v=20260925-photo').catch(console.error);
-if(page==='photos')import('./photos.js?v=20260925-photo').catch(console.error);
-if(page==='lists')import('./music.js?v=20260925-photo').catch(console.error);
+if(page==='travel')import('./travel.js?v=20260925-photo2').catch(console.error);
+if(page==='photos')import('./photos.js?v=20260925-photo2').catch(console.error);
+if(page==='lists')import('./music.js?v=20260925-photo2').catch(console.error);
