@@ -3,7 +3,10 @@
     "file": "photography/photo-01.webp",
     "caption": "photo01",
     "width": 700,
-    "height": 700
+    "height": 700,
+    "full": "photography/photo-01-full.webp",
+    "fullWidth": 1254,
+    "fullHeight": 1254
   },
   {
     "file": "photography/photo-02.webp",
@@ -57,24 +60,36 @@
     "file": "photography/photo-10.webp",
     "caption": "photo10",
     "width": 900,
-    "height": 675
+    "height": 675,
+    "full": "photography/photo-10-full.webp",
+    "fullWidth": 1448,
+    "fullHeight": 1086
   },
   {
     "file": "photography/photo-11.webp",
     "caption": "photo11",
     "width": 900,
-    "height": 675
+    "height": 675,
+    "full": "photography/photo-11-full.webp",
+    "fullWidth": 1448,
+    "fullHeight": 1086
   },
   {
     "file": "photography/photo-12.webp",
     "caption": "photo12",
     "width": 900,
-    "height": 600
+    "height": 600,
+    "full": "photography/photo-12-full.webp",
+    "fullWidth": 1536,
+    "fullHeight": 1024
   },
   {
     "file": "photography/photo-13.webp",
     "caption": "photo13",
     "width": 900,
-    "height": 675
+    "height": 675,
+    "full": "photography/photo-13-full.webp",
+    "fullWidth": 1448,
+    "fullHeight": 1086
   }
 ]
