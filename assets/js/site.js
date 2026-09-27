@@ -6,7 +6,7 @@ if(location.pathname==='/' && legacySections[location.hash]){
 const base = '/';
 const page = document.body.dataset.page;
 const params = new URLSearchParams(location.search);
-const assetVersion = '20260927-seo3';
+const assetVersion = '20260927-seo4';
 const load = async name => {
   const version = name === 'now' ? Date.now() : assetVersion;
   const options = name === 'now' ? { cache: 'no-store' } : undefined;
@@ -59,7 +59,7 @@ function setLanguage(value){
   document.querySelector('meta[property="og:locale"]').content=({en:'en_GB',es:'es_ES',ja:'ja_JP',zh:'zh_CN'})[lang];
   document.querySelector('meta[property="og:title"]').content=document.title;
   try {localStorage.setItem('aganzo-v2-language',lang);localStorage.setItem('aganzo-language',lang);} catch {}
-  const current = new URL(location.href);current.searchParams.set('lang',lang);history.replaceState(null,'',current);
+  const current = new URL(location.href);if(lang==='ja'||lang==='zh')current.searchParams.set('lang',lang);else current.searchParams.delete('lang');history.replaceState(null,'',current);
   updateLinks();
   listeners.forEach(fn=>fn());
   document.documentElement.classList.remove('i18n-pending');
@@ -107,6 +107,6 @@ if(page==='home'){
   motion.addEventListener('change',()=>{if(motion.matches){playing=false;sync();}});
   onLanguage(sync);
 }
-if(page==='travel')import('./travel.js?v=20260927-seo3').catch(console.error);
-if(page==='photos')import('./photos.js?v=20260927-seo3').catch(console.error);
-if(page==='lists'||page==='music')import('./music.js?v=20260927-seo3').catch(console.error);
+if(page==='travel')import('./travel.js?v=20260927-seo4').catch(console.error);
+if(page==='photos')import('./photos.js?v=20260927-seo4').catch(console.error);
+if(page==='lists'||page==='music')import('./music.js?v=20260927-seo4').catch(console.error);
