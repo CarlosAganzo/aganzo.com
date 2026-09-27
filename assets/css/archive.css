@@ -385,6 +385,12 @@
   gap:1.8rem 1.1rem;
   padding-top:1rem
 }
+.archive-media-empty{
+  grid-column:1/-1;
+  margin:0;
+  padding:1rem 0 2rem;
+  border-top:1px solid var(--ink,#222)
+}
 .archive-file-card{
   min-width:0;
   border-top:1px solid var(--ink,#222);
