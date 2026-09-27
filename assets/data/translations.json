@@ -389,7 +389,11 @@
     "moreBooksNotes": "More book notes",
     "cronenbergNote": "Bodies, identity, technology and desire — usually behaving badly.",
     "watersNote": "Bad taste as an art form; provocation with a sense of humour.",
-    "polanskiNote": "Paranoia, confinement and the suspicion that the room itself has turned against you."
+    "polanskiNote": "Paranoia, confinement and the suspicion that the room itself has turned against you.",
+    "refnNote": "Neon, silence, ritualised violence and lonely people moving through hostile worlds.",
+    "lynchNote": "Dream logic, tenderness and dread sharing the same room.",
+    "hanekeNote": "Distance, discomfort and violence stripped of spectacle.",
+    "kurosawaNote": "Empty spaces, quiet dread and the feeling that something is wrong long before you know what."
   },
   "es": {
     "emailLabel": "Correo electrónico",
@@ -781,7 +785,11 @@
     "moreBooksNotes": "Más notas de libros",
     "cronenbergNote": "Cuerpo, identidad, tecnología y deseo; casi siempre comportándose bastante mal.",
     "watersNote": "El mal gusto como forma de arte; provocación con sentido del humor.",
-    "polanskiNote": "Paranoia, encierro y la sospecha de que hasta la habitación se ha puesto en tu contra."
+    "polanskiNote": "Paranoia, encierro y la sospecha de que hasta la habitación se ha puesto en tu contra.",
+    "refnNote": "Neón, silencio, violencia ritualizada y gente sola atravesando mundos hostiles.",
+    "lynchNote": "Lógica de sueño, ternura e inquietud compartiendo la misma habitación.",
+    "hanekeNote": "Distancia, incomodidad y violencia despojada de espectáculo.",
+    "kurosawaNote": "Espacios vacíos, inquietud silenciosa y la sensación de que algo va mal mucho antes de saber qué."
   },
   "ja": {
     "emailLabel": "メール",
@@ -1173,7 +1181,11 @@
     "moreBooksNotes": "本についてもっと",
     "cronenbergNote": "身体、アイデンティティ、テクノロジー、欲望。たいてい、どれもろくな方向には進まない。",
     "watersNote": "悪趣味を芸術に変える。挑発にはちゃんとユーモアがある。",
-    "polanskiNote": "パラノイア、閉塞感、そして部屋そのものが自分に敵対し始めたような感覚。"
+    "polanskiNote": "パラノイア、閉塞感、そして部屋そのものが自分に敵対し始めたような感覚。",
+    "refnNote": "ネオン、沈黙、儀式めいた暴力。そして敵意ある世界を進む孤独な人々。",
+    "lynchNote": "夢の論理、優しさ、不穏さが同じ部屋に同居する。",
+    "hanekeNote": "距離、不快感、そして見世物性を剥ぎ取られた暴力。",
+    "kurosawaNote": "空虚な空間、静かな不安、そして何が起きているのか分かる前から何かがおかしいという感覚。"
   },
   "zh": {
     "emailLabel": "电子邮件",
@@ -1565,6 +1577,10 @@
     "moreBooksNotes": "更多书籍笔记",
     "cronenbergNote": "身体、身份、技术与欲望——通常都会朝不太妙的方向发展。",
     "watersNote": "把坏品味变成艺术；挑衅里始终带着幽默感。",
-    "polanskiNote": "偏执、幽闭，以及连房间本身都仿佛开始与你作对的感觉。"
+    "polanskiNote": "偏执、幽闭，以及连房间本身都仿佛开始与你作对的感觉。",
+    "refnNote": "霓虹、沉默、仪式化的暴力，以及独自穿行于敌意世界中的人。",
+    "lynchNote": "梦的逻辑、温柔与不安共处一室。",
+    "hanekeNote": "距离感、不适，以及被剥去 spectacle 的暴力。",
+    "kurosawaNote": "空旷空间、安静的不安，以及在你知道哪里不对之前就已经出现的异样感。"
   }
 }
