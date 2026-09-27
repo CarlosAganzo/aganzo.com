@@ -255,7 +255,7 @@
     "collectPokemonNote": "Japanese promos, artists, oddities and the constant suspicion that one more card will complete something.",
     "collectGameWatchNote": "A very efficient way to turn childhood memory into shelf space.",
     "opinionsTitle": "Unreasonably specific opinions",
-    "opinionsIntro": "Not a manifesto. Just several hills with my flag already planted.",
+    "opinionsIntro": "Some cultural arguments I consider closed.",
     "opinionB52": "The early records: yes. “Love Shack”: absolutely not.",
     "opinionArctic": "Mostly “505”. I am comfortable with this.",
     "opinionDune": "Dune > Star Wars.",
@@ -329,7 +329,16 @@
     "photo10": "Laurel forest",
     "photo11": "In the rain",
     "photo12": "Light over the ridge",
-    "photo13": "Storm coast"
+    "photo13": "Storm coast",
+    "opinionVerhoeven": "I have yet to find a Verhoeven film I dislike.",
+    "opinionLumines": "The only Tetris-like game I have ever needed.",
+    "opinionDeadly": "In its strange little genre, the best game ever made.",
+    "opinionLabelSoundtracks": "Video-game soundtracks",
+    "opinionSoundtracks": "Usually irrelevant. Dune (Cryo, 1992) and NieR are the exceptions.",
+    "opinionLabelBiopics": "Music biopics",
+    "opinionWalkHard": "Walk Hard is better than the films it parodies.",
+    "opinionLabelFPS": "Multiplayer FPS",
+    "opinionFPS": "I stopped at LAN Doom. That was enough."
   },
   "es": {
     "emailLabel": "Correo electrónico",
@@ -587,7 +596,7 @@
     "collectPokemonNote": "Promos japonesas, ilustradores, rarezas y la sospecha constante de que una carta más completará algo.",
     "collectGameWatchNote": "Una forma muy eficiente de convertir recuerdos de infancia en espacio de estantería.",
     "opinionsTitle": "Opiniones absurdamente específicas",
-    "opinionsIntro": "No es un manifiesto. Solo unas cuantas colinas donde ya he plantado la bandera.",
+    "opinionsIntro": "Algunas discusiones culturales que doy por cerradas.",
     "opinionB52": "Los primeros discos: sí. “Love Shack”: ni de coña.",
     "opinionArctic": "Básicamente “505”. Estoy perfectamente cómodo con ello.",
     "opinionDune": "Dune > Star Wars.",
@@ -661,7 +670,16 @@
     "photo10": "Laurisilva",
     "photo11": "Bajo la lluvia",
     "photo12": "Luz sobre la cresta",
-    "photo13": "Costa bajo la tormenta"
+    "photo13": "Costa bajo la tormenta",
+    "opinionVerhoeven": "Todavía no he encontrado una película de Verhoeven que no me guste.",
+    "opinionLumines": "El único juego tipo Tetris que he necesitado jamás.",
+    "opinionDeadly": "En su pequeño y extraño género, el mejor juego que se ha hecho.",
+    "opinionLabelSoundtracks": "Bandas sonoras de videojuegos",
+    "opinionSoundtracks": "Normalmente me dan igual. Dune (Cryo, 1992) y NieR son las excepciones.",
+    "opinionLabelBiopics": "Biopics musicales",
+    "opinionWalkHard": "Walk Hard es mejor que las películas que parodia.",
+    "opinionLabelFPS": "FPS multijugador",
+    "opinionFPS": "Me quedé en el Doom por LAN. Era suficiente."
   },
   "ja": {
     "emailLabel": "メール",
@@ -919,7 +937,7 @@
     "collectPokemonNote": "日本のプロモ、作家、妙なカード、そして「あと一枚で何かが完成する」という永遠の疑い。",
     "collectGameWatchNote": "子どもの頃の記憶を棚の占有面積に変える効率的な方法。",
     "opinionsTitle": "妙に具体的な意見",
-    "opinionsIntro": "マニフェストではありません。すでに旗を立てた丘がいくつかあるだけ。",
+    "opinionsIntro": "いくつかの文化的な議論については、もう結論が出ている。",
     "opinionB52": "初期作品は好き。“Love Shack”は絶対に違う。",
     "opinionArctic": "ほぼ“505”だけ。それで十分です。",
     "opinionDune": "Dune > Star Wars。",
@@ -993,7 +1011,16 @@
     "photo10": "月桂樹の森",
     "photo11": "雨の中",
     "photo12": "稜線に差す光",
-    "photo13": "嵐の海岸"
+    "photo13": "嵐の海岸",
+    "opinionVerhoeven": "嫌いなヴァーホーヴェン映画には、まだ出会っていない。",
+    "opinionLumines": "テトリス系ゲームは、Lumines があれば十分。",
+    "opinionDeadly": "あの奇妙な小ジャンルでは、史上最高のゲーム。",
+    "opinionLabelSoundtracks": "ゲーム音楽",
+    "opinionSoundtracks": "普段はどうでもいい。例外は Dune（Cryo, 1992）と NieR。",
+    "opinionLabelBiopics": "音楽伝記映画",
+    "opinionWalkHard": "Walk Hard は、パロディにしている映画より面白い。",
+    "opinionLabelFPS": "対戦FPS",
+    "opinionFPS": "LAN Doom で止まった。それで十分だった。"
   },
   "zh": {
     "emailLabel": "电子邮件",
@@ -1251,7 +1278,7 @@
     "collectPokemonNote": "日本促销卡、插画师、怪东西，以及“再来一张就能完成某个系列”的持续幻觉。",
     "collectGameWatchNote": "把童年记忆高效转换成书架空间的方法。",
     "opinionsTitle": "异常具体的观点",
-    "opinionsIntro": "不是宣言，只是几座我已经插旗的小山。",
+    "opinionsIntro": "有些文化争论，我已经认为可以结案了。",
     "opinionB52": "早期作品：可以。“Love Shack”：绝对不行。",
     "opinionArctic": "基本就是“505”。我对此毫无压力。",
     "opinionDune": "Dune > Star Wars。",
@@ -1325,6 +1352,15 @@
     "photo10": "月桂林",
     "photo11": "雨中",
     "photo12": "山脊之光",
-    "photo13": "风暴海岸"
+    "photo13": "风暴海岸",
+    "opinionVerhoeven": "我至今还没看过一部不喜欢的保罗·范霍文电影。",
+    "opinionLumines": "类《俄罗斯方块》的游戏，我有 Lumines 就够了。",
+    "opinionDeadly": "在它那个古怪的小类型里，这是史上最佳。",
+    "opinionLabelSoundtracks": "电子游戏配乐",
+    "opinionSoundtracks": "通常我并不在乎。Dune（Cryo, 1992）和 NieR 是例外。",
+    "opinionLabelBiopics": "音乐传记片",
+    "opinionWalkHard": "Walk Hard 比它所恶搞的那些电影都好。",
+    "opinionLabelFPS": "多人 FPS",
+    "opinionFPS": "我停在局域网 Doom 的年代。那已经够了。"
   }
 }
