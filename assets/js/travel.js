@@ -108,6 +108,15 @@ function renderDetail(){
     row.append(dt,dd);dl.append(row);
   }
   entry.append(dl);
+  if(country==='ID'){
+    const story=document.createElement('a');
+    story.className='trip-story-link';
+    const currentLang=language();
+    story.href=currentLang==='es'?'/es/travel/indonesia/':'/travel/indonesia/';
+    if(currentLang==='ja'||currentLang==='zh')story.href+='?lang='+currentLang;
+    story.textContent=t('tripPage');
+    entry.append(story);
+  }
   const photos=item.photos?.length?item.photos:(item.photo?[item.photo]:[]);
   const shown=subregion?photos.filter(photo=>photo.region===subregion):photos;
   renderGallery(shown,subregion?null:item.heroPhoto);
