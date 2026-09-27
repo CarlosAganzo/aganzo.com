@@ -51,6 +51,7 @@ function setLanguage(value){
   const current = new URL(location.href);current.searchParams.set('lang',lang);history.replaceState(null,'',current);
   updateLinks();
   listeners.forEach(fn=>fn());
+  document.documentElement.classList.remove('i18n-pending');
 }
 document.querySelectorAll('.brand').forEach(el=>{el.textContent=domain;});
 document.querySelectorAll('[data-page-link]').forEach(a=>{if(a.dataset.pageLink===page)a.setAttribute('aria-current','page');});
