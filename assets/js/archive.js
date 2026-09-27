@@ -1,4 +1,4 @@
-import {translate as t, onLanguage} from './site.js?v=20260922-main';
+import {translate as t, onLanguage} from './site.js?v=20260927-seo2';
 
 const demoPeople = [
   {id:'p1',name:'Elena Robles',birth:{date:'1924',place:''},death:{date:'2008',place:''},parents:['p2','p3'],spouses:[],children:[],media:[]},
