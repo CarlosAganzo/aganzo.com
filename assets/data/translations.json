@@ -257,7 +257,7 @@
     "opinionsTitle": "Unreasonably specific opinions",
     "opinionsIntro": "Some cultural arguments I consider closed.",
     "opinionB52": "The early records: yes. “Love Shack”: absolutely not.",
-    "opinionArctic": "Mostly “505”. I am comfortable with this.",
+    "opinionArctic": "I cannot stand them. “505” is the exception.",
     "opinionDune": "Dune > Star Wars.",
     "opinionRnB": "Aaliyah can stay. Most of the decade can leave.",
     "opinionNewsletter": "Humanity already has enough.",
@@ -338,7 +338,8 @@
     "opinionLabelBiopics": "Music biopics",
     "opinionWalkHard": "Walk Hard is better than the films it parodies.",
     "opinionLabelFPS": "Multiplayer FPS",
-    "opinionFPS": "I stopped at LAN Doom. That was enough."
+    "opinionFPS": "I stopped at LAN Doom. That was enough.",
+    "opinionFrankOcean": "R&B and I rarely agree. Frank Ocean made a record I thought was sensational."
   },
   "es": {
     "emailLabel": "Correo electrónico",
@@ -598,7 +599,7 @@
     "opinionsTitle": "Opiniones absurdamente específicas",
     "opinionsIntro": "Algunas discusiones culturales que doy por cerradas.",
     "opinionB52": "Los primeros discos: sí. “Love Shack”: ni de coña.",
-    "opinionArctic": "Básicamente “505”. Estoy perfectamente cómodo con ello.",
+    "opinionArctic": "No los soporto. “505” es la excepción.",
     "opinionDune": "Dune > Star Wars.",
     "opinionRnB": "Aaliyah puede quedarse. Casi todo el resto de los 90 puede irse.",
     "opinionNewsletter": "La humanidad ya tiene suficientes.",
@@ -679,7 +680,8 @@
     "opinionLabelBiopics": "Biopics musicales",
     "opinionWalkHard": "Walk Hard es mejor que las películas que parodia.",
     "opinionLabelFPS": "FPS multijugador",
-    "opinionFPS": "Me quedé en el Doom por LAN. Era suficiente."
+    "opinionFPS": "Me quedé en el Doom por LAN. Era suficiente.",
+    "opinionFrankOcean": "El R&B y yo rara vez nos entendemos. Frank Ocean consiguió hacer un disco que me pareció sensacional."
   },
   "ja": {
     "emailLabel": "メール",
@@ -939,7 +941,7 @@
     "opinionsTitle": "妙に具体的な意見",
     "opinionsIntro": "いくつかの文化的な議論については、もう結論が出ている。",
     "opinionB52": "初期作品は好き。“Love Shack”は絶対に違う。",
-    "opinionArctic": "ほぼ“505”だけ。それで十分です。",
+    "opinionArctic": "どうしても好きになれない。“505”だけは例外。",
     "opinionDune": "Dune > Star Wars。",
     "opinionRnB": "Aaliyahは残ってよい。90年代の大半は退場。",
     "opinionNewsletter": "人類にはもう十分あります。",
@@ -1020,7 +1022,8 @@
     "opinionLabelBiopics": "音楽伝記映画",
     "opinionWalkHard": "Walk Hard は、パロディにしている映画より面白い。",
     "opinionLabelFPS": "対戦FPS",
-    "opinionFPS": "LAN Doom で止まった。それで十分だった。"
+    "opinionFPS": "LAN Doom で止まった。それで十分だった。",
+    "opinionFrankOcean": "R&Bとはたいてい相性が悪い。でもFrank Oceanには、心から素晴らしいと思えたアルバムがある。"
   },
   "zh": {
     "emailLabel": "电子邮件",
@@ -1280,7 +1283,7 @@
     "opinionsTitle": "异常具体的观点",
     "opinionsIntro": "有些文化争论，我已经认为可以结案了。",
     "opinionB52": "早期作品：可以。“Love Shack”：绝对不行。",
-    "opinionArctic": "基本就是“505”。我对此毫无压力。",
+    "opinionArctic": "我完全受不了他们。“505”是唯一的例外。",
     "opinionDune": "Dune > Star Wars。",
     "opinionRnB": "Aaliyah 可以留下。90 年代的大部分其他东西可以走。",
     "opinionNewsletter": "人类已经有足够多的 newsletter 了。",
@@ -1361,6 +1364,7 @@
     "opinionLabelBiopics": "音乐传记片",
     "opinionWalkHard": "Walk Hard 比它所恶搞的那些电影都好。",
     "opinionLabelFPS": "多人 FPS",
-    "opinionFPS": "我停在局域网 Doom 的年代。那已经够了。"
+    "opinionFPS": "我停在局域网 Doom 的年代。那已经够了。",
+    "opinionFrankOcean": "我和R&B通常合不来，但Frank Ocean有一张专辑让我觉得非常出色。"
   }
 }
