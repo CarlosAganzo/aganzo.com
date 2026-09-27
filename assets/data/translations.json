@@ -226,7 +226,7 @@
     "filmTabReturn": "Return",
     "filmTabLaws": "Cinema laws",
     "filmTabComfort": "Comfort",
-    "filmLawsNote": "Some comparisons do not require a committee.",
+    "filmLawsNote": "I have had enough time to reconsider these. I haven't.",
     "filmComfortNote": "Not a guilty pleasure. Comfort media. Draw your own conclusions.",
     "songsExplain": "The most important songs in my life",
     "songsExplainIntro": "No genre logic, no attempt at balance. Just the songs that stayed.",
@@ -339,7 +339,10 @@
     "opinionWalkHard": "Walk Hard is better than the films it parodies.",
     "opinionLabelFPS": "Multiplayer FPS",
     "opinionFPS": "I stopped at LAN Doom. That was enough.",
-    "opinionFrankOcean": "R&B and I rarely agree. Frank Ocean made a record I thought was sensational."
+    "opinionFrankOcean": "R&B and I rarely agree. Frank Ocean made a record I thought was sensational.",
+    "filmLawEverything": "everything else",
+    "filmLawUnknown": "Unknown film",
+    "filmLawSequel": "sequel to a favourite"
   },
   "es": {
     "emailLabel": "Correo electrónico",
@@ -568,7 +571,7 @@
     "filmTabReturn": "Volver",
     "filmTabLaws": "Leyes del cine",
     "filmTabComfort": "Confort",
-    "filmLawsNote": "Hay comparaciones que no necesitan comité.",
+    "filmLawsNote": "He tenido tiempo de sobra para reconsiderar esto. No lo he hecho.",
     "filmComfortNote": "No es un placer culpable. Es comfort media. Saca tus propias conclusiones.",
     "songsExplain": "Las canciones más importantes de mi vida",
     "songsExplainIntro": "Sin lógica de géneros ni intento de equilibrio. Solo las canciones que se quedaron.",
@@ -681,7 +684,10 @@
     "opinionWalkHard": "Walk Hard es mejor que las películas que parodia.",
     "opinionLabelFPS": "FPS multijugador",
     "opinionFPS": "Me quedé en el Doom por LAN. Era suficiente.",
-    "opinionFrankOcean": "El R&B y yo rara vez nos entendemos. Frank Ocean consiguió hacer un disco que me pareció sensacional."
+    "opinionFrankOcean": "El R&B y yo rara vez nos entendemos. Frank Ocean consiguió hacer un disco que me pareció sensacional.",
+    "filmLawEverything": "todo lo demás",
+    "filmLawUnknown": "Película de la que no sé nada",
+    "filmLawSequel": "secuela de una favorita"
   },
   "ja": {
     "emailLabel": "メール",
@@ -910,7 +916,7 @@
     "filmTabReturn": "何度も観る",
     "filmTabLaws": "映画の法則",
     "filmTabComfort": "安心枠",
-    "filmLawsNote": "委員会を開くまでもない比較もあります。",
+    "filmLawsNote": "考え直す時間は十分あった。考え直していない。",
     "filmComfortNote": "罪悪感のある楽しみではなく、完全にコンフォートメディアです。解釈はご自由に。",
     "songsExplain": "人生で最も大切な曲",
     "songsExplainIntro": "ジャンルの整合性もバランスもなし。ただ、ずっと残った曲。",
@@ -1023,7 +1029,10 @@
     "opinionWalkHard": "Walk Hard は、パロディにしている映画より面白い。",
     "opinionLabelFPS": "対戦FPS",
     "opinionFPS": "LAN Doom で止まった。それで十分だった。",
-    "opinionFrankOcean": "R&Bとはたいてい相性が悪い。でもFrank Oceanには、心から素晴らしいと思えたアルバムがある。"
+    "opinionFrankOcean": "R&Bとはたいてい相性が悪い。でもFrank Oceanには、心から素晴らしいと思えたアルバムがある。",
+    "filmLawEverything": "それ以外すべて",
+    "filmLawUnknown": "何も知らない映画",
+    "filmLawSequel": "大好きな映画の続編"
   },
   "zh": {
     "emailLabel": "电子邮件",
@@ -1252,7 +1261,7 @@
     "filmTabReturn": "重看",
     "filmTabLaws": "电影定律",
     "filmTabComfort": "舒适区",
-    "filmLawsNote": "有些比较根本不需要开会。",
+    "filmLawsNote": "我已经有足够多的时间重新考虑这些观点了。我没有。",
     "filmComfortNote": "不是羞于承认的爱好。是舒适型媒体。请自行得出结论。",
     "songsExplain": "我生命中最重要的歌",
     "songsExplainIntro": "不讲类型逻辑，也不追求平衡。只是那些一直留下来的歌。",
@@ -1365,6 +1374,9 @@
     "opinionWalkHard": "Walk Hard 比它所恶搞的那些电影都好。",
     "opinionLabelFPS": "多人 FPS",
     "opinionFPS": "我停在局域网 Doom 的年代。那已经够了。",
-    "opinionFrankOcean": "我和R&B通常合不来，但Frank Ocean有一张专辑让我觉得非常出色。"
+    "opinionFrankOcean": "我和R&B通常合不来，但Frank Ocean有一张专辑让我觉得非常出色。",
+    "filmLawEverything": "其他一切",
+    "filmLawUnknown": "一部我完全不了解的电影",
+    "filmLawSequel": "最爱电影的续集"
   }
 }
