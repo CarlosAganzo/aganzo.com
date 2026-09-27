@@ -1,8 +1,8 @@
 :root {
-  --paper:#eee9dd;
+  --paper:#ecedea;
   --ink:#22231f;
   --red:#b92e23;
-  --line:#b9b4a7;
+  --line:#b8bbb7;
   --muted:#66665d;
   --serif:Georgia,'Times New Roman',serif;
   --sans:Arial,Helvetica,sans-serif;
@@ -240,7 +240,7 @@ nav a[aria-current=page] {
 }
 .portrait-frame {
   position:relative;
-  background:#d8d2c5;
+  background:#d6d8d5;
   aspect-ratio:4/5;
   max-height:510px;
   overflow:hidden;
@@ -504,7 +504,7 @@ nav a[aria-current=page] {
 }
 .map-paper {
   position:relative;
-  background:#e5dfd0;
+  background:#e1e3e0;
   border:1px solid var(--line);
   height:clamp(260px,39vw,530px);
   overflow:hidden;
@@ -514,7 +514,7 @@ nav a[aria-current=page] {
   position:absolute;
   inset:0;
   pointer-events:none;
-  background-image:linear-gradient(#aaa58b22 1px,transparent 1px),linear-gradient(90deg,#aaa58b22 1px,transparent 1px);
+  background-image:linear-gradient(#8f938c22 1px,transparent 1px),linear-gradient(90deg,#8f938c22 1px,transparent 1px);
   background-size:10% 20%;
 }
 .atlas-map {
@@ -524,7 +524,7 @@ nav a[aria-current=page] {
   position:relative;
 }
 .atlas-map path {
-  fill:#cdc8b9;
+  fill:#c9ccc8;
   stroke:var(--paper);
   stroke-width:.6;
 }
@@ -535,7 +535,7 @@ nav a[aria-current=page] {
   stroke-width:.7;
 }
 .atlas-map .atlas-country.is-muted {
-  fill:#bba69a;
+  fill:#aeb2ad;
 }
 .atlas-map .atlas-country:hover,.atlas-map .atlas-country:focus {
   fill:#252b28;
@@ -570,7 +570,7 @@ nav a[aria-current=page] {
   inset:0;
   z-index:3;
   padding:14px 18px 12px;
-  background:#e5dfd0;
+  background:#e1e3e0;
   display:grid;
   grid-template-rows:auto minmax(0,1fr) auto;
   gap:8px;
@@ -1189,7 +1189,7 @@ dialog>.micro {
   border:1px solid var(--line);
   border-bottom-color:var(--ink);
   border-radius:0;
-  background:#f5f0e7;
+  background:#f4f5f3;
   padding:12px;
   margin-bottom:10px;
   min-height:48px;
