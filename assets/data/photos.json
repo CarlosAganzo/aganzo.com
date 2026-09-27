@@ -12,49 +12,73 @@
     "file": "photography/photo-02.webp",
     "caption": "photo02",
     "width": 700,
-    "height": 700
+    "height": 700,
+    "full": "photography/photo-02-full.webp",
+    "fullWidth": 1254,
+    "fullHeight": 1254
   },
   {
     "file": "photography/photo-03.webp",
     "caption": "photo03",
     "width": 700,
-    "height": 525
+    "height": 525,
+    "full": "photography/photo-03-full.webp",
+    "fullWidth": 1448,
+    "fullHeight": 1086
   },
   {
     "file": "photography/photo-04.webp",
     "caption": "photo04",
     "width": 700,
-    "height": 525
+    "height": 525,
+    "full": "photography/photo-04-full.webp",
+    "fullWidth": 1448,
+    "fullHeight": 1086
   },
   {
     "file": "photography/photo-05.webp",
     "caption": "photo05",
     "width": 700,
-    "height": 525
+    "height": 525,
+    "full": "photography/photo-05-full.webp",
+    "fullWidth": 1448,
+    "fullHeight": 1086
   },
   {
     "file": "photography/photo-06.webp",
     "caption": "photo06",
     "width": 700,
-    "height": 525
+    "height": 525,
+    "full": "photography/photo-06-full.webp",
+    "fullWidth": 1448,
+    "fullHeight": 1086
   },
   {
     "file": "photography/photo-07.webp",
     "caption": "photo07",
     "width": 700,
-    "height": 525
+    "height": 525,
+    "full": "photography/photo-07-full.webp",
+    "fullWidth": 1448,
+    "fullHeight": 1086
   },
   {
     "file": "photography/photo-08.webp",
     "caption": "photo08",
     "width": 700,
-    "height": 525
+    "height": 525,
+    "full": "photography/photo-08-full.webp",
+    "fullWidth": 1448,
+    "fullHeight": 1086
   },
   {
     "file": "photography/photo-09.webp",
     "caption": "photo09",
     "width": 700,
-    "height": 525
+    "height": 525,
+    "full": "photography/photo-09-full.webp",
+    "fullWidth": 1448,
+    "fullHeight": 1086
   },
   {
     "file": "photography/photo-10.webp",
