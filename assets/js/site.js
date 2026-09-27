@@ -17,17 +17,28 @@ const load = async name => {
 const dictionaries = await load('translations');
 let saved;
 try { saved = localStorage.getItem('aganzo-v2-language') || localStorage.getItem('aganzo-language'); } catch {}
-let lang = [params.get('lang'), saved, navigator.language.slice(0,2), 'en'].find(l => dictionaries[l]);
+const pathLang = location.pathname === '/es' || location.pathname.startsWith('/es/') ? 'es' : null;
+let lang = [params.get('lang'), pathLang, saved, navigator.language.slice(0,2), 'en'].find(l => dictionaries[l]);
 let listeners = [];
 export const translate = key => dictionaries[lang][key] || dictionaries.en[key] || key;
 export const language = () => lang;
 export const onLanguage = fn => { listeners.push(fn); fn(); };
 export { load };
 const domain = location.hostname.replace(/^www\./,'') === 'carlosaganzo.com' || params.get('from') === 'carlosaganzo.com' ? 'CARLOSAGANZO.COM' : 'AGANZO.COM';
+function localizedPath(path,targetLang){
+  let clean=path.replace(/^\/es(?=\/|$)/,'')||'/';
+  if(!clean.startsWith('/')) clean='/'+clean;
+  if(targetLang==='es') return clean==='/'?'/es/':'/es'+clean;
+  return clean;
+}
 function updateLinks(){
-  document.querySelectorAll('a.brand, a[data-page-link], a.teaser').forEach(a => {
-    const url = new URL(a.href);
-    url.searchParams.set('lang',lang);
+  document.querySelectorAll('a.brand, a[data-page-link], a.teaser, a[data-localized-link]').forEach(a => {
+    const url = new URL(a.href,location.origin);
+    if(url.origin!==location.origin) return;
+    const targetPath=localizedPath(url.pathname,lang);
+    url.pathname=targetPath;
+    url.searchParams.delete('lang');
+    if(lang==='ja'||lang==='zh') url.searchParams.set('lang',lang);
     if(domain==='CARLOSAGANZO.COM') url.searchParams.set('from','carlosaganzo.com');
     a.href = url.pathname + url.search + url.hash;
   });
@@ -55,7 +66,24 @@ function setLanguage(value){
 }
 document.querySelectorAll('.brand').forEach(el=>{el.textContent=domain;});
 document.querySelectorAll('[data-page-link]').forEach(a=>{if(a.dataset.pageLink===page)a.setAttribute('aria-current','page');});
-document.querySelectorAll('[data-lang]').forEach(button=>button.addEventListener('click',()=>setLanguage(button.dataset.lang)));
+document.querySelectorAll('[data-lang]').forEach(button=>button.addEventListener('click',()=>{
+  const target=button.dataset.lang;
+  if(target==='en'||target==='es'){
+    const url=new URL(location.href);
+    url.pathname=localizedPath(url.pathname,target);
+    url.searchParams.delete('lang');
+    location.href=url.pathname+url.search+url.hash;
+    return;
+  }
+  if(target==='ja'||target==='zh'){
+    const url=new URL(location.href);
+    url.pathname=localizedPath(url.pathname,'en');
+    url.searchParams.set('lang',target);
+    location.href=url.pathname+url.search+url.hash;
+    return;
+  }
+  setLanguage(target);
+}));
 document.getElementById('year').textContent=new Date().getFullYear();
 setLanguage(lang);
 if(page==='home'){
@@ -80,4 +108,4 @@ if(page==='home'){
 }
 if(page==='travel')import('./travel.js?v=20260926-photo4').catch(console.error);
 if(page==='photos')import('./photos.js?v=20260926-photo4').catch(console.error);
-if(page==='lists')import('./music.js?v=20260926-photo4').catch(console.error);
+if(page==='lists'||page==='music')import('./music.js?v=20260926-photo4').catch(console.error);
