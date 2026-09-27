@@ -386,7 +386,10 @@
     "moreCinemaNotes": "More cinema notes",
     "moreMusicNotes": "More music notes",
     "moreGamesNotes": "More video game notes",
-    "moreBooksNotes": "More book notes"
+    "moreBooksNotes": "More book notes",
+    "cronenbergNote": "Bodies, identity, technology and desire — usually behaving badly.",
+    "watersNote": "Bad taste as an art form; provocation with a sense of humour.",
+    "polanskiNote": "Paranoia, confinement and the suspicion that the room itself has turned against you."
   },
   "es": {
     "emailLabel": "Correo electrónico",
@@ -775,7 +778,10 @@
     "moreCinemaNotes": "Más notas de cine",
     "moreMusicNotes": "Más notas de música",
     "moreGamesNotes": "Más notas de videojuegos",
-    "moreBooksNotes": "Más notas de libros"
+    "moreBooksNotes": "Más notas de libros",
+    "cronenbergNote": "Cuerpo, identidad, tecnología y deseo; casi siempre comportándose bastante mal.",
+    "watersNote": "El mal gusto como forma de arte; provocación con sentido del humor.",
+    "polanskiNote": "Paranoia, encierro y la sospecha de que hasta la habitación se ha puesto en tu contra."
   },
   "ja": {
     "emailLabel": "メール",
@@ -1164,7 +1170,10 @@
     "moreCinemaNotes": "映画についてもっと",
     "moreMusicNotes": "音楽についてもっと",
     "moreGamesNotes": "ゲームについてもっと",
-    "moreBooksNotes": "本についてもっと"
+    "moreBooksNotes": "本についてもっと",
+    "cronenbergNote": "身体、アイデンティティ、テクノロジー、欲望。たいてい、どれもろくな方向には進まない。",
+    "watersNote": "悪趣味を芸術に変える。挑発にはちゃんとユーモアがある。",
+    "polanskiNote": "パラノイア、閉塞感、そして部屋そのものが自分に敵対し始めたような感覚。"
   },
   "zh": {
     "emailLabel": "电子邮件",
@@ -1553,6 +1562,9 @@
     "moreCinemaNotes": "更多电影笔记",
     "moreMusicNotes": "更多音乐笔记",
     "moreGamesNotes": "更多游戏笔记",
-    "moreBooksNotes": "更多书籍笔记"
+    "moreBooksNotes": "更多书籍笔记",
+    "cronenbergNote": "身体、身份、技术与欲望——通常都会朝不太妙的方向发展。",
+    "watersNote": "把坏品味变成艺术；挑衅里始终带着幽默感。",
+    "polanskiNote": "偏执、幽闭，以及连房间本身都仿佛开始与你作对的感觉。"
   }
 }
