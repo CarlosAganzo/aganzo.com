@@ -1,4 +1,4 @@
-import {translate as t,onLanguage,load} from './site.js?v=20260927-seo3';
+import {translate as t,onLanguage,load} from './site.js?v=20260927-seo4';
 
 const input=document.getElementById('spotify-track'),reason=document.getElementById('song-reason'),submit=document.getElementById('song-submit'),previewButton=document.getElementById('preview-track'),preview=document.getElementById('spotify-preview'),status=document.getElementById('track-status');
 let id='';
