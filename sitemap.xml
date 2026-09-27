@@ -36,19 +36,19 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/photos/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/photos/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/photos/"/>
-    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-01-full.webp</image:loc><image:caption>Newcastle at dusk</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-02-full.webp</image:loc><image:caption>Blue hour</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-03-full.webp</image:loc><image:caption>Mountain mist</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-04-full.webp</image:loc><image:caption>After dark</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-05-full.webp</image:loc><image:caption>Night reflections</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-06-full.webp</image:loc><image:caption>Alpine dusk</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-07-full.webp</image:loc><image:caption>Between clouds</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-08-full.webp</image:loc><image:caption>Break in the weather</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-09-full.webp</image:loc><image:caption>Ice</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-10-full.webp</image:loc><image:caption>Laurel forest</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-11-full.webp</image:loc><image:caption>In the rain</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-12-full.webp</image:loc><image:caption>Light over the ridge</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-13-full.webp</image:loc><image:caption>Storm coast</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-01-full.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-02-full.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-03-full.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-04-full.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-05-full.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-06-full.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-07-full.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-08-full.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-09-full.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-10-full.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-11-full.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-12-full.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-13-full.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://aganzo.com/es/photos/</loc>
@@ -56,19 +56,19 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/photos/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/photos/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/photos/"/>
-    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-01-full.webp</image:loc><image:caption>Newcastle al atardecer</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-02-full.webp</image:loc><image:caption>Hora azul</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-03-full.webp</image:loc><image:caption>Niebla de montaña</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-04-full.webp</image:loc><image:caption>Al caer la noche</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-05-full.webp</image:loc><image:caption>Reflejos nocturnos</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-06-full.webp</image:loc><image:caption>Anochecer alpino</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-07-full.webp</image:loc><image:caption>Entre nubes</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-08-full.webp</image:loc><image:caption>Un claro en la tormenta</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-09-full.webp</image:loc><image:caption>Hielo</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-10-full.webp</image:loc><image:caption>Laurisilva</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-11-full.webp</image:loc><image:caption>Bajo la lluvia</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-12-full.webp</image:loc><image:caption>Luz sobre la cresta</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-13-full.webp</image:loc><image:caption>Costa bajo la tormenta</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-01-full.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-02-full.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-03-full.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-04-full.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-05-full.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-06-full.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-07-full.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-08-full.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-09-full.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-10-full.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-11-full.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-12-full.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-13-full.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://aganzo.com/lists/</loc>
@@ -160,15 +160,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/travel/indonesia/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/travel/indonesia/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/travel/indonesia/"/>
-    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc05597.webp</image:loc><image:caption>Boats beneath a sunset sky in Indonesia</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc05836.webp</image:loc><image:caption>Traditional green figure in Indonesia</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc06337.webp</image:loc><image:caption>Volcanic ridge before sunrise</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc06812.webp</image:loc><image:caption>Volcanic landscape in golden light</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc07440.webp</image:loc><image:caption>Temple complex in Java</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc08278.webp</image:loc><image:caption>Orangutan in Borneo</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc08494.webp</image:loc><image:caption>Proboscis monkey in Borneo</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc04805.webp</image:loc><image:caption>Viewpoint over the Indonesian coast</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc05469.webp</image:loc><image:caption>Komodo dragon</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc05597.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc05836.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc06337.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc06812.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc07440.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc08278.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc08494.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc04805.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc05469.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://aganzo.com/es/travel/indonesia/</loc>
@@ -176,14 +176,14 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/travel/indonesia/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/travel/indonesia/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/travel/indonesia/"/>
-    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc05597.webp</image:loc><image:caption>Barcos bajo un cielo de atardecer en Indonesia</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc05836.webp</image:loc><image:caption>Figura tradicional verde en Indonesia</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc06337.webp</image:loc><image:caption>Cresta volcánica antes del amanecer</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc06812.webp</image:loc><image:caption>Paisaje volcánico con luz dorada</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc07440.webp</image:loc><image:caption>Complejo de templos en Java</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc08278.webp</image:loc><image:caption>Orangután en Borneo</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc08494.webp</image:loc><image:caption>Mono narigudo en Borneo</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc04805.webp</image:loc><image:caption>Mirador sobre la costa de Indonesia</image:caption></image:image>
-    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc05469.webp</image:loc><image:caption>Dragón de Komodo</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc05597.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc05836.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc06337.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc06812.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc07440.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc08278.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc08494.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc04805.webp</image:loc></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc05469.webp</image:loc></image:image>
   </url>
 </urlset>
