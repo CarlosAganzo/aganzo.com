@@ -1,8 +1,189 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://aganzo.com/</loc><lastmod>2026-09-22</lastmod></url>
-  <url><loc>https://aganzo.com/travel/</loc><lastmod>2026-09-22</lastmod></url>
-  <url><loc>https://aganzo.com/photos/</loc><lastmod>2026-09-22</lastmod></url>
-  <url><loc>https://aganzo.com/lists/</loc><lastmod>2026-09-22</lastmod></url>
-  <url><loc>https://aganzo.com/archive/</loc><lastmod>2026-09-22</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://aganzo.com/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/"/>
+  </url>
+  <url>
+    <loc>https://aganzo.com/es/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/"/>
+  </url>
+  <url>
+    <loc>https://aganzo.com/travel/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/travel/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/travel/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/travel/"/>
+  </url>
+  <url>
+    <loc>https://aganzo.com/es/travel/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/travel/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/travel/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/travel/"/>
+  </url>
+  <url>
+    <loc>https://aganzo.com/photos/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/photos/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/photos/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/photos/"/>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-01-full.webp</image:loc><image:caption>photo01</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-02-full.webp</image:loc><image:caption>photo02</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-03-full.webp</image:loc><image:caption>photo03</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-04-full.webp</image:loc><image:caption>photo04</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-05-full.webp</image:loc><image:caption>photo05</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-06-full.webp</image:loc><image:caption>photo06</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-07-full.webp</image:loc><image:caption>photo07</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-08-full.webp</image:loc><image:caption>photo08</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-09-full.webp</image:loc><image:caption>photo09</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-10-full.webp</image:loc><image:caption>photo10</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-11-full.webp</image:loc><image:caption>photo11</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-12-full.webp</image:loc><image:caption>photo12</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-13-full.webp</image:loc><image:caption>photo13</image:caption></image:image>
+  </url>
+  <url>
+    <loc>https://aganzo.com/es/photos/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/photos/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/photos/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/photos/"/>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-01-full.webp</image:loc><image:caption>photo01</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-02-full.webp</image:loc><image:caption>photo02</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-03-full.webp</image:loc><image:caption>photo03</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-04-full.webp</image:loc><image:caption>photo04</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-05-full.webp</image:loc><image:caption>photo05</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-06-full.webp</image:loc><image:caption>photo06</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-07-full.webp</image:loc><image:caption>photo07</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-08-full.webp</image:loc><image:caption>photo08</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-09-full.webp</image:loc><image:caption>photo09</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-10-full.webp</image:loc><image:caption>photo10</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-11-full.webp</image:loc><image:caption>photo11</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-12-full.webp</image:loc><image:caption>photo12</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/photography/photo-13-full.webp</image:loc><image:caption>photo13</image:caption></image:image>
+  </url>
+  <url>
+    <loc>https://aganzo.com/lists/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/lists/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/lists/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/lists/"/>
+  </url>
+  <url>
+    <loc>https://aganzo.com/es/lists/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/lists/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/lists/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/lists/"/>
+  </url>
+  <url>
+    <loc>https://aganzo.com/archive/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/archive/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/archive/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/archive/"/>
+  </url>
+  <url>
+    <loc>https://aganzo.com/es/archive/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/archive/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/archive/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/archive/"/>
+  </url>
+  <url>
+    <loc>https://aganzo.com/cinema/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/cinema/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/cinema/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/cinema/"/>
+  </url>
+  <url>
+    <loc>https://aganzo.com/es/cinema/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/cinema/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/cinema/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/cinema/"/>
+  </url>
+  <url>
+    <loc>https://aganzo.com/music/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/music/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/music/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/music/"/>
+  </url>
+  <url>
+    <loc>https://aganzo.com/es/music/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/music/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/music/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/music/"/>
+  </url>
+  <url>
+    <loc>https://aganzo.com/games/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/games/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/games/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/games/"/>
+  </url>
+  <url>
+    <loc>https://aganzo.com/es/games/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/games/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/games/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/games/"/>
+  </url>
+  <url>
+    <loc>https://aganzo.com/books/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/books/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/books/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/books/"/>
+  </url>
+  <url>
+    <loc>https://aganzo.com/es/books/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/books/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/books/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/books/"/>
+  </url>
+  <url>
+    <loc>https://aganzo.com/travel/indonesia/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/travel/indonesia/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/travel/indonesia/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/travel/indonesia/"/>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc05597.webp</image:loc><image:caption>Boats beneath a sunset sky in Indonesia</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc05836.webp</image:loc><image:caption>Traditional green figure in Indonesia</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc06337.webp</image:loc><image:caption>Volcanic ridge before sunrise</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc06812.webp</image:loc><image:caption>Volcanic landscape in golden light</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc07440.webp</image:loc><image:caption>Temple complex in Java</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc08278.webp</image:loc><image:caption>Orangutan in Borneo</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc08494.webp</image:loc><image:caption>Proboscis monkey in Borneo</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc04805.webp</image:loc><image:caption>Viewpoint over the Indonesian coast</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc05469.webp</image:loc><image:caption>Komodo dragon</image:caption></image:image>
+  </url>
+  <url>
+    <loc>https://aganzo.com/es/travel/indonesia/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/travel/indonesia/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/travel/indonesia/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/travel/indonesia/"/>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc05597.webp</image:loc><image:caption>Barcos bajo un cielo de atardecer en Indonesia</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc05836.webp</image:loc><image:caption>Figura tradicional verde en Indonesia</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc06337.webp</image:loc><image:caption>Cresta volcánica antes del amanecer</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc06812.webp</image:loc><image:caption>Paisaje volcánico con luz dorada</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc07440.webp</image:loc><image:caption>Complejo de templos en Java</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc08278.webp</image:loc><image:caption>Orangután en Borneo</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc08494.webp</image:loc><image:caption>Mono narigudo en Borneo</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc04805.webp</image:loc><image:caption>Mirador sobre la costa de Indonesia</image:caption></image:image>
+    <image:image><image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc05469.webp</image:loc><image:caption>Dragón de Komodo</image:caption></image:image>
+  </url>
 </urlset>
