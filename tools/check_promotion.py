@@ -38,7 +38,7 @@ def check_public(path, lang):
     assert len(page.find("meta", "name", "cf-web-analytics-token")) == 1
     assert "/v2/" not in text
 
-    for raw in re.findall(r'<script type="application/ld\\+json">(.*?)</script>', text, re.S):
+    for raw in re.findall(r'<script type="application/ld\+json">(.*?)</script>', text, re.S):
         json.loads(raw)
 
     for tag, attrs in page.tags:
