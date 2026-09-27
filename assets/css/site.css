@@ -408,10 +408,15 @@ nav a[aria-current=page] {
 }
 .work-note {
   display:grid;
-  grid-template-columns:1fr 1.35fr;
-  gap:10%;
+  grid-template-columns:.82fr 1.35fr;
+  gap:38px 9%;
   border-top:1px solid var(--ink);
   padding:35px 0 60px;
+}
+.work-intro>.micro {
+  display:block;
+  margin-bottom:8px;
+  color:var(--muted);
 }
 .work-note h2 {
   font:11px var(--mono);
@@ -419,11 +424,80 @@ nav a[aria-current=page] {
   letter-spacing:.1em;
   margin-bottom:16px;
 }
-.work-note p:not(.serif) {
-  font-size:14px;
+.work-note .serif {
+  max-width:360px;
+  font-size:clamp(28px,3vw,43px);
+  line-height:1.02;
 }
-.work-note a {
+.work-story {
+  max-width:720px;
+}
+.work-story p {
+  font-size:14px;
+  margin-bottom:16px;
+}
+.work-link {
+  display:inline-block;
+  margin-top:4px;
   font-size:12px;
+}
+.work-trajectory {
+  grid-column:1/-1;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.work-stage {
+  min-width:0;
+  padding:18px 18px 22px 0;
+  border-right:1px solid var(--line);
+}
+.work-stage+.work-stage {
+  padding-left:18px;
+}
+.work-stage:last-child {
+  border-right:0;
+  padding-right:0;
+}
+.work-stage h3 {
+  margin:10px 0 9px;
+  font:600 11px/1.2 var(--sans);
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+.work-stage p {
+  margin:0;
+  font-size:12px;
+  line-height:1.55;
+  color:var(--muted);
+}
+@media (max-width:900px) {
+  .work-trajectory {
+    grid-template-columns:1fr 1fr;
+  }
+  .work-stage:nth-child(2) {
+    border-right:0;
+  }
+  .work-stage:nth-child(-n+2) {
+    border-bottom:1px solid var(--line);
+  }
+  .work-stage:nth-child(3) {
+    padding-left:0;
+  }
+}
+@media (max-width:620px) {
+  .work-trajectory {
+    grid-template-columns:1fr;
+  }
+  .work-stage,.work-stage+.work-stage {
+    padding:16px 0;
+    border-right:0;
+    border-bottom:1px solid var(--line);
+  }
+  .work-stage:last-child {
+    border-bottom:0;
+  }
 }
 .site-footer {
   border-top:3px solid var(--ink);
