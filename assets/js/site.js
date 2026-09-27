@@ -108,4 +108,4 @@ if(page==='home'){
 }
 if(page==='travel')import('./travel.js?v=20260927-seo2').catch(console.error);
 if(page==='photos')import('./photos.js?v=20260927-seo2').catch(console.error);
-if(page==='music')import('./music.js?v=20260927-seo2').catch(console.error);
+if(page==='lists'||page==='music')import('./music.js?v=20260927-seo2').catch(console.error);
