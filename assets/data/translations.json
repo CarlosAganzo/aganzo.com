@@ -352,7 +352,8 @@
     "seoTitle_books": "Books — reading and collecting | Carlos Aganzo",
     "seoDescription_books": "Carlos Aganzo’s personal books page: reading, rereading and collecting thousands of books, from Sōseki and Hesse to Ballard, Camus, Lem and Philip K. Dick.",
     "seoTitle_indonesia": "Indonesia 2026 — Java, Komodo, Bali & Borneo | Carlos Aganzo",
-    "seoDescription_indonesia": "Carlos Aganzo’s 15-day Indonesia journey in April 2026: Jakarta, Komodo, Ubud, Ijen, Bromo, Yogyakarta, Semarang and Borneo, with original photographs."
+    "seoDescription_indonesia": "Carlos Aganzo’s 15-day Indonesia journey in April 2026: Jakarta, Komodo, Ubud, Ijen, Bromo, Yogyakarta, Semarang and Borneo, with original photographs.",
+    "tripPage": "Open the full Indonesia trip page ↗"
   },
   "es": {
     "emailLabel": "Correo electrónico",
@@ -707,7 +708,8 @@
     "seoTitle_books": "Libros — lectura y coleccionismo | Carlos Aganzo",
     "seoDescription_books": "La página de libros de Carlos Aganzo: lectura, relectura y una colección de miles de volúmenes, de Sōseki y Hesse a Ballard, Camus, Lem y Philip K. Dick.",
     "seoTitle_indonesia": "Indonesia 2026 — Java, Komodo, Bali y Borneo | Carlos Aganzo",
-    "seoDescription_indonesia": "El viaje de 15 días de Carlos Aganzo por Indonesia en abril de 2026: Jakarta, Komodo, Ubud, Ijen, Bromo, Yogyakarta, Semarang y Borneo, con fotografías propias."
+    "seoDescription_indonesia": "El viaje de 15 días de Carlos Aganzo por Indonesia en abril de 2026: Jakarta, Komodo, Ubud, Ijen, Bromo, Yogyakarta, Semarang y Borneo, con fotografías propias.",
+    "tripPage": "Abrir la página completa del viaje a Indonesia ↗"
   },
   "ja": {
     "emailLabel": "メール",
@@ -1062,7 +1064,8 @@
     "seoTitle_books": "本 — 読書と収集 | Carlos Aganzo",
     "seoDescription_books": "Carlos Aganzoの本のページ。Sōseki、Hesse、Ballard、Camus、Lem、Philip K. Dickなど、読書と数千冊の収集。",
     "seoTitle_indonesia": "インドネシア 2026 — ジャワ、コモド、バリ、ボルネオ | Carlos Aganzo",
-    "seoDescription_indonesia": "2026年4月、15日間のインドネシア旅行。ジャカルタ、コモド、ウブド、イジェン、ブロモ、ジョグジャカルタ、スマラン、ボルネオ。"
+    "seoDescription_indonesia": "2026年4月、15日間のインドネシア旅行。ジャカルタ、コモド、ウブド、イジェン、ブロモ、ジョグジャカルタ、スマラン、ボルネオ。",
+    "tripPage": "インドネシア旅行のページを開く ↗"
   },
   "zh": {
     "emailLabel": "电子邮件",
@@ -1417,6 +1420,7 @@
     "seoTitle_books": "书籍 — 阅读与收藏 | Carlos Aganzo",
     "seoDescription_books": "Carlos Aganzo 的书籍页面：阅读、重读与数千册藏书，从 Sōseki、Hesse 到 Ballard、Camus、Lem 和 Philip K. Dick。",
     "seoTitle_indonesia": "印度尼西亚 2026 — 爪哇、科莫多、巴厘与婆罗洲 | Carlos Aganzo",
-    "seoDescription_indonesia": "Carlos Aganzo 2026年4月为期15天的印度尼西亚旅行：雅加达、科莫多、乌布、伊真、布罗莫、日惹、三宝垄与婆罗洲。"
+    "seoDescription_indonesia": "Carlos Aganzo 2026年4月为期15天的印度尼西亚旅行：雅加达、科莫多、乌布、伊真、布罗莫、日惹、三宝垄与婆罗洲。",
+    "tripPage": "打开完整的印度尼西亚旅行页面 ↗"
   }
 }
