@@ -1,4 +1,4 @@
-import {load,translate as t,language,onLanguage} from './site.js?v=20260927-seo2';
+import {load,translate as t,language,onLanguage} from './site.js?v=20260927-seo3';
 const data=await load('travel');
 const visited=[...new Set(Object.values(data.regions).flat())];
 const shapes=[...document.querySelectorAll('.atlas-country')];
