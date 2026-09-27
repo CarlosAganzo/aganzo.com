@@ -1,5 +1,7 @@
 # AGANZO.COM
 
+**Live:** https://aganzo.com/ — personal site of Carlos Aganzo: software engineering, travel, photography and cultural notes.
+
 Production is now served from the repository root on GitHub Pages (`main`).
 Edit `index.html`, `travel/`, `photos/`, `lists/`, `archive/`, `cinema/`, `music/`, `games/`, `books/`, `es/`, `assets/` and `admin/`.
 Do not edit the retired `/v2/` pages: they redirect to production.
