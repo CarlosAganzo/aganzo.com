@@ -19,7 +19,7 @@ const copy = {
     matches:'matches',noResults:'No matches',person:'Person',timeline:'Timeline',
     heading:'Names & connections',hint:'Choose a person. The tree recentres around them.',
     family:'Family',ancestors:'Ancestors',descendants:'Descendants',centre:'Centre on this person',
-    files:'Archive files',photos:'Photographs',documents:'Documents',all:'All files',
+    files:'Archive files',photos:'Photographs',documents:'Documents',all:'All',
     fileCount:n=>n+' FILES',linked:'Linked to',open:'Open file ↗',more:'Show more',
     scoped:n=>'Showing '+n+' linked files',clearScope:'Show all files',noFiles:'No files in this view.'
   },
@@ -67,7 +67,6 @@ let isDemo = true;
 let selected = people[0];
 let mode = 'family';
 let mediaFilter = 'all';
-let mediaOwner = null;
 let mediaLimit = 24;
 
 const tree = document.querySelector('#family-tree');
@@ -361,9 +360,8 @@ function mediaOwners(id){
 }
 
 function filteredMedia(){
-  let entries=Object.values(media);
+  let entries=(selected?.media||[]).map(id=>media[id]).filter(Boolean);
   if(mediaFilter!=='all')entries=entries.filter(m=>m.kind===mediaFilter);
-  if(mediaOwner)entries=entries.filter(m=>(byId(mediaOwner)?.media||[]).includes(m.id));
   return entries;
 }
 
@@ -372,6 +370,7 @@ function renderMedia(){
   const l=labels();
   const entries=filteredMedia();
   mediaGrid.replaceChildren();
+  if(!entries.length)mediaGrid.append(el('p','small archive-media-empty',l.noFiles));
   entries.slice(0,mediaLimit).forEach((m,i)=>{
     const article=el('article','archive-file-card');
     const a=el('a','archive-file-preview');a.href=m.url;a.target='_blank';a.rel='noopener noreferrer';a.setAttribute('aria-label',(m.title||l.open)+' — '+l.open);
@@ -394,10 +393,7 @@ function renderMedia(){
   if(mediaCount)mediaCount.textContent=l.fileCount(entries.length);
   if(mediaScope){
     mediaScope.replaceChildren();
-    if(mediaOwner){
-      mediaScope.append(el('span','micro',l.scoped(entries.length)+' · '+(byId(mediaOwner)?.name||'')));
-      const clear=el('button','archive-media-clear',l.clearScope);clear.type='button';clear.dataset.clearMediaOwner='true';mediaScope.append(clear);
-    }
+    mediaScope.append(el('span','micro',l.scoped(entries.length)+' · '+selected.name));
   }
   if(mediaMore){
     mediaMore.hidden=entries.length<=mediaLimit;
@@ -435,7 +431,7 @@ document.querySelector('#family-room').addEventListener('click',e=>{
   const person=e.target.closest('[data-person]');
   if(person){
     const p=byId(person.dataset.person);
-    if(p){selected=p;search.value='';results.replaceChildren();render();}
+    if(p){selected=p;mediaLimit=24;search.value='';results.replaceChildren();render();}
   }
   const m=e.target.closest('[data-family-mode]');
   if(m){mode=m.dataset.familyMode;render();}
@@ -443,7 +439,7 @@ document.querySelector('#family-room').addEventListener('click',e=>{
   if(jump){mode=jump.dataset.modeJump;render();}
   const files=e.target.closest('[data-show-person-media]');
   if(files){
-    mediaOwner=files.dataset.showPersonMedia;mediaFilter='all';mediaLimit=24;renderMedia();
+    mediaFilter='all';mediaLimit=24;renderMedia();
     document.querySelector('#archive-files')?.scrollIntoView({behavior:'smooth',block:'start'});
   }
   const centre=e.target.closest('[data-center-person]');
@@ -453,8 +449,6 @@ document.querySelector('#family-room').addEventListener('click',e=>{
 document.querySelector('#archive-files')?.addEventListener('click',e=>{
   const filter=e.target.closest('[data-media-filter]');
   if(filter){mediaFilter=filter.dataset.mediaFilter;mediaLimit=24;renderMedia();}
-  const clear=e.target.closest('[data-clear-media-owner]');
-  if(clear){mediaOwner=null;mediaLimit=24;renderMedia();}
 });
 
 mediaMore?.addEventListener('click',()=>{mediaLimit+=24;renderMedia();});
