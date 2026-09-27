@@ -115,6 +115,10 @@ function nodeMetrics(count){
   return {width,gap,rowWidth:Math.max(width,count*width+Math.max(0,count-1)*gap)};
 }
 
+function stageWidth(rowWidth){
+  return Math.max(760,rowWidth+160,Math.ceil(canvas?.clientWidth||0));
+}
+
 function distribute(list,stageWidth,y,role){
   if(!list.length)return[];
   const {width,gap}=nodeMetrics(list.length);
@@ -160,14 +164,14 @@ function familyLayout(){
   const kids=unique(children(selected));
   const centre=[selected,...spouses];
   const maxCount=Math.max(1,parents.length,centre.length,kids.length);
-  const stageWidth=Math.max(760,nodeMetrics(maxCount).rowWidth+160);
+  const width=stageWidth(nodeMetrics(maxCount).rowWidth);
   const nodes=[
-    ...distribute(parents,stageWidth,92,'parent'),
-    ...distribute(centre,stageWidth,286,'focus'),
-    ...distribute(kids,stageWidth,486,'child')
+    ...distribute(parents,width,92,'parent'),
+    ...distribute(centre,width,286,'focus'),
+    ...distribute(kids,width,486,'child')
   ];
   const edges=relationshipEdges(nodes,spouses.map(p=>[selected.id,p.id]));
-  return {nodes,edges,width:stageWidth,height:580};
+  return {nodes,edges,width,height:580};
 }
 
 function generationLayout(direction){
@@ -180,17 +184,17 @@ function generationLayout(direction){
     levels.push(next);current=next;
   }
   const widest=Math.max(...levels.map(x=>x.length),1);
-  const stageWidth=Math.max(760,nodeMetrics(widest).rowWidth+160);
+  const width=stageWidth(nodeMetrics(widest).rowWidth);
   const rowGap=165;
   const height=Math.max(520,110+(levels.length-1)*rowGap+120);
   const nodes=[];
   levels.forEach((list,index)=>{
     const visualIndex=direction==='ancestors'?(levels.length-1-index):index;
     const y=80+visualIndex*rowGap;
-    nodes.push(...distribute(list,stageWidth,y,index===0?'focus':'generation'));
+    nodes.push(...distribute(list,width,y,index===0?'focus':'generation'));
   });
   const edges=relationshipEdges(nodes);
-  return {nodes,edges,width:stageWidth,height};
+  return {nodes,edges,width,height};
 }
 
 function measuredNode(stage,id){
@@ -237,6 +241,11 @@ function pathFor(edge,stage){
 }
 
 function drawEdges(svg,stage,edges){
+  const width=stage.clientWidth;
+  const height=stage.clientHeight;
+  svg.setAttribute('viewBox','0 0 '+width+' '+height);
+  svg.setAttribute('width',String(width));
+  svg.setAttribute('height',String(height));
   svg.replaceChildren();
   const junctions=[];
   edges.forEach(edge=>{
@@ -278,7 +287,7 @@ function renderTree(){
   const stage=el('div','family-tree-stage');
   stage.style.width=layout.width+'px';stage.style.height=layout.height+'px';
   const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
-  svg.setAttribute('class','family-tree-lines');svg.setAttribute('viewBox','0 0 '+layout.width+' '+layout.height);
+  svg.setAttribute('class','family-tree-lines');
   svg.setAttribute('aria-hidden','true');
   stage.append(svg);
   layout.nodes.forEach(n=>stage.append(treeNode(n)));
@@ -455,16 +464,24 @@ mediaMore?.addEventListener('click',()=>{mediaLimit+=24;renderMedia();});
 search.addEventListener('input',renderResults);
 
 let resizeRedrawFrame=0;
+let lastCanvasWidth=0;
+function rerenderTreeForWidth(){
+  const width=Math.round(canvas?.clientWidth||0);
+  if(!width||width===lastCanvasWidth)return;
+  lastCanvasWidth=width;
+  renderTree();
+}
 window.addEventListener('resize',()=>{
   cancelAnimationFrame(resizeRedrawFrame);
-  resizeRedrawFrame=requestAnimationFrame(()=>{
-    const stage=tree.querySelector('.family-tree-stage');
-    const svg=stage?.querySelector('.family-tree-lines');
-    if(!stage||!svg)return;
-    const layout=mode==='family'?familyLayout():generationLayout(mode);
-    drawEdges(svg,stage,layout.edges);
-  });
+  resizeRedrawFrame=requestAnimationFrame(rerenderTreeForWidth);
 });
+if(window.ResizeObserver&&canvas){
+  const canvasResizeObserver=new ResizeObserver(()=>{
+    cancelAnimationFrame(resizeRedrawFrame);
+    resizeRedrawFrame=requestAnimationFrame(rerenderTreeForWidth);
+  });
+  canvasResizeObserver.observe(canvas);
+}
 
 onLanguage(render);
 
