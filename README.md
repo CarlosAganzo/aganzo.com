@@ -1,7 +1,7 @@
 # AGANZO.COM
 
 Production is now served from the repository root on GitHub Pages (`main`).
-Edit `index.html`, `travel/`, `photos/`, `lists/`, `archive/`, `assets/` and `admin/`.
+Edit `index.html`, `travel/`, `photos/`, `lists/`, `archive/`, `cinema/`, `music/`, `games/`, `books/`, `es/`, `assets/` and `admin/`.
 Do not edit the retired `/v2/` pages: they redirect to production.
 
 - `assets/data/now.json`: live Now content. `/admin/` commits to this path.
@@ -17,7 +17,7 @@ Exact pre-migration snapshot: `129521efdef1721c9636ad63cc0d52dc553da7bc`; backup
 The old design remains browsable at https://aganzo.com/v1/.
 Old `/v2/` page URLs redirect with instant meta refresh and JavaScript preserving queries/fragments. These are static Pages redirects, not HTTP 301 responses. Legacy asset URLs remain available for existing photo/document links. All new code and content must use root paths.
 
-SEO: five canonical root URLs in sitemap.xml; public indexing enabled; unique page metadata, Open Graph/Twitter and ProfilePage/Person structured data retained. Language selectors still use `?lang=`; canonical URLs consolidate those views at their section URL. No claims of separate server-rendered language pages. `robots.txt` permits fetching redirect/noindex directives.
+SEO: production now exposes 10 English canonical pages and 10 static Spanish counterparts under `/es/`, all listed in `sitemap.xml` with reciprocal hreflang. Dedicated pages exist for cinema, music, games, books and the Indonesia 2026 travel story. Photography and Indonesia images are included in the sitemap; photography has ImageGallery structured data. The home ProfilePage/Person schema links the public identity to LinkedIn, Instagram, Facebook and GitHub. Japanese and Chinese remain dynamic `?lang=` views and are not advertised as separate canonical locales. `robots.txt` permits fetching redirect/noindex directives.
 
 Analytics: original Cloudflare token preserved. One guarded beacon on each production public page, independent of JSON/module loading. No beacon on old-site, redirect, review or admin pages. Existing property/history and Search Console domain verification need no domain change. No external analytics/Search Console settings were changed.
 
