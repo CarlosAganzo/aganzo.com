@@ -17,7 +17,7 @@ const load = async name => {
 const dictionaries = await load('translations');
 let saved;
 try { saved = localStorage.getItem('aganzo-v2-language') || localStorage.getItem('aganzo-language'); } catch {}
-const pathLang = location.pathname === '/es' || location.pathname.startsWith('/es/') ? 'es' : null;
+const pathLang = location.pathname === '/es' || location.pathname.startsWith('/es/') ? 'es' : 'en';
 let lang = [params.get('lang'), pathLang, saved, navigator.language.slice(0,2), 'en'].find(l => dictionaries[l]);
 let listeners = [];
 export const translate = key => dictionaries[lang][key] || dictionaries.en[key] || key;
@@ -65,7 +65,8 @@ function setLanguage(value){
   document.documentElement.classList.remove('i18n-pending');
 }
 document.querySelectorAll('.brand').forEach(el=>{el.textContent=domain;});
-document.querySelectorAll('[data-page-link]').forEach(a=>{if(a.dataset.pageLink===page)a.setAttribute('aria-current','page');});
+const navPage = ['cinema','music','games','books'].includes(page) ? 'lists' : page==='indonesia' ? 'travel' : page;
+document.querySelectorAll('[data-page-link]').forEach(a=>{if(a.dataset.pageLink===navPage)a.setAttribute('aria-current','page');});
 document.querySelectorAll('[data-lang]').forEach(button=>button.addEventListener('click',()=>{
   const target=button.dataset.lang;
   if(target==='en'||target==='es'){
