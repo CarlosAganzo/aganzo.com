@@ -30,3 +30,8 @@ To restore exactly, create a new commit from the backup branch tree on top of cu
 ## Validation
 
 See the migration checks in `tools/check_promotion.py`; browser checks cover production routes, languages, redirects, admin data source and single analytics insertion.
+
+
+## SEO checkpoint — 2026-09-27
+
+Google Search Console showed the homepage indexed while the newly created section/locale URLs were still unknown to Google. All 20 canonical URLs were added to the connected indexing tracker. Sitemap re-submission requires a Search Console connection with full `webmasters` scope; the current connection is read-only, so re-submission must be completed after enabling full access (or manually in Search Console).
