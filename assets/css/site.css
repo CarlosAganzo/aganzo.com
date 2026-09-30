@@ -2770,6 +2770,8 @@ dialog>.micro {
 .travel-story-route h2{font-family:var(--serif,Georgia,serif);font-weight:400;font-size:clamp(1.5rem,3vw,3rem);line-height:1.05;margin:.5rem 0 1rem}
 .travel-story-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--ink,#1e1e1c);border:1px solid var(--ink,#1e1e1c);margin:2rem 0}
 .travel-story-facts>div{background:var(--paper,#e5e5e1);padding:1rem;display:grid;gap:.45rem}
+.travel-story-note{max-width:900px;border-top:1px solid var(--ink,#1e1e1c);padding-top:1.25rem;margin:2.75rem 0 3.25rem}
+.travel-story-note p{font-family:var(--serif,Georgia,serif);font-size:clamp(1.2rem,2.1vw,1.9rem);line-height:1.38;margin:.7rem 0 0}
 .story-gallery{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(.75rem,1.5vw,1.5rem)}
 .story-gallery figure{grid-column:span 6;margin:0}
 .story-gallery figure:nth-child(3n){grid-column:span 12}
