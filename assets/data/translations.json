@@ -393,7 +393,9 @@
     "refnNote": "Neon, silence, ritualised violence and lonely people moving through hostile worlds.",
     "lynchNote": "Dream logic, tenderness and dread sharing the same room.",
     "hanekeNote": "Distance, discomfort and violence stripped of spectacle.",
-    "kurosawaNote": "Empty spaces, quiet dread and the feeling that something is wrong long before you know what."
+    "kurosawaNote": "Empty spaces, quiet dread and the feeling that something is wrong long before you know what.",
+    "indonesiaFieldNote": "FIELD NOTE",
+    "indonesiaStory": "Travelling through Indonesia is less like visiting many different places than making several different journeys. From the deranged city of Jakarta, with its brutal contrasts, to the great Buddhist and Hindu temple complexes; from diving with sharks in Komodo to spending three days travelling upriver in Borneo, in a kind of family <em>Heart of Darkness</em>, with only orangutans for company. From Bali’s terrifying figures to the markets of Semarang.<br><br>Indonesia does not feel like a single country crossed from end to end, but several journeys that, somehow, happened one after another."
   },
   "es": {
     "emailLabel": "Correo electrónico",
@@ -789,7 +791,9 @@
     "refnNote": "Neón, silencio, violencia ritualizada y gente sola atravesando mundos hostiles.",
     "lynchNote": "Lógica de sueño, ternura e inquietud compartiendo la misma habitación.",
     "hanekeNote": "Distancia, incomodidad y violencia despojada de espectáculo.",
-    "kurosawaNote": "Espacios vacíos, inquietud silenciosa y la sensación de que algo va mal mucho antes de saber qué."
+    "kurosawaNote": "Espacios vacíos, inquietud silenciosa y la sensación de que algo va mal mucho antes de saber qué.",
+    "indonesiaFieldNote": "NOTA DE VIAJE",
+    "indonesiaStory": "Viajar a Indonesia es, más que viajar a muchos lugares diferentes, hacer muchos viajes distintos. Pasar de la ciudad desquiciada que es Jakarta, con sus contrastes brutales, a algunos de los mayores templos budistas e hindúes del mundo; de bucear con tiburones en Komodo a pasar tres días remontando un río en Borneo, en una especie de <em>Corazón de las Tinieblas</em> familiar, sin más compañía que los orangutanes. De los ninots terroríficos de Bali a los mercados de Semarang.<br><br>Indonesia no parece un solo país recorrido de punta a punta, sino varios viajes que, por algún motivo, sucedieron uno detrás de otro."
   },
   "ja": {
     "emailLabel": "メール",
@@ -1185,7 +1189,9 @@
     "refnNote": "ネオン、沈黙、儀式めいた暴力。そして敵意ある世界を進む孤独な人々。",
     "lynchNote": "夢の論理、優しさ、不穏さが同じ部屋に同居する。",
     "hanekeNote": "距離、不快感、そして見世物性を剥ぎ取られた暴力。",
-    "kurosawaNote": "空虚な空間、静かな不安、そして何が起きているのか分かる前から何かがおかしいという感覚。"
+    "kurosawaNote": "空虚な空間、静かな不安、そして何が起きているのか分かる前から何かがおかしいという感覚。",
+    "indonesiaFieldNote": "旅のメモ",
+    "indonesiaStory": "インドネシアを旅することは、たくさんの場所を巡るというより、いくつもの別々の旅を続けてすることに近い。荒々しいコントラストを抱えた狂騒の都市ジャカルタから、巨大な仏教・ヒンドゥー教寺院群へ。コモドでサメと潜ることから、家族だけでボルネオの川を三日間さかのぼり、オランウータンだけを道連れにした、いわば家族版の<em>『闇の奥』</em>へ。バリの恐ろしい人形たちからスマランの市場まで。<br><br>インドネシアは、一つの国を端から端まで旅したというより、なぜかいくつもの旅が次々と連なって起きたように感じる。"
   },
   "zh": {
     "emailLabel": "电子邮件",
@@ -1581,6 +1587,8 @@
     "refnNote": "霓虹、沉默、仪式化的暴力，以及独自穿行于敌意世界中的人。",
     "lynchNote": "梦的逻辑、温柔与不安共处一室。",
     "hanekeNote": "距离感、不适，以及被剥去 spectacle 的暴力。",
-    "kurosawaNote": "空旷空间、安静的不安，以及在你知道哪里不对之前就已经出现的异样感。"
+    "kurosawaNote": "空旷空间、安静的不安，以及在你知道哪里不对之前就已经出现的异样感。",
+    "indonesiaFieldNote": "旅行札记",
+    "indonesiaStory": "在印度尼西亚旅行，与其说是在很多不同的地方旅行，不如说是连续经历了很多次完全不同的旅行。从充满疯狂节奏和巨大反差的雅加达，到宏伟的佛教与印度教寺庙群；从在科莫多与鲨鱼一起潜水，到和家人在婆罗洲沿河航行三天，仿佛一场家庭版的<em>《黑暗之心》</em>，陪伴我们的只有猩猩。从巴厘岛那些令人发毛的巨大人偶，到三宝垄的市场。<br><br>印度尼西亚不像是一个从一端走到另一端的国家，更像是几段完全不同的旅程，不知为何恰好一段接着一段发生。"
   }
 }
