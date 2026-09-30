@@ -6,7 +6,7 @@ if(location.pathname==='/' && legacySections[location.hash]){
 const base = '/';
 const page = document.body.dataset.page;
 const params = new URLSearchParams(location.search);
-const assetVersion = '20260927-directors2';
+const assetVersion = '20260930-indonesia1';
 const load = async name => {
   const version = name === 'now' ? Date.now() : assetVersion;
   const options = name === 'now' ? { cache: 'no-store' } : undefined;
