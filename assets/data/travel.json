@@ -329,7 +329,145 @@
         "es": "Probablemente el país que mejor conozco después de España y el Reino Unido.",
         "ja": "スペインとイギリスに次いで、最もよく知っている国。",
         "zh": "除了西班牙和英国之外，我最熟悉的国家。"
-      }
+      },
+      "heroPhoto": "travel/france/france-01-bordeaux-reflection.webp",
+      "photos": [
+        {
+          "file": "travel/france/france-01-bordeaux-reflection.webp",
+          "alt": {
+            "en": "Clouds reflected across a square in Bordeaux",
+            "es": "Nubes reflejadas en una plaza de Burdeos",
+            "ja": "ボルドーの広場に映る雲",
+            "zh": "波尔多广场上的云影"
+          }
+        },
+        {
+          "file": "travel/france/france-02-night-city.webp",
+          "alt": {
+            "en": "A French city after dark",
+            "es": "Una ciudad francesa al anochecer",
+            "ja": "夜のフランスの街",
+            "zh": "夜色中的法国城市"
+          }
+        },
+        {
+          "file": "travel/france/france-03-stone-light.webp",
+          "alt": {
+            "en": "Light cutting through a stone passage",
+            "es": "La luz atravesando un pasaje de piedra",
+            "ja": "石造りの通路を差し込む光",
+            "zh": "穿过石砌通道的光"
+          }
+        },
+        {
+          "file": "travel/france/france-04-framed-church.webp",
+          "alt": {
+            "en": "A church framed by old stone",
+            "es": "Una iglesia enmarcada por piedra antigua",
+            "ja": "古い石壁越しに見える教会",
+            "zh": "古老石墙框景中的教堂"
+          }
+        },
+        {
+          "file": "travel/france/france-05-coast.webp",
+          "alt": {
+            "en": "The French coast in evening light",
+            "es": "La costa francesa con luz de atardecer",
+            "ja": "夕暮れのフランス海岸",
+            "zh": "暮色中的法国海岸"
+          }
+        },
+        {
+          "file": "travel/france/france-06-pyrenees-lake.webp",
+          "alt": {
+            "en": "A mountain lake in the Pyrenees",
+            "es": "Un lago de montaña en los Pirineos",
+            "ja": "ピレネーの山上湖",
+            "zh": "比利牛斯山中的高山湖"
+          }
+        },
+        {
+          "file": "travel/france/france-07-pyrenees-cablecar.webp",
+          "alt": {
+            "en": "A cable car in the French Pyrenees",
+            "es": "Un teleférico en los Pirineos franceses",
+            "ja": "フランス領ピレネーのロープウェイ",
+            "zh": "法国比利牛斯山的缆车"
+          }
+        },
+        {
+          "file": "travel/france/france-08-strasbourg.webp",
+          "alt": {
+            "en": "Architecture in Strasbourg",
+            "es": "Arquitectura en Estrasburgo",
+            "ja": "ストラスブールの建築",
+            "zh": "斯特拉斯堡建筑"
+          }
+        },
+        {
+          "file": "travel/france/france-09-alsace.webp",
+          "alt": {
+            "en": "A street in Alsace",
+            "es": "Una calle de Alsacia",
+            "ja": "アルザスの通り",
+            "zh": "阿尔萨斯的街道"
+          }
+        },
+        {
+          "file": "travel/france/france-10-cliff-village.webp",
+          "alt": {
+            "en": "A village beneath the cliffs",
+            "es": "Un pueblo bajo los acantilados",
+            "ja": "断崖の下の村",
+            "zh": "悬崖下的村庄"
+          }
+        },
+        {
+          "file": "travel/france/france-11-autumn-boats.webp",
+          "alt": {
+            "en": "Boats and autumn trees beside the water",
+            "es": "Barcas y árboles de otoño junto al agua",
+            "ja": "水辺のボートと秋の木々",
+            "zh": "水边的船与秋树"
+          }
+        },
+        {
+          "file": "travel/france/france-12-alps.webp",
+          "alt": {
+            "en": "The French Alps",
+            "es": "Los Alpes franceses",
+            "ja": "フランス・アルプス",
+            "zh": "法国阿尔卑斯山"
+          }
+        },
+        {
+          "file": "travel/france/france-13-provence-abbey.webp",
+          "alt": {
+            "en": "An abbey in Provence",
+            "es": "Una abadía en la Provenza",
+            "ja": "プロヴァンスの修道院",
+            "zh": "普罗旺斯的一座修道院"
+          }
+        },
+        {
+          "file": "travel/france/france-14-provence-village.webp",
+          "alt": {
+            "en": "A village in Provence",
+            "es": "Un pueblo de la Provenza",
+            "ja": "プロヴァンスの村",
+            "zh": "普罗旺斯的村庄"
+          }
+        },
+        {
+          "file": "travel/france/france-15-lourdes-carlos.webp",
+          "alt": {
+            "en": "Carlos in Lourdes",
+            "es": "Carlos en Lourdes",
+            "ja": "ルルドのカルロス",
+            "zh": "在卢尔德的卡洛斯"
+          }
+        }
+      ]
     }
   },
   "entrySchema": {
