@@ -278,6 +278,58 @@
         "zh": "第一次走出西班牙。"
       },
       "year": "c. 1996–1998"
+    },
+    "FR": {
+      "noteHtml": {
+        "en": "I have been to France many times. After Spain and the United Kingdom, it is probably the country I know best.<br><br>My relationship with France is a little like the one you might have with a more handsome, more intelligent brother: you resent him slightly, compare yourself with him more than you should, but deep down you adore him.<br><br>And it is difficult not to. Almost wherever you go, France seems determined to be spectacular: Brittany, Alsace, the Landes, Périgord, the Pyrenees, the Alpine valleys, Provence. Its landscapes are almost as varied as Spain’s and, if I had to choose, I would probably admit that its average beauty is even greater.<br><br>There are still quite a few areas I have yet to see, so I hope to correct that over the next few years. And there is one thing for which I struggle to find a rival: few European countries have a collection of villages as beautiful as France.",
+        "es": "He estado muchas veces en Francia. Después de España y el Reino Unido, es probablemente el país que mejor conozco.<br><br>Con Francia tengo una relación un poco parecida a la que uno puede tener con un hermano más guapo y más listo: le guardas cierto rencor, te comparas con él más de la cuenta, pero en el fondo lo adoras.<br><br>Y es difícil no hacerlo. Casi vayas donde vayas, Francia parece empeñada en ser espectacular: la Bretaña, Alsacia, las Landas, el Périgord, los Pirineos, los valles de los Alpes, la Provenza. Sus paisajes son casi tan variados como los de España y, si me obligaran a elegir, probablemente admitiría que su belleza media es incluso superior.<br><br>Todavía me quedan bastantes zonas por conocer, así que espero ir corrigiendo eso durante los próximos años. Y hay algo en lo que sí me cuesta encontrar rival: pocos países europeos tienen una colección de pueblos tan hermosos como Francia.",
+        "ja": "フランスには何度も行っている。スペインとイギリスに次いで、おそらく最もよく知っている国だ。<br><br>フランスに対しては、少しだけ、よりハンサムで頭のいい兄弟に抱くような感情がある。少し腹立たしく、つい比べてしまう。でも結局のところ、心の底では大好きなのだ。<br><br>そして、そうならない方が難しい。どこへ行っても、フランスはほとんど意地になって美しい。ブルターニュ、アルザス、ランド、ペリゴール、ピレネー、アルプスの谷、プロヴァンス。風景の多様さはスペインにほとんど匹敵し、もし選ばなければならないなら、平均的な美しさではフランスの方が上だと認めるかもしれない。<br><br>まだ知らない地域はいくつも残っているので、これから数年で少しずつ埋めていきたい。そして一つだけ、なかなかライバルが見つからないことがある。フランスほど美しい村々を数多く持つヨーロッパの国は、そう多くない。",
+        "zh": "我去过法国很多次。除了西班牙和英国之外，它大概是我最熟悉的国家。<br><br>我和法国之间的关系，有点像面对一个比你更帅、更聪明的兄弟：你会有一点怨气，会不自觉地和他比较，但心底里其实非常喜欢他。<br><br>而且很难不喜欢。几乎无论走到哪里，法国都像是执意要把自己弄得很壮观：布列塔尼、阿尔萨斯、朗德、佩里戈尔、比利牛斯、阿尔卑斯山谷、普罗旺斯。它的风景几乎和西班牙一样多样，如果非要选的话，我大概会承认，它的平均美感甚至更胜一筹。<br><br>我还有不少地区没有去过，所以希望未来几年能慢慢补上。还有一点，我很难在欧洲找到真正的对手：像法国这样拥有如此多美丽村庄的国家，实在不多。"
+      },
+      "places": {
+        "en": [
+          "Brittany",
+          "Alsace",
+          "Landes",
+          "Périgord",
+          "Pyrenees",
+          "Alpine valleys",
+          "Provence"
+        ],
+        "es": [
+          "Bretaña",
+          "Alsacia",
+          "Landas",
+          "Périgord",
+          "Pirineos",
+          "Valles de los Alpes",
+          "Provenza"
+        ],
+        "ja": [
+          "ブルターニュ",
+          "アルザス",
+          "ランド",
+          "ペリゴール",
+          "ピレネー",
+          "アルプスの谷",
+          "プロヴァンス"
+        ],
+        "zh": [
+          "布列塔尼",
+          "阿尔萨斯",
+          "朗德",
+          "佩里戈尔",
+          "比利牛斯",
+          "阿尔卑斯山谷",
+          "普罗旺斯"
+        ]
+      },
+      "memory": {
+        "en": "Probably the country I know best after Spain and the United Kingdom.",
+        "es": "Probablemente el país que mejor conozco después de España y el Reino Unido.",
+        "ja": "スペインとイギリスに次いで、最もよく知っている国。",
+        "zh": "除了西班牙和英国之外，我最熟悉的国家。"
+      }
     }
   },
   "entrySchema": {
