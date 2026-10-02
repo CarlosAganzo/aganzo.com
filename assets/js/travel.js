@@ -1,4 +1,4 @@
-import {load,translate as t,language,onLanguage} from './site.js?v=20260927-seo4';
+import {load,translate as t,language,onLanguage} from './site.js?v=20261002-belgium1';
 const data=await load('travel');
 const visited=[...new Set(Object.values(data.regions).flat())];
 const shapes=[...document.querySelectorAll('.atlas-country')];
@@ -90,7 +90,7 @@ function renderGallery(photos,heroFile){
 }
 function renderDetail(){
   title.textContent=country?name(country):t(region+'Title');
-  note.textContent=country?(data.entries[country]?.note?.[language()]||t('notesPending')):t(region+'Text');
+  if(country){const item=data.entries[country]||{};const html=item.noteHtml?.[language()]||item.noteHtml?.en;if(html)note.innerHTML=html;else note.textContent=item.note?.[language()]||t('notesPending');}else note.textContent=t(region+'Text');
   entry.replaceChildren();
   galleryStage.replaceChildren();galleryStage.hidden=true;
   if(!country)return;
