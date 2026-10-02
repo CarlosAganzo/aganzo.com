@@ -237,6 +237,46 @@
         }
       ],
       "heroPhoto": "travel/indonesia/dsc06812.webp"
+    },
+    "BE": {
+      "noteHtml": {
+        "en": "The first time I ever left Spain was for Belgium. I was at university when a friend announced that there were flights to Brussels for 15,000 pesetas. It was the dawn of cheap air travel, and it sounded almost too good to be true. A few hours later, there were already six of us.<br><br>There was one small problem: we had an exam on exactly the same dates. So we convinced our lecturers that “a sizeable group of students” had “a study trip” planned for those days. It worked. They moved the exam. I passed it.<br><br>And the trip was exactly what a first journey abroad should have been: backpack, youth hostel, shared dormitory and strangers who stopped being strangers for a few hours. We saw Bruges, Ghent and Brussels; visited the <s>Pandemonium</s> Atomium; and ended up eating steak a la riojana in a Spanish restaurant where, for some reason, they gave us a discount.<br><br>I do not remember Belgium simply as the first country I visited. I remember it as the first time travel stopped feeling like something distant.",
+        "es": "La primera vez que salí de España fue a Bélgica. Estaba en la universidad cuando un amigo apareció con la noticia de que había vuelos a Bruselas por 15.000 pesetas. Era el comienzo de los vuelos baratos y aquello sonaba casi demasiado bien para ser verdad. Unas horas después ya éramos seis.<br><br>Había un pequeño problema: teníamos un examen exactamente durante las fechas del viaje. Así que convencimos a los profesores de que “un grupo numeroso de alumnos” tenía “un viaje de estudios” previsto para aquellos días. Funcionó. Cambiaron la fecha del examen. Lo aprobé.<br><br>Y el viaje fue exactamente lo que tenía que ser una primera salida al extranjero: mochila, albergue, dormitorio compartido y gente desconocida que dejaba de serlo durante unas horas. Vimos Brujas, Gante y Bruselas; visitamos el <s>Pandemonium</s> Atomium; y acabamos comiendo filete a la riojana en un restaurante español donde, por alguna razón, nos hicieron precio.<br><br>No recuerdo Bélgica como mi primer país visitado. La recuerdo como la primera vez que viajar dejó de parecerme algo lejano.",
+        "ja": "初めてスペインを出た先はベルギーだった。大学時代、友人が「ブリュッセル行きが15,000ペセタで出ている」と言ってきた。格安航空券が生まれ始めた頃で、ほとんど信じられない値段だった。数時間後には、もう6人のグループになっていた。<br><br>問題が一つだけあった。旅行の日程と試験が完全に重なっていたのだ。そこで教授たちに、「かなりの人数の学生」がその時期に「研修旅行」に行く予定なのだと説明して、試験日を変えてもらった。うまくいった。試験にも受かった。<br><br>そして旅は、初めての海外旅行としてあるべき姿そのものだった。バックパック、ユースホステル、相部屋のドミトリー、そして数時間のうちに他人ではなくなる知らない人たち。ブルージュ、ゲント、ブリュッセルを歩き、<s>パンデモニウム</s> アトミウムを見て、最後にはスペイン料理店でリオハ風ステーキを食べた。なぜか少し安くしてくれた。<br><br>ベルギーを、単に「最初に訪れた外国」として覚えているわけではない。旅というものが遠い世界の出来事ではなくなった、最初の場所として覚えている。",
+        "zh": "我第一次离开西班牙，去的就是比利时。那时我还在上大学，一个朋友突然说，飞布鲁塞尔的机票只要15,000比塞塔。那正是廉价航空刚刚出现的年代，这个价格听起来几乎不像真的。几个小时后，我们已经凑成了六个人。<br><br>只有一个小问题：旅行日期和一场考试完全撞上了。于是我们说服老师，相信“相当多的一批学生”那几天有一次“学习旅行”。居然成功了。考试改期了。我也通过了。<br><br>而那次旅行，恰好就是第一次出国旅行该有的样子：背包、青年旅舍、多人宿舍，还有那些原本陌生、几个小时后便不再陌生的人。我们去了布鲁日、根特和布鲁塞尔；参观了<s>Pandemonium</s> 原子球塔；最后还在一家西班牙餐厅吃了里奥哈风味牛排，不知为什么，老板还给我们便宜了一点。<br><br>我记得比利时，并不只是因为它是我去过的第一个外国。更因为从那一次开始，旅行不再像一件遥远的事。"
+      },
+      "places": {
+        "en": [
+          "Bruges",
+          "Ghent",
+          "Brussels",
+          "Atomium"
+        ],
+        "es": [
+          "Brujas",
+          "Gante",
+          "Bruselas",
+          "Atomium"
+        ],
+        "ja": [
+          "ブルージュ",
+          "ゲント",
+          "ブリュッセル",
+          "アトミウム"
+        ],
+        "zh": [
+          "布鲁日",
+          "根特",
+          "布鲁塞尔",
+          "原子球塔"
+        ]
+      },
+      "memory": {
+        "en": "My first trip outside Spain.",
+        "es": "Mi primer viaje fuera de España.",
+        "ja": "初めての海外旅行。",
+        "zh": "第一次走出西班牙。"
+      }
     }
   },
   "entrySchema": {
