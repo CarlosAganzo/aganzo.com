@@ -1,4 +1,4 @@
-import {load,translate as t,language,onLanguage} from './site.js?v=20261002-france1';
+import {load,translate as t,language,onLanguage} from './site.js?v=20261002-france2';
 const data=await load('travel');
 const visited=[...new Set(Object.values(data.regions).flat())];
 const shapes=[...document.querySelectorAll('.atlas-country')];
@@ -23,7 +23,7 @@ let mapMode=country&&data.subdivisions?.[country]?'regional':'world';
 let loadedRegionalAsset=null;
 function name(code){return new Intl.DisplayNames([language()],{type:'region'}).of(code);}
 function localized(value){return value?.[language()]||value?.en||'';}
-const travelImageVersion='20261002-france1';
+const travelImageVersion='20261002-france2';
 function imageSrc(photo){return '/assets/images/'+photo.file+'?v='+travelImageVersion;}
 function imageAlt(photo){return photo.alt?.[language()]||name(country);}
 function subdivision(){return country?data.subdivisions?.[country]:null;}
@@ -99,7 +99,8 @@ function renderDetail(){
   for(const key of ['year','places','memory']){
     const row=document.createElement('div'),dt=document.createElement('dt'),dd=document.createElement('dd');
     dt.textContent=t(key);
-    let value=key==='year'?item.year:item[key]?.[language()];\n    if(key==='year'&&!value)continue;
+    let value=key==='year'?item.year:item[key]?.[language()];
+    if(key==='year'&&!value)continue;
     if(key==='places'&&subregion){
       const regionalPlaces=subdivision()?.regions?.[subregion]?.places;
       if(regionalPlaces)value=regionalPlaces[language()]||regionalPlaces.en||value;
