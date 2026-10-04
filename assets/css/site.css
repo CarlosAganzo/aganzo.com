@@ -226,6 +226,23 @@ nav a[aria-current=page] {
   max-width:440px;
   line-height:1.75;
 }
+.home-about-note {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:7%;
+  border-top:1px solid var(--line);
+  padding:24px 0 30px;
+  max-width:100%;
+}
+.home-about-note p {
+  margin:0;
+  font-size:14px;
+  line-height:1.72;
+  max-width:54ch;
+}
+.home-about-note p:last-child {
+  color:var(--muted);
+}
 .hero-portrait {
   padding-top:10px;
   position:relative;
@@ -1705,6 +1722,14 @@ dialog>.micro {
   }
   .intro {
     font-size:15px;
+  }
+  .home-about-note {
+    grid-template-columns:1fr;
+    gap:14px;
+    padding:20px 0 24px;
+  }
+  .home-about-note p {
+    font-size:14px;
   }
   .hero-portrait {
     width:85%;
