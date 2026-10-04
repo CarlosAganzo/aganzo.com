@@ -438,7 +438,15 @@
     "journalWithContent": "with stories or photos",
     "journalContentLabel": "With content",
     "journalPending": "Not written yet",
-    "journalCountries": "countries"
+    "journalCountries": "countries",
+    "seoTitle_spain": "Spain — The map I started from | Carlos Aganzo",
+    "seoDescription_spain": "Spain is less a destination than the map I started from: a regional archive of places, notes and photographs.",
+    "journalRegionsEyebrow": "REGIONAL ARCHIVE",
+    "journalRegionsTitle": "A country inside the country.",
+    "journalRegionsIntro": "Spain is too large, too varied and too personal to flatten into one entry. Pick a region.",
+    "allRegions": "All regions",
+    "regionArchive": "Regional notes",
+    "regionEmpty": "This region is ready for notes and photographs. Nothing invented in the meantime."
   },
   "es": {
     "emailLabel": "Correo electrónico",
@@ -879,7 +887,15 @@
     "journalWithContent": "con texto o fotos",
     "journalContentLabel": "Con contenido",
     "journalPending": "Pendiente de escribir",
-    "journalCountries": "países"
+    "journalCountries": "países",
+    "seoTitle_spain": "España — El mapa del que partí | Carlos Aganzo",
+    "seoDescription_spain": "España es menos un destino que el mapa del que partí: un archivo regional de lugares, notas y fotografías.",
+    "journalRegionsEyebrow": "ARCHIVO REGIONAL",
+    "journalRegionsTitle": "Un país dentro del país.",
+    "journalRegionsIntro": "España es demasiado grande, demasiado variada y demasiado personal para aplastarla en una sola entrada. Elige una región.",
+    "allRegions": "Todas las regiones",
+    "regionArchive": "Notas de la región",
+    "regionEmpty": "Esta región está preparada para notas y fotografías. Mientras tanto, nada inventado."
   },
   "ja": {
     "emailLabel": "メール",
@@ -1320,7 +1336,15 @@
     "journalWithContent": "文章・写真あり",
     "journalContentLabel": "文章・写真あり",
     "journalPending": "未執筆",
-    "journalCountries": "か国"
+    "journalCountries": "か国",
+    "seoTitle_spain": "スペイン — 私が出発した地図 | Carlos Aganzo",
+    "seoDescription_spain": "スペインは目的地というより、私が出発した地図。地域ごとの場所、文章、写真のアーカイブ。",
+    "journalRegionsEyebrow": "地域アーカイブ",
+    "journalRegionsTitle": "国の中にある、いくつもの国。",
+    "journalRegionsIntro": "スペインは広く、多様で、そして個人的すぎて、一つの記事には収まらない。地域を選ぶ。",
+    "allRegions": "すべての地域",
+    "regionArchive": "地域のノート",
+    "regionEmpty": "この地域は文章と写真を追加できる状態です。それまでは、何も作りません。"
   },
   "zh": {
     "emailLabel": "电子邮件",
@@ -1761,6 +1785,14 @@
     "journalWithContent": "已有文字或照片",
     "journalContentLabel": "已有内容",
     "journalPending": "尚未撰写",
-    "journalCountries": "个国家"
+    "journalCountries": "个国家",
+    "seoTitle_spain": "西班牙 — 我出发的那张地图 | Carlos Aganzo",
+    "seoDescription_spain": "西班牙与其说是目的地，不如说是我出发的那张地图：按地区整理的地点、文字和照片档案。",
+    "journalRegionsEyebrow": "地区档案",
+    "journalRegionsTitle": "一个国家里的许多个地方。",
+    "journalRegionsIntro": "西班牙太大、太多样，也太私人，不适合压缩成一篇文字。选择一个地区。",
+    "allRegions": "所有地区",
+    "regionArchive": "地区笔记",
+    "regionEmpty": "这个地区已经准备好添加文字和照片。在那之前，不编造任何内容。"
   }
 }
