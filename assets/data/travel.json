@@ -508,6 +508,36 @@
         "ja": "結局、大好きな兄弟",
         "zh": "那个你深爱的兄弟"
       }
+    },
+    "ES": {
+      "slug": "spain",
+      "period": {
+        "en": "A lifetime",
+        "es": "Toda una vida",
+        "ja": "人生ずっと",
+        "zh": "一辈子"
+      },
+      "subtitle": {
+        "en": "Not quite a destination",
+        "es": "No exactamente un destino",
+        "ja": "旅先とは少し違う場所",
+        "zh": "它不太像一个目的地"
+      },
+      "noteHtml": {
+        "en": "Spain is awkward to file under <em>travel</em>. I was born there, so it is less a destination than the map everything else starts from.<br><br>That is why this page works differently. Instead of pretending the country is one trip, it breaks it into regions: places I know well, places I return to, places with photographs and stories, and places whose boxes are still waiting to be filled.<br><br>The map below is the real beginning of this archive.",
+        "es": "España es difícil de meter dentro de <em>viajes</em>. Nací allí, así que es menos un destino que el mapa desde el que empieza todo lo demás.<br><br>Por eso esta página funciona de otra manera. En vez de fingir que el país es un solo viaje, lo divide en regiones: sitios que conozco bien, sitios a los que vuelvo, sitios con fotos e historias y otros cuyas casillas todavía están esperando que las llene.<br><br>El mapa de abajo es, en realidad, el principio de este archivo.",
+        "ja": "スペインを単純に「旅」の中へ入れるのは少し難しい。そこで生まれたからだ。目的地というより、ほかのすべての旅が始まる地図に近い。<br><br>だからこのページだけは少し違う。一つの旅行として扱うのではなく、地域ごとに分ける。よく知っている場所、何度も戻る場所、写真や物語がある場所、そしてまだ空欄のままの場所。<br><br>下の地図が、このアーカイブの本当の出発点だ。",
+        "zh": "把西班牙简单归进“旅行”其实有点别扭。我出生在那里，所以它与其说是一个目的地，不如说是其他一切旅程开始的那张地图。<br><br>因此这一页会有点不同。它不会假装整个国家只是一次旅行，而是按地区展开：熟悉的地方、反复回去的地方、有照片和故事的地方，以及仍然留着空白等待补上的地方。<br><br>下面这张地图，才是这个旅行档案真正的起点。"
+      },
+      "memory": {
+        "en": "The map I started from.",
+        "es": "El mapa del que partí.",
+        "ja": "自分が出発した地図。",
+        "zh": "我出发的那张地图。"
+      },
+      "photos": [],
+      "heroPhoto": null,
+      "regionalExplorer": true
     }
   },
   "entrySchema": {
@@ -667,6 +697,255 @@
             "zh": "巴布亚"
           },
           "visited": false
+        }
+      }
+    },
+    "ES": {
+      "asset": "maps/spain-regions.svg",
+      "intro": {
+        "en": "Spain is too large, too varied and too personal to flatten into one entry. Pick a region.",
+        "es": "España es demasiado grande, demasiado variada y demasiado personal para aplastarla en una sola entrada. Elige una región.",
+        "ja": "スペインは広く、多様で、そして個人的すぎて、一つの記事には収まらない。地域を選ぶ。",
+        "zh": "西班牙太大、太多样，也太私人，不适合压缩成一篇文字。选择一个地区。"
+      },
+      "regions": {
+        "andalusia": {
+          "name": {
+            "en": "Andalusia",
+            "es": "Andalucía",
+            "ja": "アンダルシア",
+            "zh": "安达卢西亚"
+          },
+          "enabled": true
+        },
+        "aragon": {
+          "name": {
+            "en": "Aragon",
+            "es": "Aragón",
+            "ja": "アラゴン",
+            "zh": "阿拉贡"
+          },
+          "enabled": true
+        },
+        "asturias": {
+          "name": {
+            "en": "Asturias",
+            "es": "Asturias",
+            "ja": "アストゥリアス",
+            "zh": "阿斯图里亚斯"
+          },
+          "enabled": true
+        },
+        "balearic": {
+          "name": {
+            "en": "Balearic Islands",
+            "es": "Islas Baleares",
+            "ja": "バレアレス諸島",
+            "zh": "巴利阿里群岛"
+          },
+          "enabled": true
+        },
+        "basque-country": {
+          "name": {
+            "en": "Basque Country",
+            "es": "País Vasco",
+            "ja": "バスク地方",
+            "zh": "巴斯克地区"
+          },
+          "enabled": true
+        },
+        "canary": {
+          "name": {
+            "en": "Canary Islands",
+            "es": "Canarias",
+            "ja": "カナリア諸島",
+            "zh": "加那利群岛"
+          },
+          "enabled": true
+        },
+        "cantabria": {
+          "name": {
+            "en": "Cantabria",
+            "es": "Cantabria",
+            "ja": "カンタブリア",
+            "zh": "坎塔布里亚"
+          },
+          "enabled": true
+        },
+        "castile-leon": {
+          "name": {
+            "en": "Castile and León",
+            "es": "Castilla y León",
+            "ja": "カスティーリャ・イ・レオン",
+            "zh": "卡斯蒂利亚-莱昂"
+          },
+          "enabled": true
+        },
+        "castile-la-mancha": {
+          "name": {
+            "en": "Castile-La Mancha",
+            "es": "Castilla-La Mancha",
+            "ja": "カスティーリャ＝ラ・マンチャ",
+            "zh": "卡斯蒂利亚-拉曼恰"
+          },
+          "enabled": true
+        },
+        "catalonia": {
+          "name": {
+            "en": "Catalonia",
+            "es": "Cataluña",
+            "ja": "カタルーニャ",
+            "zh": "加泰罗尼亚"
+          },
+          "enabled": true,
+          "visited": true,
+          "places": {
+            "en": [
+              "Barcelona"
+            ],
+            "es": [
+              "Barcelona"
+            ],
+            "ja": [
+              "バルセロナ"
+            ],
+            "zh": [
+              "巴塞罗那"
+            ]
+          },
+          "noteHtml": {
+            "en": "Barcelona keeps reappearing. It belongs here less as a single trip than as one of those cities that has entered the background of my life.",
+            "es": "Barcelona sigue reapareciendo. Encaja aquí menos como un viaje concreto que como una de esas ciudades que han acabado entrando en el fondo de mi vida.",
+            "ja": "バルセロナは何度も戻ってくる。一度きりの旅というより、いつの間にか人生の背景に入り込んだ都市の一つだ。",
+            "zh": "巴塞罗那总会再次出现。它在这里更不像一次具体旅行，而像一座慢慢进入我生活背景的城市。"
+          }
+        },
+        "ceuta": {
+          "name": {
+            "en": "Ceuta",
+            "es": "Ceuta",
+            "ja": "セウタ",
+            "zh": "休达"
+          },
+          "enabled": true
+        },
+        "extremadura": {
+          "name": {
+            "en": "Extremadura",
+            "es": "Extremadura",
+            "ja": "エストレマドゥーラ",
+            "zh": "埃斯特雷马杜拉"
+          },
+          "enabled": true
+        },
+        "galicia": {
+          "name": {
+            "en": "Galicia",
+            "es": "Galicia",
+            "ja": "ガリシア",
+            "zh": "加利西亚"
+          },
+          "enabled": true
+        },
+        "la-rioja": {
+          "name": {
+            "en": "La Rioja",
+            "es": "La Rioja",
+            "ja": "ラ・リオハ",
+            "zh": "拉里奥哈"
+          },
+          "enabled": true
+        },
+        "madrid": {
+          "name": {
+            "en": "Community of Madrid",
+            "es": "Comunidad de Madrid",
+            "ja": "マドリード州",
+            "zh": "马德里自治区"
+          },
+          "enabled": true,
+          "visited": true,
+          "places": {
+            "en": [
+              "Madrid"
+            ],
+            "es": [
+              "Madrid"
+            ],
+            "ja": [
+              "マドリード"
+            ],
+            "zh": [
+              "马德里"
+            ]
+          },
+          "noteHtml": {
+            "en": "I was born in Madrid. That makes this the one region on the map that is not really travel at all: it is the reference point from which the rest of the map makes sense.",
+            "es": "Nací en Madrid. Eso convierte a esta en la única región del mapa que en realidad no es un viaje: es el punto de referencia desde el que tiene sentido todo lo demás.",
+            "ja": "私はマドリードで生まれた。だからここだけは、本当の意味では旅ではない。ほかのすべての場所を測るための基準点だ。",
+            "zh": "我出生在马德里。所以地图上只有这里其实并不算旅行：它是理解其他所有地方的参照点。"
+          }
+        },
+        "melilla": {
+          "name": {
+            "en": "Melilla",
+            "es": "Melilla",
+            "ja": "メリリャ",
+            "zh": "梅利利亚"
+          },
+          "enabled": true
+        },
+        "murcia": {
+          "name": {
+            "en": "Region of Murcia",
+            "es": "Región de Murcia",
+            "ja": "ムルシア州",
+            "zh": "穆尔西亚自治区"
+          },
+          "enabled": true
+        },
+        "navarre": {
+          "name": {
+            "en": "Navarre",
+            "es": "Navarra",
+            "ja": "ナバーラ",
+            "zh": "纳瓦拉"
+          },
+          "enabled": true
+        },
+        "valencia": {
+          "name": {
+            "en": "Valencian Community",
+            "es": "Comunidad Valenciana",
+            "ja": "バレンシア州",
+            "zh": "瓦伦西亚自治区"
+          },
+          "enabled": true,
+          "visited": true,
+          "places": {
+            "en": [
+              "Valencia",
+              "Buñol"
+            ],
+            "es": [
+              "Valencia",
+              "Buñol"
+            ],
+            "ja": [
+              "バレンシア",
+              "ブニョール"
+            ],
+            "zh": [
+              "瓦伦西亚",
+              "布尼奥尔"
+            ]
+          },
+          "noteHtml": {
+            "en": "Valencia and Buñol. Mediterranean light, a short return, and a Tomatina that was exactly as sensible as it sounds.",
+            "es": "Valencia y Buñol. Luz mediterránea, una vuelta breve y una Tomatina exactamente tan sensata como suena.",
+            "ja": "バレンシアとブニョール。地中海の光、短い再訪、そして名前の通りまったく理性的ではないトマティーナ。",
+            "zh": "瓦伦西亚和布尼奥尔。地中海的光，一次短暂重访，以及一场和听起来一样不理智的番茄节。"
+          }
         }
       }
     }
