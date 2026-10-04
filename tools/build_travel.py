@@ -8,17 +8,45 @@ from pathlib import Path
 from html import escape
 import json
 import re
+import subprocess
+import unicodedata
 import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = json.loads((ROOT / 'assets/data/travel.json').read_text())
 TRANSLATIONS = json.loads((ROOT / 'assets/data/translations.json').read_text())
-VERSION = '20261004-journal2'
+VERSION = '20261004-journal3'
 DATE = '2026-10-04'
-DESTINATIONS = [code for code, item in DATA['entries'].items() if item.get('slug')]
-DESTINATIONS.sort(key=lambda c: ['ID', 'FR', 'BE'].index(c))
-NAMES = {'en': {'ID': 'Indonesia', 'FR': 'France', 'BE': 'Belgium'},
-         'es': {'ID': 'Indonesia', 'FR': 'Francia', 'BE': 'Bélgica'}}
+VISITED = list(dict.fromkeys(code for codes in DATA['regions'].values() for code in codes))
+
+
+def has_text(value):
+    return any(has_text(v) for v in value.values()) if isinstance(value, dict) else bool(value and str(value).strip())
+
+
+def has_content(code):
+    item = DATA['entries'].get(code, {})
+    return any(has_text(item.get(k)) for k in ['noteHtml', 'note', 'memory']) or bool(item.get('photos') or item.get('photo'))
+
+
+# Node's standard Intl data supplies every country name without a hand-kept list.
+NAMES = json.loads(subprocess.check_output(['node', '-e', '''
+const codes=JSON.parse(process.argv[1]);
+console.log(JSON.stringify(Object.fromEntries(['en','es'].map(lang=>{
+ const names=new Intl.DisplayNames([lang],{type:'region'});
+ return [lang,Object.fromEntries(codes.map(code=>[code,names.of(code)]))];
+}))));''', json.dumps(VISITED)], text=True))
+DESTINATIONS = sorted((c for c in VISITED if has_content(c)), key=lambda c: NAMES['en'][c])
+for code in DESTINATIONS:
+    item = DATA['entries'][code]
+    if not item.get('slug'):
+        ascii_name = unicodedata.normalize('NFKD', NAMES['en'][code]).encode('ascii', 'ignore').decode()
+        item['slug'] = re.sub(r'[^a-z0-9]+', '-', ascii_name.lower()).strip('-') or code.lower()
+    if not item.get('photos') and item.get('photo'):
+        item['photos'] = [item['photo']]
+DEFAULT_COUNTRY = DATA.get('defaultCountry', 'ID')
+if DEFAULT_COUNTRY not in VISITED:
+    DEFAULT_COUNTRY = next(iter(DESTINATIONS or VISITED))
 
 
 def e(s):
@@ -55,7 +83,7 @@ def localized_template(name, lang):
 
 def choices(lang, selected, related=False):
     cards = []
-    for code in DESTINATIONS:
+    for code in sorted(DESTINATIONS, key=lambda c: NAMES[lang][c]):
         item = DATA['entries'][code]
         photos = item.get('photos', [])
         thumbnail = next((p for p in photos if p['file'] == item.get('heroPhoto')), None)
@@ -66,6 +94,18 @@ def choices(lang, selected, related=False):
         cards.append(f'<a class="journal-choice" data-destination="{code}" data-localized-link href="{path(lang, code)}"{current}>{visual}'
                      f'<span><strong>{NAMES[lang][code]}</strong><small>{e(meta)}</small></span><span class="choice-arrow" aria-hidden="true">↗</span></a>')
     return f'<nav class="journal-choices" aria-label="{e(tr("journalMore" if related else "journalNav", lang))}">' + ''.join(cards) + '</nav>'
+
+
+def country_picker(lang, selected):
+    groups = []
+    for region, codes in DATA['regions'].items():
+        options = []
+        for code in sorted(codes, key=lambda c: NAMES[lang][c]):
+            photos = DATA['entries'].get(code, {}).get('photos', [])
+            status = (str(len(photos)) + ' ' + tr('journalPhotoShort', lang) if photos else tr('journalStoryOnly', lang)) if has_content(code) else tr('journalPending', lang)
+            options.append(f'<option value="{code}"{" selected" if code == selected else ""}>{e(NAMES[lang][code])} — {e(status)}</option>')
+        groups.append(f'<optgroup label="{e(tr(region, lang))}">' + ''.join(options) + '</optgroup>')
+    return f'<div class="journal-country-picker"><label for="journal-country" data-i18n="journalChooseCountry">{e(tr("journalChooseCountry", lang))}</label><select id="journal-country">' + ''.join(groups) + '</select></div>'
 
 
 def reader(lang, code, standalone=False):
@@ -92,7 +132,7 @@ def reader(lang, code, standalone=False):
           <div class="journal-photo-caption"><span id="photo-caption">{e(local(hero['alt'], lang))}</span><div class="journal-photo-controls"><button type="button" data-photo-step="-1" aria-label="{e(tr('previous', lang))}">←</button><span id="photo-counter">{hero_index + 1} / {len(photos)}</span><button type="button" data-photo-step="1" aria-label="{e(tr('next', lang))}">→</button></div></div>
           <div class="journal-thumbs" aria-label="{e(tr('journalAllPhotos', lang))}">{thumbs}</div>
         </section>'''
-    prose = '<p>' + re.sub(r'<br\s*/?>\s*<br\s*/?>', '</p><p>', local(item.get('noteHtml', item.get('note', {})), lang)) + '</p>'
+    prose = '<p>' + re.sub(r'<br\s*/?>\s*<br\s*/?>', '</p><p>', local(item.get('noteHtml') or item.get('note') or item.get('memory') or {}, lang)) + '</p>'
     places = local(item.get('places', {}), lang)
     route = f'<div class="journal-route"><span class="micro">{e(tr("journalRoute", lang))}</span><p>{e(" · ".join(places))}</p></div>' if places else ''
     map_url = path(lang) + '?country=' + code + '#atlas'
@@ -108,7 +148,7 @@ def atlas(lang):
     svg = svg.replace('aria-label="Countries visited"', f'aria-label="{e(tr("atlasLegend", lang))}"')
     filters = ''.join(f'<button type="button" data-region="{r}" aria-pressed="{str(r == "all").lower()}">{e(tr("journalAllCountries" if r == "all" else r, lang))}</button>' for r in ['all', *DATA['regions']])
     return f'''<section id="atlas" class="journal-atlas" aria-labelledby="atlas-title">
-      <div class="journal-section-heading"><div><p class="eyebrow">02 / {e(tr('journalMap', lang))}</p><h2 id="atlas-title">{e(tr('journalAtlasTitle', lang))}</h2></div><p class="journal-total"><strong>76</strong><span>{e(tr('atlasVisited', lang))}</span></p></div>
+      <div class="journal-section-heading"><div><p class="eyebrow">02 / {e(tr('journalMap', lang))}</p><h2 id="atlas-title">{e(tr('journalAtlasTitle', lang))}</h2></div><p class="journal-total"><strong>{len(VISITED)}</strong><span>{e(tr('atlasVisited', lang))}</span></p></div>
       <p class="journal-atlas-help">{e(tr('journalAtlasHelp', lang))}</p><div class="region-filters" role="group" aria-label="{e(tr('journalMap', lang))}">{filters}</div>
       <div class="journal-atlas-grid"><div class="country-index"><label for="country-search">{e(tr('journalSearch', lang))}</label><input type="search" id="country-search" autocomplete="off" placeholder="{e(tr('journalCountry', lang))}"><div id="country-list" class="country-list" aria-label="{e(tr('atlasPlaces', lang))}"></div><p id="country-status" role="status"></p></div>
       <div class="map-paper"><div class="map-grid" aria-hidden="true"></div>{svg}<div id="regional-map-shell" class="regional-map-shell" hidden><div class="regional-map-topline"><button id="regional-map-back" type="button">← {e(tr('worldMap', lang))}</button><div class="regional-map-heading"><strong id="regional-map-country"></strong><span class="micro">{e(tr('regionalView', lang))}</span></div></div><div id="regional-map-canvas" class="regional-map-canvas"></div><div id="regional-map-list" class="regional-map-list" aria-label="{e(tr('regionalView', lang))}"></div></div><div class="map-key"><span><i></i> {e(tr('visited', lang))}</span><span aria-hidden="true">N ↑</span></div></div></div>
@@ -117,7 +157,11 @@ def atlas(lang):
 
 def build(lang, code=None):
     page = DATA['entries'][code]['slug'] if code else 'travel'
-    title, desc = tr('seoTitle_' + page, lang), tr('seoDescription_' + page, lang)
+    item = DATA['entries'].get(code, {})
+    default_title = ' — '.join(filter(None, [NAMES[lang].get(code), local(item.get('subtitle'), lang), 'Carlos Aganzo']))
+    default_desc = re.sub(r'<[^>]*>', ' ', local(item.get('noteHtml') or item.get('note') or item.get('memory'), lang) or tr('seoDescription_travel', lang))[:190]
+    title = TRANSLATIONS[lang].get('seoTitle_' + page, default_title)
+    desc = TRANSLATIONS[lang].get('seoDescription_' + page, default_desc)
     canonical = 'https://aganzo.com' + path(lang, code)
     hero = DATA['entries'][code or 'ID'].get('heroPhoto')
     social = 'https://aganzo.com/assets/images/' + hero if hero else 'https://aganzo.com/portrait.jpg'
@@ -135,9 +179,9 @@ def build(lang, code=None):
     if code:
         main = f'<div class="journal-breadcrumb"><a data-localized-link href="{path(lang)}?country={code}#notebook">← {e(tr("journalBack", lang))}</a><span class="micro">{e(tr("journalEyebrow", lang))}</span></div><section id="notebook">{reader(lang, code, True)}</section><section class="journal-related"><p class="eyebrow">{e(tr("journalMore", lang))}</p>{choices(lang, code, True)}</section>'
     else:
-        main = f'''<section class="journal-intro"><div><p class="eyebrow">01 / <span data-i18n="travel">{e(tr('travel', lang))}</span></p><h1 data-i18n-html="travelTitleV2">{tr('travelTitleV2', lang)}</h1></div><div class="journal-intro-note"><p data-i18n="journalIntro">{e(tr('journalIntro', lang))}</p><span class="micro">76 <span data-i18n="atlasVisited">{e(tr('atlasVisited', lang))}</span></span></div></section>
+        main = f'''<section class="journal-intro"><div><p class="eyebrow">01 / <span data-i18n="travel">{e(tr('travel', lang))}</span></p><h1 data-i18n-html="travelTitleV2">{tr('travelTitleV2', lang)}</h1></div><div class="journal-intro-note"><p data-i18n="journalIntro">{e(tr('journalIntro', lang))}</p><span class="micro">{len(VISITED)} <span data-i18n="atlasVisited">{e(tr('atlasVisited', lang))}</span></span></div></section>
           <nav class="journal-jumps" aria-label="{e(tr('navigation', lang))}"><a href="#notebook">01 <span data-i18n="journalNavShort">{e(tr('journalNavShort', lang))}</span> ↓</a><a href="#atlas">02 <span data-i18n="journalMapShort">{e(tr('journalMapShort', lang))}</span> ↓</a><a href="#fixed-points">03 <span data-i18n="journalPlacesShort">{e(tr('journalPlacesShort', lang))}</span> ↓</a></nav>
-          <section id="notebook" class="journal-notebook" aria-label="{e(tr('journalNav', lang))}"><div class="journal-notebook-label"><p class="eyebrow" data-i18n="journalEyebrow">{e(tr('journalEyebrow', lang))}</p><span class="micro" id="journal-content-count">3 {e(tr('journalStories', lang))} / 24 {e(tr('journalPhotos', lang))}</span></div>{choices(lang, 'ID')}<div id="journal-reader">{reader(lang, 'ID')}</div><p id="journal-status" class="sr-only" role="status"></p></section>
+          <section id="notebook" class="journal-notebook" aria-label="{e(tr('journalNav', lang))}"><div class="journal-notebook-label"><p class="eyebrow" data-i18n="journalEyebrow">{e(tr('journalEyebrow', lang))}</p><span class="micro" id="journal-content-count">{len(VISITED)} {e(tr('journalCountries', lang))} · {len(DESTINATIONS)} {e(tr('journalWithContent', lang))}</span></div>{country_picker(lang, DEFAULT_COUNTRY)}<div class="journal-content-shortcuts"><span class="micro journal-content-label" data-i18n="journalContentLabel">{e(tr('journalContentLabel', lang))}</span>{choices(lang, DEFAULT_COUNTRY)}</div><div id="journal-reader">{reader(lang, DEFAULT_COUNTRY)}</div><p id="journal-status" class="sr-only" role="status"></p></section>
           {atlas(lang)}{localized_template('travel-fixed.html', lang)}'''
     body = f'<body class="travel-journal" data-page="{page}" data-travel-country="{code or ""}"><a class="skip" data-i18n="skip" href="#main">{e(tr("skip", lang))}</a>{localized_template("travel-header.html", lang)}<main id="main">{main}</main>{localized_template("travel-footer.html", lang)}<noscript><p class="journal-noscript">{e(tr("journalNoScript", lang))}</p></noscript></body></html>\n'
     out = ROOT / path(lang, code).lstrip('/') / 'index.html'
@@ -178,4 +222,5 @@ if __name__ == '__main__':
         for country in DESTINATIONS:
             build(locale, country)
     sitemap()
-    print('Built 8 travel pages from shared stories, photographs and translations.')
+    (ROOT / 'assets/data/travel.json').write_text(json.dumps(DATA, ensure_ascii=False, indent=2) + '\n')
+    print(f'Built {2 * (1 + len(DESTINATIONS))} travel pages; {len(VISITED)} countries and {len(DESTINATIONS)} entries with content.')

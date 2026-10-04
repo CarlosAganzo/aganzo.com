@@ -5,7 +5,12 @@ export function initTravel({data, t, language}) {
   const local = value => typeof value === 'object' && value ? value[lang] || value.en || '' : value || '';
   const esc = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const visited = [...new Set(Object.values(data.regions).flat())];
-  const written = Object.keys(data.entries).filter(code => data.entries[code].slug).sort((a,b) => ['ID','FR','BE'].indexOf(a)-['ID','FR','BE'].indexOf(b));
+  const hasText = value => typeof value === 'string' ? Boolean(value.trim()) : Boolean(value && Object.values(value).some(hasText));
+  const hasContent = code => {
+    const entry=data.entries[code];
+    return Boolean(entry && ([entry.noteHtml,entry.note,entry.memory].some(hasText) || entry.photos?.length || entry.photo));
+  };
+  const written = visited.filter(hasContent).sort((a,b)=>names.of(a).localeCompare(names.of(b),lang));
   const standalone = document.body.dataset.travelCountry;
   const regionOf = code => Object.keys(data.regions).find(r => data.regions[r].includes(code));
   const name = code => names.of(code);
@@ -28,6 +33,7 @@ export function initTravel({data, t, language}) {
     const url = new URL((lang === 'es' ? '/es' : '') + '/travel/' + (code && data.entries[code]?.slug ? data.entries[code].slug + '/' : ''), location.origin);
     if (lang === 'ja' || lang === 'zh') url.searchParams.set('lang', lang);
     if (new URLSearchParams(location.search).get('from') === 'carlosaganzo.com') url.searchParams.set('from', 'carlosaganzo.com');
+    if(code && !data.entries[code]?.slug){url.searchParams.set('country',code);if(!hash)hash='notebook';}
     url.hash = hash;
     return url.pathname + url.search + url.hash;
   };
@@ -60,8 +66,12 @@ export function initTravel({data, t, language}) {
         return `<a class="journal-choice" data-destination="${code}" href="${path(code)}"${code === country ? ' aria-current="true"' : ''}>${visual}<span><strong>${esc(name(code))}</strong><small>${esc(label)}</small></span><span class="choice-arrow" aria-hidden="true">${standalone ? '↗' : '↓'}</span></a>`;
       }).join('');
     });
+    const picker=document.getElementById('journal-country');
+    if(picker){
+      picker.innerHTML=Object.entries(data.regions).map(([key,codes])=>`<optgroup label="${esc(t(key))}">${[...codes].sort((a,b)=>name(a).localeCompare(name(b),lang)).map(code=>`<option value="${code}"${code===country?' selected':''}>${esc(name(code))} — ${esc(hasContent(code)?(allPhotos(code).length?`${allPhotos(code).length} ${t('journalPhotoShort')}`:t('journalStoryOnly')):t('journalPending'))}</option>`).join('')}</optgroup>`).join('');
+    }
     const count = document.getElementById('journal-content-count');
-    if (count) count.textContent = `${written.length} ${t('journalStories')} / ${written.reduce((sum,c) => sum+allPhotos(c).length,0)} ${t('journalPhotos')}`;
+    if(count)count.textContent=`${visited.length} ${t('journalCountries')} · ${written.length} ${t('journalWithContent')}`;
   }
   function renderReader() {
     const item = data.entries[country] || {};
@@ -73,7 +83,7 @@ export function initTravel({data, t, language}) {
     const titleTag = standalone ? 'h1' : 'h2';
     const articleLink = !standalone && item.slug ? `<a class="journal-text-link" id="journey-page-link" href="${path(country)}">${esc(t('journalReadPage'))} <span aria-hidden="true">↗</span></a>` : '';
     const htmlNote = local(item.noteHtml);
-    const note = htmlNote ? '<p>' + htmlNote.replace(/<br\s*\/?>\s*<br\s*\/?>/gi, '</p><p>') + '</p>' : `<p>${esc(local(item.note) || t('journalEmptyText'))}</p>`;
+    const note = htmlNote ? '<p>' + htmlNote.replace(/<br\s*\/?>\s*<br\s*\/?>/gi, '</p><p>') + '</p>' : `<p>${esc(local(item.note) || local(item.memory) || t('journalEmptyText'))}</p>`;
     const places = local(item.places);
     const route = Array.isArray(places) && places.length ? `<div class="journal-route"><span class="micro">${esc(t('journalRoute'))}</span><p>${places.map(esc).join(' · ')}</p></div>` : '';
     const mapURL = new URL(path(null, 'atlas'), location.origin); mapURL.searchParams.set('country', country);
@@ -151,7 +161,7 @@ export function initTravel({data, t, language}) {
     const query = normalize(search.value.trim());
     const codes = (region === 'all' ? visited : data.regions[region]).filter(code=>normalize(name(code)).includes(query)||code.toLowerCase()===query).sort((a,b)=>name(a).localeCompare(name(b),lang));
     const position = countryList.scrollTop;
-    countryList.innerHTML = codes.map(code => `<button type="button" data-country-code="${code}" aria-pressed="${code===country}"><span>${esc(name(code))}</span>${data.entries[code]?.slug?`<span class="country-has-story" aria-label="${esc(t('journalStoryOnly'))}">↗</span>`:''}</button>`).join('');
+    countryList.innerHTML = codes.map(code => `<button type="button" data-country-code="${code}" aria-pressed="${code===country}"><span>${esc(name(code))}</span>${hasContent(code)?`<span class="country-has-story" aria-label="${esc(t('journalStoryOnly'))}">↗</span>`:''}</button>`).join('');
     countryList.scrollTop = position;
     document.getElementById('country-status').textContent = codes.length ? `${codes.length} / ${visited.length}` : t('noCountries');
   }
@@ -237,7 +247,7 @@ export function initTravel({data, t, language}) {
     const sub=event.target.closest('[data-subregion],.region-province.is-visited');
     if(sub){selectSubregion(sub.dataset.subregion??sub.dataset.region,true);}
   });
-  document.addEventListener('change',event=>{if(event.target.id==='photo-region')selectSubregion(event.target.value);});
+  document.addEventListener('change',event=>{if(event.target.id==='photo-region')selectSubregion(event.target.value);if(event.target.id==='journal-country')select(event.target.value,false);});
   document.addEventListener('keydown',event=>{
     const shape=event.target.closest('.atlas-country,.region-province.is-visited');
     if(shape&&(event.key==='Enter'||event.key===' ')){event.preventDefault();if(shape.dataset.country)select(shape.dataset.country);else selectSubregion(shape.dataset.region,true);}
@@ -246,7 +256,7 @@ export function initTravel({data, t, language}) {
   window.addEventListener('popstate',()=>{readUrl();renderReader();renderMapSelection();renderMap();});
   // Strings outside the changing reader are localized as well.
   const text = (selector,key) => {const node=document.querySelector(selector);if(node)node.textContent=t(key);};
-    text('#atlas-title','journalAtlasTitle');const mapEyebrow=document.querySelector('.journal-section-heading .eyebrow');if(mapEyebrow)mapEyebrow.textContent='02 / '+t('journalMap');text('.journal-atlas-help','journalAtlasHelp');
+    text('label[for="journal-country"]','journalChooseCountry');text('.journal-content-label','journalContentLabel');text('#atlas-title','journalAtlasTitle');const mapEyebrow=document.querySelector('.journal-section-heading .eyebrow');if(mapEyebrow)mapEyebrow.textContent='02 / '+t('journalMap');text('.journal-atlas-help','journalAtlasHelp');
   text('label[for="country-search"]','journalSearch');text('.journal-total span','atlasVisited');
   text('.journal-atlas-about summary','atlasSubtitle');text('.journal-atlas-about > p','travelText');
   text('.journal-atlas-about .atlas-foot','atlasFoot');text('.journal-related > .eyebrow','journalMore');
@@ -258,5 +268,14 @@ export function initTravel({data, t, language}) {
   const worldBack=document.getElementById('regional-map-back');if(worldBack)worldBack.textContent='← '+t('worldMap');
   text('.regional-map-heading .micro','regionalView');
   readUrl();renderReader();renderMapSelection();renderMap();
+  if(standalone){
+    const item=data.entries[country]||{},key='seoTitle_'+item.slug;
+    if(t(key)===key){
+      document.title=[name(country),local(item.subtitle),'Carlos Aganzo'].filter(Boolean).join(' — ');
+      const description=String(local(item.noteHtml)||local(item.note)||local(item.memory)||t('seoDescription_travel')).replace(/<[^>]*>/g,' ').slice(0,190);
+      document.querySelectorAll('meta[name="description"],meta[property="og:description"],meta[name="twitter:description"]').forEach(el=>el.content=description);
+      document.querySelectorAll('meta[property="og:title"],meta[name="twitter:title"]').forEach(el=>el.content=document.title);
+    }
+  }
   document.documentElement.classList.add('travel-ready');
 }

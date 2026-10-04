@@ -6,10 +6,10 @@ if(location.pathname==='/' && legacySections[location.hash]){
 const base = '/';
 const page = document.body.dataset.page;
 const params = new URLSearchParams(location.search);
-const assetVersion = '20261004-journal2';
+const assetVersion = '20261004-journal3';
 const load = async name => {
-  const version = name === 'now' ? Date.now() : assetVersion;
-  const options = name === 'now' ? { cache: 'no-store' } : undefined;
+  const version = ['now','travel'].includes(name) ? Date.now() : assetVersion;
+  const options = ['now','travel'].includes(name) ? { cache: 'no-store' } : undefined;
   const response = await fetch(`${base}assets/data/${name}.json?v=${version}`, options);
   if (!response.ok) throw new Error(`Cannot load ${name}: ${response.status}`);
   return response.json();
@@ -50,8 +50,10 @@ function setLanguage(value){
   document.querySelectorAll('[data-i18n-html]').forEach(el => {el.innerHTML=translate(el.dataset.i18nHtml);});
   for (const attr of ['aria','alt']) document.querySelectorAll(`[data-i18n-${attr}]`).forEach(el=>el.setAttribute(attr==='aria'?'aria-label':'alt',translate(el.dataset[attr==='aria'?'i18nAria':'i18nAlt'])));
   document.querySelectorAll('[data-lang]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.lang===lang)));
-  document.title = translate(`seoTitle_${page}`);
-  const description=translate(`seoDescription_${page}`);
+  const titleKey = `seoTitle_${page}`;
+  if(translate(titleKey)!==titleKey)document.title = translate(titleKey);
+  const descriptionKey=`seoDescription_${page}`;
+  const description=translate(descriptionKey)===descriptionKey?document.querySelector('meta[name="description"]').content:translate(descriptionKey);
   document.querySelector('meta[name="description"]').content=description;
   document.querySelector('meta[property="og:description"]').content=description;
   document.querySelector('meta[name="twitter:description"]').content=description;
@@ -65,7 +67,7 @@ function setLanguage(value){
 }
 
 document.querySelectorAll('.brand').forEach(el=>{el.textContent=domain;});
-const navPage = ['cinema','music','games','books'].includes(page) ? 'lists' : ['indonesia','france','belgium'].includes(page) ? 'travel' : page;
+const navPage = 'travel';
 document.querySelectorAll('[data-page-link]').forEach(a=>{if(a.dataset.pageLink===navPage)a.setAttribute('aria-current','page');});
 document.querySelectorAll('[data-lang]').forEach(button=>button.addEventListener('click',()=>{
   const target=button.dataset.lang;
@@ -89,7 +91,7 @@ document.getElementById('year').textContent=new Date().getFullYear();
 setLanguage(lang);
 
 try {
-  const [data, module] = await Promise.all([load('travel'), import('./travel-journal.js?v=20261004-journal2')]);
+  const [data, module] = await Promise.all([load('travel'), import('./travel-journal.js?v=20261004-journal3')]);
   module.initTravel({data, t: translate, language});
 } catch (error) {
   console.error('Travel could not initialize', error);

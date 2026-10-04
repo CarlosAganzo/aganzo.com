@@ -400,7 +400,7 @@
     "journalNav": "Stories & photographs",
     "journalMap": "Explore the map",
     "journalPlaces": "Three fixed points",
-    "journalEyebrow": "FROM THE NOTEBOOK",
+    "journalEyebrow": "COUNTRY NOTEBOOK",
     "journalStories": "stories",
     "journalPhotos": "photographs",
     "journalPhotoShort": "photos",
@@ -433,7 +433,12 @@
     "seoDescription_belgium": "The first time I ever left Spain was for Belgium. I was at university when a friend announced that there were flights to Brussels for 15,000 pesetas. It was the dawn of cheap air travel, and it sounded almost too good to be true. A few hours later, there were already six of us.",
     "journalNavShort": "Stories & photos",
     "journalMapShort": "Map",
-    "journalPlacesShort": "Three places"
+    "journalPlacesShort": "Three places",
+    "journalChooseCountry": "Choose a country",
+    "journalWithContent": "with stories or photos",
+    "journalContentLabel": "With content",
+    "journalPending": "Not written yet",
+    "journalCountries": "countries"
   },
   "es": {
     "emailLabel": "Correo electrónico",
@@ -836,7 +841,7 @@
     "journalNav": "Relatos y fotografías",
     "journalMap": "Explorar el mapa",
     "journalPlaces": "Tres puntos fijos",
-    "journalEyebrow": "DEL CUADERNO",
+    "journalEyebrow": "CUADERNO POR PAÍSES",
     "journalStories": "relatos",
     "journalPhotos": "fotografías",
     "journalPhotoShort": "fotos",
@@ -869,7 +874,12 @@
     "seoDescription_belgium": "La primera vez que salí de España fue a Bélgica. Estaba en la universidad cuando un amigo apareció con la noticia de que había vuelos a Bruselas por 15.000 pesetas. Era el comienzo de los vuelos baratos y aquello sonaba casi demasiado bien para ser verdad. Unas horas después ya éramos seis.",
     "journalNavShort": "Relatos y fotos",
     "journalMapShort": "Mapa",
-    "journalPlacesShort": "Tres lugares"
+    "journalPlacesShort": "Tres lugares",
+    "journalChooseCountry": "Elige un país",
+    "journalWithContent": "con texto o fotos",
+    "journalContentLabel": "Con contenido",
+    "journalPending": "Pendiente de escribir",
+    "journalCountries": "países"
   },
   "ja": {
     "emailLabel": "メール",
@@ -1272,7 +1282,7 @@
     "journalNav": "旅の話と写真",
     "journalMap": "地図を開く",
     "journalPlaces": "三つの特別な場所",
-    "journalEyebrow": "旅のノートから",
+    "journalEyebrow": "国別の旅ノート",
     "journalStories": "編の旅の話",
     "journalPhotos": "枚の写真",
     "journalPhotoShort": "枚",
@@ -1305,7 +1315,12 @@
     "seoDescription_belgium": "初めてスペインを出た先はベルギーだった。大学時代、友人が「ブリュッセル行きが15,000ペセタで出ている」と言ってきた。格安航空券が生まれ始めた頃で、ほとんど信じられない値段だった。数時間後には、もう6人のグループになっていた。",
     "journalNavShort": "旅の話と写真",
     "journalMapShort": "地図",
-    "journalPlacesShort": "三つの場所"
+    "journalPlacesShort": "三つの場所",
+    "journalChooseCountry": "国を選ぶ",
+    "journalWithContent": "文章・写真あり",
+    "journalContentLabel": "文章・写真あり",
+    "journalPending": "未執筆",
+    "journalCountries": "か国"
   },
   "zh": {
     "emailLabel": "电子邮件",
@@ -1708,7 +1723,7 @@
     "journalNav": "故事与照片",
     "journalMap": "探索地图",
     "journalPlaces": "三个特别的地方",
-    "journalEyebrow": "旅行笔记",
+    "journalEyebrow": "各国旅行笔记",
     "journalStories": "篇故事",
     "journalPhotos": "张照片",
     "journalPhotoShort": "张照片",
@@ -1741,6 +1756,11 @@
     "seoDescription_belgium": "我第一次离开西班牙，去的就是比利时。那时我还在上大学，一个朋友突然说，飞布鲁塞尔的机票只要15,000比塞塔。那正是廉价航空刚刚出现的年代，这个价格听起来几乎不像真的。几个小时后，我们已经凑成了六个人。",
     "journalNavShort": "故事与照片",
     "journalMapShort": "地图",
-    "journalPlacesShort": "三个地方"
+    "journalPlacesShort": "三个地方",
+    "journalChooseCountry": "选择国家",
+    "journalWithContent": "已有文字或照片",
+    "journalContentLabel": "已有内容",
+    "journalPending": "尚未撰写",
+    "journalCountries": "个国家"
   }
 }

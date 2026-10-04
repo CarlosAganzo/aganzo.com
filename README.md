@@ -38,13 +38,20 @@ Google Search Console showed the homepage indexed while the newly created sectio
 
 ## Travel journal — 2026-10-04
 
-The travel hub puts the written destinations and photographs first, followed by
-an independent map/index and the three fixed points. Indonesia, France and Belgium
-use the same reader and have static EN/ES destination pages. Country/subregion
-query links and the four languages remain supported.
+The travel hub has one notebook entry for every visited country, a compact country
+selector, and shortcuts generated from entries with text or photos. Countries
+without content show a pending entry. Photos and text share one reader, followed
+by an independent map/index and the three fixed points. Country/subregion query
+links and the four languages remain supported.
 
 `assets/data/travel.json` is the source for stories, dates, routes, captions and
 photos. After changing it or the shared translations, run
-`python tools/build_travel.py` to regenerate the eight travel pages and sitemap.
+`python tools/build_travel.py` (Python and Node required) to regenerate the travel
+pages and sitemap. The builder discovers every country with content, creates its
+EN/ES pages, and supplies a slug when needed; no country list, name list or count
+needs updating by hand. Commit the resulting pages and data together.
+The browser also reads current travel data and discovers entries automatically,
+so a newly published story/photo appears in the notebook even before it has a
+standalone page. A data edit alone does not run the static builder on GitHub Pages.
 The reader is in `assets/js/travel-journal.js`, its locale bootstrap in
 `assets/js/travel-app.js`, and its styles in `assets/css/travel.css`.
