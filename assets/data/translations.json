@@ -1,5 +1,7 @@
 {
   "en": {
+    "directorsLabel": "Directors",
+    "directorsTitle": "Behind the camera",
     "emailLabel": "Email",
     "heroLocation": "MADRID ↔ GREAT BRITAIN",
     "pageTitle": "AGANZO.COM — Carlos Aganzo",
@@ -449,6 +451,8 @@
     "regionEmpty": "This region is ready for notes and photographs. Nothing invented in the meantime."
   },
   "es": {
+    "directorsLabel": "Directores",
+    "directorsTitle": "Detrás de la cámara",
     "emailLabel": "Correo electrónico",
     "heroLocation": "MADRID ↔ GRAN BRETAÑA",
     "pageTitle": "AGANZO.COM — Carlos Aganzo",
@@ -898,6 +902,8 @@
     "regionEmpty": "Esta región está preparada para notas y fotografías. Mientras tanto, nada inventado."
   },
   "ja": {
+    "directorsLabel": "監督",
+    "directorsTitle": "カメラの向こう側",
     "emailLabel": "メール",
     "heroLocation": "マドリード ↔ 英国",
     "pageTitle": "AGANZO.COM — カルロス・アガンソ",
@@ -1347,6 +1353,8 @@
     "regionEmpty": "この地域は文章と写真を追加できる状態です。それまでは、何も作りません。"
   },
   "zh": {
+    "directorsLabel": "导演",
+    "directorsTitle": "镜头背后",
     "emailLabel": "电子邮件",
     "heroLocation": "马德里 ↔ 英国",
     "pageTitle": "AGANZO.COM — Carlos Aganzo",
