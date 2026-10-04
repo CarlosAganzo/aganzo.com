@@ -40,9 +40,10 @@ export function initTravel({data, t, language}) {
   function readUrl() {
     const params = new URLSearchParams(location.search);
     country = standalone || (visited.includes(params.get('country')) ? params.get('country') : 'ID');
-    subregion = config()?.regions?.[params.get('subregion')]?.visited ? params.get('subregion') : null;
+    const requestedSubregion=params.get('subregion'), requestedRegion=config()?.regions?.[requestedSubregion];
+    subregion = requestedRegion && (requestedRegion.visited || requestedRegion.enabled) ? requestedSubregion : null;
     region = data.regions[params.get('region')] ? params.get('region') : 'all';
-    mapMode = (subregion || location.hash === '#atlas') && config() ? 'regional' : 'world';
+    mapMode = ((standalone && data.entries[country]?.regionalExplorer && config()) || ((subregion || location.hash === '#atlas') && config())) ? 'regional' : 'world';
   }
   function writeUrl(push = true) {
     const url = new URL(location.href);
@@ -101,7 +102,7 @@ export function initTravel({data, t, language}) {
     const regions = config()?.regions;
     let filter = '';
     if (regions) {
-      filter = `<label class="journal-region-label"><span class="sr-only">${esc(t('journalPhotoRegions'))}</span><select id="photo-region"><option value="">${esc(t('journalAllPhotos'))}</option>${Object.entries(regions).filter(([,r])=>r.visited).map(([key,r])=>`<option value="${key}"${key===subregion?' selected':''}>${esc(local(r.name))}</option>`).join('')}</select></label>`;
+      filter = `<label class="journal-region-label"><span class="sr-only">${esc(t('journalPhotoRegions'))}</span><select id="photo-region"><option value="">${esc(t('journalAllPhotos'))}</option>${Object.entries(regions).filter(([,r])=>r.visited||r.enabled).map(([key,r])=>`<option value="${key}"${key===subregion?' selected':''}>${esc(local(r.name))}</option>`).join('')}</select></label>`;
     }
     const photo = shownPhotos[activePhoto];
     if (!photo) return `<section class="journal-gallery"><div class="journal-gallery-top">${filter}</div><p>${esc(t('journalRegionEmpty'))}</p></section>`;
@@ -182,20 +183,35 @@ export function initTravel({data, t, language}) {
     if (!regions || !mapCanvas) return;
     mapCanvas.querySelectorAll('.region-province').forEach(shape=>{
       const r=regions[shape.dataset.region];
-      shape.classList.toggle('is-visited', Boolean(r?.visited));
+      const available=Boolean(r?.visited||r?.enabled);
+      shape.classList.toggle('is-visited', available);
       shape.classList.toggle('is-selected', shape.dataset.region===subregion);
       shape.setAttribute('aria-pressed', String(shape.dataset.region===subregion));
-      if(r)shape.setAttribute('aria-label', local(r.name)+' — '+t(r.visited?'visitedRegion':'unvisitedRegion'));
-      if(r?.visited){shape.setAttribute('role','button');shape.setAttribute('tabindex','0');}
+      if(r)shape.setAttribute('aria-label', local(r.name)+(r.visited?' — '+t('visitedRegion'):''));
+      if(available){shape.setAttribute('role','button');shape.setAttribute('tabindex','0');}
+      else{shape.removeAttribute('role');shape.setAttribute('tabindex','-1');}
     });
-    const buttons = [{key:'',label:t('allRegionPhotos')},...Object.entries(regions).filter(([,r])=>r.visited).map(([key,r])=>({key,label:local(r.name)}))];
-    document.getElementById('regional-map-list').innerHTML=buttons.map(({key,label})=>`<button type="button" data-subregion="${key}" aria-pressed="${(key||null)===subregion}">${esc(label)}</button>`).join('');
+    const allLabel = standalone && data.entries[country]?.regionalExplorer ? t('allRegions') : t('allRegionPhotos');
+    const buttons = [{key:'',label:allLabel},...Object.entries(regions).filter(([,r])=>r.visited||r.enabled).map(([key,r])=>({key,label:local(r.name)}))];
+    const list=document.getElementById('regional-map-list');
+    if(list)list.innerHTML=buttons.map(({key,label})=>`<button type="button" data-subregion="${key}" aria-pressed="${(key||null)===subregion}">${esc(label)}</button>`).join('');
+  }
+  function renderRegionDetail() {
+    const detail=document.getElementById('region-detail');
+    const settings=config(), regions=settings?.regions;
+    if(!detail||!regions)return;
+    const item=subregion?regions[subregion]:null;
+    const title=item?local(item.name):t('allRegions');
+    const note=item?(local(item.noteHtml)||local(item.note)||t('regionEmpty')):(local(settings.intro)||t('journalRegionsIntro'));
+    const places=item?local(item.places):null;
+    const placeLine=Array.isArray(places)&&places.length?`<div class="region-detail-places"><span class="micro">${esc(t('journalRoute'))}</span><p>${places.map(esc).join(' · ')}</p></div>`:'';
+    detail.innerHTML=`<p class="eyebrow">${esc(t('regionArchive'))}</p><h2 id="region-detail-title">${esc(title)}</h2><div class="region-detail-copy"><p>${String(note).replace(/<br\s*\/?>\s*<br\s*\/?>/gi,'</p><p>')}</p></div>${placeLine}`;
   }
   async function renderMap() {
     if (!mapShell) return;
     const request=++mapRequest, settings=config();
     const regional = mapMode==='regional' && settings;
-    worldMap.hidden=Boolean(regional); mapShell.hidden=!regional; mapPaper.classList.toggle('is-regional',Boolean(regional));
+    if(worldMap)worldMap.hidden=Boolean(regional); mapShell.hidden=!regional; mapPaper?.classList.toggle('is-regional',Boolean(regional));
     if (!regional) return;
     document.getElementById('regional-map-country').textContent=name(country);
     try {
@@ -221,9 +237,10 @@ export function initTravel({data, t, language}) {
     if(shouldScroll)scrollTo('notebook',true);
   }
   function selectSubregion(key, shouldScroll = false) {
-    if(key && !config()?.regions?.[key]?.visited)return;
-    subregion=key||null;writeUrl();renderReader();syncSubregions();
-    if(shouldScroll)scrollTo('notebook',true);
+    const target=key?config()?.regions?.[key]:null;
+    if(key && !(target?.visited||target?.enabled))return;
+    subregion=key||null;writeUrl();renderReader();syncSubregions();renderRegionDetail();
+    if(shouldScroll)scrollTo(standalone&&document.getElementById('region-detail')?'region-detail':'notebook',false);
   }
   // Delegation survives destination changes and preserves ordinary new-tab links.
   document.addEventListener('click', event => {
@@ -253,7 +270,7 @@ export function initTravel({data, t, language}) {
     if(shape&&(event.key==='Enter'||event.key===' ')){event.preventDefault();if(shape.dataset.country)select(shape.dataset.country);else selectSubregion(shape.dataset.region,true);}
   });
   search?.addEventListener('input',renderCountries);
-  window.addEventListener('popstate',()=>{readUrl();renderReader();renderMapSelection();renderMap();});
+  window.addEventListener('popstate',()=>{readUrl();renderReader();renderMapSelection();renderMap();renderRegionDetail();});
   // Strings outside the changing reader are localized as well.
   const text = (selector,key) => {const node=document.querySelector(selector);if(node)node.textContent=t(key);};
     text('label[for="journal-country"]','journalChooseCountry');text('.journal-content-label','journalContentLabel');text('#atlas-title','journalAtlasTitle');const mapEyebrow=document.querySelector('.journal-section-heading .eyebrow');if(mapEyebrow)mapEyebrow.textContent='02 / '+t('journalMap');text('.journal-atlas-help','journalAtlasHelp');
@@ -267,7 +284,7 @@ export function initTravel({data, t, language}) {
   text('.map-key > span:first-child','visited');
   const worldBack=document.getElementById('regional-map-back');if(worldBack)worldBack.textContent='← '+t('worldMap');
   text('.regional-map-heading .micro','regionalView');
-  readUrl();renderReader();renderMapSelection();renderMap();
+  readUrl();renderReader();renderMapSelection();renderMap();renderRegionDetail();
   if(standalone){
     const item=data.entries[country]||{},key='seoTitle_'+item.slug;
     if(t(key)===key){
