@@ -15,7 +15,7 @@ import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 DATA = json.loads((ROOT / 'assets/data/travel.json').read_text())
 TRANSLATIONS = json.loads((ROOT / 'assets/data/translations.json').read_text())
-VERSION = '20261004-journal4'
+VERSION = '20261004-journal5'
 DATE = '2026-10-04'
 VISITED = list(dict.fromkeys(code for codes in DATA['regions'].values() for code in codes))
 
@@ -124,7 +124,7 @@ def reader(lang, code, standalone=False):
         thumbs = ''.join(f'<a href="{image(p)}" class="journal-thumb" data-photo-index="{i}" aria-label="{e(local(p["alt"], lang))}" aria-current="{str(i == hero_index).lower()}"><img src="{image(p)}" alt="" width="100" height="68" loading="lazy"></a>' for i, p in enumerate(photos))
         filters = ''
         if code in DATA.get('subdivisions', {}):
-            options = ''.join(f'<option value="{key}">{e(local(r["name"], lang))}</option>' for key, r in DATA['subdivisions'][code]['regions'].items() if r.get('visited'))
+            options = ''.join(f'<option value="{key}">{e(local(r["name"], lang))}</option>' for key, r in DATA['subdivisions'][code]['regions'].items() if r.get('visited') or r.get('enabled'))
             filters = f'<label class="journal-region-label"><span class="sr-only">{e(tr("journalPhotoRegions", lang))}</span><select id="photo-region"><option value="">{e(tr("journalAllPhotos", lang))}</option>{options}</select></label>'
         photos_html = f'''<section class="journal-gallery" aria-label="{e(tr('journalNav', lang))}">
           <div class="journal-gallery-top"><span class="micro" id="photo-total">{len(photos)} {e(tr('journalPhotos', lang))}</span>{filters}</div>
@@ -141,6 +141,23 @@ def reader(lang, code, standalone=False):
       <header class="journal-entry-heading"><div><p class="eyebrow">{e(meta)}</p><{title_tag} id="country-title" tabindex="-1">{NAMES[lang][code]}</{title_tag}></div>{article_link}</header>
       <div class="journal-entry-grid">{photos_html}<div class="journal-writing"><p class="journal-subtitle">{e(subtitle)}</p><div id="country-note" class="journal-prose">{prose}</div>{route}<div class="journal-entry-links">{map_link}</div></div></div>
     </article>'''
+
+
+
+def regional_explorer(lang, code):
+    item = DATA['entries'][code]
+    settings = DATA.get('subdivisions', {}).get(code)
+    if not settings or not item.get('regionalExplorer'):
+        return ''
+    intro = local(settings.get('intro', {}), lang) or tr('journalRegionsIntro', lang)
+    return f'''<section id="regions" class="country-regions" aria-labelledby="regions-title">
+      <div class="country-regions-head"><div><p class="eyebrow">{e(tr('journalRegionsEyebrow', lang))}</p><h2 id="regions-title">{e(tr('journalRegionsTitle', lang))}</h2></div><p>{e(intro)}</p></div>
+      <div class="country-regions-grid">
+        <div class="map-paper is-regional"><div class="map-grid" aria-hidden="true"></div><div id="regional-map-shell" class="regional-map-shell"><div class="regional-map-topline"><div class="regional-map-heading"><strong id="regional-map-country">{NAMES[lang][code]}</strong><span class="micro">{e(tr('regionalView', lang))}</span></div></div><div id="regional-map-canvas" class="regional-map-canvas"></div><div id="regional-map-list" class="regional-map-list" aria-label="{e(tr('regionalView', lang))}"></div></div></div>
+        <article id="region-detail" class="region-detail" aria-live="polite"><p class="eyebrow">{e(tr('regionArchive', lang))}</p><h2 id="region-detail-title">{e(tr('allRegions', lang))}</h2><div class="region-detail-copy"><p>{e(intro)}</p></div></article>
+        <p id="map-status" role="status"></p>
+      </div>
+    </section>'''
 
 
 def atlas(lang):
@@ -177,7 +194,7 @@ def build(lang, code=None):
     early = "<style>html.i18n-pending body{visibility:hidden}</style><script>try{if(['ja','zh'].includes(new URLSearchParams(location.search).get('lang'))){document.documentElement.classList.add('i18n-pending');setTimeout(()=>document.documentElement.classList.remove('i18n-pending'),1800)}}catch{}</script>"
     head = f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8">{early}<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="index,follow,max-image-preview:large"><title>{e(title)}</title><meta name="description" content="{e(desc)}"><link rel="canonical" href="{canonical}">{alternates}<meta name="author" content="Carlos Aganzo">{social_tags}<meta name="cf-web-analytics-token" content="403e543dcdab49e7bbf3115318a8bf44"><link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/css/site.css?v=20260927-seo3"><link rel="stylesheet" href="/assets/css/travel.css?v={VERSION}"><script type="module" src="/assets/js/travel-app.js?v={VERSION}"></script><script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script><script defer src="/assets/js/analytics.js?v=20260922-main"></script></head>'''
     if code:
-        main = f'<div class="journal-breadcrumb"><a data-localized-link href="{path(lang)}?country={code}#notebook">← {e(tr("journalBack", lang))}</a><span class="micro">{e(tr("journalEyebrow", lang))}</span></div><section id="notebook">{reader(lang, code, True)}</section><section class="journal-related"><p class="eyebrow">{e(tr("journalMore", lang))}</p>{choices(lang, code, True)}</section>'
+        main = f'<div class="journal-breadcrumb"><a data-localized-link href="{path(lang)}?country={code}#notebook">← {e(tr("journalBack", lang))}</a><span class="micro">{e(tr("journalEyebrow", lang))}</span></div><section id="notebook">{reader(lang, code, True)}</section>{regional_explorer(lang, code)}<section class="journal-related"><p class="eyebrow">{e(tr("journalMore", lang))}</p>{choices(lang, code, True)}</section>'
     else:
         main = f'''<section class="journal-intro"><div><p class="eyebrow">01 / <span data-i18n="travel">{e(tr('travel', lang))}</span></p><h1 data-i18n-html="travelTitleV2">{tr('travelTitleV2', lang)}</h1></div><div class="journal-intro-note"><p data-i18n="journalIntro">{e(tr('journalIntro', lang))}</p><span class="micro">{len(VISITED)} <span data-i18n="atlasVisited">{e(tr('atlasVisited', lang))}</span></span></div></section>
           <nav class="journal-jumps" aria-label="{e(tr('navigation', lang))}"><a href="#notebook">01 <span data-i18n="journalNavShort">{e(tr('journalNavShort', lang))}</span> ↓</a><a href="#atlas">02 <span data-i18n="journalMapShort">{e(tr('journalMapShort', lang))}</span> ↓</a><a href="#fixed-points">03 <span data-i18n="journalPlacesShort">{e(tr('journalPlacesShort', lang))}</span> ↓</a></nav>
