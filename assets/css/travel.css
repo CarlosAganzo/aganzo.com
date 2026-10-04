@@ -244,3 +244,46 @@ body.photo-is-open{overflow:hidden}
  .journal-content-shortcuts .journal-choice small{font-size:8px}
  .journal-related .journal-choice{flex-basis:160px}
 }
+
+/* Standalone country regional explorer. Spain is the first full use. */
+.country-regions{border-top:1px solid var(--ink);margin:18px 0 48px;padding-top:26px;scroll-margin-top:20px}
+.country-regions-head{display:grid;grid-template-columns:minmax(0,.8fr) minmax(280px,1.2fr);gap:42px;align-items:end;margin-bottom:24px}
+.country-regions-head .eyebrow{margin:0 0 12px}
+.country-regions-head h2{font-size:clamp(40px,5vw,70px);line-height:.96;margin:0;max-width:720px}
+.country-regions-head>p{font-size:15px;line-height:1.65;color:var(--muted);max-width:620px;margin:0}
+.country-regions-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(280px,.72fr);gap:26px;align-items:stretch}
+.country-regions .map-paper{height:520px;padding:0}
+.country-regions .regional-map-shell{padding:16px 18px 14px}
+.country-regions .regional-map-topline{justify-content:flex-end}
+.country-regions .regional-map-heading strong{font-size:28px}
+.country-regions .regional-map-canvas{padding:2px 0}
+.country-regions .regional-map-list{gap:3px}
+.country-regions .regional-map-list button{font-size:9px;padding:6px 9px}
+.region-detail{border:1px solid var(--line);padding:28px;min-height:520px;display:flex;flex-direction:column;justify-content:flex-start;background:color-mix(in srgb,var(--paper) 92%,white)}
+.region-detail .eyebrow{margin:0 0 28px}
+.region-detail h2{font-size:clamp(38px,4vw,58px);line-height:1;margin:0 0 28px}
+.region-detail-copy{font:20px/1.58 var(--serif)}
+.region-detail-copy p{margin:0 0 18px}
+.region-detail-places{margin-top:auto;padding-top:24px;border-top:1px solid var(--line)}
+.region-detail-places p{font:11px/1.6 var(--mono);margin:8px 0 0;color:var(--muted)}
+.country-regions #map-status{grid-column:1/-1;margin:0}
+
+@media(max-width:820px){
+  .country-regions-head{grid-template-columns:1fr;gap:14px}
+  .country-regions-head h2{font-size:42px}
+  .country-regions-grid{grid-template-columns:1fr}
+  .country-regions .map-paper{height:390px}
+  .region-detail{min-height:0;padding:22px}
+}
+@media(max-width:540px){
+  .country-regions{margin-bottom:36px;padding-top:22px}
+  .country-regions-head h2{font-size:36px}
+  .country-regions-head>p{font-size:14px}
+  .country-regions .map-paper{height:340px}
+  .country-regions .regional-map-shell{padding:10px 9px 8px}
+  .country-regions .regional-map-heading strong{font-size:22px}
+  .country-regions .regional-map-list button{font-size:8px;min-height:36px}
+  .region-detail{padding:20px}
+  .region-detail h2{font-size:38px}
+  .region-detail-copy{font-size:18px}
+}
