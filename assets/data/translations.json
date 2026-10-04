@@ -79,7 +79,7 @@
     "personal": "A personal corner of the internet",
     "homeTitle": "A few things.<br>In considerable detail.",
     "homeDeck": "Films, records, places, books. And the occasional simple purchase that becomes a research project.",
-    "introShort": "Castilian. In Great Britain since 2008. I manage software engineering across several teams and collect rather more interests than I have room for.",
+    "introShort": "I'm from Madrid, although I’ve lived in the UK for a long time now. I still carry quite a lot of Madrid with me: the dry humour, the impatience with anything too grand, and a certain affection for things that are a little rough around the edges.",
     "portraitCaption": "The same person. Three different settings.",
     "portraitChoose": "Choose portrait",
     "portraitPause": "Pause slideshow",
@@ -448,7 +448,9 @@
     "journalRegionsIntro": "Spain is too large, too varied and too personal to flatten into one entry. Pick a region.",
     "allRegions": "All regions",
     "regionArchive": "Regional notes",
-    "regionEmpty": "This region is ready for notes and photographs. Nothing invented in the meantime."
+    "regionEmpty": "This region is ready for notes and photographs. Nothing invented in the meantime.",
+    "introTaste": "I tend to be drawn to the same qualities in music, films and places. Things with some darkness in them, things that leave room for interpretation, and things that can be melancholy without trying too hard to be moving. I’m probably more interested than I should be in memory, passing time, and the strange way places and songs end up attached to particular versions of ourselves.",
+    "introSite": "Most of what is on this site comes from that: places I’ve been, photographs I wanted to keep, music and films that stayed with me, and the occasional attempt to understand why."
   },
   "es": {
     "directorsLabel": "Directores",
@@ -530,7 +532,7 @@
     "personal": "Un rincón personal de internet",
     "homeTitle": "Unas cuantas cosas.<br>Con bastante detalle.",
     "homeDeck": "Películas, discos, lugares, libros. Y alguna compra sencilla que acaba convertida en un proyecto de investigación.",
-    "introShort": "Castellano. En Gran Bretaña desde 2008. Gestiono ingeniería de software en varios equipos y acumulo más intereses de los que me caben.",
+    "introShort": "Soy de Madrid, aunque llevo ya mucho tiempo viviendo en el Reino Unido. Sigo llevando bastante Madrid conmigo: el humor seco, la poca paciencia para cualquier cosa demasiado grandilocuente y cierta debilidad por lo que tiene los bordes un poco gastados.",
     "portraitCaption": "La misma persona. Tres escenarios distintos.",
     "portraitChoose": "Elegir retrato",
     "portraitPause": "Pausar presentación",
@@ -899,7 +901,9 @@
     "journalRegionsIntro": "España es demasiado grande, demasiado variada y demasiado personal para aplastarla en una sola entrada. Elige una región.",
     "allRegions": "Todas las regiones",
     "regionArchive": "Notas de la región",
-    "regionEmpty": "Esta región está preparada para notas y fotografías. Mientras tanto, nada inventado."
+    "regionEmpty": "Esta región está preparada para notas y fotografías. Mientras tanto, nada inventado.",
+    "introTaste": "Suelo buscar esas mismas cualidades en la música, el cine y los lugares. Cosas con algo de oscuridad, que dejan espacio para interpretar y que pueden ser melancólicas sin esforzarse demasiado por conmover. Probablemente me interesan más de la cuenta la memoria, el paso del tiempo y esa forma extraña en que los lugares y las canciones acaban unidos a versiones concretas de nosotros mismos.",
+    "introSite": "La mayor parte de lo que hay en esta web sale de ahí: lugares en los que he estado, fotografías que quería conservar, música y películas que se quedaron conmigo, y algún que otro intento de entender por qué."
   },
   "ja": {
     "directorsLabel": "監督",
@@ -981,7 +985,7 @@
     "personal": "インターネットの片隅にある個人サイト",
     "homeTitle": "いくつかのことを。<br>かなり詳しく。",
     "homeDeck": "映画、レコード、場所、本。そして、つい調査プロジェクトになってしまう簡単な買い物。",
-    "introShort": "カスティーリャ出身。2008年から英国暮らし。複数のソフトウェアエンジニアリングチームをマネジメントしながら、収まりきらないほどの興味を集めています。",
+    "introShort": "マドリード出身ですが、もう長いこと英国で暮らしています。それでも自分の中にはかなりマドリードが残っています。乾いたユーモア、大げさなものへの辛抱のなさ、そして少しくたびれたものへの妙な愛着。",
     "portraitCaption": "同じ人。三つの違う場所。",
     "portraitChoose": "写真を選ぶ",
     "portraitPause": "スライドショーを停止",
@@ -1350,7 +1354,9 @@
     "journalRegionsIntro": "スペインは広く、多様で、そして個人的すぎて、一つの記事には収まらない。地域を選ぶ。",
     "allRegions": "すべての地域",
     "regionArchive": "地域のノート",
-    "regionEmpty": "この地域は文章と写真を追加できる状態です。それまでは、何も作りません。"
+    "regionEmpty": "この地域は文章と写真を追加できる状態です。それまでは、何も作りません。",
+    "introTaste": "音楽や映画や場所にも、同じようなものを求めがちです。少し暗さがあり、解釈の余地があり、感動させようと力まずにメランコリックでいられるもの。記憶や時間の流れ、そして場所や曲がいつの間にか過去のある時期の自分と結びついていく不思議さに、たぶん必要以上に惹かれています。",
+    "introSite": "このサイトにあるものの大半は、そこから来ています。訪れた場所、残しておきたかった写真、心に残った音楽や映画、そして時々、それがなぜなのかを理解しようとする試みです。"
   },
   "zh": {
     "directorsLabel": "导演",
@@ -1432,7 +1438,7 @@
     "personal": "互联网里的一处私人角落",
     "homeTitle": "几件小事。<br>研究得相当仔细。",
     "homeDeck": "电影、唱片、地方、书。还有那些不知怎么就变成研究项目的简单购物。",
-    "introShort": "来自卡斯蒂利亚，2008 年起住在英国。我同时管理多个软件工程团队，也积累着多到快放不下的兴趣。",
+    "introShort": "我来自马德里，不过已经在英国生活了很久。身上似乎仍带着不少马德里的东西：干涩的幽默，对过度宏大的东西缺乏耐心，以及对那些略显粗粝、带点磨损感的事物有一种偏爱。",
     "portraitCaption": "同一个人。三个不同的场景。",
     "portraitChoose": "选择肖像",
     "portraitPause": "暂停幻灯片",
@@ -1801,6 +1807,8 @@
     "journalRegionsIntro": "西班牙太大、太多样，也太私人，不适合压缩成一篇文字。选择一个地区。",
     "allRegions": "所有地区",
     "regionArchive": "地区笔记",
-    "regionEmpty": "这个地区已经准备好添加文字和照片。在那之前，不编造任何内容。"
+    "regionEmpty": "这个地区已经准备好添加文字和照片。在那之前，不编造任何内容。",
+    "introTaste": "我在音乐、电影和地方上，往往也会被同样的特质吸引：带一点黑暗，留出解释的空间，可以忧郁却不刻意煽情。记忆、时间的流逝，以及某些地方和歌曲会莫名其妙地与我们某个时期的自己绑在一起——我大概对此感兴趣得有点过头。",
+    "introSite": "这个网站上的大部分东西都来自那里：我去过的地方、想留下来的照片、一直留在我心里的音乐和电影，以及偶尔试着弄明白为什么。"
   }
 }
