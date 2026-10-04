@@ -35,3 +35,16 @@ See the migration checks in `tools/check_promotion.py`; browser checks cover pro
 ## SEO checkpoint — 2026-09-27
 
 Google Search Console showed the homepage indexed while the newly created section/locale URLs were still unknown to Google. All 20 canonical URLs were added to the connected indexing tracker. Sitemap re-submission requires a Search Console connection with full `webmasters` scope; the current connection is read-only, so re-submission must be completed after enabling full access (or manually in Search Console).
+
+## Travel journal — 2026-10-04
+
+The travel hub puts the written destinations and photographs first, followed by
+an independent map/index and the three fixed points. Indonesia, France and Belgium
+use the same reader and have static EN/ES destination pages. Country/subregion
+query links and the four languages remain supported.
+
+`assets/data/travel.json` is the source for stories, dates, routes, captions and
+photos. After changing it or the shared translations, run
+`python tools/build_travel.py` to regenerate the eight travel pages and sitemap.
+The reader is in `assets/js/travel-journal.js`, its locale bootstrap in
+`assets/js/travel-app.js`, and its styles in `assets/css/travel.css`.

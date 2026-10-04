@@ -236,7 +236,26 @@
           "region": "nusa-tenggara"
         }
       ],
-      "heroPhoto": "travel/indonesia/dsc06812.webp"
+      "heroPhoto": "travel/indonesia/dsc06812.webp",
+      "noteHtml": {
+        "en": "Travelling through Indonesia is less like visiting many different places than making several different journeys. From the deranged city of Jakarta, with its brutal contrasts, to the great Buddhist and Hindu temple complexes; from diving with sharks in Komodo to spending three days travelling upriver in Borneo, in a kind of family <em>Heart of Darkness</em>, with only orangutans for company. From Bali’s terrifying figures to the markets of Semarang.<br><br>Indonesia does not feel like a single country crossed from end to end, but several journeys that, somehow, happened one after another.",
+        "es": "Viajar a Indonesia es, más que viajar a muchos lugares diferentes, hacer muchos viajes distintos. Pasar de la ciudad desquiciada que es Jakarta, con sus contrastes brutales, a algunos de los mayores templos budistas e hindúes del mundo; de bucear con tiburones en Komodo a pasar tres días remontando un río en Borneo, en una especie de <em>Corazón de las Tinieblas</em> familiar, sin más compañía que los orangutanes. De los ninots terroríficos de Bali a los mercados de Semarang.<br><br>Indonesia no parece un solo país recorrido de punta a punta, sino varios viajes que, por algún motivo, sucedieron uno detrás de otro.",
+        "ja": "インドネシアを旅することは、たくさんの場所を巡るというより、いくつもの別々の旅を続けてすることに近い。荒々しいコントラストを抱えた狂騒の都市ジャカルタから、巨大な仏教・ヒンドゥー教寺院群へ。コモドでサメと潜ることから、家族だけでボルネオの川を三日間さかのぼり、オランウータンだけを道連れにした、いわば家族版の<em>『闇の奥』</em>へ。バリの恐ろしい人形たちからスマランの市場まで。<br><br>インドネシアは、一つの国を端から端まで旅したというより、なぜかいくつもの旅が次々と連なって起きたように感じる。",
+        "zh": "在印度尼西亚旅行，与其说是在很多不同的地方旅行，不如说是连续经历了很多次完全不同的旅行。从充满疯狂节奏和巨大反差的雅加达，到宏伟的佛教与印度教寺庙群；从在科莫多与鲨鱼一起潜水，到和家人在婆罗洲沿河航行三天，仿佛一场家庭版的<em>《黑暗之心》</em>，陪伴我们的只有猩猩。从巴厘岛那些令人发毛的巨大人偶，到三宝垄的市场。<br><br>印度尼西亚不像是一个从一端走到另一端的国家，更像是几段完全不同的旅程，不知为何恰好一段接着一段发生。"
+      },
+      "slug": "indonesia",
+      "period": {
+        "en": "April 2026 · 15 days",
+        "es": "Abril de 2026 · 15 días",
+        "ja": "2026年4月 · 15日間",
+        "zh": "2026年4月 · 15天"
+      },
+      "subtitle": {
+        "en": "Several journeys in one",
+        "es": "Varios viajes en uno",
+        "ja": "一つの旅に、いくつもの旅",
+        "zh": "一次旅程，几种旅行"
+      }
     },
     "BE": {
       "noteHtml": {
@@ -277,7 +296,20 @@
         "ja": "初めての海外旅行。",
         "zh": "第一次走出西班牙。"
       },
-      "year": "c. 1996–1998"
+      "year": "c. 1996–1998",
+      "slug": "belgium",
+      "period": {
+        "en": "c. 1996–1998",
+        "es": "Hacia 1996–1998",
+        "ja": "1996〜1998年頃",
+        "zh": "约1996—1998年"
+      },
+      "subtitle": {
+        "en": "The first time abroad",
+        "es": "La primera vez fuera",
+        "ja": "初めての海外旅行",
+        "zh": "第一次出国"
+      }
     },
     "FR": {
       "noteHtml": {
@@ -330,15 +362,15 @@
         "ja": "スペインとイギリスに次いで、最もよく知っている国。",
         "zh": "除了西班牙和英国之外，我最熟悉的国家。"
       },
-      "heroPhoto": "travel/france/france-01-bordeaux-reflection.webp",
+      "heroPhoto": "travel/france/france-14-provence-village.webp",
       "photos": [
         {
           "file": "travel/france/france-01-bordeaux-reflection.webp",
           "alt": {
-            "en": "Clouds reflected across a square in Bordeaux",
-            "es": "Nubes reflejadas en una plaza de Burdeos",
-            "ja": "ボルドーの広場に映る雲",
-            "zh": "波尔多广场上的云影"
+            "en": "A stone vault lit by a stained-glass window",
+            "es": "Una bóveda de piedra iluminada por una vidriera",
+            "ja": "ステンドグラスの光が差す石造りの丸天井",
+            "zh": "彩色玻璃窗照亮的石拱顶"
           }
         },
         {
@@ -468,7 +500,14 @@
           }
         }
       ],
-      "year": "—"
+      "year": "—",
+      "slug": "france",
+      "subtitle": {
+        "en": "The brother you secretly adore",
+        "es": "Ese hermano al que adoras",
+        "ja": "結局、大好きな兄弟",
+        "zh": "那个你深爱的兄弟"
+      }
     }
   },
   "entrySchema": {
