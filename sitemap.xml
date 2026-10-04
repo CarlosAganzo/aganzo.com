@@ -438,4 +438,18 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/travel/belgium/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/travel/belgium/" />
   </url>
+  <url>
+    <loc>https://aganzo.com/travel/spain/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/travel/spain/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/travel/spain/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/travel/spain/" />
+  </url>
+  <url>
+    <loc>https://aganzo.com/es/travel/spain/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/travel/spain/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/travel/spain/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/travel/spain/" />
+  </url>
 </urlset>
