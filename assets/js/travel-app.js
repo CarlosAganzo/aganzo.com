@@ -6,7 +6,7 @@ if(location.pathname==='/' && legacySections[location.hash]){
 const base = '/';
 const page = document.body.dataset.page;
 const params = new URLSearchParams(location.search);
-const assetVersion = '20261004-journal1';
+const assetVersion = '20261004-journal2';
 const load = async name => {
   const version = name === 'now' ? Date.now() : assetVersion;
   const options = name === 'now' ? { cache: 'no-store' } : undefined;
@@ -62,8 +62,8 @@ function setLanguage(value){
   const current = new URL(location.href);if(lang==='ja'||lang==='zh')current.searchParams.set('lang',lang);else current.searchParams.delete('lang');history.replaceState(null,'',current);
   updateLinks();
   listeners.forEach(fn=>fn());
-  document.documentElement.classList.remove('i18n-pending');
 }
+
 document.querySelectorAll('.brand').forEach(el=>{el.textContent=domain;});
 const navPage = ['cinema','music','games','books'].includes(page) ? 'lists' : ['indonesia','france','belgium'].includes(page) ? 'travel' : page;
 document.querySelectorAll('[data-page-link]').forEach(a=>{if(a.dataset.pageLink===navPage)a.setAttribute('aria-current','page');});
@@ -89,7 +89,7 @@ document.getElementById('year').textContent=new Date().getFullYear();
 setLanguage(lang);
 
 try {
-  const [data, module] = await Promise.all([load('travel'), import('./travel-journal.js?v=20261004-journal1')]);
+  const [data, module] = await Promise.all([load('travel'), import('./travel-journal.js?v=20261004-journal2')]);
   module.initTravel({data, t: translate, language});
 } catch (error) {
   console.error('Travel could not initialize', error);

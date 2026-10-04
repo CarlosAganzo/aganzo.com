@@ -13,7 +13,7 @@ import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 DATA = json.loads((ROOT / 'assets/data/travel.json').read_text())
 TRANSLATIONS = json.loads((ROOT / 'assets/data/translations.json').read_text())
-VERSION = '20261004-journal1'
+VERSION = '20261004-journal2'
 DATE = '2026-10-04'
 DESTINATIONS = [code for code, item in DATA['entries'].items() if item.get('slug')]
 DESTINATIONS.sort(key=lambda c: ['ID', 'FR', 'BE'].index(c))
@@ -119,8 +119,8 @@ def build(lang, code=None):
     page = DATA['entries'][code]['slug'] if code else 'travel'
     title, desc = tr('seoTitle_' + page, lang), tr('seoDescription_' + page, lang)
     canonical = 'https://aganzo.com' + path(lang, code)
-    hero = DATA['entries'][code or 'ID'].get('heroPhoto', DATA['entries']['ID']['heroPhoto'])
-    social = 'https://aganzo.com/assets/images/' + hero
+    hero = DATA['entries'][code or 'ID'].get('heroPhoto')
+    social = 'https://aganzo.com/assets/images/' + hero if hero else 'https://aganzo.com/portrait.jpg'
     alternates = ''.join(f'<link rel="alternate" hreflang="{l}" href="https://aganzo.com{path(l, code)}">' for l in ['en', 'es']) + f'<link rel="alternate" hreflang="x-default" href="https://aganzo.com{path("en", code)}">'
     schema = {'@context': 'https://schema.org', '@type': 'Article' if code else 'CollectionPage', 'url': canonical, 'name': title, 'description': desc, 'inLanguage': lang, 'author': {'@id': 'https://aganzo.com/#person', '@type': 'Person', 'name': 'Carlos Aganzo', 'url': 'https://aganzo.com/'}, 'image': social, 'dateModified': DATE, 'isPartOf': {'@type': 'WebSite', '@id': 'https://aganzo.com/#website'}}
     if code:
@@ -135,8 +135,8 @@ def build(lang, code=None):
     if code:
         main = f'<div class="journal-breadcrumb"><a data-localized-link href="{path(lang)}?country={code}#notebook">← {e(tr("journalBack", lang))}</a><span class="micro">{e(tr("journalEyebrow", lang))}</span></div><section id="notebook">{reader(lang, code, True)}</section><section class="journal-related"><p class="eyebrow">{e(tr("journalMore", lang))}</p>{choices(lang, code, True)}</section>'
     else:
-        main = f'''<section class="journal-intro"><div><p class="eyebrow">01 / {e(tr('travel', lang))}</p><h1 data-i18n-html="travelTitleV2">{tr('travelTitleV2', lang)}</h1></div><div class="journal-intro-note"><p data-i18n="journalIntro">{e(tr('journalIntro', lang))}</p><span class="micro">76 <span data-i18n="atlasVisited">{e(tr('atlasVisited', lang))}</span></span></div></section>
-          <nav class="journal-jumps" aria-label="{e(tr('navigation', lang))}"><a href="#notebook">01 <span data-i18n="journalNav">{e(tr('journalNav', lang))}</span> ↓</a><a href="#atlas">02 <span data-i18n="journalMap">{e(tr('journalMap', lang))}</span> ↓</a><a href="#fixed-points">03 <span data-i18n="journalPlaces">{e(tr('journalPlaces', lang))}</span> ↓</a></nav>
+        main = f'''<section class="journal-intro"><div><p class="eyebrow">01 / <span data-i18n="travel">{e(tr('travel', lang))}</span></p><h1 data-i18n-html="travelTitleV2">{tr('travelTitleV2', lang)}</h1></div><div class="journal-intro-note"><p data-i18n="journalIntro">{e(tr('journalIntro', lang))}</p><span class="micro">76 <span data-i18n="atlasVisited">{e(tr('atlasVisited', lang))}</span></span></div></section>
+          <nav class="journal-jumps" aria-label="{e(tr('navigation', lang))}"><a href="#notebook">01 <span data-i18n="journalNavShort">{e(tr('journalNavShort', lang))}</span> ↓</a><a href="#atlas">02 <span data-i18n="journalMapShort">{e(tr('journalMapShort', lang))}</span> ↓</a><a href="#fixed-points">03 <span data-i18n="journalPlacesShort">{e(tr('journalPlacesShort', lang))}</span> ↓</a></nav>
           <section id="notebook" class="journal-notebook" aria-label="{e(tr('journalNav', lang))}"><div class="journal-notebook-label"><p class="eyebrow" data-i18n="journalEyebrow">{e(tr('journalEyebrow', lang))}</p><span class="micro" id="journal-content-count">3 {e(tr('journalStories', lang))} / 24 {e(tr('journalPhotos', lang))}</span></div>{choices(lang, 'ID')}<div id="journal-reader">{reader(lang, 'ID')}</div><p id="journal-status" class="sr-only" role="status"></p></section>
           {atlas(lang)}{localized_template('travel-fixed.html', lang)}'''
     body = f'<body class="travel-journal" data-page="{page}" data-travel-country="{code or ""}"><a class="skip" data-i18n="skip" href="#main">{e(tr("skip", lang))}</a>{localized_template("travel-header.html", lang)}<main id="main">{main}</main>{localized_template("travel-footer.html", lang)}<noscript><p class="journal-noscript">{e(tr("journalNoScript", lang))}</p></noscript></body></html>\n'

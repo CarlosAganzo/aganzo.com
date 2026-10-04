@@ -57,7 +57,7 @@ export function initTravel({data, t, language}) {
         const hero = photos.find(p => p.file === item.heroPhoto) || photos[0];
         const visual = hero ? `<img src="${image(hero)}" alt="" width="96" height="64">` : '<span class="journal-choice-type" aria-hidden="true">Aa</span>';
         const label = photos.length ? `${photos.length} ${t('journalPhotoShort')}` : t('journalStoryOnly');
-        return `<a class="journal-choice" data-destination="${code}" href="${path(code)}"${code === country ? ' aria-current="true"' : ''}>${visual}<span><strong>${esc(name(code))}</strong><small>${esc(label)}</small></span><span class="choice-arrow" aria-hidden="true">↗</span></a>`;
+        return `<a class="journal-choice" data-destination="${code}" href="${path(code)}"${code === country ? ' aria-current="true"' : ''}>${visual}<span><strong>${esc(name(code))}</strong><small>${esc(label)}</small></span><span class="choice-arrow" aria-hidden="true">${standalone ? '↗' : '↓'}</span></a>`;
       }).join('');
     });
     const count = document.getElementById('journal-content-count');
@@ -246,7 +246,7 @@ export function initTravel({data, t, language}) {
   window.addEventListener('popstate',()=>{readUrl();renderReader();renderMapSelection();renderMap();});
   // Strings outside the changing reader are localized as well.
   const text = (selector,key) => {const node=document.querySelector(selector);if(node)node.textContent=t(key);};
-    text('#atlas-title','journalAtlasTitle');text('.journal-atlas-help','journalAtlasHelp');
+    text('#atlas-title','journalAtlasTitle');const mapEyebrow=document.querySelector('.journal-section-heading .eyebrow');if(mapEyebrow)mapEyebrow.textContent='02 / '+t('journalMap');text('.journal-atlas-help','journalAtlasHelp');
   text('label[for="country-search"]','journalSearch');text('.journal-total span','atlasVisited');
   text('.journal-atlas-about summary','atlasSubtitle');text('.journal-atlas-about > p','travelText');
   text('.journal-atlas-about .atlas-foot','atlasFoot');text('.journal-related > .eyebrow','journalMore');

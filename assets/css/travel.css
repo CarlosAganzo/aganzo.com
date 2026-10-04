@@ -205,3 +205,13 @@ body.photo-is-open{overflow:hidden}
 @media(prefers-reduced-motion:reduce){
   .travel-journal *{scroll-behavior:auto!important;transition:none!important}
 }
+/* Keep the travel photograph visible within a phone's opening viewport. */
+@media(max-width:540px){
+  .travel-journal .masthead{flex-wrap:nowrap;gap:10px;padding:14px 0 12px;min-height:64px}
+  .travel-journal .masthead .brand{font-size:20px;flex-shrink:0}
+  .travel-journal .masthead .edition{display:none}
+  .travel-journal .masthead .languages{width:auto;margin:0 0 0 auto;padding:0;border:0;gap:0}
+  .travel-journal .languages button{min-width:32px;min-height:38px;font-size:10px;padding:6px}
+  .journal-jumps{gap:0;justify-content:space-between;flex-wrap:nowrap}
+  .journal-jumps a{font-size:8px;gap:5px;white-space:nowrap}
+}
