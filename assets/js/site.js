@@ -6,7 +6,16 @@ if(location.pathname==='/' && legacySections[location.hash]){
 const base = '/';
 const page = document.body.dataset.page;
 const params = new URLSearchParams(location.search);
-const assetVersion = '20261004-home-about-3';
+const host = location.hostname.replace(/^www\./,'');
+const referredFromCarlos = (() => { try { return new URL(document.referrer).hostname.replace(/^www\./,'') === 'carlosaganzo.com'; } catch { return false; } })();
+let carlosBrand = host === 'carlosaganzo.com' || params.get('from') === 'carlosaganzo.com' || referredFromCarlos;
+try {
+  carlosBrand = carlosBrand || sessionStorage.getItem('aganzo-brand-domain') === 'carlosaganzo.com';
+  if (carlosBrand) sessionStorage.setItem('aganzo-brand-domain','carlosaganzo.com');
+} catch {}
+const domain = carlosBrand ? 'CARLOSAGANZO.COM' : 'AGANZO.COM';
+document.querySelectorAll('.brand').forEach(el=>{el.textContent=domain;});
+const assetVersion = '20261004-domain-brand-1';
 const load = async name => {
   const version = name === 'now' ? Date.now() : assetVersion;
   const options = name === 'now' ? { cache: 'no-store' } : undefined;
@@ -24,7 +33,6 @@ export const translate = key => dictionaries[lang][key] || dictionaries.en[key] 
 export const language = () => lang;
 export const onLanguage = fn => { listeners.push(fn); fn(); };
 export { load };
-const domain = location.hostname.replace(/^www\./,'') === 'carlosaganzo.com' || params.get('from') === 'carlosaganzo.com' ? 'CARLOSAGANZO.COM' : 'AGANZO.COM';
 function localizedPath(path,targetLang){
   let clean=path.replace(/^\/es(?=\/|$)/,'')||'/';
   if(!clean.startsWith('/')) clean='/'+clean;
@@ -64,7 +72,6 @@ function setLanguage(value){
   listeners.forEach(fn=>fn());
   document.documentElement.classList.remove('i18n-pending');
 }
-document.querySelectorAll('.brand').forEach(el=>{el.textContent=domain;});
 const navPage = ['cinema','music','games','books'].includes(page) ? 'lists' : page==='indonesia' ? 'travel' : page;
 document.querySelectorAll('[data-page-link]').forEach(a=>{if(a.dataset.pageLink===navPage)a.setAttribute('aria-current','page');});
 document.querySelectorAll('[data-lang]').forEach(button=>button.addEventListener('click',()=>{
