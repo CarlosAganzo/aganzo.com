@@ -15,7 +15,7 @@ import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 DATA = json.loads((ROOT / 'assets/data/travel.json').read_text())
 TRANSLATIONS = json.loads((ROOT / 'assets/data/translations.json').read_text())
-VERSION = '20261004-journal3'
+VERSION = '20261004-journal4'
 DATE = '2026-10-04'
 VISITED = list(dict.fromkeys(code for codes in DATA['regions'].values() for code in codes))
 
