@@ -16,7 +16,13 @@ from urllib.parse import urlparse
 ROOT = Path(__file__).resolve().parents[1]
 NOW_PATH = ROOT / "assets/data/now.json"
 SITEMAP_PATH = ROOT / "sitemap.xml"
-HOME_PATHS = [ROOT / "index.html", ROOT / "es/index.html"]
+TRANSLATIONS_PATH = ROOT / "assets/data/translations.json"
+HOME_PATHS = [
+    ROOT / "index.html",
+    ROOT / "es/index.html",
+    ROOT / "ja/index.html",
+    ROOT / "zh-hans/index.html",
+]
 
 
 def git_date(*paths: Path) -> str | None:
@@ -85,6 +91,14 @@ def path_for_url(url: str) -> Path | None:
     return ROOT / route.strip("/") / "index.html"
 
 
+def source_page_for(page: Path) -> Path:
+    rel = page.relative_to(ROOT)
+    parts = list(rel.parts)
+    if parts and parts[0] in {"es", "ja", "zh-hans"}:
+        parts = parts[1:]
+    return ROOT.joinpath(*parts)
+
+
 def update_sitemap() -> bool:
     source = SITEMAP_PATH.read_text(encoding="utf-8")
 
@@ -98,7 +112,8 @@ def update_sitemap() -> bool:
         if page is None or not page.exists():
             return block
 
-        dependencies = [page]
+        source_page = source_page_for(page)
+        dependencies = list(dict.fromkeys([page, source_page, TRANSLATIONS_PATH]))
         if page in HOME_PATHS:
             dependencies.append(NOW_PATH)
         if "/travel/" in url:
