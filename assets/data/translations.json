@@ -450,7 +450,15 @@
     "regionArchive": "Regional notes",
     "regionEmpty": "This region is ready for notes and photographs. Nothing invented in the meantime.",
     "introTaste": "I tend to be drawn to the same qualities in music, films and places. Things with some darkness in them, things that leave room for interpretation, and things that can be melancholy without trying too hard to be moving. I’m probably more interested than I should be in memory, passing time, and the strange way places and songs end up attached to particular versions of ourselves.",
-    "introSite": "Most of what is on this site comes from that: places I’ve been, photographs I wanted to keep, music and films that stayed with me, and the occasional attempt to understand why."
+    "introSite": "Most of what is on this site comes from that: places I’ve been, photographs I wanted to keep, music and films that stayed with me, and the occasional attempt to understand why.",
+    "mentalModelEyebrow": "A PERSONAL MODEL / UNPEER-REVIEWED",
+    "mentalModelTitle": "Mental load, approximately.",
+    "mentalModelIntro": "I have a tendency to build mental models for absolutely everything, including myself.",
+    "mentalModelFormulaTop": "Mental load ≈ uncertainty × emotional importance × irreversibility",
+    "mentalModelFormulaBottom": "ability to verify + ability to intervene",
+    "mentalModelWork": "At work, the worst-case scenario is usually that I get fired.",
+    "mentalModelPunch": "Apparently, my brain considers that less serious than not knowing how something will turn out.",
+    "mentalModelFoot": "This model has not been peer reviewed."
   },
   "es": {
     "directorsLabel": "Directores",
@@ -903,7 +911,15 @@
     "regionArchive": "Notas de la región",
     "regionEmpty": "Esta región está preparada para notas y fotografías. Mientras tanto, nada inventado.",
     "introTaste": "Suelo buscar esas mismas cualidades en la música, el cine y los lugares. Cosas con algo de oscuridad, que dejan espacio para interpretar y que pueden ser melancólicas sin esforzarse demasiado por conmover. Probablemente me interesan más de la cuenta la memoria, el paso del tiempo y esa forma extraña en que los lugares y las canciones acaban unidos a versiones concretas de nosotros mismos.",
-    "introSite": "La mayor parte de lo que hay en esta web sale de ahí: lugares en los que he estado, fotografías que quería conservar, música y películas que se quedaron conmigo, y algún que otro intento de entender por qué."
+    "introSite": "La mayor parte de lo que hay en esta web sale de ahí: lugares en los que he estado, fotografías que quería conservar, música y películas que se quedaron conmigo, y algún que otro intento de entender por qué.",
+    "mentalModelEyebrow": "UN MODELO PERSONAL / SIN REVISIÓN POR PARES",
+    "mentalModelTitle": "Carga mental, aproximadamente.",
+    "mentalModelIntro": "Tengo cierta tendencia a construir modelos mentales para absolutamente todo, incluido yo mismo.",
+    "mentalModelFormulaTop": "Carga mental ≈ incertidumbre × importancia emocional × irreversibilidad",
+    "mentalModelFormulaBottom": "capacidad de verificar + capacidad de intervenir",
+    "mentalModelWork": "En el trabajo, el peor escenario suele ser que me despidan.",
+    "mentalModelPunch": "Al parecer, mi cerebro considera eso menos grave que no saber cómo va a acabar algo.",
+    "mentalModelFoot": "Este modelo no ha sido revisado por pares."
   },
   "ja": {
     "directorsLabel": "監督",
@@ -1356,7 +1372,15 @@
     "regionArchive": "地域のノート",
     "regionEmpty": "この地域は文章と写真を追加できる状態です。それまでは、何も作りません。",
     "introTaste": "音楽や映画や場所にも、同じようなものを求めがちです。少し暗さがあり、解釈の余地があり、感動させようと力まずにメランコリックでいられるもの。記憶や時間の流れ、そして場所や曲がいつの間にか過去のある時期の自分と結びついていく不思議さに、たぶん必要以上に惹かれています。",
-    "introSite": "このサイトにあるものの大半は、そこから来ています。訪れた場所、残しておきたかった写真、心に残った音楽や映画、そして時々、それがなぜなのかを理解しようとする試みです。"
+    "introSite": "このサイトにあるものの大半は、そこから来ています。訪れた場所、残しておきたかった写真、心に残った音楽や映画、そして時々、それがなぜなのかを理解しようとする試みです。",
+    "mentalModelEyebrow": "個人的モデル / 査読なし",
+    "mentalModelTitle": "メンタル負荷、おおよそ。",
+    "mentalModelIntro": "私は何にでもメンタルモデルを作る癖がある。自分自身に対しても。",
+    "mentalModelFormulaTop": "メンタル負荷 ≈ 不確実性 × 感情的重要度 × 不可逆性",
+    "mentalModelFormulaBottom": "確認できる力 + 介入できる力",
+    "mentalModelWork": "仕事では、最悪のケースはたいてい解雇されることだ。",
+    "mentalModelPunch": "どうやら私の脳は、それよりも物事がどうなるか分からないことの方を深刻だと考えるらしい。",
+    "mentalModelFoot": "このモデルは査読されていない。"
   },
   "zh": {
     "directorsLabel": "导演",
@@ -1809,6 +1833,14 @@
     "regionArchive": "地区笔记",
     "regionEmpty": "这个地区已经准备好添加文字和照片。在那之前，不编造任何内容。",
     "introTaste": "我在音乐、电影和地方上，往往也会被同样的特质吸引：带一点黑暗，留出解释的空间，可以忧郁却不刻意煽情。记忆、时间的流逝，以及某些地方和歌曲会莫名其妙地与我们某个时期的自己绑在一起——我大概对此感兴趣得有点过头。",
-    "introSite": "这个网站上的大部分东西都来自那里：我去过的地方、想留下来的照片、一直留在我心里的音乐和电影，以及偶尔试着弄明白为什么。"
+    "introSite": "这个网站上的大部分东西都来自那里：我去过的地方、想留下来的照片、一直留在我心里的音乐和电影，以及偶尔试着弄明白为什么。",
+    "mentalModelEyebrow": "个人模型 / 未经同行评审",
+    "mentalModelTitle": "精神负荷，大致如此。",
+    "mentalModelIntro": "我有个习惯：几乎什么都要建立一个心理模型，包括我自己。",
+    "mentalModelFormulaTop": "精神负荷 ≈ 不确定性 × 情感重要性 × 不可逆性",
+    "mentalModelFormulaBottom": "验证能力 + 干预能力",
+    "mentalModelWork": "在工作里，最坏的情况通常也就是被炒鱿鱼。",
+    "mentalModelPunch": "显然，我的大脑觉得这还没有“不知道事情最后会怎样”严重。",
+    "mentalModelFoot": "本模型未经同行评审。"
   }
 }
