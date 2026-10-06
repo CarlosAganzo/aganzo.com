@@ -1,4 +1,4 @@
-name: Sync generated SEO content
+name: Build multilingual site and SEO
 
 on:
   push:
@@ -7,8 +7,12 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: multilingual-site-build
+  cancel-in-progress: true
+
 jobs:
-  sync:
+  build:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
@@ -17,17 +21,31 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Sync Now fallback and sitemap dates
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build static locale pages
+        run: python3 tools/build_locales.py
+
+      - name: Build travel pages in all locales
+        run: python3 tools/build_travel.py
+
+      - name: Sync crawl-visible content and sitemap dates
         run: python3 tools/sync_generated_seo.py
+
+      - name: Validate multilingual SEO contract
+        run: python3 tools/check_locales.py
 
       - name: Commit generated changes
         run: |
-          if git diff --quiet; then
-            echo "Nothing to update."
-            exit 0
-          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html es/index.html sitemap.xml
-          git commit -m "Sync generated SEO content"
+          git add -A --             index.html es ja zh-hans             archive books cinema games lists music photos travel             sitemap.xml assets/data/travel.json
+          if git diff --cached --quiet; then
+            echo "Generated locale content is already current."
+            exit 0
+          fi
+          git commit -m "Build multilingual site"
           git push
