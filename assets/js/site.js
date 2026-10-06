@@ -15,7 +15,7 @@ try {
 } catch {}
 const domain = carlosBrand ? 'CARLOSAGANZO.COM' : 'AGANZO.COM';
 document.querySelectorAll('.brand').forEach(el=>{el.textContent=domain;});
-const assetVersion = '20261004-domain-brand-1';
+const assetVersion = '20261006-locales1';
 const load = async name => {
   const version = name === 'now' ? Date.now() : assetVersion;
   const options = name === 'now' ? { cache: 'no-store' } : undefined;
