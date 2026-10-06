@@ -2833,3 +2833,75 @@ dialog>.micro {
 .topic-context-copy{grid-column:2;display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:900px}
 .topic-context-copy p{margin:0;font:17px/1.55 var(--serif)}
 @media(max-width:760px){.topic-context{grid-template-columns:1fr;gap:20px;padding:42px 0}.topic-context-copy{grid-column:1;grid-template-columns:1fr;gap:18px}.topic-detail-link{text-align:left}}
+
+
+/* Homepage — personal mental model */
+.mental-model {
+  display:grid;
+  grid-template-columns:minmax(220px,.72fr) minmax(0,1.28fr);
+  gap:7%;
+  border-top:1px solid var(--ink);
+  padding:34px 0 38px;
+}
+.mental-model-label .micro {
+  display:block;
+  color:var(--red);
+  margin-bottom:12px;
+}
+.mental-model-label h2 {
+  font:400 clamp(28px,3.2vw,44px)/1.02 var(--serif);
+  letter-spacing:-.035em;
+  max-width:390px;
+  margin-bottom:14px;
+}
+.mental-model-label p {
+  margin:0;
+  max-width:40ch;
+  font-size:13px;
+  line-height:1.6;
+  color:var(--muted);
+}
+.mental-model-body {
+  border-left:1px solid var(--line);
+  padding-left:34px;
+  max-width:760px;
+}
+.mental-model-formula {
+  display:grid;
+  gap:9px;
+  margin:0 0 24px;
+  font:400 clamp(19px,2vw,28px)/1.28 var(--serif);
+  letter-spacing:-.02em;
+}
+.mental-model-divider {
+  display:block;
+  height:1px;
+  width:min(100%,680px);
+  background:var(--ink);
+}
+.mental-model-body>p:not(.mental-model-foot) {
+  margin:0 0 8px;
+  font-size:14px;
+  line-height:1.65;
+}
+.mental-model-body>p:nth-of-type(2) {
+  font-family:var(--serif);
+  font-size:17px;
+}
+.mental-model-foot {
+  margin:18px 0 0;
+  color:var(--muted);
+  font-size:9px;
+}
+@media(max-width:760px) {
+  .mental-model {
+    grid-template-columns:1fr;
+    gap:24px;
+    padding:28px 0 32px;
+  }
+  .mental-model-body {
+    border-left:0;
+    border-top:1px solid var(--line);
+    padding:22px 0 0;
+  }
+}
