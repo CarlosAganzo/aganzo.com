@@ -30,8 +30,8 @@ export function initTravel({data, t, language}) {
   const worldMap = document.querySelector('.atlas-map');
   const config = () => data.subdivisions?.[country];
   const path = (code, hash = '') => {
-    const url = new URL((lang === 'es' ? '/es' : '') + '/travel/' + (code && data.entries[code]?.slug ? data.entries[code].slug + '/' : ''), location.origin);
-    if (lang === 'ja' || lang === 'zh') url.searchParams.set('lang', lang);
+    const prefix = ({en:'',es:'/es',ja:'/ja',zh:'/zh-hans'})[lang] || '';
+    const url = new URL(prefix + '/travel/' + (code && data.entries[code]?.slug ? data.entries[code].slug + '/' : ''), location.origin);
     if (new URLSearchParams(location.search).get('from') === 'carlosaganzo.com') url.searchParams.set('from', 'carlosaganzo.com');
     if(code && !data.entries[code]?.slug){url.searchParams.set('country',code);if(!hash)hash='notebook';}
     url.hash = hash;
