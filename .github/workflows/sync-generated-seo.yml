@@ -1,0 +1,33 @@
+name: Sync generated SEO content
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Sync Now fallback and sitemap dates
+        run: python3 tools/sync_generated_seo.py
+
+      - name: Commit generated changes
+        run: |
+          if git diff --quiet; then
+            echo "Nothing to update."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html es/index.html sitemap.xml
+          git commit -m "Sync generated SEO content"
+          git push
