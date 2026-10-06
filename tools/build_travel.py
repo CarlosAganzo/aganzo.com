@@ -1,8 +1,8 @@
 """Build the travel hub and all written destinations from one content source.
 
 Run: python tools/build_travel.py
-English and Spanish are static, indexable pages; Japanese and Chinese use the
-same data in the browser. Existing country/subregion query links stay valid.
+English, Spanish, Japanese and Simplified Chinese are static, indexable pages.
+Existing country/subregion query links stay valid.
 """
 from pathlib import Path
 from html import escape
@@ -15,8 +15,13 @@ import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 DATA = json.loads((ROOT / 'assets/data/travel.json').read_text())
 TRANSLATIONS = json.loads((ROOT / 'assets/data/translations.json').read_text())
-VERSION = '20261004-journal5'
-DATE = '2026-10-04'
+VERSION = '20261006-locales1'
+DATE = '2026-10-06'
+LOCALES = ['en', 'es', 'ja', 'zh']
+PREFIX = {'en': '', 'es': '/es', 'ja': '/ja', 'zh': '/zh-hans'}
+HREFLANG = {'en': 'en', 'es': 'es', 'ja': 'ja', 'zh': 'zh-Hans'}
+HTML_LANG = {'en': 'en', 'es': 'es', 'ja': 'ja', 'zh': 'zh-Hans'}
+OG_LOCALE = {'en': 'en_GB', 'es': 'es_ES', 'ja': 'ja_JP', 'zh': 'zh_CN'}
 VISITED = list(dict.fromkeys(code for codes in DATA['regions'].values() for code in codes))
 
 
@@ -32,7 +37,7 @@ def has_content(code):
 # Node's standard Intl data supplies every country name without a hand-kept list.
 NAMES = json.loads(subprocess.check_output(['node', '-e', '''
 const codes=JSON.parse(process.argv[1]);
-console.log(JSON.stringify(Object.fromEntries(['en','es'].map(lang=>{
+console.log(JSON.stringify(Object.fromEntries(['en','es','ja','zh'].map(lang=>{
  const names=new Intl.DisplayNames([lang],{type:'region'});
  return [lang,Object.fromEntries(codes.map(code=>[code,names.of(code)]))];
 }))));''', json.dumps(VISITED)], text=True))
@@ -62,7 +67,7 @@ def local(value, lang):
 
 
 def path(lang, code=None):
-    return ('/es' if lang == 'es' else '') + '/travel/' + (DATA['entries'][code]['slug'] + '/' if code else '')
+    return PREFIX[lang] + '/travel/' + (DATA['entries'][code]['slug'] + '/' if code else '')
 
 
 def image(photo):
@@ -76,8 +81,13 @@ def localized_template(name, lang):
     s = re.sub(r'(<[^>]*data-i18n-aria="([^"]+)"[^>]*>)',
                lambda m: re.sub(r'aria-label="[^"]*"', 'aria-label="' + e(tr(m[2], lang)) + '"', m[1]), s)
     s = re.sub(r'(data-lang="([^"]+)"[^>]*aria-pressed=")[^"]+', lambda m: m[1] + str(m[2] == lang).lower(), s)
-    if lang == 'es':
-        s = re.sub(r'href="/(?!assets|es/)([^"]*)"', lambda m: 'href="/es/' + m[1] + '"', s)
+    prefix = PREFIX[lang]
+    if prefix:
+        s = re.sub(
+            r'href="/(?!assets/|admin/|v1/|v2/)([^"]*)"',
+            lambda m: f'href="{prefix}/' + m.group(1) + '"',
+            s,
+        )
     return s
 
 
@@ -182,17 +192,18 @@ def build(lang, code=None):
     canonical = 'https://aganzo.com' + path(lang, code)
     hero = DATA['entries'][code or 'ID'].get('heroPhoto')
     social = 'https://aganzo.com/assets/images/' + hero if hero else 'https://aganzo.com/portrait.jpg'
-    alternates = ''.join(f'<link rel="alternate" hreflang="{l}" href="https://aganzo.com{path(l, code)}">' for l in ['en', 'es']) + f'<link rel="alternate" hreflang="x-default" href="https://aganzo.com{path("en", code)}">'
-    schema = {'@context': 'https://schema.org', '@type': 'Article' if code else 'CollectionPage', 'url': canonical, 'name': title, 'description': desc, 'inLanguage': lang, 'author': {'@id': 'https://aganzo.com/#person', '@type': 'Person', 'name': 'Carlos Aganzo', 'url': 'https://aganzo.com/'}, 'image': social, 'dateModified': DATE, 'isPartOf': {'@type': 'WebSite', '@id': 'https://aganzo.com/#website'}}
+    alternates = ''.join(
+        f'<link rel="alternate" hreflang="{HREFLANG[l]}" href="https://aganzo.com{path(l, code)}">'
+        for l in LOCALES
+    ) + f'<link rel="alternate" hreflang="x-default" href="https://aganzo.com{path("en", code)}">'
+    schema = {'@context': 'https://schema.org', '@type': 'Article' if code else 'CollectionPage', 'url': canonical, 'name': title, 'description': desc, 'inLanguage': HTML_LANG[lang], 'author': {'@id': 'https://aganzo.com/#person', '@type': 'Person', 'name': 'Carlos Aganzo', 'url': 'https://aganzo.com/'}, 'image': social, 'dateModified': DATE, 'isPartOf': {'@type': 'WebSite', '@id': 'https://aganzo.com/#website'}}
     if code:
         schema['mainEntityOfPage'] = canonical
         schema['headline'] = title
     else:
         schema['hasPart'] = [{'@type': 'Article', 'url': 'https://aganzo.com' + path(lang, c), 'name': NAMES[lang][c]} for c in DESTINATIONS]
-    social_tags = ''.join(f'<meta {"property" if k.startswith("og:") else "name"}="{k}" content="{e(v)}">' for k, v in {'og:type': 'article' if code else 'website', 'og:title': title, 'og:description': desc, 'og:url': canonical, 'og:image': social, 'og:site_name': 'AGANZO.COM', 'og:locale': 'es_ES' if lang == 'es' else 'en_GB', 'twitter:card': 'summary_large_image', 'twitter:title': title, 'twitter:description': desc, 'twitter:image': social}.items())
-    # No locale flash on ja/zh links; static en/es remain useful without JS.
-    early = "<style>html.i18n-pending body{visibility:hidden}</style><script>try{if(['ja','zh'].includes(new URLSearchParams(location.search).get('lang'))){document.documentElement.classList.add('i18n-pending');setTimeout(()=>document.documentElement.classList.remove('i18n-pending'),1800)}}catch{}</script>"
-    head = f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8">{early}<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="index,follow,max-image-preview:large"><title>{e(title)}</title><meta name="description" content="{e(desc)}"><link rel="canonical" href="{canonical}">{alternates}<meta name="author" content="Carlos Aganzo">{social_tags}<meta name="cf-web-analytics-token" content="403e543dcdab49e7bbf3115318a8bf44"><link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/css/site.css?v=20260927-seo3"><link rel="stylesheet" href="/assets/css/travel.css?v={VERSION}"><script type="module" src="/assets/js/travel-app.js?v={VERSION}"></script><script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script><script defer src="/assets/js/analytics.js?v=20260922-main"></script></head>'''
+    social_tags = ''.join(f'<meta {"property" if k.startswith("og:") else "name"}="{k}" content="{e(v)}">' for k, v in {'og:type': 'article' if code else 'website', 'og:title': title, 'og:description': desc, 'og:url': canonical, 'og:image': social, 'og:site_name': 'AGANZO.COM', 'og:locale': OG_LOCALE[lang], 'twitter:card': 'summary_large_image', 'twitter:title': title, 'twitter:description': desc, 'twitter:image': social}.items())
+    head = f'''<!doctype html><html lang="{HTML_LANG[lang]}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="index,follow,max-image-preview:large"><title>{e(title)}</title><meta name="description" content="{e(desc)}"><link rel="canonical" href="{canonical}">{alternates}<meta name="author" content="Carlos Aganzo">{social_tags}<meta name="cf-web-analytics-token" content="403e543dcdab49e7bbf3115318a8bf44"><link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/css/site.css?v=20260927-seo3"><link rel="stylesheet" href="/assets/css/travel.css?v={VERSION}"><script type="module" src="/assets/js/travel-app.js?v={VERSION}"></script><script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script><script defer src="/assets/js/analytics.js?v=20260922-main"></script></head>'''
     if code:
         main = f'<div class="journal-breadcrumb"><a data-localized-link href="{path(lang)}?country={code}#notebook">← {e(tr("journalBack", lang))}</a><span class="micro">{e(tr("journalEyebrow", lang))}</span></div><section id="notebook">{reader(lang, code, True)}</section>{regional_explorer(lang, code)}<section class="journal-related"><p class="eyebrow">{e(tr("journalMore", lang))}</p>{choices(lang, code, True)}</section>'
     else:
@@ -212,7 +223,7 @@ def sitemap():
     img = 'http://www.google.com/schemas/sitemap-image/1.1'
     ET.register_namespace('', ns); ET.register_namespace('xhtml', xhtml); ET.register_namespace('image', img)
     file = ROOT / 'sitemap.xml'; tree = ET.parse(file); root = tree.getroot()
-    for lang in ['en', 'es']:
+    for lang in LOCALES:
         for code in [None, *DESTINATIONS]:
             url = 'https://aganzo.com' + path(lang, code)
             node = next((n for n in root if n.findtext('{'+ns+'}loc') == url), None)
@@ -222,8 +233,9 @@ def sitemap():
                 node.clear()
             ET.SubElement(node, '{'+ns+'}loc').text = url
             ET.SubElement(node, '{'+ns+'}lastmod').text = DATE
-            for l in ['en', 'es', 'x-default']:
-                ET.SubElement(node, '{'+xhtml+'}link', {'rel': 'alternate', 'hreflang': l, 'href': 'https://aganzo.com' + path('en' if l == 'x-default' else l, code)})
+            for l in LOCALES:
+                ET.SubElement(node, '{'+xhtml+'}link', {'rel': 'alternate', 'hreflang': HREFLANG[l], 'href': 'https://aganzo.com' + path(l, code)})
+            ET.SubElement(node, '{'+xhtml+'}link', {'rel': 'alternate', 'hreflang': 'x-default', 'href': 'https://aganzo.com' + path('en', code)})
             if code:
                 for photo in DATA['entries'][code].get('photos', []):
                     child = ET.SubElement(node, '{'+img+'}image')
@@ -234,10 +246,10 @@ def sitemap():
 
 
 if __name__ == '__main__':
-    for locale in ['en', 'es']:
+    for locale in LOCALES:
         build(locale)
         for country in DESTINATIONS:
             build(locale, country)
     sitemap()
     (ROOT / 'assets/data/travel.json').write_text(json.dumps(DATA, ensure_ascii=False, indent=2) + '\n')
-    print(f'Built {2 * (1 + len(DESTINATIONS))} travel pages; {len(VISITED)} countries and {len(DESTINATIONS)} entries with content.')
+    print(f'Built {len(LOCALES) * (1 + len(DESTINATIONS))} travel pages; {len(VISITED)} countries and {len(DESTINATIONS)} entries with content.')
