@@ -5,6 +5,8 @@
     <lastmod>2026-10-06</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/" />
   </url>
   <url>
@@ -12,27 +14,35 @@
     <lastmod>2026-10-06</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/" />
   </url>
   <url>
     <loc>https://aganzo.com/travel/</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/travel/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/travel/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/travel/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/travel/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/travel/" />
   </url>
   <url>
     <loc>https://aganzo.com/es/travel/</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/travel/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/travel/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/travel/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/travel/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/travel/" />
   </url>
   <url>
     <loc>https://aganzo.com/photos/</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/photos/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/photos/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/photos/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/photos/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/photos/" />
     <image:image>
       <image:loc>https://aganzo.com/assets/images/photography/photo-01-full.webp</image:loc>
@@ -76,9 +86,11 @@
   </url>
   <url>
     <loc>https://aganzo.com/es/photos/</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/photos/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/photos/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/photos/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/photos/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/photos/" />
     <image:image>
       <image:loc>https://aganzo.com/assets/images/photography/photo-01-full.webp</image:loc>
@@ -122,93 +134,119 @@
   </url>
   <url>
     <loc>https://aganzo.com/lists/</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/lists/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/lists/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/lists/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/lists/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/lists/" />
   </url>
   <url>
     <loc>https://aganzo.com/es/lists/</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/lists/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/lists/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/lists/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/lists/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/lists/" />
   </url>
   <url>
     <loc>https://aganzo.com/archive/</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/archive/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/archive/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/archive/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/archive/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/archive/" />
   </url>
   <url>
     <loc>https://aganzo.com/es/archive/</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/archive/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/archive/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/archive/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/archive/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/archive/" />
   </url>
   <url>
     <loc>https://aganzo.com/cinema/</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/cinema/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/cinema/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/cinema/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/cinema/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/cinema/" />
   </url>
   <url>
     <loc>https://aganzo.com/es/cinema/</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/cinema/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/cinema/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/cinema/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/cinema/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/cinema/" />
   </url>
   <url>
     <loc>https://aganzo.com/music/</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/music/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/music/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/music/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/music/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/music/" />
   </url>
   <url>
     <loc>https://aganzo.com/es/music/</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/music/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/music/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/music/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/music/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/music/" />
   </url>
   <url>
     <loc>https://aganzo.com/games/</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/games/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/games/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/games/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/games/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/games/" />
   </url>
   <url>
     <loc>https://aganzo.com/es/games/</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/games/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/games/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/games/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/games/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/games/" />
   </url>
   <url>
     <loc>https://aganzo.com/books/</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/books/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/books/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/books/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/books/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/books/" />
   </url>
   <url>
     <loc>https://aganzo.com/es/books/</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/books/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/books/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/books/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/books/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/books/" />
   </url>
   <url>
     <loc>https://aganzo.com/travel/indonesia/</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/travel/indonesia/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/travel/indonesia/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/travel/indonesia/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/travel/indonesia/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/travel/indonesia/" />
     <image:image>
       <image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc05597.webp</image:loc>
@@ -249,9 +287,11 @@
   </url>
   <url>
     <loc>https://aganzo.com/es/travel/indonesia/</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/travel/indonesia/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/travel/indonesia/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/travel/indonesia/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/travel/indonesia/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/travel/indonesia/" />
     <image:image>
       <image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc05597.webp</image:loc>
@@ -292,9 +332,11 @@
   </url>
   <url>
     <loc>https://aganzo.com/travel/france/</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/travel/france/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/travel/france/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/travel/france/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/travel/france/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/travel/france/" />
     <image:image>
       <image:loc>https://aganzo.com/assets/images/travel/france/france-01-bordeaux-reflection.webp</image:loc>
@@ -359,16 +401,20 @@
   </url>
   <url>
     <loc>https://aganzo.com/travel/belgium/</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/travel/belgium/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/travel/belgium/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/travel/belgium/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/travel/belgium/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/travel/belgium/" />
   </url>
   <url>
     <loc>https://aganzo.com/es/travel/france/</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/travel/france/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/travel/france/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/travel/france/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/travel/france/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/travel/france/" />
     <image:image>
       <image:loc>https://aganzo.com/assets/images/travel/france/france-01-bordeaux-reflection.webp</image:loc>
@@ -433,23 +479,533 @@
   </url>
   <url>
     <loc>https://aganzo.com/es/travel/belgium/</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/travel/belgium/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/travel/belgium/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/travel/belgium/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/travel/belgium/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/travel/belgium/" />
   </url>
   <url>
     <loc>https://aganzo.com/travel/spain/</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/travel/spain/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/travel/spain/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/travel/spain/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/travel/spain/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/travel/spain/" />
   </url>
   <url>
     <loc>https://aganzo.com/es/travel/spain/</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/travel/spain/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/travel/spain/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/travel/spain/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/travel/spain/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/travel/spain/" />
+  </url>
+  <url>
+    <loc>https://aganzo.com/ja/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/" />
+  </url>
+  <url>
+    <loc>https://aganzo.com/zh-hans/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/" />
+  </url>
+  <url>
+    <loc>https://aganzo.com/ja/photos/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/photos/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/photos/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/photos/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/photos/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/photos/" />
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/photography/photo-01-full.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/photography/photo-02-full.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/photography/photo-03-full.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/photography/photo-04-full.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/photography/photo-05-full.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/photography/photo-06-full.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/photography/photo-07-full.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/photography/photo-08-full.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/photography/photo-09-full.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/photography/photo-10-full.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/photography/photo-11-full.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/photography/photo-12-full.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/photography/photo-13-full.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://aganzo.com/zh-hans/photos/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/photos/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/photos/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/photos/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/photos/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/photos/" />
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/photography/photo-01-full.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/photography/photo-02-full.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/photography/photo-03-full.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/photography/photo-04-full.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/photography/photo-05-full.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/photography/photo-06-full.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/photography/photo-07-full.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/photography/photo-08-full.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/photography/photo-09-full.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/photography/photo-10-full.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/photography/photo-11-full.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/photography/photo-12-full.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/photography/photo-13-full.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://aganzo.com/ja/lists/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/lists/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/lists/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/lists/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/lists/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/lists/" />
+  </url>
+  <url>
+    <loc>https://aganzo.com/zh-hans/lists/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/lists/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/lists/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/lists/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/lists/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/lists/" />
+  </url>
+  <url>
+    <loc>https://aganzo.com/ja/archive/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/archive/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/archive/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/archive/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/archive/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/archive/" />
+  </url>
+  <url>
+    <loc>https://aganzo.com/zh-hans/archive/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/archive/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/archive/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/archive/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/archive/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/archive/" />
+  </url>
+  <url>
+    <loc>https://aganzo.com/ja/cinema/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/cinema/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/cinema/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/cinema/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/cinema/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/cinema/" />
+  </url>
+  <url>
+    <loc>https://aganzo.com/zh-hans/cinema/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/cinema/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/cinema/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/cinema/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/cinema/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/cinema/" />
+  </url>
+  <url>
+    <loc>https://aganzo.com/ja/music/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/music/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/music/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/music/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/music/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/music/" />
+  </url>
+  <url>
+    <loc>https://aganzo.com/zh-hans/music/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/music/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/music/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/music/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/music/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/music/" />
+  </url>
+  <url>
+    <loc>https://aganzo.com/ja/games/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/games/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/games/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/games/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/games/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/games/" />
+  </url>
+  <url>
+    <loc>https://aganzo.com/zh-hans/games/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/games/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/games/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/games/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/games/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/games/" />
+  </url>
+  <url>
+    <loc>https://aganzo.com/ja/books/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/books/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/books/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/books/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/books/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/books/" />
+  </url>
+  <url>
+    <loc>https://aganzo.com/zh-hans/books/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/books/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/books/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/books/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/books/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/books/" />
+  </url>
+  <url>
+    <loc>https://aganzo.com/ja/travel/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/travel/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/travel/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/travel/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/travel/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/travel/" />
+  </url>
+  <url>
+    <loc>https://aganzo.com/ja/travel/belgium/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/travel/belgium/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/travel/belgium/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/travel/belgium/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/travel/belgium/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/travel/belgium/" />
+  </url>
+  <url>
+    <loc>https://aganzo.com/ja/travel/france/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/travel/france/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/travel/france/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/travel/france/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/travel/france/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/travel/france/" />
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/france/france-01-bordeaux-reflection.webp</image:loc>
+      <image:caption>ステンドグラスの光が差す石造りの丸天井</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/france/france-02-night-city.webp</image:loc>
+      <image:caption>夜のフランスの街</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/france/france-03-stone-light.webp</image:loc>
+      <image:caption>石造りの通路を差し込む光</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/france/france-04-framed-church.webp</image:loc>
+      <image:caption>古い石壁越しに見える教会</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/france/france-05-coast.webp</image:loc>
+      <image:caption>夕暮れのフランス海岸</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/france/france-06-pyrenees-lake.webp</image:loc>
+      <image:caption>ピレネーの山上湖</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/france/france-07-pyrenees-cablecar.webp</image:loc>
+      <image:caption>フランス領ピレネーのロープウェイ</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/france/france-08-strasbourg.webp</image:loc>
+      <image:caption>ストラスブールの建築</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/france/france-09-alsace.webp</image:loc>
+      <image:caption>アルザスの通り</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/france/france-10-cliff-village.webp</image:loc>
+      <image:caption>断崖の下の村</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/france/france-11-autumn-boats.webp</image:loc>
+      <image:caption>水辺のボートと秋の木々</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/france/france-12-alps.webp</image:loc>
+      <image:caption>フランス・アルプス</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/france/france-13-provence-abbey.webp</image:loc>
+      <image:caption>プロヴァンスの修道院</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/france/france-14-provence-village.webp</image:loc>
+      <image:caption>プロヴァンスの村</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/france/france-15-lourdes-carlos.webp</image:loc>
+      <image:caption>ルルドのカルロス</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://aganzo.com/ja/travel/indonesia/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/travel/indonesia/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/travel/indonesia/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/travel/indonesia/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/travel/indonesia/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/travel/indonesia/" />
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc05597.webp</image:loc>
+      <image:caption>インドネシアの夕焼けと船</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc05836.webp</image:loc>
+      <image:caption>インドネシアの伝統的な緑色の像</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc06337.webp</image:loc>
+      <image:caption>夜明け前の火山稜線</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc06812.webp</image:loc>
+      <image:caption>黄金色の光に包まれた火山風景</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc07440.webp</image:loc>
+      <image:caption>ジャワ島の寺院群</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc08278.webp</image:loc>
+      <image:caption>ボルネオのオランウータン</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc08494.webp</image:loc>
+      <image:caption>ボルネオのテングザル</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc04805.webp</image:loc>
+      <image:caption>インドネシアの海岸を望む展望台</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc05469.webp</image:loc>
+      <image:caption>コモドドラゴン</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://aganzo.com/ja/travel/spain/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/travel/spain/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/travel/spain/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/travel/spain/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/travel/spain/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/travel/spain/" />
+  </url>
+  <url>
+    <loc>https://aganzo.com/zh-hans/travel/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/travel/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/travel/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/travel/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/travel/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/travel/" />
+  </url>
+  <url>
+    <loc>https://aganzo.com/zh-hans/travel/belgium/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/travel/belgium/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/travel/belgium/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/travel/belgium/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/travel/belgium/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/travel/belgium/" />
+  </url>
+  <url>
+    <loc>https://aganzo.com/zh-hans/travel/france/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/travel/france/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/travel/france/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/travel/france/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/travel/france/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/travel/france/" />
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/france/france-01-bordeaux-reflection.webp</image:loc>
+      <image:caption>彩色玻璃窗照亮的石拱顶</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/france/france-02-night-city.webp</image:loc>
+      <image:caption>夜色中的法国城市</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/france/france-03-stone-light.webp</image:loc>
+      <image:caption>穿过石砌通道的光</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/france/france-04-framed-church.webp</image:loc>
+      <image:caption>古老石墙框景中的教堂</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/france/france-05-coast.webp</image:loc>
+      <image:caption>暮色中的法国海岸</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/france/france-06-pyrenees-lake.webp</image:loc>
+      <image:caption>比利牛斯山中的高山湖</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/france/france-07-pyrenees-cablecar.webp</image:loc>
+      <image:caption>法国比利牛斯山的缆车</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/france/france-08-strasbourg.webp</image:loc>
+      <image:caption>斯特拉斯堡建筑</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/france/france-09-alsace.webp</image:loc>
+      <image:caption>阿尔萨斯的街道</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/france/france-10-cliff-village.webp</image:loc>
+      <image:caption>悬崖下的村庄</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/france/france-11-autumn-boats.webp</image:loc>
+      <image:caption>水边的船与秋树</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/france/france-12-alps.webp</image:loc>
+      <image:caption>法国阿尔卑斯山</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/france/france-13-provence-abbey.webp</image:loc>
+      <image:caption>普罗旺斯的一座修道院</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/france/france-14-provence-village.webp</image:loc>
+      <image:caption>普罗旺斯的村庄</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/france/france-15-lourdes-carlos.webp</image:loc>
+      <image:caption>在卢尔德的卡洛斯</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://aganzo.com/zh-hans/travel/indonesia/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/travel/indonesia/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/travel/indonesia/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/travel/indonesia/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/travel/indonesia/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/travel/indonesia/" />
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc05597.webp</image:loc>
+      <image:caption>印度尼西亚夕阳下的船只</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc05836.webp</image:loc>
+      <image:caption>印度尼西亚的绿色传统形象</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc06337.webp</image:loc>
+      <image:caption>日出前的火山山脊</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc06812.webp</image:loc>
+      <image:caption>金色光线下的火山景观</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc07440.webp</image:loc>
+      <image:caption>爪哇的寺庙建筑群</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc08278.webp</image:loc>
+      <image:caption>婆罗洲的红毛猩猩</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc08494.webp</image:loc>
+      <image:caption>婆罗洲的长鼻猴</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc04805.webp</image:loc>
+      <image:caption>俯瞰印度尼西亚海岸的观景点</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aganzo.com/assets/images/travel/indonesia/dsc05469.webp</image:loc>
+      <image:caption>科莫多巨蜥</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://aganzo.com/zh-hans/travel/spain/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aganzo.com/travel/spain/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://aganzo.com/es/travel/spain/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aganzo.com/ja/travel/spain/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://aganzo.com/zh-hans/travel/spain/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aganzo.com/travel/spain/" />
   </url>
 </urlset>
