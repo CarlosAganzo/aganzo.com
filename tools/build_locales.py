@@ -94,6 +94,7 @@ def translate_markup(source: str, lang: str, page: str, route: str) -> str:
     )
 
     out = re.sub(r'<html\s+lang="[^"]+"', f'<html lang="{html_lang}"', out, count=1)
+    out = out.replace('data-lang="zh" lang="zh"', 'data-lang="zh" lang="zh-Hans"')
 
     html_pattern = r'(<([a-z0-9]+)\b[^>]*\bdata-i18n-html="([^"]+)"[^>]*>)([\s\S]*?)(</\2>)'
     out = re.sub(
