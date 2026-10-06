@@ -24,29 +24,37 @@ const load = async name => {
   return response.json();
 };
 const dictionaries = await load('translations');
-let saved;
-try { saved = localStorage.getItem('aganzo-v2-language') || localStorage.getItem('aganzo-language'); } catch {}
-const pathLang = location.pathname === '/es' || location.pathname.startsWith('/es/') ? 'es' : 'en';
-let lang = [params.get('lang'), pathLang, saved, navigator.language.slice(0,2), 'en'].find(l => dictionaries[l]);
+const localePrefix = {en:'', es:'/es', ja:'/ja', zh:'/zh-hans'};
+const localeFromPath = path => path === '/es' || path.startsWith('/es/') ? 'es'
+  : path === '/ja' || path.startsWith('/ja/') ? 'ja'
+  : path === '/zh-hans' || path.startsWith('/zh-hans/') ? 'zh'
+  : 'en';
+function localizedPath(path,targetLang){
+  let clean=path.replace(/^\/(?:es|ja|zh-hans)(?=\/|$)/,'')||'/';
+  if(!clean.startsWith('/')) clean='/'+clean;
+  const prefix=localePrefix[targetLang] || '';
+  return prefix ? (clean==='/' ? prefix+'/' : prefix+clean) : clean;
+}
+const pathLang = localeFromPath(location.pathname);
+const legacyLang = params.get('lang');
+if((legacyLang==='ja'||legacyLang==='zh') && pathLang==='en'){
+  const url=new URL(location.href);
+  url.pathname=localizedPath(url.pathname,legacyLang);
+  url.searchParams.delete('lang');
+  location.replace(url.pathname+url.search+url.hash);
+}
+let lang = pathLang;
 let listeners = [];
 export const translate = key => dictionaries[lang][key] || dictionaries.en[key] || key;
 export const language = () => lang;
 export const onLanguage = fn => { listeners.push(fn); fn(); };
 export { load };
-function localizedPath(path,targetLang){
-  let clean=path.replace(/^\/es(?=\/|$)/,'')||'/';
-  if(!clean.startsWith('/')) clean='/'+clean;
-  if(targetLang==='es') return clean==='/'?'/es/':'/es'+clean;
-  return clean;
-}
 function updateLinks(){
   document.querySelectorAll('a.brand, a[data-page-link], a.teaser, a[data-localized-link]').forEach(a => {
     const url = new URL(a.href,location.origin);
     if(url.origin!==location.origin) return;
-    const targetPath=localizedPath(url.pathname,lang);
-    url.pathname=targetPath;
+    url.pathname=localizedPath(url.pathname,lang);
     url.searchParams.delete('lang');
-    if(lang==='ja'||lang==='zh') url.searchParams.set('lang',lang);
     if(domain==='CARLOSAGANZO.COM') url.searchParams.set('from','carlosaganzo.com');
     a.href = url.pathname + url.search + url.hash;
   });
@@ -67,7 +75,6 @@ function setLanguage(value){
   document.querySelector('meta[property="og:locale"]').content=({en:'en_GB',es:'es_ES',ja:'ja_JP',zh:'zh_CN'})[lang];
   document.querySelector('meta[property="og:title"]').content=document.title;
   try {localStorage.setItem('aganzo-v2-language',lang);localStorage.setItem('aganzo-language',lang);} catch {}
-  const current = new URL(location.href);if(lang==='ja'||lang==='zh')current.searchParams.set('lang',lang);else current.searchParams.delete('lang');history.replaceState(null,'',current);
   updateLinks();
   listeners.forEach(fn=>fn());
   document.documentElement.classList.remove('i18n-pending');
@@ -76,21 +83,11 @@ const navPage = ['cinema','music','games','books'].includes(page) ? 'lists' : pa
 document.querySelectorAll('[data-page-link]').forEach(a=>{if(a.dataset.pageLink===navPage)a.setAttribute('aria-current','page');});
 document.querySelectorAll('[data-lang]').forEach(button=>button.addEventListener('click',()=>{
   const target=button.dataset.lang;
-  if(target==='en'||target==='es'){
-    const url=new URL(location.href);
-    url.pathname=localizedPath(url.pathname,target);
-    url.searchParams.delete('lang');
-    location.href=url.pathname+url.search+url.hash;
-    return;
-  }
-  if(target==='ja'||target==='zh'){
-    const url=new URL(location.href);
-    url.pathname=localizedPath(url.pathname,'en');
-    url.searchParams.set('lang',target);
-    location.href=url.pathname+url.search+url.hash;
-    return;
-  }
-  setLanguage(target);
+  if(!dictionaries[target]) return;
+  const url=new URL(location.href);
+  url.pathname=localizedPath(url.pathname,target);
+  url.searchParams.delete('lang');
+  location.href=url.pathname+url.search+url.hash;
 }));
 document.getElementById('year').textContent=new Date().getFullYear();
 setLanguage(lang);
