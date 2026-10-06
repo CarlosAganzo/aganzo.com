@@ -95,7 +95,7 @@ def translate_markup(source: str, lang: str, page: str, route: str) -> str:
 
     out = re.sub(r'<html\s+lang="[^"]+"', f'<html lang="{html_lang}"', out, count=1)
     out = out.replace('data-lang="zh" lang="zh"', 'data-lang="zh" lang="zh-Hans"')
-    out = re.sub(r'/assets/js/site\\.js\\?v=[^"]+', '/assets/js/site.js?v=20261006-locales1', out)
+    out = re.sub(r'/assets/js/site\.js\?v=[^"]+', '/assets/js/site.js?v=20261006-locales1', out)
 
     html_pattern = r'(<([a-z0-9]+)\b[^>]*\bdata-i18n-html="([^"]+)"[^>]*>)([\s\S]*?)(</\2>)'
     out = re.sub(
