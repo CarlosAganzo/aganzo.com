@@ -88,7 +88,7 @@ document.getElementById('year').textContent=new Date().getFullYear();
 setLanguage(lang);
 
 try {
-  const [data, module] = await Promise.all([load('travel'), import('./travel-journal.js?v=20261004-journal5')]);
+  const [data, module] = await Promise.all([load('travel'), import('./travel-journal.js?v=20261006-locales1')]);
   module.initTravel({data, t: translate, language});
 } catch (error) {
   console.error('Travel could not initialize', error);
