@@ -287,3 +287,98 @@ body.photo-is-open{overflow:hidden}
   .region-detail h2{font-size:38px}
   .region-detail-copy{font-size:18px}
 }
+
+
+/* Travel atlas redesign — 2026-10-28. Shared across four locales. */
+.travel-journal [hidden]{display:none!important}
+.travel-legacy-anchor{position:relative;top:-24px}
+.travel-featured,.journal-atlas,.travel-fixed-points{scroll-margin-top:26px}
+.travel-featured{padding:34px 0 46px;border-bottom:1px solid var(--line)}
+.featured-heading{display:grid;grid-template-columns:1fr minmax(200px,430px);gap:36px;align-items:end;margin:0 0 22px}
+.featured-heading h2{font:italic clamp(35px,4vw,58px)/1.08 var(--serif);letter-spacing:-.045em;margin:0}
+.featured-heading>p{font:16px/1.6 var(--serif);color:var(--muted);margin:0}
+.featured-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.featured-card{border:1px solid var(--line);min-width:0}
+.featured-card-link{display:flex;flex-direction:column;height:100%;background:var(--paper);color:inherit;text-decoration:none;transition:background .15s}
+.featured-card-link:hover{background:#e0e2dd}
+.featured-card-link:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.featured-visual{height:160px;background:#dedfdc;overflow:hidden}
+.featured-visual img{width:100%;height:100%;display:block;object-fit:cover}
+.featured-visual--type{display:flex;align-items:center;justify-content:center;padding:16px;background:#dfe1dc}
+.featured-visual--type span{font:italic clamp(25px,2.9vw,48px)/1 var(--serif);color:#484b45;text-align:center}
+.featured-card-text{display:flex;flex-direction:column;flex:1;gap:9px;padding:16px}
+.featured-kicker{font:10px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--red)}
+.featured-card h3{font:italic clamp(28px,3vw,42px)/1 var(--serif);margin:0}
+.featured-card p{font:14px/1.55 var(--serif);margin:0;color:var(--muted);flex:1}
+.featured-read{font:11px/1.3 var(--mono);text-decoration:underline;text-underline-offset:3px;margin-top:10px}
+.atlas-mode-switch{display:flex;width:max-content;max-width:100%;border:1px solid var(--ink);margin:23px 0 10px}
+.atlas-mode-switch button{font:600 12px/1.3 var(--mono);color:var(--ink);background:transparent;border:0;border-right:1px solid var(--ink);min-height:44px;padding:12px 22px;cursor:pointer}
+.atlas-mode-switch button:last-child{border-right:0}
+.atlas-mode-switch button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+.atlas-mode-switch button:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.atlas-mode-help{font:13px/1.6 var(--serif);margin:0 0 18px;color:var(--muted)}
+.journal-atlas .region-filters{margin:0 0 15px}
+.journal-atlas-grid.is-regional-view{grid-template-columns:minmax(0,1fr)}
+.world-map-canvas{width:100%;height:100%;min-width:0;display:flex;justify-content:center;align-items:center}
+.world-map-canvas .atlas-map{display:block;max-width:100%;height:auto;max-height:100%;margin:0}
+.world-map-canvas .atlas-map[hidden]{display:none}
+.atlas-loading{font:13px/1.5 var(--mono);color:var(--muted);padding:24px}
+.journal-atlas .map-paper{height:420px}
+.journal-atlas .regional-map-shell{overflow:auto;overscroll-behavior:contain}
+.journal-atlas .regional-map-canvas{min-height:210px}
+.journal-atlas .regional-map-list{gap:5px}
+.journal-atlas .regional-map-list button{font-size:10px;min-height:36px}
+.region-province.is-enabled:not(.is-visited){stroke:#66665d;stroke-dasharray:1.5 2}
+.region-province.has-notes{stroke:var(--red);stroke-width:1.4}
+.region-province:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.atlas-preview{display:grid;grid-template-columns:1fr minmax(0,210px);align-items:center;gap:26px;border-top:1px solid var(--line);margin-top:20px;padding:24px 0 8px;min-height:142px}
+.atlas-preview .eyebrow{margin:0 0 9px;color:var(--red)}
+.atlas-preview h3{font:italic clamp(29px,3.6vw,44px)/1.12 var(--serif);letter-spacing:-.035em;margin:0 0 10px}
+.atlas-preview p:not(.eyebrow){font:16px/1.55 var(--serif);max-width:780px;margin:0 0 9px}
+.atlas-preview img{width:100%;height:155px;object-fit:cover;border:1px solid var(--line)}
+.atlas-preview .atlas-preview-places{color:var(--muted);font-size:13px!important}
+.atlas-preview-link{font:12px/1.5 var(--mono);display:inline-block;margin-top:9px;text-decoration:underline;text-underline-offset:4px}
+.journal-atlas .country-list button{border-bottom:1px solid var(--line)}
+.country-has-story{font-size:18px}
+.country-regions .region-detail{min-height:420px}
+.country-regions .region-detail-copy{max-width:72ch}
+@media(max-width:1050px){
+ .featured-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .featured-visual{height:205px}
+ .featured-heading{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+ .travel-featured{padding:24px 0 32px}
+ .featured-heading{grid-template-columns:1fr;gap:9px}
+ .featured-heading h2{font-size:38px}
+ .featured-heading>p{font-size:15px}
+ .featured-grid{gap:10px}
+ .featured-visual{height:145px}
+ .featured-card-text{padding:12px}
+ .featured-card h3{font-size:29px}
+ .featured-card p{font-size:13px}
+ .featured-kicker{font-size:9px}
+ .featured-read{font-size:10px}
+ .journal-atlas .map-paper{height:365px;padding:9px}
+ .journal-atlas .regional-map-canvas{min-height:185px}
+ .atlas-preview{grid-template-columns:1fr 112px;gap:12px;padding-top:18px}
+ .atlas-preview img{height:98px}
+ .atlas-preview h3{font-size:32px}
+ .atlas-preview p:not(.eyebrow){font-size:14px}
+ .journal-atlas .country-list{max-height:220px}
+ .atlas-mode-switch{width:100%}
+ .atlas-mode-switch button{flex:1;padding:12px 10px;white-space:normal}
+}
+@media(max-width:440px){
+ .featured-visual{height:105px}
+ .featured-card h3{font-size:25px}
+ .featured-card p{font-size:12px}
+ .featured-card-text{gap:6px}
+ .featured-visual--type span{font-size:27px}
+ .atlas-preview{grid-template-columns:1fr}
+ .atlas-preview img{display:none}
+ .journal-atlas .map-paper{height:345px}
+ .journal-atlas .regional-map-list button{min-height:39px}
+ .journal-atlas .atlas-map{max-height:100%}
+}
+@media(prefers-reduced-motion:reduce){.featured-card-link{transition:none}}
