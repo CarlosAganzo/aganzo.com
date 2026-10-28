@@ -219,6 +219,7 @@ export function initTravel({data, t, language}) {
       .then(svg => {
         worldCanvas.innerHTML = svg;
         worldMap = worldCanvas.querySelector('.atlas-map');
+        if (worldMap) worldMap.setAttribute('aria-label',t('atlasLegend'));
         shapes = [...worldCanvas.querySelectorAll('.atlas-country')];
         renderMapSelection();
         if (worldMap) worldMap.hidden = mapMode === 'regional';
@@ -275,9 +276,17 @@ export function initTravel({data, t, language}) {
       else{shape.removeAttribute('role');shape.setAttribute('tabindex','-1');}
     });
     const allLabel = standalone && data.entries[country]?.regionalExplorer ? t('allRegions') : t('allRegionPhotos');
-    const buttons = [{key:'',label:allLabel},...Object.entries(regions).filter(([,r])=>r.visited||r.enabled).map(([key,r])=>({key,label:local(r.name)}))];
+    const buttons = [{key:'',label:allLabel,status:'all'},...Object.entries(regions).filter(([,r])=>r.visited||r.enabled).map(([key,r])=>({key,label:local(r.name),status:(local(r.noteHtml)||local(r.note)||local(r.places)?.length)?'story':r.visited?'visited':'pending'}))];
     const list=document.getElementById('regional-map-list');
-    if(list)list.innerHTML=buttons.map(({key,label})=>`<button type="button" data-subregion="${key}" aria-pressed="${(key||null)===subregion}">${esc(label)}</button>`).join('');
+    if(list){
+      const label=atlasLabels();
+      const legend='<div class="region-legend"><span>● '+esc(label.hasNotes)+'</span><span>◌ '+esc(label.visited)+'</span><span>– '+esc(label.regionEmpty)+'</span></div>';
+      list.innerHTML=legend+buttons.map(({key,label:regionLabel,status})=>{
+        const statusName=status==='story'?label.hasNotes:status==='visited'?label.visited:status==='pending'?label.regionEmpty:'';
+        const marker=status==='story'?'●':status==='visited'?'◌':status==='pending'?'–':'';
+        return `<button type="button" data-subregion="${key}" data-status="${status}" aria-pressed="${(key||null)===subregion}" aria-label="${esc(regionLabel+(statusName?' — '+statusName:''))}"><span>${esc(regionLabel)}</span><span class="region-list-status" aria-hidden="true">${marker}</span></button>`;
+      }).join('');
+    }
   }
   function renderRegionDetail() {
     const detail=document.getElementById('region-detail');

@@ -382,3 +382,10 @@ body.photo-is-open{overflow:hidden}
  .journal-atlas .atlas-map{max-height:100%}
 }
 @media(prefers-reduced-motion:reduce){.featured-card-link{transition:none}}
+
+/* Explicit regional content states, including keyboard-readable labels. */
+.region-legend{display:flex;flex:0 0 100%;width:100%;flex-wrap:wrap;gap:4px 13px;margin:0 0 6px;font:9px/1.5 var(--mono);color:var(--muted)}
+.regional-map-list button[data-status]{display:inline-flex;align-items:center;gap:7px;justify-content:space-between}
+.region-list-status{font-size:13px;line-height:1;color:var(--muted)}
+.regional-map-list button[data-status="story"] .region-list-status{color:var(--red)}
+.regional-map-list button[data-status="visited"] .region-list-status{color:var(--ink)}
