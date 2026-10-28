@@ -92,7 +92,9 @@ for (const p of prefix) {
     assert(dims.document <= dims.width + 4, 'Horizontal overflow: ' + JSON.stringify(dims));
     await page.locator('[data-map-mode="spain"]').click();
     await page.locator('#regional-map-shell:visible').waitFor();
-    if((await page.locator('#regional-map-list [data-status="story"]').count()) !== 3) throw new Error('Spain must mark Madrid, Catalonia, Valencia as published');
+    await page.locator('#regional-map-list [data-subregion="madrid"]').waitFor({timeout:15000});
+    const publishedCount = await page.locator('#regional-map-list [data-status="story"]').count();
+    if(publishedCount !== 3) throw new Error('Spain should have 3 published regions; found '+publishedCount);
     const ordered = await page.locator('#regional-map-list button[data-subregion]').evaluateAll(nodes => nodes.slice(1,4).map(n=>n.dataset.status));
     assert.deepEqual(ordered,['story','story','story'],'Published regions should appear first');
     await page.locator('#regional-map-list [data-subregion="madrid"]').click();
