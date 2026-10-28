@@ -129,7 +129,7 @@ export function initTravel({data, t, language}) {
     }
     const photo = shownPhotos[activePhoto];
     if (!photo) return `<section class="journal-gallery"><div class="journal-gallery-top">${filter}</div><p>${esc(t('journalRegionEmpty'))}</p></section>`;
-    return `<section class="journal-gallery" aria-label="${esc(t('journalNav'))}"><div class="journal-gallery-top"><span class="micro" id="photo-total">${shownPhotos.length} ${esc(t('journalPhotos'))}</span>${filter}</div><figure class="journal-photo-frame"><a id="journal-hero" href="${image(photo)}" aria-label="${esc(t('journalExpand'))}"><img src="${image(photo)}" alt="${esc(alt(photo))}" width="1400" height="933" fetchpriority="high"><span class="journal-expand" aria-hidden="true">↗</span></a></figure><div class="journal-photo-caption"><span id="photo-caption">${esc(alt(photo))}</span><div class="journal-photo-controls"><button type="button" data-photo-step="-1" aria-label="${esc(t('previous'))}">←</button><span id="photo-counter"></span><button type="button" data-photo-step="1" aria-label="${esc(t('next'))}">→</button></div></div><div class="journal-thumbs" aria-label="${esc(t('journalAllPhotos'))}">${shownPhotos.map((p,i)=>`<a href="${image(p)}" class="journal-thumb" data-photo-index="${i}" aria-label="${esc(alt(p))}" aria-current="${i===activePhoto}"><img src="${image(p)}" alt="" width="100" height="68" loading="lazy"></a>`).join('')}</div></section>`;
+    return `<section class="journal-gallery" aria-label="${esc(t('journalNav'))}"><div class="journal-gallery-top"><span class="micro" id="photo-total">${shownPhotos.length} ${esc(t('journalPhotos'))}</span>${filter}</div><figure class="journal-photo-frame"><a id="journal-hero" href="${image(photo)}" aria-label="${esc(t('journalExpand'))}"><img src="${image(photo)}" alt="${esc(alt(photo))}" width="1400" height="933" fetchpriority="high"><span class="journal-expand" aria-hidden="true">↗</span></a></figure><div class="journal-photo-caption"><span id="photo-caption" aria-live="polite">${esc(alt(photo))}</span><div class="journal-photo-controls"><button type="button" data-photo-step="-1" aria-label="${esc(t('previous'))}">←</button><span id="photo-counter"></span><button type="button" data-photo-step="1" aria-label="${esc(t('next'))}">→</button></div></div><div class="journal-thumbs" aria-label="${esc(t('journalAllPhotos'))}">${shownPhotos.map((p,i)=>`<a href="${image(p)}" class="journal-thumb" data-photo-index="${i}" aria-label="${esc(alt(p))}" aria-current="${i===activePhoto}"><img src="${image(p)}" alt="" width="100" height="68" loading="lazy"></a>`).join('')}</div></section>`;
   }
   function updatePhoto(index, reveal = true) {
     if (!shownPhotos.length) return;
@@ -376,6 +376,13 @@ export function initTravel({data, t, language}) {
   });
   document.addEventListener('change',event=>{if(event.target.id==='photo-region')selectSubregion(event.target.value);if(event.target.id==='journal-country')select(event.target.value);});
   document.addEventListener('keydown',event=>{
+    if ((event.key === 'ArrowLeft' || event.key === 'ArrowRight') && event.target.closest('.journal-gallery')) {
+      if (shownPhotos.length > 1) {
+        event.preventDefault();
+        updatePhoto(activePhoto + (event.key === 'ArrowLeft' ? -1 : 1));
+      }
+      return;
+    }
     const shape=event.target.closest('.atlas-country,.region-province.is-enabled');
     if(shape&&(event.key==='Enter'||event.key===' ')){event.preventDefault();if(shape.dataset.country)select(shape.dataset.country);else selectSubregion(shape.dataset.region,true);}
   });
