@@ -47,6 +47,9 @@ for (const p of prefix) {
     assert.equal(await page.locator('.featured-card').count(), 4);
     assert.equal(await page.locator('[data-map-mode]').count(), 3);
     assert.equal(await page.locator('#atlas-preview').count(), 1);
+    assert.equal(await page.locator('#atlas-preview > .atlas-preview-copy').count(), 1, 'Welcome preview must stay in one column');
+    assert.deepEqual(await page.locator('.featured-visual--type span').allInnerTexts(), ['ES','BE']);
+    if(!p) assert(!(await page.locator('.journal-atlas-help').innerText()).includes('open its notebook'), 'Old navigation hint visible');
     assert.equal(await page.locator('h1').count(), 1);
     assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'), root + path);
     for (const l of ['en', 'es', 'ja', 'zh-Hans', 'x-default']) assert.equal(await page.locator('link[hreflang="'+l+'"]').count(), 1);
@@ -64,6 +67,9 @@ for (const p of prefix) {
     assert(dims.document <= dims.width + 4, 'Horizontal overflow: ' + JSON.stringify(dims));
     await page.locator('[data-map-mode="spain"]').click();
     await page.locator('#regional-map-shell:visible').waitFor();
+    if((await page.locator('#regional-map-list [data-status="story"]').count()) !== 3) throw new Error('Spain must mark Madrid, Catalonia, Valencia as published');
+    const ordered = await page.locator('#regional-map-list button[data-subregion]').evaluateAll(nodes => nodes.slice(1,4).map(n=>n.dataset.status));
+    assert.deepEqual(ordered,['story','story','story'],'Published regions should appear first');
     await page.locator('#regional-map-list [data-subregion="madrid"]').click();
     await page.locator('#atlas-preview h3').waitFor();
     assert((await page.locator('#atlas-preview h3').innerText()).toLowerCase().includes(p === '/ja'?'マドリード':p === '/zh-hans'?'马德里':'madrid'));
