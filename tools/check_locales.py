@@ -101,6 +101,15 @@ for route in ROUTES:
             if alternates.get(hreflang) != href:
                 errors.append(f"Wrong/missing hreflang {hreflang} in {path.relative_to(ROOT)}")
 
+        if "https://aganzo.com/portrait.jpg" in html:
+            errors.append(f"Legacy portrait in page metadata: {path.relative_to(ROOT)}")
+
+        if route == "/archive/":
+            if 'max-image-preview:none' not in html:
+                errors.append(f"Archive image preview should be disabled: {path.relative_to(ROOT)}")
+            if 'property="og:image"' in html or 'name="twitter:image"' in html:
+                errors.append(f"Archive must not advertise a portrait thumbnail: {path.relative_to(ROOT)}")
+
         if "?lang=ja" in html or "?lang=zh" in html:
             errors.append(f"Legacy query-language link remains in {path.relative_to(ROOT)}")
 
