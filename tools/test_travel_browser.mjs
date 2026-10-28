@@ -114,7 +114,11 @@ for (const p of prefix) for (const slug of slugs) {
       await page.locator('#regional-map-list [data-subregion="madrid"]').click();
       assert((await page.locator('#region-detail').innerText()).length>100);
     } else if (slug === 'indonesia' || slug === 'france') {
-      const images=await page.locator('.journal-gallery img').evaluateAll(nodes => nodes.map(n=>({src:n.src,ready:n.complete && n.naturalWidth>0})));
+      const images=await page.locator('.journal-gallery img').evaluateAll(async nodes => {
+        nodes.forEach(n => { n.loading = 'eager'; });
+        await Promise.all(nodes.map(n => n.decode().catch(() => {})));
+        return nodes.map(n=>({src:n.src,ready:n.complete && n.naturalWidth>0}));
+      });
       assert(images.length>1, 'Photo gallery not found');
       assert(images.every(i=>i.ready),JSON.stringify(images.filter(i=>!i.ready)));
       await page.locator('#journal-hero').click();
@@ -127,6 +131,42 @@ for (const p of prefix) for (const slug of slugs) {
     return 'canonical · content · gallery/regions';
   });
 }
+
+
+for (const p of prefix) for (const slug of slugs) {
+  const path = p + '/travel/' + slug + '/';
+  await check(path + ' mobile country content layout', async () => {
+    const { page, errors } = await load(contexts[1], path, true);
+    const geometry = await page.evaluate(() => ({
+      viewport: innerWidth,
+      document: document.documentElement.scrollWidth,
+      heading: document.querySelector('#country-title')?.getBoundingClientRect().width
+    }));
+    assert(geometry.document <= geometry.viewport + 4, 'Horizontal overflow: ' + JSON.stringify(geometry));
+    assert(geometry.heading > 0);
+    if (slug === 'spain') {
+      await page.locator('#regional-map-list [data-subregion="madrid"]').waitFor();
+      await page.locator('#regional-map-list [data-subregion="madrid"]').click();
+      assert((await page.locator('#region-detail').innerText()).length > 100);
+    }
+    assert.deepEqual(errors, [], 'Page errors');
+    await page.close();
+    return '390px · full content · no overflow';
+  });
+}
+
+await check('Deep-linked regional state survives page reload', async () => {
+  const {page, errors} = await load(contexts[0],'/es/travel/?country=ES&map=spain&subregion=madrid#atlas',true);
+  await page.locator('#regional-map-list [data-subregion="madrid"][aria-pressed="true"]').waitFor();
+  assert((await page.locator('#atlas-preview h3').innerText()).includes('Madrid'));
+  await page.reload({waitUntil:'domcontentloaded'});
+  await page.locator('html.travel-ready').waitFor();
+  assert.equal(await page.locator('[data-map-mode="spain"]').getAttribute('aria-pressed'),'true');
+  assert.equal(await page.locator('#regional-map-list [data-subregion="madrid"]').getAttribute('aria-pressed'),'true');
+  assert.deepEqual(errors, [], 'Page errors');
+  await page.close();
+  return 'reload retains Madrid and Spain map';
+});
 
 await Promise.all(contexts.map(c=>c.close()));
 await browser.close();
