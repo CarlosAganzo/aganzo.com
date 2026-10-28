@@ -1,0 +1,40 @@
+name: Travel browser smoke test
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/travel-smoke.yml
+      - tools/test_travel_browser.mjs
+      - tools/build_travel.py
+      - assets/js/travel-journal.js
+      - assets/js/travel-app.js
+      - assets/css/travel.css
+      - assets/data/travel.json
+      - assets/maps/**
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  travel-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install headless Chromium test dependencies
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Verify published travel experience
+        env:
+          TRAVEL_TEST_ORIGIN: https://aganzo.com
+        run: node tools/test_travel_browser.mjs
+      - name: Save screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: travel-browser-screenshots
+          path: travel-smoke-screenshots/
+          if-no-files-found: ignore
