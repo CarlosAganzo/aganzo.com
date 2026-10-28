@@ -233,19 +233,22 @@ def build(lang, code=None):
     desc = TRANSLATIONS[lang].get('seoDescription_' + page, default_desc)
     canonical = 'https://aganzo.com' + path(lang, code)
     hero = DATA['entries'][code or 'ID'].get('heroPhoto')
-    social = 'https://aganzo.com/assets/images/' + hero if hero else 'https://aganzo.com/portrait.jpg'
+    social = 'https://aganzo.com/assets/images/' + hero if hero else None
+    preview = 'large' if social else 'none'
     alternates = ''.join(
         f'<link rel="alternate" hreflang="{HREFLANG[l]}" href="https://aganzo.com{path(l, code)}">'
         for l in LOCALES
     ) + f'<link rel="alternate" hreflang="x-default" href="https://aganzo.com{path("en", code)}">'
     schema = {'@context': 'https://schema.org', '@type': 'Article' if code else 'CollectionPage', 'url': canonical, 'name': title, 'description': desc, 'inLanguage': HTML_LANG[lang], 'author': {'@id': 'https://aganzo.com/#person', '@type': 'Person', 'name': 'Carlos Aganzo', 'url': 'https://aganzo.com/'}, 'image': social, 'dateModified': DATE, 'isPartOf': {'@type': 'WebSite', '@id': 'https://aganzo.com/#website'}}
+    if not social:
+        schema.pop('image', None)
     if code:
         schema['mainEntityOfPage'] = canonical
         schema['headline'] = title
     else:
         schema['hasPart'] = [{'@type': 'Article', 'url': 'https://aganzo.com' + path(lang, c), 'name': NAMES[lang][c]} for c in DESTINATIONS]
-    social_tags = ''.join(f'<meta {"property" if k.startswith("og:") else "name"}="{k}" content="{e(v)}">' for k, v in {'og:type': 'article' if code else 'website', 'og:title': title, 'og:description': desc, 'og:url': canonical, 'og:image': social, 'og:site_name': 'AGANZO.COM', 'og:locale': OG_LOCALE[lang], 'twitter:card': 'summary_large_image', 'twitter:title': title, 'twitter:description': desc, 'twitter:image': social}.items())
-    head = f'''<!doctype html><html lang="{HTML_LANG[lang]}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="index,follow,max-image-preview:large"><title>{e(title)}</title><meta name="description" content="{e(desc)}"><link rel="canonical" href="{canonical}">{alternates}<meta name="author" content="Carlos Aganzo">{social_tags}<meta name="cf-web-analytics-token" content="403e543dcdab49e7bbf3115318a8bf44"><link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/css/site.css?v=20260927-seo3"><link rel="stylesheet" href="/assets/css/travel.css?v={VERSION}"><script type="module" src="/assets/js/travel-app.js?v={VERSION}"></script><script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script><script defer src="/assets/js/analytics.js?v=20260922-main"></script></head>'''
+    social_tags = ''.join(f'<meta {"property" if k.startswith("og:") else "name"}="{k}" content="{e(v)}">' for k, v in {'og:type': 'article' if code else 'website', 'og:title': title, 'og:description': desc, 'og:url': canonical, 'og:image': social, 'og:site_name': 'AGANZO.COM', 'og:locale': OG_LOCALE[lang], 'twitter:card': 'summary_large_image', 'twitter:title': title, 'twitter:description': desc, 'twitter:image': social}.items() if v is not None)
+    head = f'''<!doctype html><html lang="{HTML_LANG[lang]}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="index,follow,max-image-preview:{preview}"><title>{e(title)}</title><meta name="description" content="{e(desc)}"><link rel="canonical" href="{canonical}">{alternates}<meta name="author" content="Carlos Aganzo">{social_tags}<meta name="cf-web-analytics-token" content="403e543dcdab49e7bbf3115318a8bf44"><link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/css/site.css?v=20260927-seo3"><link rel="stylesheet" href="/assets/css/travel.css?v={VERSION}"><script type="module" src="/assets/js/travel-app.js?v={VERSION}"></script><script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script><script defer src="/assets/js/analytics.js?v=20260922-main"></script></head>'''
     if code:
         main = f'<div class="journal-breadcrumb"><a data-localized-link href="{path(lang)}?country={code}#atlas">← {e(tr("journalBack", lang))}</a><span class="micro">{e(tr("journalEyebrow", lang))}</span></div><section id="notebook">{reader(lang, code, True)}</section>{regional_explorer(lang, code)}<section class="journal-related"><p class="eyebrow">{e(tr("journalMore", lang))}</p>{choices(lang, code, True)}</section>'
     else:
