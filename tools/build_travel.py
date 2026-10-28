@@ -15,7 +15,7 @@ import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 DATA = json.loads((ROOT / 'assets/data/travel.json').read_text())
 TRANSLATIONS = json.loads((ROOT / 'assets/data/translations.json').read_text())
-VERSION = '20261028-atlas1'
+VERSION = '20261028-atlas2'
 DATE = '2026-10-28'
 LOCALES = ['en', 'es', 'ja', 'zh']
 PREFIX = {'en': '', 'es': '/es', 'ja': '/ja', 'zh': '/zh-hans'}

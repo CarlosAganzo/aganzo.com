@@ -219,7 +219,7 @@ export function initTravel({data, t, language}) {
   }
   function loadWorldMap() {
     if (!worldCanvas) return;
-    fetch('/assets/maps/world-visited.svg?v=20261028-atlas1')
+    fetch('/assets/maps/world-visited.svg?v=20261028-atlas2')
       .then(response => { if (!response.ok) throw new Error('World map unavailable'); return response.text(); })
       .then(svg => {
         worldCanvas.innerHTML = svg;
