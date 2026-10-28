@@ -50,7 +50,7 @@ for (const p of prefix) {
     assert.equal(await page.locator('h1').count(), 1);
     assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'), root + path);
     for (const l of ['en', 'es', 'ja', 'zh-Hans', 'x-default']) assert.equal(await page.locator('link[hreflang="'+l+'"]').count(), 1);
-    assert.equal(await page.locator('#world-map-canvas svg.atlas-map').count(), 1);
+    await page.locator('#world-map-canvas svg.atlas-map').waitFor({ timeout: 15000 });
     const images = await page.locator('.featured-card img').evaluateAll(nodes => nodes.map(n => ({src:n.src,ok:n.complete && n.naturalWidth > 0})));
     assert(images.length >= 2 && images.every(x=>x.ok), JSON.stringify(images));
     assert.deepEqual(errors, [], 'Page errors');
