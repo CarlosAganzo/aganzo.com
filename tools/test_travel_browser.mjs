@@ -1,5 +1,7 @@
 import assert from 'node:assert/strict';
-import { chromium } from 'playwright';
+import { chromium, request } from 'playwright';
+import { readFile } from 'node:fs/promises';
+import { setTimeout as sleep } from 'node:timers/promises';
 import { mkdir } from 'node:fs/promises';
 
 const root = process.env.TRAVEL_TEST_ORIGIN || 'https://aganzo.com';
@@ -20,6 +22,29 @@ async function check(label, fn) {
   }
 }
 
+const appScript = await readFile('assets/js/travel-app.js', 'utf8');
+const expectedVersion = appScript.match(/const assetVersion = '([^']+)'/)?.[1];
+assert(expectedVersion, 'Missing current travel asset version');
+
+async function waitForPublishedVersion() {
+  const api = await request.newContext({extraHTTPHeaders:{'Cache-Control':'no-cache'}});
+  try {
+    for(let i=0;i<35;i++) {
+      const response = await api.get(root+'/travel/?ci_version='+Date.now(), {timeout:12000});
+      if (response.ok() && (await response.text()).includes('travel-app.js?v='+expectedVersion)) {
+        console.log('Published version verified:', expectedVersion);
+        return;
+      }
+      console.log('Awaiting published version',expectedVersion,'attempt',i+1);
+      await sleep(7000);
+    }
+    throw new Error('Published site did not deploy expected version: '+expectedVersion);
+  } finally {
+    await api.dispose();
+  }
+}
+
+await waitForPublishedVersion();
 await mkdir('travel-smoke-screenshots', { recursive: true });
 const browser = await chromium.launch({ headless: true, args: ['--no-sandbox'] });
 const desktop = browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1 });
