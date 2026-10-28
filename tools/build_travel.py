@@ -15,8 +15,8 @@ import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 DATA = json.loads((ROOT / 'assets/data/travel.json').read_text())
 TRANSLATIONS = json.loads((ROOT / 'assets/data/translations.json').read_text())
-VERSION = '20261006-locales1'
-DATE = '2026-10-06'
+VERSION = '20261028-atlas1'
+DATE = '2026-10-28'
 LOCALES = ['en', 'es', 'ja', 'zh']
 PREFIX = {'en': '', 'es': '/es', 'ja': '/ja', 'zh': '/zh-hans'}
 HREFLANG = {'en': 'en', 'es': 'es', 'ja': 'ja', 'zh': 'zh-Hans'}
@@ -170,16 +170,58 @@ def regional_explorer(lang, code):
     </section>'''
 
 
+HUB_COPY = json.loads("{\"en\":{\"featured\":\"From the notebook\",\"intro\":\"Four places, four different ways of travelling. The longer stories and photo albums have their own pages.\",\"read\":\"Explore the story\",\"atlas\":\"Explore the atlas\",\"world\":\"World map\",\"spain\":\"Spain · regions\",\"indonesia\":\"Indonesia · islands\",\"search\":\"Find a country\",\"choose\":\"Choose a place on the map\",\"chooseBody\":\"Explore 76 countries, or switch to a regional map.\",\"help\":\"Select a country or switch to a regional map. Your selection appears directly below the map.\",\"special\":\"Three special places\",\"story\":\"Story and photographs\"},\"es\":{\"featured\":\"Del cuaderno\",\"intro\":\"Cuatro lugares y cuatro maneras distintas de viajar. Los relatos completos y las galerías tienen sus propias páginas.\",\"read\":\"Explorar el relato\",\"atlas\":\"Explora el atlas\",\"world\":\"Mapa del mundo\",\"spain\":\"España · regiones\",\"indonesia\":\"Indonesia · islas\",\"search\":\"Buscar un país\",\"choose\":\"Elige un lugar en el mapa\",\"chooseBody\":\"Explora 76 países o cambia a un mapa regional.\",\"help\":\"Elige un país o cambia a un mapa regional. Tu selección aparecerá justo debajo del mapa.\",\"special\":\"Tres lugares especiales\",\"story\":\"Relatos y fotografías\"},\"ja\":{\"featured\":\"旅のノートから\",\"intro\":\"四つの場所、四つの旅のかたち。文章と写真はそれぞれのページで見ることができます。\",\"read\":\"旅の記録を見る\",\"atlas\":\"地図を探索\",\"world\":\"世界地図\",\"spain\":\"スペイン・地域\",\"indonesia\":\"インドネシア・島々\",\"search\":\"国を探す\",\"choose\":\"地図から場所を選ぶ\",\"chooseBody\":\"訪れた76か国、または地域地図を探索できます。\",\"help\":\"国を選ぶか地域地図に切り替えてください。選んだ場所の情報は地図の下に表示されます。\",\"special\":\"特別な三つの場所\",\"story\":\"文章と写真\"},\"zh\":{\"featured\":\"旅行笔记精选\",\"intro\":\"四个地方，四种不同的旅行方式。完整的故事和相册都在各自的页面中。\",\"read\":\"阅读旅行记录\",\"atlas\":\"探索地图\",\"world\":\"世界地图\",\"spain\":\"西班牙 · 地区\",\"indonesia\":\"印度尼西亚 · 群岛\",\"search\":\"查找国家\",\"choose\":\"在地图上选择地点\",\"chooseBody\":\"探索到访过的76个国家，或查看地区地图。\",\"help\":\"选择一个国家或切换到地区地图。地点信息将显示在地图下方。\",\"special\":\"三个特别的地方\",\"story\":\"故事与照片\"}}")
+HIGHLIGHT_ORDER = ('ID', 'FR', 'ES', 'BE')
+
+
+def featured(lang):
+    """Country cards with current content; new published entries appear automatically."""
+    c = HUB_COPY[lang]
+    order = [code for code in HIGHLIGHT_ORDER if code in DESTINATIONS]
+    order.extend(code for code in DESTINATIONS if code not in order)
+    cards = []
+    for i, code in enumerate(order):
+        item = DATA['entries'][code]
+        photos = item.get('photos', [])
+        hero = next((p for p in photos if p['file'] == item.get('heroPhoto')), photos[0] if photos else None)
+        if hero:
+            visual = (f'<div class="featured-visual"><img src="{image(hero)}" '
+                      f'alt="{e(local(hero.get("alt", {}), lang) or NAMES[lang][code])}" '
+                      f'width="740" height="494" loading="{"eager" if i == 0 else "lazy"}"></div>')
+        else:
+            visual = f'<div class="featured-visual featured-visual--type" aria-hidden="true"><span>{e(NAMES[lang][code])}</span></div>'
+        note = local(item.get('noteHtml') or item.get('note') or item.get('memory') or {}, lang) or ''
+        excerpt = ' '.join(re.sub(r'<[^>]+>', ' ', note).split())
+        excerpt = excerpt[:185] + ('…' if len(excerpt) > 185 else '')
+        cards.append(
+            f'<article class="featured-card"><a class="featured-card-link" href="{path(lang,code)}">'
+            f'{visual}<div class="featured-card-text"><span class="featured-kicker">{i+1:02d} / {e(c["story"])}</span>'
+            f'<h3>{e(NAMES[lang][code])}</h3><p>{e(excerpt)}</p>'
+            f'<span class="featured-read">{e(c["read"])} <span aria-hidden="true">↗</span></span></div></a></article>'
+        )
+    return (f'<section id="featured" class="travel-featured" aria-labelledby="featured-title">'
+            f'<span id="notebook" class="travel-legacy-anchor" aria-hidden="true"></span>'
+            f'<div class="featured-heading"><div><p class="eyebrow">01 / {e(c["story"])}</p>'
+            f'<h2 id="featured-title">{e(c["featured"])}</h2></div><p>{e(c["intro"])}</p></div>'
+            f'<div class="featured-grid">{"".join(cards)}</div></section>')
+
+
 def atlas(lang):
-    svg = (ROOT / 'assets/maps/world-visited.svg').read_text()
-    svg = svg.replace('aria-label="Countries visited"', f'aria-label="{e(tr("atlasLegend", lang))}"')
-    filters = ''.join(f'<button type="button" data-region="{r}" aria-pressed="{str(r == "all").lower()}">{e(tr("journalAllCountries" if r == "all" else r, lang))}</button>' for r in ['all', *DATA['regions']])
+    """World and regional maps share a single presentation and selection state."""
+    c = HUB_COPY[lang]
+    filters = ''.join(
+        f'<button type="button" data-region="{r}" aria-pressed="{str(r == "all").lower()}">'
+        f'{e(tr("journalAllCountries" if r == "all" else r, lang))}</button>'
+        for r in ['all', *DATA['regions']]
+    )
     return f'''<section id="atlas" class="journal-atlas" aria-labelledby="atlas-title">
-      <div class="journal-section-heading"><div><p class="eyebrow">02 / {e(tr('journalMap', lang))}</p><h2 id="atlas-title">{e(tr('journalAtlasTitle', lang))}</h2></div><p class="journal-total"><strong>{len(VISITED)}</strong><span>{e(tr('atlasVisited', lang))}</span></p></div>
-      <p class="journal-atlas-help">{e(tr('journalAtlasHelp', lang))}</p><div class="region-filters" role="group" aria-label="{e(tr('journalMap', lang))}">{filters}</div>
-      <div class="journal-atlas-grid"><div class="country-index"><label for="country-search">{e(tr('journalSearch', lang))}</label><input type="search" id="country-search" autocomplete="off" placeholder="{e(tr('journalCountry', lang))}"><div id="country-list" class="country-list" aria-label="{e(tr('atlasPlaces', lang))}"></div><p id="country-status" role="status"></p></div>
-      <div class="map-paper"><div class="map-grid" aria-hidden="true"></div>{svg}<div id="regional-map-shell" class="regional-map-shell" hidden><div class="regional-map-topline"><button id="regional-map-back" type="button">← {e(tr('worldMap', lang))}</button><div class="regional-map-heading"><strong id="regional-map-country"></strong><span class="micro">{e(tr('regionalView', lang))}</span></div></div><div id="regional-map-canvas" class="regional-map-canvas"></div><div id="regional-map-list" class="regional-map-list" aria-label="{e(tr('regionalView', lang))}"></div></div><div class="map-key"><span><i></i> {e(tr('visited', lang))}</span><span aria-hidden="true">N ↑</span></div></div></div>
-      <p id="map-status" role="status"></p><details class="journal-atlas-about"><summary>{e(tr('atlasSubtitle', lang))}</summary><p>{e(tr('travelText', lang))}</p><p class="atlas-foot">{e(tr('atlasFoot', lang))}</p></details></section>'''
+      <div class="journal-section-heading"><div><p class="eyebrow">02 / {e(tr('journalMap',lang))}</p><h2 id="atlas-title">{e(tr('journalAtlasTitle',lang))}</h2></div><p class="journal-total"><strong>{len(VISITED)}</strong><span>{e(tr('atlasVisited',lang))}</span></p></div>
+      <p class="journal-atlas-help">{e(c['help'])}</p>
+      <div class="atlas-mode-switch" role="group" aria-label="{e(c['atlas'])}"><button type="button" data-map-mode="world" aria-pressed="true">{e(c['world'])}</button><button type="button" data-map-mode="spain" aria-pressed="false">{e(c['spain'])}</button><button type="button" data-map-mode="indonesia" aria-pressed="false">{e(c['indonesia'])}</button></div>
+      <div class="region-filters" role="group" aria-label="{e(tr('journalMap',lang))}">{filters}</div>
+      <div class="journal-atlas-grid"><div class="country-index"><label for="country-search">{e(c['search'])}</label><input type="search" id="country-search" autocomplete="off" placeholder="{e(tr('journalCountry',lang))}"><div id="country-list" class="country-list" aria-label="{e(tr('atlasPlaces',lang))}"></div><p id="country-status" role="status"></p></div>
+      <div class="map-paper"><div class="map-grid" aria-hidden="true"></div><div id="world-map-canvas" class="world-map-canvas" aria-label="{e(c['world'])}"><p class="atlas-loading" role="status">{e(c['atlas'])}…</p></div><div id="regional-map-shell" class="regional-map-shell" hidden><div class="regional-map-topline"><button id="regional-map-back" type="button">← {e(tr('worldMap',lang))}</button><div class="regional-map-heading"><strong id="regional-map-country"></strong><span class="micro">{e(tr('regionalView',lang))}</span></div></div><div id="regional-map-canvas" class="regional-map-canvas"></div><div id="regional-map-list" class="regional-map-list" aria-label="{e(tr('regionalView',lang))}"></div></div><div class="map-key"><span><i></i> {e(tr('visited',lang))}</span><span aria-hidden="true">N ↑</span></div></div></div>
+      <p id="map-status" role="status"></p><details class="journal-atlas-about"><summary>{e(tr('atlasSubtitle',lang))}</summary><p>{e(tr('travelText',lang))}</p><p class="atlas-foot">{e(tr('atlasFoot',lang))}</p></details><aside id="atlas-preview" class="atlas-preview" aria-live="polite" aria-atomic="true"><h3>{e(c['choose'])}</h3><p>{e(c['chooseBody'])}</p></aside></section>'''
 
 
 def build(lang, code=None):
@@ -205,12 +247,12 @@ def build(lang, code=None):
     social_tags = ''.join(f'<meta {"property" if k.startswith("og:") else "name"}="{k}" content="{e(v)}">' for k, v in {'og:type': 'article' if code else 'website', 'og:title': title, 'og:description': desc, 'og:url': canonical, 'og:image': social, 'og:site_name': 'AGANZO.COM', 'og:locale': OG_LOCALE[lang], 'twitter:card': 'summary_large_image', 'twitter:title': title, 'twitter:description': desc, 'twitter:image': social}.items())
     head = f'''<!doctype html><html lang="{HTML_LANG[lang]}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="index,follow,max-image-preview:large"><title>{e(title)}</title><meta name="description" content="{e(desc)}"><link rel="canonical" href="{canonical}">{alternates}<meta name="author" content="Carlos Aganzo">{social_tags}<meta name="cf-web-analytics-token" content="403e543dcdab49e7bbf3115318a8bf44"><link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/css/site.css?v=20260927-seo3"><link rel="stylesheet" href="/assets/css/travel.css?v={VERSION}"><script type="module" src="/assets/js/travel-app.js?v={VERSION}"></script><script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script><script defer src="/assets/js/analytics.js?v=20260922-main"></script></head>'''
     if code:
-        main = f'<div class="journal-breadcrumb"><a data-localized-link href="{path(lang)}?country={code}#notebook">← {e(tr("journalBack", lang))}</a><span class="micro">{e(tr("journalEyebrow", lang))}</span></div><section id="notebook">{reader(lang, code, True)}</section>{regional_explorer(lang, code)}<section class="journal-related"><p class="eyebrow">{e(tr("journalMore", lang))}</p>{choices(lang, code, True)}</section>'
+        main = f'<div class="journal-breadcrumb"><a data-localized-link href="{path(lang)}?country={code}#atlas">← {e(tr("journalBack", lang))}</a><span class="micro">{e(tr("journalEyebrow", lang))}</span></div><section id="notebook">{reader(lang, code, True)}</section>{regional_explorer(lang, code)}<section class="journal-related"><p class="eyebrow">{e(tr("journalMore", lang))}</p>{choices(lang, code, True)}</section>'
     else:
-        main = f'''<section class="journal-intro"><div><p class="eyebrow">01 / <span data-i18n="travel">{e(tr('travel', lang))}</span></p><h1 data-i18n-html="travelTitleV2">{tr('travelTitleV2', lang)}</h1></div><div class="journal-intro-note"><p data-i18n="journalIntro">{e(tr('journalIntro', lang))}</p><span class="micro">{len(VISITED)} <span data-i18n="atlasVisited">{e(tr('atlasVisited', lang))}</span></span></div></section>
-          <nav class="journal-jumps" aria-label="{e(tr('navigation', lang))}"><a href="#notebook">01 <span data-i18n="journalNavShort">{e(tr('journalNavShort', lang))}</span> ↓</a><a href="#atlas">02 <span data-i18n="journalMapShort">{e(tr('journalMapShort', lang))}</span> ↓</a><a href="#fixed-points">03 <span data-i18n="journalPlacesShort">{e(tr('journalPlacesShort', lang))}</span> ↓</a></nav>
-          <section id="notebook" class="journal-notebook" aria-label="{e(tr('journalNav', lang))}"><div class="journal-notebook-label"><p class="eyebrow" data-i18n="journalEyebrow">{e(tr('journalEyebrow', lang))}</p><span class="micro" id="journal-content-count">{len(VISITED)} {e(tr('journalCountries', lang))} · {len(DESTINATIONS)} {e(tr('journalWithContent', lang))}</span></div>{country_picker(lang, DEFAULT_COUNTRY)}<div class="journal-content-shortcuts"><span class="micro journal-content-label" data-i18n="journalContentLabel">{e(tr('journalContentLabel', lang))}</span>{choices(lang, DEFAULT_COUNTRY)}</div><div id="journal-reader">{reader(lang, DEFAULT_COUNTRY)}</div><p id="journal-status" class="sr-only" role="status"></p></section>
-          {atlas(lang)}{localized_template('travel-fixed.html', lang)}'''
+        c = HUB_COPY[lang]
+        main = f'''<section class="journal-intro"><div><p class="eyebrow">01 / <span data-i18n="travel">{e(tr('travel',lang))}</span></p><h1 data-i18n-html="travelTitleV2">{tr('travelTitleV2',lang)}</h1></div><div class="journal-intro-note"><p data-i18n="journalIntro">{e(tr('journalIntro',lang))}</p><span class="micro">{len(VISITED)} <span data-i18n="atlasVisited">{e(tr('atlasVisited',lang))}</span></span></div></section>
+          <nav class="journal-jumps" aria-label="{e(tr('navigation',lang))}"><a href="#featured">01 {e(c['featured'])} ↓</a><a href="#atlas">02 {e(c['atlas'])} ↓</a><a href="#fixed-points">03 {e(c['special'])} ↓</a></nav>
+          {featured(lang)}{atlas(lang)}{localized_template('travel-fixed.html',lang)}'''
     body = f'<body class="travel-journal" data-page="{page}" data-travel-country="{code or ""}"><a class="skip" data-i18n="skip" href="#main">{e(tr("skip", lang))}</a>{localized_template("travel-header.html", lang)}<main id="main">{main}</main>{localized_template("travel-footer.html", lang)}<noscript><p class="journal-noscript">{e(tr("journalNoScript", lang))}</p></noscript></body></html>\n'
     out = ROOT / path(lang, code).lstrip('/') / 'index.html'
     out.parent.mkdir(parents=True, exist_ok=True)
