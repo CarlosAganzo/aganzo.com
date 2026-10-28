@@ -15,7 +15,7 @@ import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 DATA = json.loads((ROOT / 'assets/data/travel.json').read_text())
 TRANSLATIONS = json.loads((ROOT / 'assets/data/translations.json').read_text())
-VERSION = '20261028-atlas2'
+VERSION = '20261028-atlas3'
 DATE = '2026-10-28'
 LOCALES = ['en', 'es', 'ja', 'zh']
 PREFIX = {'en': '', 'es': '/es', 'ja': '/ja', 'zh': '/zh-hans'}
@@ -189,7 +189,7 @@ def featured(lang):
                       f'alt="{e(local(hero.get("alt", {}), lang) or NAMES[lang][code])}" '
                       f'width="740" height="494" loading="{"eager" if i == 0 else "lazy"}"></div>')
         else:
-            visual = f'<div class="featured-visual featured-visual--type" aria-hidden="true"><span>{e(NAMES[lang][code])}</span></div>'
+            visual = f'<div class="featured-visual featured-visual--type" aria-hidden="true"><span>{e(code)}</span></div>'
         note = local(item.get('noteHtml') or item.get('note') or item.get('memory') or {}, lang) or ''
         excerpt = ' '.join(re.sub(r'<[^>]+>', ' ', note).split())
         excerpt = excerpt[:185] + ('…' if len(excerpt) > 185 else '')

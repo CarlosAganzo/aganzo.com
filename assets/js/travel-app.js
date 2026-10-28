@@ -6,7 +6,7 @@ if(location.pathname==='/' && legacySections[location.hash]){
 const base = '/';
 const page = document.body.dataset.page;
 const params = new URLSearchParams(location.search);
-const assetVersion = '20261028-atlas2';
+const assetVersion = '20261028-atlas3';
 const load = async name => {
   const version = name === 'now' ? Date.now() : assetVersion;
   const options = name === 'now' ? { cache: 'no-store' } : undefined;
@@ -88,7 +88,7 @@ document.getElementById('year').textContent=new Date().getFullYear();
 setLanguage(lang);
 
 try {
-  const [data, module] = await Promise.all([load('travel'), import('./travel-journal.js?v=20261028-atlas2')]);
+  const [data, module] = await Promise.all([load('travel'), import('./travel-journal.js?v=20261028-atlas3')]);
   module.initTravel({data, t: translate, language});
 } catch (error) {
   console.error('Travel could not initialize', error);

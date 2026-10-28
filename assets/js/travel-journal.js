@@ -192,7 +192,7 @@ export function initTravel({data, t, language}) {
     if (!host) return;
     const label = atlasLabels();
     if (!country) {
-      host.innerHTML = '<p class="eyebrow">' + esc(label.selected) + '</p><h3>' + esc(label.choose) + '</h3><p>' + esc(label.chooseBody) + '</p>';
+      host.innerHTML = '<div class="atlas-preview-copy"><p class="eyebrow">' + esc(label.selected) + '</p><h3>' + esc(label.choose) + '</h3><p>' + esc(label.chooseBody) + '</p></div>';
       return;
     }
     const entry = data.entries[country] || {};
@@ -219,7 +219,7 @@ export function initTravel({data, t, language}) {
   }
   function loadWorldMap() {
     if (!worldCanvas) return;
-    fetch('/assets/maps/world-visited.svg?v=20261028-atlas2')
+    fetch('/assets/maps/world-visited.svg?v=20261028-atlas3')
       .then(response => { if (!response.ok) throw new Error('World map unavailable'); return response.text(); })
       .then(svg => {
         worldCanvas.innerHTML = svg;
@@ -281,7 +281,14 @@ export function initTravel({data, t, language}) {
       else{shape.removeAttribute('role');shape.setAttribute('tabindex','-1');}
     });
     const allLabel = standalone && data.entries[country]?.regionalExplorer ? t('allRegions') : t('allRegionPhotos');
-    const buttons = [{key:'',label:allLabel,status:'all'},...Object.entries(regions).filter(([,r])=>r.visited||r.enabled).map(([key,r])=>({key,label:local(r.name),status:(local(r.noteHtml)||local(r.note)||local(r.places)?.length)?'story':r.visited?'visited':'pending'}))];
+    const entryButtons = Object.entries(regions).filter(([,r])=>r.visited||r.enabled).map(([key,r])=>({
+      key,label:local(r.name),
+      status:(local(r.noteHtml)||local(r.note)||local(r.places)?.length||allPhotos(country).some(p=>p.region===key))?'story':r.visited?'visited':'pending'
+    })).sort((a,b)=>{
+      const priority={story:0,visited:1,pending:2};
+      return priority[a.status]-priority[b.status] || a.label.localeCompare(b.label,lang);
+    });
+    const buttons = [{key:'',label:allLabel,status:'all'},...entryButtons];
     const list=document.getElementById('regional-map-list');
     if(list){
       const label=atlasLabels();
@@ -390,7 +397,7 @@ export function initTravel({data, t, language}) {
   window.addEventListener('popstate',()=>{readUrl();renderReader();renderMapSelection();renderMap();renderRegionDetail();});
   // Strings outside the changing reader are localized as well.
   const text = (selector,key) => {const node=document.querySelector(selector);if(node)node.textContent=t(key);};
-    text('label[for="journal-country"]','journalChooseCountry');text('.journal-content-label','journalContentLabel');text('#atlas-title','journalAtlasTitle');const mapEyebrow=document.querySelector('.journal-section-heading .eyebrow');if(mapEyebrow)mapEyebrow.textContent='02 / '+t('journalMap');text('.journal-atlas-help','journalAtlasHelp');
+    text('label[for="journal-country"]','journalChooseCountry');text('.journal-content-label','journalContentLabel');text('#atlas-title','journalAtlasTitle');const mapEyebrow=document.querySelector('.journal-section-heading .eyebrow');if(mapEyebrow)mapEyebrow.textContent='02 / '+t('journalMap');/* Keep the newly authored, locale-specific atlas instructions. */
   text('label[for="country-search"]','journalSearch');text('.journal-total span','atlasVisited');
   text('.journal-atlas-about summary','atlasSubtitle');text('.journal-atlas-about > p','travelText');
   text('.journal-atlas-about .atlas-foot','atlasFoot');text('.journal-related > .eyebrow','journalMore');
