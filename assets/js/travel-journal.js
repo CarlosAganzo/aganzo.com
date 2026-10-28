@@ -50,8 +50,11 @@ export function initTravel({data, t, language}) {
     if (standalone) {
       mapMode = ((data.entries[country]?.regionalExplorer || subregion || location.hash === '#atlas') && config()) ? 'regional' : 'world';
     } else {
-      mapMode = params.get('map') === 'spain' || (country === 'ES' && params.get('map') !== 'world') ? 'regional' : 'world';
-      if (mapMode === 'regional') country = 'ES';
+      const requestedMap = params.get('map');
+      if (requestedMap === 'spain') country = 'ES';
+      if (requestedMap === 'indonesia') country = 'ID';
+      mapMode = requestedMap === 'spain' || requestedMap === 'indonesia' ||
+        (requestedMap !== 'world' && (country === 'ES' || (country === 'ID' && (subregion || location.hash === '#atlas')))) ? 'regional' : 'world';
       if (mapMode !== 'regional') subregion = null;
     }
   }
@@ -61,7 +64,8 @@ export function initTravel({data, t, language}) {
       if (country) url.searchParams.set('country', country);
       else url.searchParams.delete('country');
       if (mapMode === 'regional' && country === 'ES') url.searchParams.set('map', 'spain');
-      else if (country === 'ES') url.searchParams.set('map', 'world');
+      else if (mapMode === 'regional' && country === 'ID') url.searchParams.set('map', 'indonesia');
+      else if (country === 'ES' || country === 'ID') url.searchParams.set('map', 'world');
       else url.searchParams.delete('map');
       if (region !== 'all' && mapMode === 'world') url.searchParams.set('region', region);
       else url.searchParams.delete('region');
@@ -192,20 +196,21 @@ export function initTravel({data, t, language}) {
       return;
     }
     const entry = data.entries[country] || {};
-    const isRegional = mapMode === 'regional' && country === 'ES';
+    const isRegional = mapMode === 'regional' && Boolean(config());
     const localRegion = isRegional && subregion ? config()?.regions?.[subregion] : null;
-    const regionPublished = localRegion && Boolean(local(localRegion.noteHtml) || local(localRegion.note) || local(localRegion.places)?.length);
+    const regionalPhotos = localRegion ? allPhotos(country).filter(photo=>photo.region===subregion) : [];
+    const regionPublished = localRegion && Boolean(local(localRegion.noteHtml) || local(localRegion.note) || local(localRegion.places)?.length || regionalPhotos.length);
     const published = localRegion ? regionPublished : hasContent(country);
     const title = localRegion ? local(localRegion.name) : name(country);
     const note = localRegion ? local(localRegion.noteHtml) || local(localRegion.note) : local(entry.noteHtml) || local(entry.note) || local(entry.memory);
-    const description = published ? asPlainText(note).slice(0,285) : localRegion ? label.regionEmpty : label.empty;
-    const photos = localRegion ? [] : allPhotos(country);
+    const description = published ? (asPlainText(note).slice(0,285) || (regionalPhotos.length ? local(entry.subtitle) : '')) : localRegion ? label.regionEmpty : label.empty;
+    const photos = localRegion ? regionalPhotos : allPhotos(country);
     const hero = photos.find(p => p.file === entry.heroPhoto) || photos[0];
     const photo = hero ? '<img src="' + image(hero) + '" alt="' + esc(local(hero.alt) || name(country)) + '" loading="lazy" width="320" height="210">' : '';
     let link = '';
     if (entry.slug && (published || isRegional)) {
       const destination = new URL(path(country), location.origin);
-      if (localRegion) { destination.searchParams.set('subregion', subregion); destination.hash = 'regions'; }
+      if (localRegion) { destination.searchParams.set('subregion', subregion); destination.hash = country === 'ES' ? 'regions' : 'notebook'; }
       link = '<a class="atlas-preview-link" href="' + esc(destination.pathname + destination.search + destination.hash) + '">' + esc(localRegion ? label.readRegion : label.readCountry) + ' <span aria-hidden="true">↗</span></a>';
     }
     const places = localRegion ? local(localRegion.places) : local(entry.places);
@@ -242,7 +247,7 @@ export function initTravel({data, t, language}) {
   }
   function renderMapSelection() {
     document.querySelectorAll('.region-filters [data-region]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.region===region)));
-    document.querySelectorAll('[data-map-mode]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.mapMode === (mapMode === 'regional' ? 'spain' : 'world'))));
+    document.querySelectorAll('[data-map-mode]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.mapMode === (mapMode === 'regional' ? (country === 'ID' ? 'indonesia' : 'spain') : 'world'))));
     const spain = !standalone && mapMode === 'regional';
     const filters = document.querySelector('.region-filters');
     const index = document.querySelector('.journal-atlas .country-index');
@@ -355,9 +360,11 @@ export function initTravel({data, t, language}) {
     if(shape){select(shape.dataset.country);return;}
     const switcher = event.target.closest('[data-map-mode]');
     if (switcher && !standalone) {
-      mapMode = switcher.dataset.mapMode === 'spain' ? 'regional' : 'world';
+      const requested = switcher.dataset.mapMode;
+      mapMode = requested === 'world' ? 'world' : 'regional';
       subregion = null;
-      if (mapMode === 'regional') {country = 'ES';region = 'all';}
+      if (requested === 'spain') {country = 'ES';region = 'all';}
+      if (requested === 'indonesia') {country = 'ID';region = 'all';}
       writeUrl();renderReader();renderMapSelection();renderMap();
       return;
     }
