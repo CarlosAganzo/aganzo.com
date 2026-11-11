@@ -100,7 +100,7 @@ function renderDay(day){
      '</span><strong>TRAYECTO '+String(i).padStart(2,'0')+'</strong><span class="travel-time">⏱ '+safeText(mv.total)+'</span></div>'+
      '<div class="transfer-summary">'+(walking?'A PIE · Todo andando':'METRO + A PIE · '+safeText(mv.foot)+' andando')+'</div>'+
      '<p>'+safeText(mv.description)+'</p>'+
-     '<a href="'+mapsDir(prev.place,s.place,mv.mode)+'" target="_blank" rel="noopener">↗ Ver este trayecto en Google Maps</a>';
+     '<a href="'+(prev.place===s.place?maps(s.place):mapsDir(prev.place,s.place,mv.mode))+'" target="_blank" rel="noopener">'+(prev.place===s.place?'↗ Ver zona de llegada (local pendiente)':'↗ Ver este trayecto en Google Maps')+'</a>';
    el('timeline').appendChild(box);
   }
   const card=document.createElement('article');card.className='event';
