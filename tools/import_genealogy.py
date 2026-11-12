@@ -28,6 +28,11 @@ def deceased(n):return any(c['value'].upper()=='Y' or value(c,'DATE') for c in c
 
 MONTHS = {m: i for i, m in enumerate(
     ('JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'), 1)}
+# Legacy Webtrees records contain Spanish month names as well as GEDCOM codes.
+MONTHS.update({m: i for i, names in enumerate(
+    ('ENE ENERO','FEB FEBRERO','MAR MARZO','ABR ABRIL','MAY MAYO','JUN JUNIO',
+     'JUL JULIO','AGO AGOSTO','SEP SEPT SEPTIEMBRE SET SETIEMBRE','OCT OCTUBRE',
+     'NOV NOVIEMBRE','DIC DICIEMBRE'), 1) for m in names.split()})
 
 def latest_birth_date(text):
     """Conservative upper bound for an exact Gregorian GEDCOM birth date.
@@ -59,14 +64,17 @@ def publishable(n,as_of):
         return False
     if deceased(n):
         return True
-    births=children(n,'BIRT')
-    if len(births)!=1:
-        return False
-    born=latest_birth_date(value(births[0],'DATE'))
-    return born is not None and born < age_cutoff(as_of)
+    dates=[value(b,'DATE') for b in children(n,'BIRT') if value(b,'DATE').strip()]
+    bounds=[latest_birth_date(d) for d in dates]
+    return bool(bounds) and all(d is not None and d < age_cutoff(as_of) for d in bounds)
 
 def event(n,tag):
-    c=next(iter(children(n,tag)),None)
+    events=children(n,tag)
+    c=next(iter(events),None)
+    # Preserve the historical snapshot unless a previously excluded person needs
+    # a dated birth event instead of a duplicate empty event.
+    if tag=='BIRT' and not deceased(n):
+        c=next((e for e in events if value(e,'DATE').strip()),c)
     return {'date':value(c,'DATE'),'place':value(c,'PLAC')} if c else None
 
 def run(args):

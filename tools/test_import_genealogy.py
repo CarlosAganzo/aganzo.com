@@ -19,6 +19,15 @@ class PublicationTest(unittest.TestCase):
         self.assertTrue(publishable(person('1935'),AS_OF))
         self.assertTrue(publishable(person('OCT 1936'),AS_OF))
         self.assertFalse(publishable(person('NOV 1936'),AS_OF))
+    def test_legacy_spanish_and_duplicate_birth(self):
+        for birth in ('13 AGOSTO 1842','01 MARZO 1840','SEPTIEMBRE 1932'):
+            self.assertTrue(publishable(person(birth),AS_OF))
+        self.assertFalse(publishable(person('NOVIEMBRE 1936'),AS_OF))
+        n=person('30 MAR 1927')
+        n['children'].insert(1, {'id':None,'tag':'BIRT','value':'','children':[]})
+        self.assertTrue(publishable(n,AS_OF))
+        n['children'].extend(person('1950')['children'][1:])
+        self.assertFalse(publishable(n,AS_OF))
     def test_privacy_and_alive(self):
         self.assertFalse(publishable(person('1820',restriction='privacy'),AS_OF))
         self.assertFalse(publishable(person('1820',death='N'),AS_OF))
