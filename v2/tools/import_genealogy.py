@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """Offline GEDCOM import. Input/backups stay outside the public repository.
-Only explicitly deceased, unrestricted people enter the public dataset.
+Unrestricted people with recorded death or birth more than 90 years ago enter the public dataset.
 Media must be explicitly approved in the review manifest before publication.
 """
 import argparse, hashlib, json, re, zipfile
 from pathlib import Path, PurePosixPath
+from datetime import date
+from calendar import monthrange
 
 def parse(text):
     roots=[]; stack=[]
@@ -23,6 +25,46 @@ def value(n,tag):return next((c['value'] for c in children(n,tag)),'')
 def refs(n,tag):return [c['value'] for c in children(n,tag)]
 def restricted(n):return any(c['tag']=='RESN' and c['value'].lower() in ('privacy','confidential','locked') or restricted(c) for c in n['children'])
 def deceased(n):return any(c['value'].upper()=='Y' or value(c,'DATE') for c in children(n,'DEAT'))
+
+MONTHS = {m: i for i, m in enumerate(
+    ('JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'), 1)}
+
+def latest_birth_date(text):
+    """Conservative upper bound for an exact Gregorian GEDCOM birth date.
+    Uncertain dates, ranges and unrecognised calendars need manual review.
+    """
+    parts=text.strip().upper().split()
+    try:
+        if len(parts)==1 and re.fullmatch(r'\d{4}',parts[0]):
+            return date(int(parts[0]),12,31)
+        if len(parts)==2 and parts[0] in MONTHS and re.fullmatch(r'\d{4}',parts[1]):
+            year=int(parts[1]); month=MONTHS[parts[0]]
+            return date(year,month,monthrange(year,month)[1])
+        if len(parts)==3 and parts[1] in MONTHS and re.fullmatch(r'\d{4}',parts[2]) and re.fullmatch(r'\d{1,2}',parts[0]):
+            return date(int(parts[2]),MONTHS[parts[1]],int(parts[0]))
+    except ValueError:
+        pass
+    return None
+
+def age_cutoff(as_of):
+    try:
+        return as_of.replace(year=as_of.year-90)
+    except ValueError:
+        return as_of.replace(year=as_of.year-90,day=28)
+
+def publishable(n,as_of):
+    if restricted(n):
+        return False
+    if any(c['value'].strip().upper()=='N' for c in children(n,'DEAT')):
+        return False
+    if deceased(n):
+        return True
+    births=children(n,'BIRT')
+    if len(births)!=1:
+        return False
+    born=latest_birth_date(value(births[0],'DATE'))
+    return born is not None and born < age_cutoff(as_of)
+
 def event(n,tag):
     c=next(iter(children(n,tag)),None)
     return {'date':value(c,'DATE'),'place':value(c,'PLAC')} if c else None
@@ -33,7 +75,8 @@ def run(args):
     individuals={k:n for k,n in records.items() if n['tag']=='INDI'}
     families={k:n for k,n in records.items() if n['tag']=='FAM'}
     objects={k:n for k,n in records.items() if n['tag']=='OBJE'}
-    public={k:n for k,n in individuals.items() if deceased(n) and not restricted(n)}
+    as_of=args.as_of
+    public={k:n for k,n in individuals.items() if publishable(n,as_of)}
     manifest=json.loads(Path(args.manifest).read_text()) if args.manifest else {'paths':{},'approved':[]}
     
     if manifest.get('sourceSha256') and manifest['sourceSha256'] != hashlib.sha256(raw).hexdigest(): raise ValueError('GEDCOM changed: review publication manifest again')
@@ -81,4 +124,4 @@ def run(args):
     if args.report:Path(args.report).write_text(json.dumps({'sourcePeople':len(individuals),'publicPeople':len(people),'excludedPeople':len(individuals)-len(people),'media':review},ensure_ascii=False,indent=2)+'\n')
     print(json.dumps({'sourcePeople':len(individuals),'publicPeople':len(people),'publishedMedia':len(published),'resolvedMedia':sum(bool(x['resolved']) for x in review),'eligibleMedia':sum(x['eligible'] for x in review)}))
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--gedcom',required=True);p.add_argument('--media',required=True);p.add_argument('--output',required=True);p.add_argument('--manifest');p.add_argument('--report');run(p.parse_args())
+    p=argparse.ArgumentParser();p.add_argument('--gedcom',required=True);p.add_argument('--media',required=True);p.add_argument('--output',required=True);p.add_argument('--manifest');p.add_argument('--report');p.add_argument('--as-of',type=date.fromisoformat,default=date.today(),help='Publication reference date (YYYY-MM-DD)');run(p.parse_args())
