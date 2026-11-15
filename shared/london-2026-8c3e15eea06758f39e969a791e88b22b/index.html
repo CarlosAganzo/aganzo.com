@@ -38,6 +38,25 @@
 .booked-confirmed{border-color:#d6f36b90!important}
 .booked-confirmed input:disabled{opacity:1;cursor:default}
 .ticket-confirmed{display:block;color:#a8d257;font-weight:800;font-size:12px;margin:4px 0}
+
+.alt-section{padding:48px 0 58px;border-top:1px solid #ffffff19}
+.alt-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.alt-card{border:1px solid #ffffff23;border-radius:18px;padding:24px;background:#1b2130;min-width:0}
+.alt-market{background:linear-gradient(150deg,#24332d,#1b2130)}
+.alt-show{background:linear-gradient(150deg,#332544,#1b2130)}
+.alt-kicker{font:700 11px var(--heading);letter-spacing:.08em;color:var(--lime)}
+.alt-card h3,.alt-combo h3{font:700 25px/1.15 var(--heading);margin:12px 0 10px;color:var(--ink)}
+.alt-card p,.alt-combo p{margin:8px 0 12px;color:#d8d7e6}
+.alt-time{font-weight:800;color:#f3f4d9;font-size:18px;margin:18px 0 8px}
+.alt-small{font-size:13px;color:var(--muted)!important;line-height:1.6}
+.alt-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.alt-links a,.alt-jump{display:inline-block;border:1px solid #d6f36b66;border-radius:999px;padding:8px 13px;color:var(--lime);font-size:12px;font-weight:700;text-decoration:none}
+.alt-links a:hover,.alt-jump:hover{background:#d6f36b18}
+.alt-jump{margin-top:12px}
+.alt-combo{margin-top:18px;padding:22px 24px;border:1px solid #d6f36b55;border-radius:16px;background:#d6f36b0a}
+.alt-combo .kicker{color:var(--lime)}
+@media(max-width:650px){.alt-grid{grid-template-columns:1fr}.alt-card,.alt-combo{padding:19px}.alt-section{padding:32px 0}}
+
 </style>
 </head>
 <body>
@@ -57,7 +76,16 @@
 <div class="main-grid" id="day-panel" role="tabpanel" aria-labelledby="tab-0"><div><div class="dayheadline"><span id="day-eyebrow"></span><h3 id="day-headline"></h3><p id="day-desc"></p></div><div class="timeline" id="timeline"></div></div>
 <aside class="side"><div class="mapheader"><strong>📍 Mapa del día</strong><small class="subtle">Selecciona una parada</small></div><div class="map" id="map"><div class="maploading">Cargando recorrido…</div></div><div class="maplinks"><a id="day-route" target="_blank" rel="noopener">↗ Ver recorrido en Google Maps</a><small>Paradas principales</small></div><div class="detailbox" id="detailbox"><strong>Recorrido conectado</strong><p>El esquema muestra el orden de las paradas. Para calles, caminatas y transporte real, usa los enlaces de cada trayecto.</p></div><div class="note"><strong>Nota:</strong> las duraciones a pie y en metro son orientativas, no tiempos en directo. Añade margen por transbordos, tráfico, colas y retrasos. Revisa las indicaciones y el estado de TfL antes de salir.</div></aside></div>
 </div></section>
-<section class="ticket-section" id="reservas"><div class="wrap"><div class="ticket-intro"><div><p class="kicker">02 / Antes de viajar</p><h2>La lista de reservas.</h2></div><p>Marca lo que ya hayáis reservado. Se guarda solo en este navegador: cada persona tiene su propia lista.</p></div><div class="bookings" id="bookings"></div><div class="progress"><div class="progress-head"><span>Preparativos</span><span id="progress-counter">0 / 8</span></div><div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div><p class="darknote">El viernes cenáis con más gente: el restaurante se decide con el grupo. No confundáis horarios sugeridos con entradas compradas.</p></div></div></section>
+
+<section class="section alt-section" id="alternativas"><div class="wrap">
+ <div class="section-heading"><div><p class="kicker">02 / Plan B · sábado 21</p><h2>Alternativas molonas<span style="color:var(--lime)">.</span></h2></div><p class="subtle">Dos ideas para después de Frameless, si finalmente no compramos Paranormal Activity. No están reservadas.</p></div>
+ <div class="alt-grid">
+  <article class="alt-card alt-market"><span class="alt-kicker">PLAN B1 · GRATIS · SIN RESERVA</span><h3>Southbank Winter Market</h3><p>Casetas de invierno, comida callejera, luces y el Támesis de noche. Paseo por Queen's Walk, bajo Hungerford Bridge. Un plan relajado con vistas al Parlamento y a la City.</p><div class="alt-time">17:00–19:15 · sugerido</div><p class="alt-small">Puestos 11:00–22:00; bares hasta las 23:00. Entrada gratuita; comida y bebida aparte. Desde Frameless: metro Central de Marble Arch a Tottenham Court Road, paseo hacia Charing Cross y cruce del puente peatonal (35–45 min aprox.).</p><div class="alt-links"><a href="https://www.southbankcentre.co.uk/activity/winter-market/" target="_blank" rel="noopener">Información oficial ↗</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=Frameless%2C+London&amp;destination=Southbank+Centre+Winter+Market%2C+London&amp;travelmode=transit" target="_blank" rel="noopener">Cómo llegar ↗</a></div></article>
+  <article class="alt-card alt-show"><span class="alt-kicker">PLAN B2 · COMEDIA RARA · 14+</span><h3>Frankie Thompson: Horrible Things</h3><p>Clown, performance, humor absurdo e incómodo. La última función de su temporada en Soho Theatre, en el 21 Dean Street. Una alternativa de culto al teatro de terror.</p><div class="alt-time">21:00–22:00 · sábado 21</div><p class="alt-small">Precios anunciados para esta función: £18, £21 o £24 sentados; £15 de pie. Para tres sentados: £54–72, sujeto a disponibilidad. Duración 60 min; edad recomendada 14+. Puede contener luces intermitentes, niebla y ruidos fuertes.</p><div class="alt-links"><a href="https://sohotheatre.com/events/frankie-thompson-horrible-things-2/" target="_blank" rel="noopener">Entradas oficiales ↗</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Soho+Theatre+21+Dean+Street+London" target="_blank" rel="noopener">Ubicación ↗</a></div></article>
+ </div>
+ <div class="alt-combo"><p class="kicker">MI COMBINACIÓN</p><h3>Mercadillo + Horrible Things</h3><p>16:00 salir de Frameless → 17:00–19:15 Southbank, picar algo y pasear por el río → 19:15–19:50 cruzar Golden Jubilee Bridge y andar hacia Soho Theatre (25–35 min) → 19:50–20:40 café o cena ligera → 21:00–22:00 espectáculo → hotel sobre las 22:40.</p><p class="alt-small">Vuelta al DoubleTree: a pie hasta Tottenham Court Road o Leicester Square, Northern line hacia King's Cross y paseo final al hotel (30–40 min aprox.). Si no conseguís entradas, el mercado funciona perfectamente como plan independiente.</p><div class="alt-links"><a href="https://www.google.com/maps/dir/?api=1&amp;origin=Southbank+Centre+Winter+Market+London&amp;destination=Soho+Theatre+21+Dean+Street+London&amp;travelmode=walking" target="_blank" rel="noopener">Ruta a pie mercado → teatro ↗</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=Soho+Theatre+21+Dean+Street+London&amp;destination=DoubleTree+by+Hilton+London+Angel+Kings+Cross&amp;travelmode=transit" target="_blank" rel="noopener">Vuelta al hotel ↗</a></div></div>
+</div></section>
+<section class="ticket-section" id="reservas"><div class="wrap"><div class="ticket-intro"><div><p class="kicker">03 / Antes de viajar</p><h2>La lista de reservas.</h2></div><p>Marca lo que ya hayáis reservado. Se guarda solo en este navegador: cada persona tiene su propia lista.</p></div><div class="bookings" id="bookings"></div><div class="progress"><div class="progress-head"><span>Preparativos</span><span id="progress-counter">0 / 8</span></div><div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div><p class="darknote">El viernes cenáis con más gente: el restaurante se decide con el grupo. No confundáis horarios sugeridos con entradas compradas.</p></div></div></section>
 </main>
 <footer class="footer"><div class="wrap footgrid"><div><h2>SEE YOU IN LONDON<span style="color:var(--lime)">.</span></h2><p>Hotel DoubleTree Angel King's Cross. Ida prevista: viernes 08:27 → 11:32. Regreso previsto: domingo 20:33 → 00:02 del lunes. Confirmar billetes.</p><div class="quicklinks"><a href="https://tfl.gov.uk/" target="_blank" rel="noopener">Transport for London ↗</a><a href="https://www.google.com/maps/search/?api=1&query=DoubleTree+Angel+Kings+Cross" target="_blank" rel="noopener">Ubicación del hotel ↗</a></div></div><div class="footer-actions"><button class="ghost" onclick="window.print()">⎙ Imprimir</button><button class="bright" id="download">↓ Guardar esta web</button></div></div></footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -87,6 +115,7 @@ function renderDay(day){
  el('day-eyebrow').textContent=d.eyebrow;
  el('day-headline').textContent=d.title;
  el('day-desc').textContent=d.desc;
+ if(day===1){const alt=document.createElement('a');alt.href='#alternativas';alt.className='alt-jump';alt.textContent='✦ Plan B: Winter Market + Horrible Things · ver alternativas ↓';el('day-desc').appendChild(document.createElement('br'));el('day-desc').appendChild(alt);}
  el('timeline').innerHTML='';
  d.stops.forEach((s,i)=>{
   if(i>0&&s.move){
