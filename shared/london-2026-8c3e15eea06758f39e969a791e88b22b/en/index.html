@@ -58,6 +58,49 @@
 @media(max-width:650px){.alt-grid{grid-template-columns:1fr}.alt-card,.alt-combo{padding:19px}.alt-section{padding:32px 0}}
 
 .lang-switch{display:inline-flex;align-items:center;gap:2px;padding:3px;border:1px solid #ffffff35;border-radius:99px;flex-shrink:0}.lang-switch a{font:700 11px var(--heading);padding:7px 9px;border-radius:99px;color:var(--ink);text-decoration:none}.lang-switch a[aria-current="page"]{background:var(--lime);color:#10101c}.lang-switch a:hover{outline:1px solid var(--lime)}@media(max-width:480px){.top-right{flex-wrap:wrap;justify-content:flex-end;gap:6px}.header-actions{align-items:center}.smallchip{font-size:9px}.lang-switch a{padding:6px 8px}}
+
+/* Shopping guide — editorial split palette; responsive cards with clear route priorities */
+.shop-section{padding:58px 0 76px;background:radial-gradient(ellipse at 3% 5%,#d6f36b0a,transparent 37%),radial-gradient(ellipse at 96% 45%,#b9a4ff13,transparent 35%);border-top:1px solid #ffffff1e}
+.shop-heading{max-width:870px;margin-bottom:35px}
+.shop-heading h2{font-size:clamp(32px,4.8vw,62px);line-height:1.03;letter-spacing:-.06em;margin:10px 0 16px}
+.shop-amp{font-family:Georgia,serif;font-size:.75em;color:#b9a4ff;padding:0 10px;font-style:italic}
+.shop-lead{max-width:600px;color:#bfc0cd;line-height:1.55}
+.lime-stop{color:var(--lime)}
+.shop-day-heading{display:flex;align-items:end;justify-content:space-between;gap:24px;margin:34px 0 18px}
+.shop-day-heading>div{display:flex;gap:14px;align-items:center}
+.shop-day-heading>p{max-width:390px;font-size:13px;color:#adafbd;margin:0;line-height:1.5}
+.shop-day-no{display:grid;place-items:center;flex:0 0 62px;height:62px;border-radius:16px;font:700 28px/1 var(--heading);color:#111221;background:var(--lime)}
+.shop-day-no.shop-optional{background:#b9a4ff}
+.shop-eyebrow{font:700 10px/1.5 var(--heading);letter-spacing:.10em;color:#b9a4ff;margin:0 0 4px}
+.shop-day-heading h3{font:700 clamp(19px,2.6vw,25px)/1.2 var(--heading);margin:0}
+.shop-second{margin-top:50px}
+.shop-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.shop-card{position:relative;display:flex;flex-direction:column;min-width:0;border:1px solid #ffffff23;border-radius:18px;background:linear-gradient(150deg,#252b36,#1b202b);padding:23px;overflow:hidden}
+.shop-card.cards{background:linear-gradient(150deg,#2b2440,#1a202c)}
+.shop-card.shop-feature{border-color:#d6f36b80;box-shadow:inset 0 0 0 1px #d6f36b15}
+.shop-card.shop-feature:before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--lime)}
+.shop-card.shop-closed{opacity:.69}
+.shop-top{display:flex;justify-content:space-between;align-items:start;gap:10px;margin-bottom:13px}
+.shop-symbol{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:#ffffff12;font-size:23px}
+.shop-timing{font:700 10px/1.3 var(--heading);letter-spacing:.07em;color:#d6f36b;padding:7px 9px;border-radius:99px;background:#d6f36b15;text-align:right}
+.shop-card.cards .shop-timing{color:#dfcbff;background:#b9a4ff1a}
+.shop-label{color:#b9a4ff;font:700 10px var(--heading);letter-spacing:.13em}
+.shop-card h3{font:750 clamp(23px,3vw,31px)/1.08 var(--heading);letter-spacing:-.045em;margin:9px 0 7px;color:#fff}
+.shop-address{font-size:12px;color:#b8bbcd;margin:0 0 15px}
+.shop-description{font-size:14px;line-height:1.58;color:#e2e2e9;margin:0 0 21px;flex:1}
+.shop-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;border-top:1px solid #ffffff1c;padding-top:15px}
+.shop-duration{font-size:12px;color:#b8bbcd}
+.shop-buttons{display:flex;flex-wrap:wrap;gap:7px}
+.shop-buttons a,.shop-guide>a{font-size:12px;font-weight:700;text-decoration:none;color:var(--lime);padding:8px 12px;border:1px solid #d6f36b5e;border-radius:100px;white-space:nowrap}
+.shop-buttons a:hover,.shop-guide>a:hover{background:#d6f36b17}
+.shop-guide{display:flex;align-items:center;gap:20px;margin-top:28px;padding:20px 23px;border:1px solid #b9a4ff66;border-radius:17px;background:#b9a4ff0c}
+.shop-guide-icon{font-size:28px;color:#b9a4ff;align-self:start}
+.shop-guide strong{font-size:17px}
+.shop-guide p{font-size:13px;line-height:1.6;color:#cbcbd8;margin:7px 0 0}
+.shop-guide>a{margin-left:auto;flex-shrink:0}
+@media(max-width:730px){.shop-day-heading{align-items:start;flex-direction:column;gap:10px}.shop-grid{grid-template-columns:1fr}.shop-heading h2{font-size:39px}.shop-guide{align-items:flex-start;flex-wrap:wrap;gap:12px}.shop-guide>a{margin-left:0}.shop-section{padding:38px 0 48px}}
+@media(prefers-reduced-motion:no-preference){.shop-card{transition:transform .2s ease,border-color .2s ease}.shop-card:hover{transform:translateY(-3px);border-color:#d6f36b70}}
+
 </style>
 </head>
 <body>
@@ -87,7 +130,67 @@
 </div>
 <div class="alt-combo"><p class="kicker">SUGGESTED ROUTE</p><h3>A full day without rushing</h3><p>10:15 Highgate → 13:00 Angry Crab Soho (table not booked) → 14:50 Frameless (booked Flexi; enter before 16:00) → 17:20 Southbank Winter Market → 21:00 Horrible Things only if you buy tickets.</p><p class="alt-small">If you skip the show, the market is a great ending to the day. Flexi tickets are for Saturday 21 and do not allow unrestricted entry after 16:00.</p></div>
 </div></section>
-<section class="ticket-section" id="reservas"><div class="wrap"><div class="ticket-intro"><div><p class="kicker">03 / Before the trip</p><h2>Booking checklist.</h2></div><p>Tick what you have booked. Your choices are saved in this browser; each person has their own checklist.</p></div><div class="bookings" id="bookings"></div><div class="progress"><div class="progress-head"><span>Preparations</span><span id="progress-counter">0 / 11</span></div><div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div><p class="darknote">Confirmed: LNER trains, hotel, Friday cinema, Bone Daddies, Dennis Severs’ House and FRAMELESS (3 Flexi tickets, enter before 16:00 on Saturday). Pending: Angry Crab Soho table and optional Saturday night activities.</p></div></div></section>
+<section class="section shop-section" id="tiendas"><div class="wrap"><div class="shop-heading"><p class="kicker">03 / CARDS &amp; JAPANESE DENIM</p><h2>Pokémon<span class="shop-amp">&amp;</span> Japanese denim<span class="lime-stop">.</span></h2><p class="shop-lead">Worthwhile stops between films, cemeteries and food. Sorted so shopping doesn't swallow the whole trip.</p></div>
+ <div class="shop-day-heading"><div><span class="shop-day-no">20</span><div><p class="shop-eyebrow">FRIDAY · SOHO &amp; WEST END</p><h3>After Seven Dials, before Bone Daddies</h3></div></div><p>15:30–18:15 is your window. Choose 2–3 shops, not all four; Bone Daddies is booked for 18:30.</p></div>
+ <div class="shop-grid"><article class="shop-card cards  ">
+ <div class="shop-top"><span class="shop-symbol" aria-hidden="true">👾</span><div class="shop-timing">FRIDAY · ON THE WAY</div></div>
+ <div class="shop-label">POKÉMON / CULT</div><h3>Forbidden Planet Megastore</h3>
+ <p class="shop-address">179 Shaftesbury Avenue · Covent Garden</p><p class="shop-description">Comics, manga, cult films, figures and some TCG. Worth it for the shop itself more than for a rare Japanese single.</p>
+ <div class="shop-bottom"><span class="shop-duration">35–45 min</span>
+ <div class="shop-buttons"><a href="https://forbiddenplanet.com/stores/london-megastore/" target="_blank" rel="noopener">Shop ↗</a><a href="https://www.google.com/maps/search/?api=1&query=179%20Shaftesbury%20Avenue%2C%20London%20WC2H%208JR" target="_blank" rel="noopener">Map ↗</a></div></div></article>
+<article class="shop-card style  ">
+ <div class="shop-top"><span class="shop-symbol" aria-hidden="true">👖</span><div class="shop-timing">FRIDAY · ON THE WAY</div></div>
+ <div class="shop-label">DENIM / REPAIRS</div><h3>Nudie Jeans Repair Shop</h3>
+ <p class="shop-address">29 D&#39;Arblay Street · Soho</p><p class="shop-description">Explore new cuts, handle different fabrics and check out the repair shop. Hardly any detour from Berwick Street.</p>
+ <div class="shop-bottom"><span class="shop-duration">15–25 min</span>
+ <div class="shop-buttons"><a href="https://www.nudiejeans.com/en-GB/stores/nudie-jeans-repair-shop-soho" target="_blank" rel="noopener">Shop ↗</a><a href="https://www.google.com/maps/search/?api=1&query=29%20D'Arblay%20Street%2C%20London%20W1F%208EP" target="_blank" rel="noopener">Map ↗</a></div></div></article>
+<article class="shop-card style shop-feature ">
+ <div class="shop-top"><span class="shop-symbol" aria-hidden="true">🧵</span><div class="shop-timing">FRIDAY · PRIORITY</div></div>
+ <div class="shop-label">JAPANESE DENIM</div><h3>Rivet &amp; Hide</h3>
+ <p class="shop-address">11–12 Old Burlington Street · Mayfair</p><p class="shop-description">Japanese denim, heritage clothing and denim jackets. The best Friday stop for trying on pieces before ordering online.</p>
+ <div class="shop-bottom"><span class="shop-duration">30–45 min</span>
+ <div class="shop-buttons"><a href="https://rivetandhide.com/gbp/our-stores" target="_blank" rel="noopener">Shop ↗</a><a href="https://www.google.com/maps/search/?api=1&query=11-12%20Old%20Burlington%20Street%2C%20London%20W1S%203AG" target="_blank" rel="noopener">Map ↗</a></div></div></article>
+<article class="shop-card style  ">
+ <div class="shop-top"><span class="shop-symbol" aria-hidden="true">🧥</span><div class="shop-timing">FRIDAY · DETOUR</div></div>
+ <div class="shop-label">JAPAN / WORKWEAR</div><h3>Clutch Cafe</h3>
+ <p class="shop-address">78–80 Great Portland Street · Fitzrovia</p><p class="shop-description">Military-inspired workwear, heritage clothing and Japanese denim. Very much your style, but a longer detour; closes 18:00 Friday.</p>
+ <div class="shop-bottom"><span class="shop-duration">30–45 min</span>
+ <div class="shop-buttons"><a href="https://clutch-cafe.com/pages/visit-the-store" target="_blank" rel="noopener">Shop ↗</a><a href="https://www.google.com/maps/search/?api=1&query=78-80%20Great%20Portland%20Street%2C%20London%20W1W%207NT" target="_blank" rel="noopener">Map ↗</a></div></div></article></div>
+ <div class="shop-day-heading shop-second"><div><span class="shop-day-no">22</span><div><p class="shop-eyebrow">SUNDAY · SPITALFIELDS &amp; BRICK LANE</p><h3>Cards in the morning, denim after lunch</h3></div></div><p>Bubble Pop at 10:00 fits. Son of a Stag opens at 12:00, just before Dennis Severs (12:30): save it for after lunch with Santiago.</p></div>
+ <div class="shop-grid"><article class="shop-card cards  ">
+ <div class="shop-top"><span class="shop-symbol" aria-hidden="true">⚡</span><div class="shop-timing">SUNDAY · 10:00</div></div>
+ <div class="shop-label">POKÉMON / IMPORTS</div><h3>Bubble Pop Spitalfields</h3>
+ <p class="shop-address">42 Brushfield Street · Spitalfields</p><p class="shop-description">Japanese packs, plushies and character merchandise. Easy stop while exploring Spitalfields before Dennis Severs.</p>
+ <div class="shop-bottom"><span class="shop-duration">10–15 min</span>
+ <div class="shop-buttons"><a href="https://www.google.com/maps/search/?api=1&amp;query=Bubble+Pop+42+Brushfield+Street+London" target="_blank" rel="noopener">Shop ↗</a><a href="https://www.google.com/maps/search/?api=1&query=42%20Brushfield%20Street%2C%20London%20E1%206AG" target="_blank" rel="noopener">Map ↗</a></div></div></article>
+<article class="shop-card style shop-feature ">
+ <div class="shop-top"><span class="shop-symbol" aria-hidden="true">🪡</span><div class="shop-timing">SUNDAY · FROM 12:00</div></div>
+ <div class="shop-label">JAPANESE HERITAGE</div><h3>Son of a Stag</h3>
+ <p class="shop-address">9 Dray Walk · Truman Brewery</p><p class="shop-description">The most you-shaped Sunday shop: Japanese denim, Fullcount, workwear and characterful jackets. Opens at 12:00: visit AFTER lunch, choosing this or Sky Garden.</p>
+ <div class="shop-bottom"><span class="shop-duration">30–45 min</span>
+ <div class="shop-buttons"><a href="https://sonofastag.com/pages/stores" target="_blank" rel="noopener">Shop ↗</a><a href="https://www.google.com/maps/search/?api=1&query=9%20Dray%20Walk%2C%20London%20E1%206QL" target="_blank" rel="noopener">Map ↗</a></div></div></article>
+<article class="shop-card style  shop-closed">
+ <div class="shop-top"><span class="shop-symbol" aria-hidden="true">🔒</span><div class="shop-timing">SUNDAY · CLOSED</div></div>
+ <div class="shop-label">DENIM / JAPAN</div><h3>Fullcount London</h3>
+ <p class="shop-address">38 Toynbee Street · Spitalfields</p><p class="shop-description">Japanese heritage denim worth knowing, but published Sunday hours indicate it is closed. Save it for another visit.</p>
+ <div class="shop-bottom"><span class="shop-duration">Skip Sunday</span>
+ <div class="shop-buttons"><a href="https://www.google.com/maps/search/?api=1&amp;query=Fullcount+38+Toynbee+Street+London" target="_blank" rel="noopener">Shop ↗</a><a href="https://www.google.com/maps/search/?api=1&query=38%20Toynbee%20Street%2C%20London%20E1%207NE" target="_blank" rel="noopener">Map ↗</a></div></div></article></div>
+ <div class="shop-day-heading shop-second"><div><span class="shop-day-no shop-optional">↗</span><div><p class="shop-eyebrow">ONLY IF TIME ALLOWS</p><h3>Pokémon detours</h3></div></div><p>Not on the normal route. For Komiya, Kanda or Japanese promos, check the singles inventory before travelling.</p></div>
+ <div class="shop-grid"><article class="shop-card cards shop-feature ">
+ <div class="shop-top"><span class="shop-symbol" aria-hidden="true">🃏</span><div class="shop-timing">DETOUR · CAMDEN</div></div>
+ <div class="shop-label">POKÉMON SINGLES</div><h3>Nendozone</h3>
+ <p class="shop-address">5 Malden Road · Chalk Farm</p><p class="shop-description">The proper Pokémon card specialist: singles, Japanese products and sealed stock. Off-route; only worth adding if cards become the main priority.</p>
+ <div class="shop-bottom"><span class="shop-duration">Long detour</span>
+ <div class="shop-buttons"><a href="https://nendozone.com/pages/visit-us" target="_blank" rel="noopener">Shop ↗</a><a href="https://www.google.com/maps/search/?api=1&query=5%20Malden%20Road%2C%20London%20NW5%203HS" target="_blank" rel="noopener">Map ↗</a></div></div></article>
+<article class="shop-card cards  ">
+ <div class="shop-top"><span class="shop-symbol" aria-hidden="true">🎴</span><div class="shop-timing">DETOUR · CALEDONIAN RD</div></div>
+ <div class="shop-label">TCG / NEAR HOTEL</div><h3>Europa Gaming</h3>
+ <p class="shop-address">370 Caledonian Road · Islington</p><p class="shop-description">Another possible stop for singles and sealed stock nearer King&#39;s Cross. Confirm Pokémon stock and opening hours before travelling; off-route.</p>
+ <div class="shop-bottom"><span class="shop-duration">Detour</span>
+ <div class="shop-buttons"><a href="https://thehobbywarehouse.co.uk/venues/europa-gaming-london/" target="_blank" rel="noopener">Shop ↗</a><a href="https://www.google.com/maps/search/?api=1&query=370%20Caledonian%20Road%2C%20London%20N1%201DY" target="_blank" rel="noopener">Map ↗</a></div></div></article></div>
+ <div class="shop-guide"><div class="shop-guide-icon">✦</div><div><strong>My realistic shopping route</strong><p>Friday: Forbidden Planet + Rivet &amp; Hide + Nudie if time allows. Sunday: Bubble Pop before Dennis; Son of a Stag after lunch ONLY if you swap Sky Garden for shopping. Clutch Cafe is an alternative, not a fourth stop.</p></div><a href="https://www.google.com/maps/dir/?api=1&amp;origin=179+Shaftesbury+Avenue+London&amp;destination=29+DArblay+Street+London&amp;waypoints=11-12+Old+Burlington+Street+London&amp;travelmode=walking" target="_blank" rel="noopener">Friday route ↗</a></div>
+ </div></section>
+<section class="ticket-section" id="reservas"><div class="wrap"><div class="ticket-intro"><div><p class="kicker">04 / Before the trip</p><h2>Booking checklist.</h2></div><p>Tick what you have booked. Your choices are saved in this browser; each person has their own checklist.</p></div><div class="bookings" id="bookings"></div><div class="progress"><div class="progress-head"><span>Preparations</span><span id="progress-counter">0 / 11</span></div><div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div><p class="darknote">Confirmed: LNER trains, hotel, Friday cinema, Bone Daddies, Dennis Severs’ House and FRAMELESS (3 Flexi tickets, enter before 16:00 on Saturday). Pending: Angry Crab Soho table and optional Saturday night activities.</p></div></div></section>
 </main>
 <footer class="footer"><div class="wrap footgrid"><div><h2>SEE YOU IN LONDON<span style="color:var(--lime)">.</span></h2><p>DoubleTree Angel King's Cross BOOKED for 20–22 Nov. LNER BOOKED: Friday 08:27 → 11:32 and Sunday 20:33 → Monday 00:02. Curzon cinema BOOKED: Friday 20:20. Friday morning: visit reception, arrange check-in and leave bags before sightseeing.</p><div class="quicklinks"><a href="https://tfl.gov.uk/" target="_blank" rel="noopener">Transport for London ↗</a><a href="https://www.google.com/maps/search/?api=1&query=DoubleTree+Angel+Kings+Cross" target="_blank" rel="noopener">Hotel location ↗</a></div></div><div class="footer-actions"><button class="ghost" onclick="window.print()">⎙ Print</button><button class="bright" id="download">↓ Save this page</button></div></div></footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -117,6 +220,7 @@ function renderDay(day){
  el('day-eyebrow').textContent=d.eyebrow;
  el('day-headline').textContent=d.title;
  el('day-desc').textContent=d.desc;
+ if(day===0||day===2){const shop=document.createElement('a');shop.href='#tiendas';shop.className='alt-jump';shop.textContent='🛍 Pokémon & denim shops · explore ↓';el('day-desc').appendChild(document.createElement('br'));el('day-desc').appendChild(shop);}
  if(day===1){const alt=document.createElement('a');alt.href='#alternativas';alt.className='alt-jump';alt.textContent='✦ Southbank + optional Horrible Things · see details ↓';el('day-desc').appendChild(document.createElement('br'));el('day-desc').appendChild(alt);}
  el('timeline').innerHTML='';
  d.stops.forEach((s,i)=>{
